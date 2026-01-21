@@ -1,0 +1,17 @@
+{
+    "name": "ConsumptionSystem",
+    "rootNamespace": "ConsumptionSystem",
+    "references": [
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1",
+        "GUID:ab91a191917feff43813a543844f0818"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
