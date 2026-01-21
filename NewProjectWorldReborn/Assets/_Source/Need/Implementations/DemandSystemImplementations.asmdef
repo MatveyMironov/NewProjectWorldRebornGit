@@ -1,0 +1,20 @@
+{
+    "name": "DemandSystemImplementations",
+    "rootNamespace": "DemandSystem.Implementations",
+    "references": [
+        "GUID:85d538dbff7ff1547b60dec44323aa3f",
+        "GUID:f47e4400da4ab004d945467fba06fce6",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:9e78f22dfe80c4f4e8597e31ef49f4bb",
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
