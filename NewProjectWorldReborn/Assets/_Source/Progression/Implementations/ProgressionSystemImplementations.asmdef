@@ -1,0 +1,17 @@
+{
+    "name": "ProgressionSystemImplementations",
+    "rootNamespace": "ProgressionSystem.Implementations",
+    "references": [
+        "GUID:94d4160702595124a8296d609d649cbf",
+        "GUID:45068e8c019032346a9d5aaabcc2259c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
