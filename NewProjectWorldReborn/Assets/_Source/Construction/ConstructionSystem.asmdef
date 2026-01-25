@@ -1,0 +1,20 @@
+{
+    "name": "ConstructionSystem",
+    "rootNamespace": "ConstructionSystem",
+    "references": [
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:239da8b8a74d97b46a9775a421cdd2c1",
+        "GUID:399597e995f9ce54db5774fded2f4d9c",
+        "GUID:f97ab82cfa7f0ed49ac98bed0f43b95b",
+        "GUID:731329b07a22b9d478320d3a661e519b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
