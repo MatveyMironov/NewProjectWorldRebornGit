@@ -7,7 +7,7 @@ namespace SwitchSystem
     {
         [SerializeField] private UnityEvent[] States = new UnityEvent[0];
 
-        private int _currentStateIndex;
+        private int _currentStateIndex = -1;
 
         public override int StatesCount => States.Length;
         public override int CurrentStateIndex => _currentStateIndex;
