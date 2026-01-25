@@ -1,4 +1,4 @@
-﻿namespace ToggleSystem
+﻿namespace SwitchSystem
 {
     public interface ISwitch
     {

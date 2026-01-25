@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ToggleSystem
+namespace SwitchSystem
 {
     public class UnityEventSwitchMB : ASwitchMB
     {

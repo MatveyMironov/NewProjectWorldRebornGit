@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ToggleSystem
+namespace SwitchSystem
 {
     public abstract class ASwitchMB : MonoBehaviour, ISwitch
     {
