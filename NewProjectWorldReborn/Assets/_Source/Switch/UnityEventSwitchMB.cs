@@ -30,6 +30,8 @@ namespace SwitchSystem
 
         public override bool TrySwitchTo(int stateIndex)
         {
+            if (stateIndex == CurrentStateIndex) return false;
+
             if (stateIndex >= 0 && stateIndex < States.Length)
             {
                 States[stateIndex].Invoke();
