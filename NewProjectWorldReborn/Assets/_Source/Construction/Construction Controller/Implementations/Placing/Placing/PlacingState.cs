@@ -41,7 +41,7 @@ namespace PlacingSystem
 
         private readonly HashSet<Vector2Int> _placementCells = new();
 
-        public event Action<ConstructedBuilding> OnBuildingPlaced;
+        public event Action<BuildingStructure> OnBuildingPlaced;
 
         public void EnterState(Vector2Int cell)
         {
@@ -70,7 +70,7 @@ namespace PlacingSystem
             if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingOccupation.OccupiedCells))
             {
                 BuildingViewMB buildingView = _buildingViewInstantiator.InstantiateBuildingView(_constructionConfiguration.BuildingViewPrefab, cell, _buildingOrientation);
-                ConstructedBuilding building = new(buildingView, _buildingOccupation);
+                BuildingStructure building = new(buildingView, _buildingOccupation);
 
                 if (_constructionGridManager.TryPlaceBuilding(building, cell))
                 {

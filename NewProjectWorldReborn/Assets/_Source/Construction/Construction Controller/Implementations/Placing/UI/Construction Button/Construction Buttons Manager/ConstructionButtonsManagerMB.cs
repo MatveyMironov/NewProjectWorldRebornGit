@@ -18,7 +18,7 @@ namespace ConstructionUISystem
             _manager = new ConstructionButtonsManager(constructionButtonSpawner, placingInvokeCreator);
         }
 
-        public bool TryAddConstructionButton(IConstructionConfiguration construction, Action<ConstructedBuilding> buildingPlacedCallback)
+        public bool TryAddConstructionButton(IConstructionConfiguration construction, Action<BuildingStructure> buildingPlacedCallback)
         {
             return _manager.TryAddConstructionButton(construction, buildingPlacedCallback);
         }

@@ -20,11 +20,11 @@ namespace DemolishingSystem
             _demolitionCellsVisualization = demolitionCellsVisualization ?? throw new ArgumentNullException(nameof(demolitionCellsVisualization));
         }
 
-        public ConstructedBuilding SelectedBuilding { get; private set; }
+        public BuildingStructure SelectedBuilding { get; private set; }
 
         public event Action OnBuildingSelected;
         public event Action OnBuildingDeselected;
-        public event Action<ConstructedBuilding> OnBuildingDemolished;
+        public event Action<BuildingStructure> OnBuildingDemolished;
 
         public void EnterState(Vector2Int cell)
         {
@@ -75,7 +75,7 @@ namespace DemolishingSystem
 
         private bool TrySelectBuilding(Vector2Int cell)
         {
-            if (_constructionGridManager.TryGetBuilding(cell, out ConstructedBuilding building))
+            if (_constructionGridManager.TryGetBuilding(cell, out BuildingStructure building))
             {
                 building.View.ShowDemolition();
                 //ShowDemolitionCells(building.OccupiedCells);

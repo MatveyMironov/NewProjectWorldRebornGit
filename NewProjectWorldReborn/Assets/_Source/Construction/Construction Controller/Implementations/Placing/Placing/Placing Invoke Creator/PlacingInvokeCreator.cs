@@ -36,7 +36,7 @@ namespace PlacingSystem
         //private readonly Dictionary<IConstructionConfiguration, PlacingState> _placingStates = new();
         //private readonly Dictionary<PlacingState, Action<ConstructedBuildingData>> _buildingPlacedCallbacks = new();
         
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<ConstructedBuilding> buildingPlacedCallback)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> buildingPlacedCallback)
         {
             PlacingState placingState = new(constructionConfiguration,
                                             _constructionGridManager,

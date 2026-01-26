@@ -6,6 +6,6 @@ namespace PlacingSystem
 {
     public interface IPlacingInvokeCreator
     {
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<ConstructedBuilding> buildingPlacedCallback);
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> buildingPlacedCallback);
     }
 }

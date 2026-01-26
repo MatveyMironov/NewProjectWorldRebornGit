@@ -24,12 +24,12 @@ namespace ConstructionGridSystem
             return _constructionGridManager.CheckIfCanPlaceBuilding(originCell, buildingOccupiedCells);
         }
 
-        public HashSet<ConstructedBuilding> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
+        public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
         {
             return _constructionGridManager.GetAllBuildingsFromTo(firstCell, secondCell);
         }
 
-        public HashSet<ConstructedBuilding> GetAllBuildingsIn(HashSet<Vector2Int> cells)
+        public HashSet<BuildingStructure> GetAllBuildingsIn(HashSet<Vector2Int> cells)
         {
             return _constructionGridManager.GetAllBuildingsIn(cells);
         }
@@ -39,7 +39,7 @@ namespace ConstructionGridSystem
             return _constructionGridManager.GetAllCellsFromTo(firstCell, secondCell);
         }
 
-        public void RemoveBuilding(ConstructedBuilding constructedBuildingData)
+        public void RemoveBuilding(BuildingStructure constructedBuildingData)
         {
             _constructionGridManager.RemoveBuilding(constructedBuildingData);
         }
@@ -49,12 +49,12 @@ namespace ConstructionGridSystem
             _constructionGridManager.RemoveBuilding(cell);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out ConstructedBuilding constructedBuildingData)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure constructedBuildingData)
         {
             return _constructionGridManager.TryGetBuilding(cell, out constructedBuildingData);
         }
 
-        public bool TryPlaceBuilding(ConstructedBuilding constructedBuildingData, Vector2Int originCell)
+        public bool TryPlaceBuilding(BuildingStructure constructedBuildingData, Vector2Int originCell)
         {
             return _constructionGridManager.TryPlaceBuilding(constructedBuildingData, originCell);
         }

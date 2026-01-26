@@ -20,7 +20,7 @@ namespace ConstructionUISystem
         private readonly Dictionary<IConstructionConfiguration, ConstructionButtonMB> _constructionButtons = new();
         private readonly Dictionary<ConstructionButtonMB, Action> _buttonActions = new();
 
-        public bool TryAddConstructionButton(IConstructionConfiguration construction, Action<ConstructedBuilding> buildingPlacedCallback)
+        public bool TryAddConstructionButton(IConstructionConfiguration construction, Action<BuildingStructure> buildingPlacedCallback)
         {
             if (_constructionButtons.TryAdd(construction, null))
             {

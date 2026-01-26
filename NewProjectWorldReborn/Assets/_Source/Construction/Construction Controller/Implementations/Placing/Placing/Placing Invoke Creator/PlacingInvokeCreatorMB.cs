@@ -33,7 +33,7 @@ namespace PlacingSystem
                                                              constructionController);
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<ConstructedBuilding> buildingPlacedCallback)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> buildingPlacedCallback)
         {
             return _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration, buildingPlacedCallback);
         }

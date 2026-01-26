@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace ConstructionGridSystem
 {
-    public class ConstructedBuilding
+    public class BuildingStructure
     {
-        public ConstructedBuilding(BuildingViewMB view, Layout layout)
+        public BuildingStructure(BuildingViewMB view, Layout layout)
         {
             View = view != null ? view : throw new ArgumentNullException(nameof(view));
             Layout = layout ?? throw new ArgumentNullException(nameof(layout));

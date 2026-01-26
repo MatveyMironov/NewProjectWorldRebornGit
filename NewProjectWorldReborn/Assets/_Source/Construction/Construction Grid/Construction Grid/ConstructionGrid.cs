@@ -25,7 +25,7 @@ namespace ConstructionGridSystem
 
         public HashSet<Vector2Int> Cells => new(_cellsData.Keys);
 
-        public bool TryPlaceBuilding(ConstructedBuilding building, Vector2Int cell)
+        public bool TryPlaceBuilding(BuildingStructure building, Vector2Int cell)
         {
             HashSet<Vector2Int> cellsToOccupy = CalculateCellsToOccupy(cell, building.OccupiedCells);
 
@@ -59,18 +59,18 @@ namespace ConstructionGridSystem
             return CheckIfCanOccupyCells(cellsToOccupy);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out ConstructedBuilding building)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure structure)
         {
             if (_cellsData.TryGetValue(cell, out PlacementData placement))
             {
                 if (placement != null)
                 {
-                    building = placement.Building;
+                    structure = placement.Structure;
                     return true;
                 }
             }
 
-            building = null;
+            structure = null;
             return false;
         }
 
@@ -109,9 +109,9 @@ namespace ConstructionGridSystem
             return true;
         }
 
-        private void OccupyCellsWithBuilding(HashSet<Vector2Int> cellsToOccupy, ConstructedBuilding building)
+        private void OccupyCellsWithBuilding(HashSet<Vector2Int> cellsToOccupy, BuildingStructure structure)
         {
-            PlacementData placement = new(building, cellsToOccupy);
+            PlacementData placement = new(structure, cellsToOccupy);
 
             foreach (var cell in cellsToOccupy)
             {
@@ -121,12 +121,12 @@ namespace ConstructionGridSystem
 
         private class PlacementData
         {
-            public readonly ConstructedBuilding Building;
+            public readonly BuildingStructure Structure;
             public readonly HashSet<Vector2Int> OccupiedCells;
 
-            public PlacementData(ConstructedBuilding building, HashSet<Vector2Int> occupiedCells)
+            public PlacementData(BuildingStructure structure, HashSet<Vector2Int> occupiedCells)
             {
-                Building = building ?? throw new ArgumentNullException(nameof(building));
+                Structure = structure ?? throw new ArgumentNullException(nameof(structure));
                 OccupiedCells = occupiedCells ?? throw new ArgumentNullException(nameof(occupiedCells));
             }
         }

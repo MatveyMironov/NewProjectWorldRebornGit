@@ -16,7 +16,7 @@ namespace ConstructionSystem.Testing
             {
                 constructionButtonsManager.TryAddConstructionButton(configuration, DebugLog);
 
-                void DebugLog(ConstructedBuilding building)
+                void DebugLog(BuildingStructure building)
                 {
                     Debug.Log($"Building {building} was constructed from configuration {configuration}");
                 }
