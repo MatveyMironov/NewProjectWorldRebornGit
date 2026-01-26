@@ -1,0 +1,18 @@
+{
+    "name": "ManufactureSystem",
+    "rootNamespace": "ManufactureSystem",
+    "references": [
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1",
+        "GUID:ab91a191917feff43813a543844f0818",
+        "GUID:835fa161c5ca8e24dbaa3c3d9048751c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
