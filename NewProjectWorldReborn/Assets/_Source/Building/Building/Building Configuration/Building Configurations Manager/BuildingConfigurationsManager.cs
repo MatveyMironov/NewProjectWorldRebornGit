@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace BuildingSystem
 {
@@ -17,6 +18,7 @@ namespace BuildingSystem
             if (_buildingConfigurations.Add(configuration))
             {
                 OnBuildingConfigurationAdded?.Invoke(configuration);
+                Debug.Log($"Building configuration added: [{configuration}]");
                 return true;
             }
 
@@ -28,6 +30,7 @@ namespace BuildingSystem
             if (_buildingConfigurations.Add(configuration))
             {
                 OnBuildingConfigurationRemoved?.Invoke(configuration);
+                Debug.Log($"Building configuration Removed: [{configuration}]");
                 return true;
             }
 

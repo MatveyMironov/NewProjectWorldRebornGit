@@ -3,6 +3,7 @@ using ConstructionGridSystem;
 using PlacingSystem;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace BuildingConstructionUISystem
 {
@@ -32,6 +33,8 @@ namespace BuildingConstructionUISystem
                 _buttonActions.Add(button, action);
                 button.OnButtonClicked += action;
 
+                Debug.Log($"Building construction button added for configuration: [{configuration}]");
+
                 return true;
             }
 
@@ -46,6 +49,9 @@ namespace BuildingConstructionUISystem
                 {
                     button.OnButtonClicked -= action; //Not neccessary, probably. Will find out later.
                     UnityEngine.Object.Destroy(button.gameObject);
+
+                    Debug.Log($"Building construction button removed of configuration: [{configuration}]");
+
                     return true;
                 }
             }
