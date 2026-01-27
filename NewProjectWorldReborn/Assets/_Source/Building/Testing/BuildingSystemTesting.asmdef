@@ -1,0 +1,18 @@
+{
+    "name": "BuildingSystemTesting",
+    "rootNamespace": "BuildingSystem.Testing",
+    "references": [
+        "GUID:f60166a9814ae7140bfa463034ca6264",
+        "GUID:becce5df3c49d6c4a9e7a5f53f6125ff",
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

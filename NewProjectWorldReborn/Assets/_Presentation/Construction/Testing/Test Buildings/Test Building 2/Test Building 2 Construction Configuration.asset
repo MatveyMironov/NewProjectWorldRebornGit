@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1360d2e122f7548999c8512bfe5ecf, type: 3}
+  m_Name: Test Building 2 Construction Configuration
+  m_EditorClassIdentifier: 
+  constructionConfiguration:
+    constructionPreviewPrefab: {fileID: 690439210746757020, guid: 108b38318676cb347b69fb11b6615006, type: 3}
+    buildingViewPrefab: {fileID: 3256355568392670272, guid: f4acbdbda5adb0b4abaccba02ef80415, type: 3}
+    occupiedCells:
+    - {x: -1, y: -1}
+    - {x: -1, y: 0}
+    - {x: -1, y: 1}
+    - {x: 0, y: -1}
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: -1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    - {x: 2, y: -1}
+    - {x: 2, y: 0}
+    - {x: 2, y: 1}
