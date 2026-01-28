@@ -1,9 +1,8 @@
 using ConstructionGridSystem;
-using ConstructionPreviewSystem;
+using PlacingSystem;
 using CellsVisualizationSystem;
 using System;
 using ConstructionControllerSystem;
-using ConstructionConfigurationSystem;
 
 namespace PlacingSystem
 {
@@ -33,18 +32,13 @@ namespace PlacingSystem
             _constructionController = constructionController ?? throw new ArgumentNullException(nameof(constructionController));
         }
 
-        //private readonly Dictionary<IConstructionConfiguration, PlacingState> _placingStates = new();
-        //private readonly Dictionary<PlacingState, Action<ConstructedBuildingData>> _buildingPlacedCallbacks = new();
-        
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<ConstructedBuilding> buildingPlacedCallback)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration)
         {
             PlacingState placingState = new(constructionConfiguration,
                                             _constructionGridManager,
                                             _constructionPreviewController,
                                             _occupiedCellsVisualization,
                                             _buildingViewInstantiator);
-
-            placingState.OnBuildingPlaced += buildingPlacedCallback;
 
             return InvokePlacing;
 
@@ -54,32 +48,5 @@ namespace PlacingSystem
                 _constructionController.SetState(placingState);
             }
         }
-
-        //public bool TryRemovePlacingInvoke(IConstructionConfiguration constructionConfiguration)
-        //{
-        //    if (_placingStates.Remove(constructionConfiguration, out PlacingState placingState))
-        //    {
-        //        if (_buildingPlacedCallbacks.Remove(placingState, out Action<ConstructedBuildingData> callback))
-        //        {
-        //            placingState.OnBuildingPlaced -= callback;
-        //        }
-
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
-
-        //public bool TryGetPlacingInvoke(IConstructionConfiguration constructionConfiguration, out Action<ConstructedBuildingData> callback)
-        //{
-        //    callback = null;
-
-        //    if (_placingStates.TryGetValue(constructionConfiguration, out PlacingState placingState))
-        //    {
-        //        return _buildingPlacedCallbacks.TryGetValue(placingState, out callback);
-        //    }
-
-        //    return false;
-        //}
     }
 }

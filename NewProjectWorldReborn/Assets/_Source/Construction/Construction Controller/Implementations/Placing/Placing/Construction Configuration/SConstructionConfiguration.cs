@@ -1,11 +1,11 @@
 ﻿using BuildingViewSystem;
-using ConstructionPreviewSystem;
+using PlacingSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ConstructionConfigurationSystem
+namespace PlacingSystem
 {
     [Serializable]
     public class SConstructionConfiguration : IConstructionConfiguration
@@ -16,6 +16,10 @@ namespace ConstructionConfigurationSystem
 
         public HashSet<Vector2Int> OccupiedCells { get => occupiedCells.ToHashSet(); }
         public ConstructionPreviewMB ConstructionPreviewPrefab { get => constructionPreviewPrefab; }
-        public BuildingViewMB BuildingViewPrefab { get => buildingViewPrefab; }
+
+        public BuildingViewMB SpawnBuildingView()
+        {
+            return GameObject.Instantiate(buildingViewPrefab);
+        }
     }
 }

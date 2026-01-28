@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ConstructionPreviewSystem
+namespace PlacingSystem
 {
     public class ConstructionPreviewMB : MonoBehaviour
     {

@@ -9,9 +9,10 @@ namespace PlacingSystem
         [SerializeField] private Transform buildingViewsParent;
         [SerializeField] private Grid grid;
 
-        public BuildingViewMB InstantiateBuildingView(BuildingViewMB prefab, Vector2Int cell, EOrientation orientation)
+        public BuildingViewMB InstantiateBuildingView(IConstructionConfiguration constructionConfiguration, Vector2Int cell, EOrientation orientation)
         {
-            BuildingViewMB buildingView = Instantiate(prefab, buildingViewsParent);
+            BuildingViewMB buildingView = constructionConfiguration.SpawnBuildingView();
+            buildingView.transform.SetParent(buildingViewsParent);
 
             Vector3Int cellPosition = new(cell.x, 0, cell.y);
             Vector3 worldPosition = grid.CellToWorld(cellPosition) + grid.cellSize / 2;

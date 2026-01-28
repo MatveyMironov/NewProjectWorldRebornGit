@@ -22,7 +22,7 @@ namespace AreaDemolishingSystem
             _demolishingState = new(gridData, cellIndicator, demolishingCellsVisualization);
         }
 
-        public event Action<ConstructedBuilding> OnBuildingDemolished
+        public event Action<BuildingStructure> OnBuildingDemolished
         {
             add { _demolishingState.OnBuildingDemolished += value; }
             remove { _demolishingState.OnBuildingDemolished -= value; }

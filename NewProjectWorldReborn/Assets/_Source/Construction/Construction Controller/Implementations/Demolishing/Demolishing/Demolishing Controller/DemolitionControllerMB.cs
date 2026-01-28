@@ -31,7 +31,7 @@ namespace DemolishingSystem
             remove { _controller.OnBuildingDeselected -= value; }
         }
 
-        public event Action<ConstructedBuilding> OnBuildingDemolished
+        public event Action<BuildingStructure> OnBuildingDemolished
         {
             add { _controller.OnBuildingDemolished += value; }
             remove { _controller.OnBuildingDemolished -= value; }
