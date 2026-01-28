@@ -45,10 +45,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 797743319516614923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6dcaa5f909014428e57826e13c163a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f72ee7745ca8ab49b777ad901436cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twoIntegerValuesDisplayer: {fileID: 6797631624925369225}
+  twoNumbersDisplayer: {fileID: 6797631624925369225}
 --- !u!1 &1187386499255775365
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1187386499255775365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893770900d2f29d488c4f047a5c3b23a, type: 3}
+  m_Script: {fileID: 11500000, guid: f7110582e4fee084c910d5fa92e8a63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twoIntegerValuesDisplayer: {fileID: 6797631624925369225}
+  twoNumbersDisplayer: {fileID: 6797631624925369225}
 --- !u!1 &2831538027277834910
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,10 +430,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4377758254238819976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5a258c1b3fdeb418d6d7256734d7ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4873e2d07fbdd054a8bc2b121012cbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twoIntegerValuesText: {fileID: 4826724039806666438}
+  twoNumbersText: {fileID: 4826724039806666438}
 --- !u!1 &5319052730026567928
 GameObject:
   m_ObjectHideFlags: 0
