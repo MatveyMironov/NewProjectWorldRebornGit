@@ -1,13 +1,12 @@
 using LayoutSystem;
 using ConstructionGridSystem;
-using ConstructionPreviewSystem;
+using PlacingSystem;
 using CellsVisualizationSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using ConstructionControllerSystem;
 using BuildingViewSystem;
-using ConstructionConfigurationSystem;
 using System.Linq;
 
 namespace PlacingSystem
@@ -69,14 +68,14 @@ namespace PlacingSystem
         {
             if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingOccupation.OccupiedCells))
             {
-                BuildingViewMB buildingView = _buildingViewInstantiator.InstantiateBuildingView(_constructionConfiguration.BuildingViewPrefab, cell, _buildingOrientation);
-                BuildingStructure building = new(buildingView, _buildingOccupation);
+                BuildingViewMB buildingView = _buildingViewInstantiator.InstantiateBuildingView(_constructionConfiguration, cell, _buildingOrientation);
+                BuildingStructure structure = new(buildingView, _buildingOccupation);
 
-                if (_constructionGridManager.TryPlaceBuilding(building, cell))
+                if (_constructionGridManager.TryPlaceBuilding(structure, cell))
                 {
                     _preview.HidePreview();
 
-                    OnBuildingPlaced?.Invoke(building);
+                    OnBuildingPlaced?.Invoke(structure);
                     _buildingOccupation = null;
 
                     CreateBuildingPreview(cell);
