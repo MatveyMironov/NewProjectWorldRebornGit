@@ -1,5 +1,4 @@
-﻿using BuildingViewSystem;
-using PlacingSystem;
+﻿using ConstructionGridSystem;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,6 @@ namespace PlacingSystem
         HashSet<Vector2Int> OccupiedCells { get; }
         ConstructionPreviewMB ConstructionPreviewPrefab { get; }
 
-        BuildingViewMB SpawnBuildingView();
+        BuildingStructure CreateBuildingStructure();
     }
 }
