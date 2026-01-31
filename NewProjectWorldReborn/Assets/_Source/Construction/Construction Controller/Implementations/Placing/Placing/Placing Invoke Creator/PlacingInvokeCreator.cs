@@ -11,7 +11,7 @@ namespace PlacingSystem
         private readonly IConstructionGridManager _constructionGridManager;
         private readonly IConstructionPreviewController _constructionPreviewController;
         private readonly ICellsVisualization _occupiedCellsVisualization;
-        private readonly IBuildingViewInstantiator _buildingViewInstantiator;
+        private readonly IBuildingStructureCreator _buildingViewInstantiator;
 
         private readonly IBuildingRotationController _buildingRotationController;
         private readonly IConstructionController _constructionController;
@@ -19,7 +19,7 @@ namespace PlacingSystem
         public PlacingInvokeCreator(IConstructionGridManager constructionGridManager,
                                     IConstructionPreviewController constructionPreviewController,
                                     ICellsVisualization occupiedCellsVisualization,
-                                    IBuildingViewInstantiator buildingViewInstantiator,
+                                    IBuildingStructureCreator buildingViewInstantiator,
                                     IBuildingRotationController buildingRotationController,
                                     IConstructionController constructionController)
         {
