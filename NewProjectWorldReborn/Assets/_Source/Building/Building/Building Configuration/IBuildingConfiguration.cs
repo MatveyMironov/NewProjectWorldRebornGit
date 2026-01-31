@@ -1,6 +1,6 @@
 using BuildingInfoSystem;
-using ConstructionConfigurationSystem;
 using ConstructionGridSystem;
+using PlacingSystem;
 
 namespace BuildingSystem
 {
@@ -9,6 +9,6 @@ namespace BuildingSystem
         IConstructionConfiguration Construction { get; }
         IBuildingInfo Info { get; }
 
-        Building CreateBuilding(ConstructedBuilding structure);
+        Building CreateBuilding(BuildingStructure structure);
     }
 }

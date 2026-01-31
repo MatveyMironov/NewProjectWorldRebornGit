@@ -1,5 +1,4 @@
 using BuildingSystem;
-using ConstructionGridSystem;
 using PlacingSystem;
 using System;
 using System.Collections.Generic;
@@ -21,7 +20,7 @@ namespace BuildingConstructionUISystem
         private readonly Dictionary<IBuildingConfiguration, BuildingConstructionButtonMB> _buildingConstructionButtons = new();
         private readonly Dictionary<BuildingConstructionButtonMB, Action> _buttonActions = new();
 
-        public bool TryAddConstructionButton(IBuildingConfiguration configuration, Action<ConstructedBuilding> structureConstructedCallback)
+        public bool TryAddConstructionButton(IBuildingConfiguration configuration)
         {
             if (_buildingConstructionButtons.TryAdd(configuration, null))
             {
@@ -29,7 +28,7 @@ namespace BuildingConstructionUISystem
                 _buildingConstructionButtons[configuration] = button;
                 button.DisplayBuildingConfiguration(configuration);
 
-                Action action = _placingInvokeCreator.CreatePlacingInvoke(configuration.Construction, structureConstructedCallback);
+                Action action = _placingInvokeCreator.CreatePlacingInvoke(configuration.Construction);
                 _buttonActions.Add(button, action);
                 button.OnButtonClicked += action;
 

@@ -1,6 +1,6 @@
 using BuildingInfoSystem;
-using ConstructionConfigurationSystem;
 using ConstructionGridSystem;
+using PlacingSystem;
 using UnityEngine;
 
 namespace BuildingSystem
@@ -13,6 +13,6 @@ namespace BuildingSystem
         public IBuildingInfo Info { get => info; }
         public IConstructionConfiguration Construction { get => construction; }
 
-        public abstract Building CreateBuilding(ConstructedBuilding structure);
+        public abstract Building CreateBuilding(BuildingStructure structure);
     }
 }

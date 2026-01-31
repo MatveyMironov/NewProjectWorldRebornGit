@@ -6,7 +6,7 @@ namespace BuildingSystem.Testing
     [CreateAssetMenu(fileName = "Test Building", menuName = "Building Configuration/Test Building")]
     public class TestBuildingConfigurationSO : ABuildingConfigurationSO
     {
-        public override Building CreateBuilding(ConstructedBuilding structure)
+        public override Building CreateBuilding(BuildingStructure structure)
         {
             return new(structure, Info);
         }
