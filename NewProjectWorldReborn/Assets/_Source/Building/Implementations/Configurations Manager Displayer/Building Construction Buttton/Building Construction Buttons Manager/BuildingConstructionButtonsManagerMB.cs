@@ -1,7 +1,5 @@
 using BuildingSystem;
-using ConstructionGridSystem;
 using PlacingSystem;
-using System;
 using UnityEngine;
 
 namespace BuildingConstructionUISystem
@@ -18,9 +16,9 @@ namespace BuildingConstructionUISystem
             _manager = new BuildingConstructionButtonsManager(constructionButtonSpawner, placingInvokeCreator);
         }
 
-        public bool TryAddConstructionButton(IBuildingConfiguration configuration, Action<ConstructedBuilding> structureConstructedCallback)
+        public bool TryAddConstructionButton(IBuildingConfiguration configuration)
         {
-            return _manager.TryAddConstructionButton(configuration, structureConstructedCallback);
+            return _manager.TryAddConstructionButton(configuration);
         }
 
         public bool TryRemoveConstructionButton(IBuildingConfiguration configuration)

@@ -33,7 +33,7 @@ namespace DemolishingSystem
             remove { _demolishingState.OnBuildingDeselected -= value; }
         }
 
-        public event Action<ConstructedBuilding> OnBuildingDemolished
+        public event Action<BuildingStructure> OnBuildingDemolished
         {
             add { _demolishingState.OnBuildingDemolished += value; }
             remove { _demolishingState.OnBuildingDemolished -= value; }

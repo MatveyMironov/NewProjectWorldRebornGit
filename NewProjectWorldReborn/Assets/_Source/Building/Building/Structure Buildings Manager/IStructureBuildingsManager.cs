@@ -4,8 +4,8 @@ namespace BuildingSystem
 {
     public interface IStructureBuildingsManager
     {
-        bool TryAddStructureBuilding(ConstructedBuilding structure, Building building);
-        bool TryRemoveBuildingInterior(ConstructedBuilding structure);
-        bool TryGetBuildingInterior(ConstructedBuilding structure, out Building building);
+        bool TryAddStructureBuilding(BuildingStructure structure, Building building);
+        bool TryRemoveBuildingInterior(BuildingStructure structure);
+        bool TryGetBuildingInterior(BuildingStructure structure, out Building building);
     }
 }

@@ -1,10 +1,8 @@
 using ConstructionGridSystem;
-using ConstructionPreviewSystem;
 using CellsVisualizationSystem;
 using System;
 using UnityEngine;
 using ConstructionControllerSystem;
-using ConstructionConfigurationSystem;
 
 namespace PlacingSystem
 {
@@ -33,9 +31,9 @@ namespace PlacingSystem
                                                              constructionController);
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<ConstructedBuilding> buildingPlacedCallback)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration)
         {
-            return _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration, buildingPlacedCallback);
+            return _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
         }
     }
 }

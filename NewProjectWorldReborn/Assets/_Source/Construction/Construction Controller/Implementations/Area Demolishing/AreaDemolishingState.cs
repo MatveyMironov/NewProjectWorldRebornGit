@@ -27,9 +27,9 @@ namespace AreaDemolishingSystem
         private bool _isSelecting;
         private Vector2Int _startCell;
 
-        private readonly HashSet<ConstructedBuilding> _selectedBuildings = new();
+        private readonly HashSet<BuildingStructure> _selectedBuildings = new();
 
-        public event Action<ConstructedBuilding> OnBuildingDemolished;
+        public event Action<BuildingStructure> OnBuildingDemolished;
 
         public void EnterState(Vector2Int cell)
         {
@@ -76,7 +76,7 @@ namespace AreaDemolishingSystem
         private void Select(Vector2Int finishCell)
         {
             HashSet<Vector2Int> cellsToSelect = _constructionGridManager.GetAllCellsFromTo(_startCell, finishCell);
-            HashSet<ConstructedBuilding> buildingsToSelect = _constructionGridManager.GetAllBuildingsIn(cellsToSelect);
+            HashSet<BuildingStructure> buildingsToSelect = _constructionGridManager.GetAllBuildingsIn(cellsToSelect);
 
             SelectCells(cellsToSelect);
             SelectBuildings(buildingsToSelect);
@@ -100,11 +100,11 @@ namespace AreaDemolishingSystem
             _demolishingCellsVisualization.DestroyVisualization();
         }
 
-        private void SelectBuildings(HashSet<ConstructedBuilding> buildingsToSelect)
+        private void SelectBuildings(HashSet<BuildingStructure> buildingsToSelect)
         {
             DeselectBuildings();
 
-            foreach (ConstructedBuilding building in buildingsToSelect)
+            foreach (BuildingStructure building in buildingsToSelect)
             {
                 building.View.ShowDemolition();
             }
@@ -114,7 +114,7 @@ namespace AreaDemolishingSystem
 
         private void DeselectBuildings()
         {
-            foreach (ConstructedBuilding building in _selectedBuildings)
+            foreach (BuildingStructure building in _selectedBuildings)
             {
                 building.View.HideDemolition();
 
@@ -124,7 +124,7 @@ namespace AreaDemolishingSystem
 
         private void DemolishSelectedBuildings()
         {
-            foreach (ConstructedBuilding building in _selectedBuildings)
+            foreach (BuildingStructure building in _selectedBuildings)
             {
                 UnityEngine.Object.Destroy(building.View.gameObject);
                 _constructionGridManager.RemoveBuilding(building);

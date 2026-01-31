@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BuildingSystem.Implementations
 {
-    public abstract class ABuildingConfiguratinsManagerDisplayerSetuper : MonoBehaviour
+    public abstract class ABuildingConfiguratinsManagerDisplayerSetuperMB : MonoBehaviour
     {
         [SerializeField] private ABuildingConfigurationsManagerDisplayerMB buildingConfigurationsManagerDisplayer;
 
@@ -11,6 +11,7 @@ namespace BuildingSystem.Implementations
         protected virtual void Start()
         {
             buildingConfigurationsManagerDisplayer.DisplayBuildingConfigurationsManager(BuildingConfigurationsManager);
+            Debug.Log("Building Configuratins Manager Displayer is setup.");
         }
     }
 }
