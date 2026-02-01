@@ -1,0 +1,17 @@
+{
+    "name": "ManufactureSystemTesting",
+    "rootNamespace": "ManufactureSystem.Testing",
+    "references": [
+        "GUID:84a569501cbdab14eaa75de5a49493fc",
+        "GUID:835fa161c5ca8e24dbaa3c3d9048751c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

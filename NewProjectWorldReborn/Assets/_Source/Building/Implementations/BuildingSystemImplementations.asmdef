@@ -1,0 +1,23 @@
+{
+    "name": "BuildingSystemImplementations",
+    "rootNamespace": "BuildingSystem.Implementations",
+    "references": [
+        "GUID:f60166a9814ae7140bfa463034ca6264",
+        "GUID:becce5df3c49d6c4a9e7a5f53f6125ff",
+        "GUID:4ad81fa61ac96c24086dc57a2a9438e3",
+        "GUID:b89c64d0793f9754f8e7fec38d5a4cbe",
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:731329b07a22b9d478320d3a661e519b",
+        "GUID:84a569501cbdab14eaa75de5a49493fc",
+        "GUID:835fa161c5ca8e24dbaa3c3d9048751c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

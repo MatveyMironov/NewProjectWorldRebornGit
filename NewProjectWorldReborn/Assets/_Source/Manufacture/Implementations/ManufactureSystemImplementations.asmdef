@@ -1,0 +1,18 @@
+{
+    "name": "ManufactureSystemImplementations",
+    "rootNamespace": "ManufactureSystem.Implementations",
+    "references": [
+        "GUID:84a569501cbdab14eaa75de5a49493fc",
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1",
+        "GUID:f47e4400da4ab004d945467fba06fce6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
