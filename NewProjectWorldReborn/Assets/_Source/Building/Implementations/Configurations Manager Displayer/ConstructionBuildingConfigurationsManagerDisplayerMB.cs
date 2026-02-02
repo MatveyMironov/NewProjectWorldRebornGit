@@ -17,10 +17,15 @@ namespace BuildingSystem
         {
             Clear();
 
+            _displayedManager = manager;
+
+            foreach (var configuration in manager.BuildingConfigurations)
+            {
+                AddBuildingConstruction(configuration);
+            }
+
             manager.OnBuildingConfigurationAdded += AddBuildingConstruction;
             manager.OnBuildingConfigurationRemoved += RemoveBuildingConstruction;
-
-            _displayedManager = manager;
         }
 
         public override void Clear()
@@ -29,6 +34,11 @@ namespace BuildingSystem
 
             _displayedManager.OnBuildingConfigurationAdded -= AddBuildingConstruction;
             _displayedManager.OnBuildingConfigurationRemoved -= RemoveBuildingConstruction;
+
+            foreach (var configuration in _displayedManager.BuildingConfigurations)
+            {
+                RemoveBuildingConstruction(configuration);
+            }
 
             _displayedManager = null;
         }

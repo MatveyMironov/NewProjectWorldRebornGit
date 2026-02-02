@@ -15,17 +15,17 @@ namespace BuildingSystem
             _manager = new StructureBuildingsManager(buildingSelectionActionsManager);
         }
 
-        public bool TryAddStructureBuilding(ConstructedBuilding structure, Building building)
+        public bool TryAddStructureBuilding(BuildingStructure structure, Building building)
         {
             return _manager.TryAddStructureBuilding(structure, building);
         }
 
-        public bool TryRemoveBuildingInterior(ConstructedBuilding structure)
+        public bool TryRemoveBuildingInterior(BuildingStructure structure)
         {
             return _manager.TryRemoveBuildingInterior(structure);
         }
 
-        public bool TryGetBuildingInterior(ConstructedBuilding structure, out Building building)
+        public bool TryGetBuildingInterior(BuildingStructure structure, out Building building)
         {
             return _manager.TryGetBuildingInterior(structure, out building);
         }

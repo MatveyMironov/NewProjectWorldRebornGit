@@ -1,5 +1,4 @@
 using BuildingConstructionUISystem;
-using ConstructionGridSystem;
 using System;
 
 namespace BuildingSystem
@@ -17,13 +16,7 @@ namespace BuildingSystem
 
         public bool TryAddBuildingConstruction(IBuildingConfiguration configuration)
         {
-            return _constructionButtonsManager.TryAddConstructionButton(configuration, CreateBuilding);
-
-            void CreateBuilding(ConstructedBuilding structure)
-            {
-                Building building = configuration.CreateBuilding(structure);
-                _correspondancesManager.TryAddStructureBuilding(structure, building);
-            }
+            return _constructionButtonsManager.TryAddConstructionButton(configuration);
         }
 
         public bool TryRemoveBuildingConstruction(IBuildingConfiguration configuration)

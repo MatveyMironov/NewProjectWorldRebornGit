@@ -1,13 +1,12 @@
 using LayoutSystem;
 using ConstructionGridSystem;
-using ConstructionPreviewSystem;
+using PlacingSystem;
 using CellsVisualizationSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using ConstructionControllerSystem;
 using BuildingViewSystem;
-using ConstructionConfigurationSystem;
 using System.Linq;
 
 namespace PlacingSystem
@@ -19,13 +18,13 @@ namespace PlacingSystem
         private readonly IConstructionGridManager _constructionGridManager;
         private readonly IConstructionPreviewController _preview;
         private readonly ICellsVisualization _placementCellsVisualization;
-        private readonly IBuildingViewInstantiator _buildingViewInstantiator;
+        private readonly IBuildingStructureCreator _buildingViewInstantiator;
 
         public PlacingState(IConstructionConfiguration constructionConfiguration,
                             IConstructionGridManager constructionGridManager,
                             IConstructionPreviewController preview,
                             ICellsVisualization placementCellsVisualization,
-                            IBuildingViewInstantiator buildingViewInstantiator)
+                            IBuildingStructureCreator buildingViewInstantiator)
         {
             _constructionConfiguration = constructionConfiguration ?? throw new ArgumentNullException(nameof(constructionConfiguration));
             _constructionGridManager = constructionGridManager ?? throw new ArgumentNullException(nameof(constructionGridManager));
@@ -36,12 +35,12 @@ namespace PlacingSystem
 
         private Vector2Int _currentCell;
 
-        private Layout _buildingOccupation;
+        private Layout _buildingLayout;
         private EOrientation _buildingOrientation;
 
         private readonly HashSet<Vector2Int> _placementCells = new();
 
-        public event Action<ConstructedBuilding> OnBuildingPlaced;
+        public event Action<BuildingStructure> OnBuildingPlaced;
 
         public void EnterState(Vector2Int cell)
         {
@@ -67,23 +66,22 @@ namespace PlacingSystem
 
         public void FinishAction(Vector2Int cell)
         {
-            if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingOccupation.OccupiedCells))
+            if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingLayout.OccupiedCells))
             {
-                BuildingViewMB buildingView = _buildingViewInstantiator.InstantiateBuildingView(_constructionConfiguration.BuildingViewPrefab, cell, _buildingOrientation);
-                ConstructedBuilding building = new(buildingView, _buildingOccupation);
+                BuildingStructure structure = _buildingViewInstantiator.CreateBuildingStructure(_constructionConfiguration, cell, _buildingOrientation);
 
-                if (_constructionGridManager.TryPlaceBuilding(building, cell))
+                if (_constructionGridManager.TryPlaceBuilding(structure, cell))
                 {
                     _preview.HidePreview();
 
-                    OnBuildingPlaced?.Invoke(building);
-                    _buildingOccupation = null;
+                    OnBuildingPlaced?.Invoke(structure);
+                    _buildingLayout = null;
 
                     CreateBuildingPreview(cell);
                 }
                 else
                 {
-                    UnityEngine.Object.Destroy(buildingView.gameObject);
+                    UnityEngine.Object.Destroy(structure.View.gameObject);
                 }
             }
 
@@ -94,12 +92,12 @@ namespace PlacingSystem
         {
             _preview.HidePreview();
             HidePlacementCells();
-            _buildingOccupation = null;
+            _buildingLayout = null;
         }
 
         private void CreateBuildingPreview(Vector2Int cell)
         {
-            _buildingOccupation = new(_constructionConfiguration.OccupiedCells)
+            _buildingLayout = new(_constructionConfiguration.OccupiedCells)
             {
                 Orientation = _buildingOrientation
             };
@@ -132,7 +130,7 @@ namespace PlacingSystem
                 break;
             }
 
-            _buildingOccupation.Orientation = _buildingOrientation;
+            _buildingLayout.Orientation = _buildingOrientation;
             _preview.SetOrientation(_buildingOrientation);
             ShowPlacementCells(_currentCell);
             ShowPlacementValidity(_currentCell);
@@ -140,10 +138,10 @@ namespace PlacingSystem
 
         private void ShowPlacementCells(Vector2Int originCell)
         {
-            if (_buildingOccupation == null) return;
+            if (_buildingLayout == null) return;
 
             _placementCells.Clear();
-            foreach (var cell in _buildingOccupation.OccupiedCells)
+            foreach (var cell in _buildingLayout.OccupiedCells)
             {
                 Vector2Int placementCell = originCell + cell;
                 _placementCells.Add(placementCell);
@@ -159,7 +157,7 @@ namespace PlacingSystem
 
         private void ShowPlacementValidity(Vector2Int originCell)
         {
-            if (_constructionGridManager.CheckIfCanPlaceBuilding(originCell, _buildingOccupation.OccupiedCells))
+            if (_constructionGridManager.CheckIfCanPlaceBuilding(originCell, _buildingLayout.OccupiedCells))
             {
                 _preview.ShowValidPlacement();
             }

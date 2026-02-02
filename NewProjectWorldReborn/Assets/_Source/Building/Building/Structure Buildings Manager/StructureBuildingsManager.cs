@@ -13,9 +13,9 @@ namespace BuildingSystem
             _buildingSelectionActionsManager = buildingSelectionActionsManager ?? throw new ArgumentNullException(nameof(buildingSelectionActionsManager));
         }
 
-        private readonly Dictionary<ConstructedBuilding, Building> _structureBuildings = new();
+        private readonly Dictionary<BuildingStructure, Building> _structureBuildings = new();
 
-        public bool TryAddStructureBuilding(ConstructedBuilding structure, Building building)
+        public bool TryAddStructureBuilding(BuildingStructure structure, Building building)
         {
             if (_structureBuildings.TryAdd(structure, building))
             {
@@ -26,7 +26,7 @@ namespace BuildingSystem
             return false;
         }
 
-        public bool TryRemoveBuildingInterior(ConstructedBuilding structure)
+        public bool TryRemoveBuildingInterior(BuildingStructure structure)
         {
             if (_structureBuildings.Remove(structure, out Building building))
             {
@@ -37,7 +37,7 @@ namespace BuildingSystem
             return false;
         }
 
-        public bool TryGetBuildingInterior(ConstructedBuilding structure, out Building building)
+        public bool TryGetBuildingInterior(BuildingStructure structure, out Building building)
         {
             return _structureBuildings.TryGetValue(structure, out building);
         }

@@ -1,7 +1,7 @@
 using LayoutSystem;
 using UnityEngine;
 
-namespace ConstructionPreviewSystem
+namespace PlacingSystem
 {
     public interface IConstructionPreviewController
     {

@@ -7,7 +7,7 @@ namespace ConstructionGridSystem
     {
         private readonly ConstructionGrid _constructionGrid;
 
-        private readonly Dictionary<ConstructedBuilding, Vector2Int> _buildingOriginCells = new();
+        private readonly Dictionary<BuildingStructure, Vector2Int> _buildingOriginCells = new();
 
         public ConstructionGridManager(ConstructionGrid constructionGrid)
         {
@@ -16,7 +16,7 @@ namespace ConstructionGridSystem
 
         public HashSet<Vector2Int> Cells => _constructionGrid.Cells;
 
-        public void RemoveBuilding(ConstructedBuilding building)
+        public void RemoveBuilding(BuildingStructure building)
         {
             if (_buildingOriginCells.Remove(building, out var originCell))
             {
@@ -24,7 +24,7 @@ namespace ConstructionGridSystem
             }
         }
 
-        public bool TryPlaceBuilding(ConstructedBuilding building, Vector2Int originCell)
+        public bool TryPlaceBuilding(BuildingStructure building, Vector2Int originCell)
         {
             if (!_buildingOriginCells.ContainsKey(building))
             {
@@ -48,24 +48,24 @@ namespace ConstructionGridSystem
             return _constructionGrid.CheckIfCanPlaceBuilding(originCell, layoutCells);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out ConstructedBuilding building)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building)
         {
             return _constructionGrid.TryGetBuilding(cell, out building);
         }
 
-        public HashSet<ConstructedBuilding> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
+        public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
         {
             HashSet<Vector2Int> cells = GetAllCellsFromTo(firstCell, secondCell);
             return GetAllBuildingsIn(cells);
         }
 
-        public HashSet<ConstructedBuilding> GetAllBuildingsIn(HashSet<Vector2Int> cells)
+        public HashSet<BuildingStructure> GetAllBuildingsIn(HashSet<Vector2Int> cells)
         {
-            HashSet<ConstructedBuilding> buildings = new();
+            HashSet<BuildingStructure> buildings = new();
 
             foreach (var cell in cells)
             {
-                if (_constructionGrid.TryGetBuilding(cell, out ConstructedBuilding building))
+                if (_constructionGrid.TryGetBuilding(cell, out BuildingStructure building))
                 {
                     buildings.Add(building);
                 }

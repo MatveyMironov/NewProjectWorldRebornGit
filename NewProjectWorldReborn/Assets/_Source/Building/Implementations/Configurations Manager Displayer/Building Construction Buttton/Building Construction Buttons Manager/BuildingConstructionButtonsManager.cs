@@ -21,7 +21,7 @@ namespace BuildingConstructionUISystem
         private readonly Dictionary<IBuildingConfiguration, BuildingConstructionButtonMB> _buildingConstructionButtons = new();
         private readonly Dictionary<BuildingConstructionButtonMB, Action> _buttonActions = new();
 
-        public bool TryAddConstructionButton(IBuildingConfiguration configuration, Action<ConstructedBuilding> structureConstructedCallback)
+        public bool TryAddConstructionButton(IBuildingConfiguration configuration)
         {
             if (_buildingConstructionButtons.TryAdd(configuration, null))
             {
@@ -29,11 +29,12 @@ namespace BuildingConstructionUISystem
                 _buildingConstructionButtons[configuration] = button;
                 button.DisplayBuildingConfiguration(configuration);
 
-                Action action = _placingInvokeCreator.CreatePlacingInvoke(configuration.Construction, structureConstructedCallback);
+                BuildingConstructionConfiguration constructionConfiguration = new(configuration);
+                Action action = _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
                 _buttonActions.Add(button, action);
                 button.OnButtonClicked += action;
 
-                Debug.Log($"Building construction button added for configuration: [{configuration}]");
+                Debug.Log($"Building construction button added for configuration: {configuration}");
 
                 return true;
             }
@@ -47,16 +48,36 @@ namespace BuildingConstructionUISystem
             {
                 if (_buttonActions.Remove(button, out Action action))
                 {
-                    button.OnButtonClicked -= action; //Not neccessary, probably. Will find out later.
+                    button.OnButtonClicked -= action; //Not neccessary, probably. Will look into it later.
                     UnityEngine.Object.Destroy(button.gameObject);
 
-                    Debug.Log($"Building construction button removed of configuration: [{configuration}]");
+                    Debug.Log($"Building construction button removed of configuration: {configuration}");
 
                     return true;
                 }
             }
 
             return false;
+        }
+
+        private class BuildingConstructionConfiguration : IConstructionConfiguration
+        {
+            private readonly IBuildingConfiguration _buildingConfiguration;
+
+            public BuildingConstructionConfiguration(IBuildingConfiguration buildingConfiguration)
+            {
+                _buildingConfiguration = buildingConfiguration ?? throw new ArgumentNullException(nameof(buildingConfiguration));
+            }
+
+            public HashSet<Vector2Int> OccupiedCells => _buildingConfiguration.OccupiedCells;
+            public ConstructionPreviewMB ConstructionPreviewPrefab => _buildingConfiguration.ConstructionPreviewPrefab;
+
+            public BuildingStructure CreateBuildingStructure()
+            {
+                Building building = _buildingConfiguration.CreateBuilding();
+
+                return building.Structure;
+            }
         }
     }
 }

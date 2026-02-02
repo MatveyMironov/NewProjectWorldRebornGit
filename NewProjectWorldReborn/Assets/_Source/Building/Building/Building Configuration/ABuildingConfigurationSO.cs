@@ -1,6 +1,6 @@
 using BuildingInfoSystem;
-using ConstructionConfigurationSystem;
-using ConstructionGridSystem;
+using PlacingSystem;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BuildingSystem
@@ -10,9 +10,12 @@ namespace BuildingSystem
         [SerializeField] private SBuildingInfo info;
         [SerializeField] private SConstructionConfiguration construction;
 
-        public IBuildingInfo Info { get => info; }
-        public IConstructionConfiguration Construction { get => construction; }
+        protected IConstructionConfiguration Construction => construction;
 
-        public abstract Building CreateBuilding(ConstructedBuilding structure);
+        public IBuildingInfo Info => info;
+        public HashSet<Vector2Int> OccupiedCells => construction.OccupiedCells;
+        public ConstructionPreviewMB ConstructionPreviewPrefab => construction.ConstructionPreviewPrefab;
+
+        public abstract Building CreateBuilding();
     }
 }

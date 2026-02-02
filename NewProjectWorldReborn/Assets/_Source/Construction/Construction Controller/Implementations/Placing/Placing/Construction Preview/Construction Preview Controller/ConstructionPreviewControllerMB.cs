@@ -2,7 +2,7 @@
 using LayoutSystem;
 using UnityEngine;
 
-namespace ConstructionPreviewSystem
+namespace PlacingSystem
 {
     public class ConstructionPreviewControllerMB : MonoBehaviour, IConstructionPreviewController
     {
