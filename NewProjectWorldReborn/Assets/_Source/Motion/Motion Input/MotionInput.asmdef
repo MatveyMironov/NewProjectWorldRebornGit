@@ -1,0 +1,19 @@
+{
+    "name": "MotionInput",
+    "rootNamespace": "MotionInput",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:3f98274db519a67408388713e6874f5a",
+        "GUID:b9242f3cf4200d34fb2c6ae3437710d9",
+        "GUID:23a60f2ceed815b48bf0bf05e0fc3a94"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
