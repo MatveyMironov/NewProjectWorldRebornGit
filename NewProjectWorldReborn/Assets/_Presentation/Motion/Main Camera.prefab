@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5976119654952223797}
   - component: {fileID: 2783572976629230832}
   - component: {fileID: 7427537682832069392}
+  - component: {fileID: 4676897897202558233}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -76,6 +77,25 @@ MonoBehaviour:
   rotationLimits:
     maxXAngle: 90
     minXAngle: 0
+--- !u!114 &4676897897202558233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950536460156162426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c654eee298cf21448afa9457e6574e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementController: {fileID: 2783572976629230832}
+  rotationController: {fileID: 7427537682832069392}
+  zoomController: {fileID: 3901489799933898121}
+  move: {fileID: 1065637383436405981, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  increaseSpeed: {fileID: 7062221154188415272, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  rotate: {fileID: -936318481454397199, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  zoom: {fileID: 2376240253286796246, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &6512238778574176826
 GameObject:
   m_ObjectHideFlags: 0
