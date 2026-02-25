@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
   requiredAmount: 50
-  displayerPrefab: {fileID: 0}
+  displayerPrefab: {fileID: 1835507949355674047, guid: 23aed55dc7bba674d9b46ac03d648be7, type: 3}
