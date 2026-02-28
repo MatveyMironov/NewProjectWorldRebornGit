@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cefa280a2145d94f9e0299c84b9d137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingConstructionActionsManager: {fileID: 190177155654184654}
+  buildingConstructionsManager: {fileID: 190177155654184654}
 --- !u!114 &670135164211981165
 MonoBehaviour:
   m_ObjectHideFlags: 0

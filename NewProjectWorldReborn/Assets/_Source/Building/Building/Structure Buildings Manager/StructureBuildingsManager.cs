@@ -1,6 +1,7 @@
 using ConstructionGridSystem;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace BuildingSystem
 {
@@ -15,11 +16,16 @@ namespace BuildingSystem
 
         private readonly Dictionary<BuildingStructure, Building> _structureBuildings = new();
 
+        public event Action<Building> OnBuildingAdded;
+        public event Action<Building> OnBuildingRemoved;
+
         public bool TryAddStructureBuilding(BuildingStructure structure, Building building)
         {
             if (_structureBuildings.TryAdd(structure, building))
             {
                 _buildingSelectionActionsManager.TryAddBuildingSelectionAction(building);
+                Debug.Log($"Building {building} for structure {structure} was added");
+                OnBuildingAdded?.Invoke(building);
                 return true;
             }
 
@@ -31,6 +37,8 @@ namespace BuildingSystem
             if (_structureBuildings.Remove(structure, out Building building))
             {
                 _buildingSelectionActionsManager.TryRemoveBuildingSelectionAction(building);
+                Debug.Log($"Building {building} for structure {structure} was removed");
+                OnBuildingRemoved?.Invoke(building);
                 return true;
             }
 

@@ -17,8 +17,8 @@ namespace BuildingSystem
         {
             if (_buildingConfigurations.Add(configuration))
             {
-                OnBuildingConfigurationAdded?.Invoke(configuration);
                 Debug.Log($"Building configuration added: {configuration}");
+                OnBuildingConfigurationAdded?.Invoke(configuration);
                 return true;
             }
 
@@ -29,8 +29,8 @@ namespace BuildingSystem
         {
             if (_buildingConfigurations.Add(configuration))
             {
-                OnBuildingConfigurationRemoved?.Invoke(configuration);
                 Debug.Log($"Building configuration Removed: {configuration}");
+                OnBuildingConfigurationRemoved?.Invoke(configuration);
                 return true;
             }
 
