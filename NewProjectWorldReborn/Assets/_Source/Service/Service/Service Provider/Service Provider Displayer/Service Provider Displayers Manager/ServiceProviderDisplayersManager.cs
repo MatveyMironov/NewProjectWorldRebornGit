@@ -30,7 +30,7 @@ namespace ServiceSystem
         {
             if (_displayers.Remove(provider, out var displayer))
             {
-                UnityEngine.Object.Destroy(displayer);
+                UnityEngine.Object.Destroy(displayer.gameObject);
                 return true;
             }
 
@@ -41,7 +41,7 @@ namespace ServiceSystem
         {
             foreach (var displayer in _displayers.Values)
             {
-                UnityEngine.Object.Destroy(displayer);
+                UnityEngine.Object.Destroy(displayer.gameObject);
             }
 
             _displayers.Clear();
