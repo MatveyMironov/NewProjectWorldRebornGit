@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ServiceSystem
@@ -8,6 +9,8 @@ namespace ServiceSystem
         [SerializeField] private ServicesManagerMB servicesManager;
 
         private IServiceProvidersManager _manager;
+
+        public HashSet<ServiceProvider> Providers => _manager.Providers;
 
         public event Action<ServiceProvider> OnServiceProviderAdded
         {

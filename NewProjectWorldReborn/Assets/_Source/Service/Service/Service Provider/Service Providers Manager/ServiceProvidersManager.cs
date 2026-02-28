@@ -14,6 +14,8 @@ namespace ServiceSystem
 
         private readonly HashSet<ServiceProvider> _providers = new();
 
+        public HashSet<ServiceProvider> Providers => new(_providers);
+
         public event Action<ServiceProvider> OnServiceProviderAdded;
         public event Action<ServiceProvider> OnServiceProviderRemoved;
 
