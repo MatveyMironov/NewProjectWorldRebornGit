@@ -44,7 +44,7 @@ namespace ServiceSystem
 
         public bool TryRemoveServiceProvider(ServiceProvider serviceProvider)
         {
-            if (_providers.Remove(serviceProvider)) return false;
+            if (!_providers.Remove(serviceProvider)) return false;
 
             if (_servicesManager.TryGetServiceBalance(serviceProvider.ProvidedService, out SuppliesManager serviceBalance))
             {
