@@ -57,7 +57,7 @@ namespace ManufactureSystem.Implementations
         {
             if (_manufactureDisplayers.TryGetValue(manufacture, out var displayer))
             {
-                Destroy(displayer);
+                Destroy(displayer.gameObject);
             }
         }
     }

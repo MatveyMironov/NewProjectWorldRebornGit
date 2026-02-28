@@ -16,19 +16,13 @@ namespace ConstructionUISystem
         }
 
         private readonly Dictionary<IConstructionConfiguration, ConstructionButtonMB> _constructionButtons = new();
-        private readonly Dictionary<ConstructionButtonMB, Action> _buttonActions = new();
 
         public bool TryAddConstructionButton(IConstructionConfiguration construction)
         {
             if (_constructionButtons.TryAdd(construction, null))
             {
                 _constructionButtons[construction] = _constructionButtonSpawner.SpawnConstructionButton();
-
-                if (_buttonActions.TryAdd(_constructionButtons[construction], null))
-                {
-                    _buttonActions[_constructionButtons[construction]] = _placingInvokeCreator.CreatePlacingInvoke(construction);
-                    _constructionButtons[construction].OnButtonClicked += _buttonActions[_constructionButtons[construction]];
-                }
+                _constructionButtons[construction].OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(construction);
 
                 return true;
             }
@@ -40,11 +34,6 @@ namespace ConstructionUISystem
         {
             if (_constructionButtons.Remove(construction, out var button))
             {
-                if (_buttonActions.Remove(button, out Action action))
-                {
-                    button.OnButtonClicked -= action;
-                }
-
                 UnityEngine.Object.Destroy(button.gameObject);
                 return true;
             }

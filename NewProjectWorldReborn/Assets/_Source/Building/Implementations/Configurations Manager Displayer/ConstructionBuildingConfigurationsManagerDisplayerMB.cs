@@ -4,7 +4,7 @@ namespace BuildingSystem
 {
     public class ConstructionBuildingConfigurationsManagerDisplayerMB : ABuildingConfigurationsManagerDisplayerMB
     {
-        [SerializeField] private ABuildingConstructionsManagerMB _buildingConstructionActionsManager;
+        [SerializeField] private ABuildingConstructionsManagerMB buildingConstructionsManager;
 
         private IBuildingConfigurationsManager _displayedManager;
 
@@ -45,12 +45,12 @@ namespace BuildingSystem
 
         private void AddBuildingConstruction(IBuildingConfiguration configuration)
         {
-            _buildingConstructionActionsManager.TryAddBuildingConstruction(configuration);
+            buildingConstructionsManager.TryAddBuildingConstruction(configuration);
         }
 
         private void RemoveBuildingConstruction(IBuildingConfiguration configuration)
         {
-            _buildingConstructionActionsManager.TryRemoveBuildingConstruction(configuration);
+            buildingConstructionsManager.TryRemoveBuildingConstruction(configuration);
         }
     }
 }
