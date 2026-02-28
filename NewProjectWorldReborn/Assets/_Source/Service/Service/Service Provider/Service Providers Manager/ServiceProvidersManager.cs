@@ -14,6 +14,8 @@ namespace ServiceSystem
 
         private readonly HashSet<ServiceProvider> _providers = new();
 
+        public HashSet<ServiceProvider> Providers => new(_providers);
+
         public event Action<ServiceProvider> OnServiceProviderAdded;
         public event Action<ServiceProvider> OnServiceProviderRemoved;
 
@@ -42,7 +44,7 @@ namespace ServiceSystem
 
         public bool TryRemoveServiceProvider(ServiceProvider serviceProvider)
         {
-            if (_providers.Remove(serviceProvider)) return false;
+            if (!_providers.Remove(serviceProvider)) return false;
 
             if (_servicesManager.TryGetServiceBalance(serviceProvider.ProvidedService, out SuppliesManager serviceBalance))
             {

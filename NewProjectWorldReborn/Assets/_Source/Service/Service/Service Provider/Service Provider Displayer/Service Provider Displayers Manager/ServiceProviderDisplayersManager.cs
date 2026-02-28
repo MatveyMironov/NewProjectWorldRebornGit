@@ -14,7 +14,7 @@ namespace ServiceSystem
 
         private readonly Dictionary<ServiceProvider, AServiceProviderDisplayerMB> _displayers = new();
 
-        public bool TryAddServiceProviderDisplayer(ServiceProvider provider)
+        public bool TryAddDisplayer(ServiceProvider provider)
         {
             if (_displayers.TryAdd(provider, null))
             {
@@ -26,15 +26,25 @@ namespace ServiceSystem
             return false;
         }
 
-        public bool TryRemoveServiceProviderDisplayer(ServiceProvider provider)
+        public bool TryRemoveDisplayer(ServiceProvider provider)
         {
             if (_displayers.Remove(provider, out var displayer))
             {
-                UnityEngine.Object.Destroy(displayer);
+                UnityEngine.Object.Destroy(displayer.gameObject);
                 return true;
             }
 
             return false;
+        }
+
+        public void RemoveAllDisplayers()
+        {
+            foreach (var displayer in _displayers.Values)
+            {
+                UnityEngine.Object.Destroy(displayer.gameObject);
+            }
+
+            _displayers.Clear();
         }
     }
 }
