@@ -1,4 +1,5 @@
 using ConstructionGridSystem;
+using System;
 using UnityEngine;
 
 namespace BuildingSystem
@@ -9,6 +10,18 @@ namespace BuildingSystem
         [SerializeField] private BuildingSelectionActionsManagerMB buildingSelectionActionsManager;
 
         private IStructureBuildingsManager _manager;
+
+        public event Action<Building> OnBuildingAdded
+        {
+            add =>_manager.OnBuildingAdded += value;
+            remove => _manager.OnBuildingAdded -= value;
+        }
+
+        public event Action<Building> OnBuildingRemoved
+        {
+            add => _manager.OnBuildingRemoved += value;
+            remove => _manager.OnBuildingRemoved -= value;
+        }
 
         private void Awake()
         {

@@ -13,7 +13,7 @@ namespace BuildingConstructionUISystem
 
         private void Awake()
         {
-            _manager = new BuildingConstructionButtonsManager(constructionButtonSpawner, placingInvokeCreator);
+            _manager = new BuildingConstructionButtonsManager(constructionButtonSpawner, placingInvokeCreator, StructureBuildingsManagerSingleton.Instance); //TODO: Create abstraction?
         }
 
         public bool TryAddConstructionButton(IBuildingConfiguration configuration)

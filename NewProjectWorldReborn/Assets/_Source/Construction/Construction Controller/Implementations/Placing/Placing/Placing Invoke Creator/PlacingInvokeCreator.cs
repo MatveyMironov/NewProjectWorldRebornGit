@@ -1,5 +1,4 @@
 using ConstructionGridSystem;
-using PlacingSystem;
 using CellsVisualizationSystem;
 using System;
 using ConstructionControllerSystem;

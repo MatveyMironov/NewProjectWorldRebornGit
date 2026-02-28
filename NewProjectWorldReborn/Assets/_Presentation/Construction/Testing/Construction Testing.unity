@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1033655378}
   - component: {fileID: 1033655379}
   m_Layer: 0
-  m_Name: Test Building Construction Button Creator
+  m_Name: Test Construction Configurations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

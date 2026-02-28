@@ -12,14 +12,18 @@ namespace BuildingConstructionUISystem
         private readonly IBuildingConstructionButtonSpawner _constructionButtonSpawner;
         private readonly IPlacingInvokeCreator _placingInvokeCreator;
 
-        public BuildingConstructionButtonsManager(IBuildingConstructionButtonSpawner constructionButtonSpawner, IPlacingInvokeCreator placingInvokeCreator)
+        private readonly IStructureBuildingsManager _structureBuildingsManager;
+
+        public BuildingConstructionButtonsManager(IBuildingConstructionButtonSpawner constructionButtonSpawner,
+                                                  IPlacingInvokeCreator placingInvokeCreator,
+                                                  IStructureBuildingsManager structureBuildingsManager)
         {
             _constructionButtonSpawner = constructionButtonSpawner ?? throw new ArgumentNullException(nameof(constructionButtonSpawner));
             _placingInvokeCreator = placingInvokeCreator ?? throw new ArgumentNullException(nameof(placingInvokeCreator));
+            _structureBuildingsManager = structureBuildingsManager ?? throw new ArgumentNullException(nameof(structureBuildingsManager));
         }
 
         private readonly Dictionary<IBuildingConfiguration, BuildingConstructionButtonMB> _buildingConstructionButtons = new();
-        private readonly Dictionary<BuildingConstructionButtonMB, Action> _buttonActions = new();
 
         public bool TryAddConstructionButton(IBuildingConfiguration configuration)
         {
@@ -29,10 +33,8 @@ namespace BuildingConstructionUISystem
                 _buildingConstructionButtons[configuration] = button;
                 button.DisplayBuildingConfiguration(configuration);
 
-                BuildingConstructionConfiguration constructionConfiguration = new(configuration);
-                Action action = _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
-                _buttonActions.Add(button, action);
-                button.OnButtonClicked += action;
+                BuildingConstructionConfiguration constructionConfiguration = new(configuration, _structureBuildingsManager);
+                button.OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
 
                 Debug.Log($"Building construction button added for configuration: {configuration}");
 
@@ -46,15 +48,9 @@ namespace BuildingConstructionUISystem
         {
             if (_buildingConstructionButtons.Remove(configuration, out var button))
             {
-                if (_buttonActions.Remove(button, out Action action))
-                {
-                    button.OnButtonClicked -= action; //Not neccessary, probably. Will look into it later.
-                    UnityEngine.Object.Destroy(button.gameObject);
-
-                    Debug.Log($"Building construction button removed of configuration: {configuration}");
-
-                    return true;
-                }
+                UnityEngine.Object.Destroy(button.gameObject);
+                Debug.Log($"Building construction button removed of configuration: {configuration}");
+                return true;
             }
 
             return false;
@@ -64,9 +60,12 @@ namespace BuildingConstructionUISystem
         {
             private readonly IBuildingConfiguration _buildingConfiguration;
 
-            public BuildingConstructionConfiguration(IBuildingConfiguration buildingConfiguration)
+            private readonly IStructureBuildingsManager _structureBuildingsManager;
+
+            public BuildingConstructionConfiguration(IBuildingConfiguration buildingConfiguration, IStructureBuildingsManager structureBuildingsManager)
             {
                 _buildingConfiguration = buildingConfiguration ?? throw new ArgumentNullException(nameof(buildingConfiguration));
+                _structureBuildingsManager = structureBuildingsManager ?? throw new ArgumentNullException(nameof(structureBuildingsManager));
             }
 
             public HashSet<Vector2Int> OccupiedCells => _buildingConfiguration.OccupiedCells;
@@ -75,7 +74,7 @@ namespace BuildingConstructionUISystem
             public BuildingStructure CreateBuildingStructure()
             {
                 Building building = _buildingConfiguration.CreateBuilding();
-
+                _structureBuildingsManager.TryAddStructureBuilding(building.Structure, building);
                 return building.Structure;
             }
         }
