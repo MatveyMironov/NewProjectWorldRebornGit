@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5606555071824906977}
   - component: {fileID: 1806525157713383840}
   - component: {fileID: 9147470193084147114}
+  - component: {fileID: 7547029910996839531}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Construction
+  m_text: 'Construction [?]
 
 '
   m_isRightToLeft: 0
@@ -138,6 +139,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7547029910996839531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755976850475196719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d3ea1e7d89c714086309655909a9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction: {fileID: 2710854587129733690, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  textUI: {fileID: 9147470193084147114}
+  textBefore: 'Construction '
+  textAfter: 
 --- !u!1 &6823545565165480245
 GameObject:
   m_ObjectHideFlags: 0
