@@ -48,9 +48,9 @@ namespace ConstructionGridSystem
             return _constructionGrid.CheckIfCanPlaceBuilding(originCell, layoutCells);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells)
         {
-            return _constructionGrid.TryGetBuilding(cell, out building);
+            return _constructionGrid.TryGetBuilding(cell, out building, out occupiedCells);
         }
 
         public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
@@ -65,7 +65,7 @@ namespace ConstructionGridSystem
 
             foreach (var cell in cells)
             {
-                if (_constructionGrid.TryGetBuilding(cell, out BuildingStructure building))
+                if (_constructionGrid.TryGetBuilding(cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells))
                 {
                     buildings.Add(building);
                 }

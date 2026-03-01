@@ -53,15 +53,5 @@ namespace DemolishingSystem
         {
             _controller.StartDemolishing();
         }
-
-        public void ConfirmDemolition()
-        {
-            _controller.ConfirmDemolition();
-        }
-
-        public void DenyDemolition()
-        {
-            _controller.DenyDemolition();
-        }
     }
 }

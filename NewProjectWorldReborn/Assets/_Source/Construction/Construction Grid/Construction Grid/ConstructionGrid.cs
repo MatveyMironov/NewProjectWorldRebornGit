@@ -59,18 +59,20 @@ namespace ConstructionGridSystem
             return CheckIfCanOccupyCells(cellsToOccupy);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure structure)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure structure, out HashSet<Vector2Int> occupiedCells)
         {
             if (_cellsData.TryGetValue(cell, out PlacementData placement))
             {
                 if (placement != null)
                 {
                     structure = placement.Structure;
+                    occupiedCells = new(placement.OccupiedCells);
                     return true;
                 }
             }
 
             structure = null;
+            occupiedCells = null;
             return false;
         }
 

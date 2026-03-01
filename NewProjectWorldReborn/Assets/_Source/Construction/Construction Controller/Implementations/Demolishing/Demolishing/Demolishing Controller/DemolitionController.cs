@@ -51,15 +51,5 @@ namespace DemolishingSystem
             _constructionController.SetState(_demolishingState);
             OnStateEntered?.Invoke();
         }
-
-        public void ConfirmDemolition()
-        {
-            _demolishingState.TryDemolishSelectedBuilding();
-        }
-
-        public void DenyDemolition()
-        {
-            _demolishingState.DeselectBuilding();
-        }
     }
 }

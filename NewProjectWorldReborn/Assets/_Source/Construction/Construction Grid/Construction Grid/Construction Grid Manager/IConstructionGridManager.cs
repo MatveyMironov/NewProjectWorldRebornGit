@@ -11,7 +11,7 @@ namespace ConstructionGridSystem
         public bool TryPlaceBuilding(BuildingStructure building, Vector2Int cell);
         public void RemoveBuilding(Vector2Int cell);
         public bool CheckIfCanPlaceBuilding(Vector2Int cell, HashSet<Vector2Int> layoutCells);
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building);
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells);
 
         #region Selection
         public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell);

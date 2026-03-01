@@ -1,5 +1,4 @@
 using ConstructionControllerSystem;
-using DemolishingSystem;
 using PlacingSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,15 +9,12 @@ namespace ConstructionInputSystem
     {
         [SerializeField] private ConstructionControllerMB constructionController;
         [SerializeField] private BuildingRotationControllerMB buildingRotationController;
-        [SerializeField] private DemolitionControllerMB demolitionController;
 
         [Space]
         [SerializeField] private InputActionReference executeConstructionAction;
         [SerializeField] private InputActionReference abortConstructionAction;
         [SerializeField] private InputActionReference moveMouse;
         [SerializeField] private InputActionReference rotateBuilding;
-        [SerializeField] private InputActionReference confirm;
-        [SerializeField] private InputActionReference cancel;
 
         private void OnEnable()
         {
@@ -30,10 +26,6 @@ namespace ConstructionInputSystem
             moveMouse.action.performed += OnMoveMouseInput;
 
             rotateBuilding.action.performed += OnRotateBuildingInput;
-
-            confirm.action.performed += OnConfirmInput;
-
-            cancel.action.performed += OnCancelInput;
         }
 
         private void OnDisable()
@@ -46,10 +38,6 @@ namespace ConstructionInputSystem
             moveMouse.action.performed -= OnMoveMouseInput;
 
             rotateBuilding.action.performed -= OnRotateBuildingInput;
-
-            confirm.action.performed -= OnConfirmInput;
-
-            cancel.action.performed -= OnCancelInput;
         }
 
         private void OnExecuteConstructionActionInput(InputAction.CallbackContext context)
@@ -83,18 +71,6 @@ namespace ConstructionInputSystem
         {
             //Debug.Log("Rotate building");
             buildingRotationController.RotateBuilding();
-        }
-
-        private void OnConfirmInput(InputAction.CallbackContext context)
-        {
-            //Debug.Log("Confirm");
-            demolitionController.ConfirmDemolition();
-        }
-
-        private void OnCancelInput(InputAction.CallbackContext context)
-        {
-            //Debug.Log("Cancel");
-            demolitionController.DenyDemolition();
         }
     }
 }

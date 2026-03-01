@@ -49,9 +49,9 @@ namespace ConstructionGridSystem
             _constructionGridManager.RemoveBuilding(cell);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure constructedBuildingData)
+        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure constructedBuildingData, out HashSet<Vector2Int> occupiedCells)
         {
-            return _constructionGridManager.TryGetBuilding(cell, out constructedBuildingData);
+            return _constructionGridManager.TryGetBuilding(cell, out constructedBuildingData, out occupiedCells);
         }
 
         public bool TryPlaceBuilding(BuildingStructure constructedBuildingData, Vector2Int originCell)
