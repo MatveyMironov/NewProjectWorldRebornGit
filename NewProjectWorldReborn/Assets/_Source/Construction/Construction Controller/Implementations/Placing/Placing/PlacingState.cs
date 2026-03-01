@@ -61,11 +61,6 @@ namespace PlacingSystem
 
         public void StartAction(Vector2Int cell)
         {
-            _currentCell = cell;
-        }
-
-        public void FinishAction(Vector2Int cell)
-        {
             if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingLayout.OccupiedCells))
             {
                 BuildingStructure structure = _buildingViewInstantiator.CreateBuildingStructure(_constructionConfiguration, cell, _buildingOrientation);
@@ -85,6 +80,11 @@ namespace PlacingSystem
                 }
             }
 
+            _currentCell = cell;
+        }
+
+        public void FinishAction(Vector2Int cell)
+        {
             _currentCell = cell;
         }
 
