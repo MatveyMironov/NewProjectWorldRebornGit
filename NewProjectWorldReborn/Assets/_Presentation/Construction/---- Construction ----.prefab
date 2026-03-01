@@ -306,6 +306,81 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &791989311285880249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574184879284828916}
+  - component: {fileID: 5420781911668452510}
+  m_Layer: 0
+  m_Name: Demolishing State Switch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574184879284828916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791989311285880249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9094199776068674842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5420781911668452510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791989311285880249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8274ca7e1cb69cb4a89cf295a8d924c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demolitionController: {fileID: 5831621182821511302}
+  stateEnteredEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
+        m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  stateExitedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ad9a9c7ada2b778409ace06fc142ccfe, type: 2}
+        m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &812409420211798041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1159,7 @@ Transform:
   - {fileID: 2497418321090016816}
   - {fileID: 5430182772745892218}
   - {fileID: 125960857943154834}
+  - {fileID: 1574184879284828916}
   m_Father: {fileID: 3524795999926013131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &747494344224492485
@@ -1166,7 +1242,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 301944523558987022, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 979855586034584944, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1322,7 +1398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7406748865802334162, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000030517578
+      value: 0.00000020861626
       objectReference: {fileID: 0}
     - target: {fileID: 7658100388962349611, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

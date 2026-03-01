@@ -26,6 +26,8 @@ namespace DemolishingSystem
         public event Action OnBuildingDeselected;
         public event Action<BuildingStructure> OnBuildingDemolished;
 
+        public event Action OnStateExited;
+
         public void EnterState(Vector2Int cell)
         {
 
@@ -49,6 +51,7 @@ namespace DemolishingSystem
         public void ExitState()
         {
             DeselectBuilding();
+            OnStateExited?.Invoke();
         }
 
         public bool TryDemolishSelectedBuilding()
