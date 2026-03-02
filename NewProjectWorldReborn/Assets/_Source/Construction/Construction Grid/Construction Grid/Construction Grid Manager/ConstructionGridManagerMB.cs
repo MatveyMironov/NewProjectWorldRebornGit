@@ -24,29 +24,19 @@ namespace ConstructionGridSystem
             return _constructionGridManager.CheckIfCanPlaceLayoutAt(cell, buildingOccupiedCells);
         }
 
-        public HashSet<ConstructionGrid.PlacementData> GetAllStructuresFromTo(Vector2Int firstCell, Vector2Int secondCell)
+        public HashSet<ConstructionGrid.PlacementData> GetAllPlacementsFromTo(Vector2Int firstCell, Vector2Int secondCell)
         {
-            return _constructionGridManager.GetAllStructuresFromTo(firstCell, secondCell);
+            return _constructionGridManager.GetAllPlacementsFromTo(firstCell, secondCell);
         }
 
-        public HashSet<ConstructionGrid.PlacementData> GetAllStructuresIn(HashSet<Vector2Int> cells)
+        public HashSet<ConstructionGrid.PlacementData> GetAllPlacementsIn(HashSet<Vector2Int> cells)
         {
-            return _constructionGridManager.GetAllStructuresIn(cells);
+            return _constructionGridManager.GetAllPlacementsIn(cells);
         }
 
         public HashSet<Vector2Int> GetAllCellsFromTo(Vector2Int firstCell, Vector2Int secondCell)
         {
             return _constructionGridManager.GetAllCellsFromTo(firstCell, secondCell);
-        }
-
-        public void RemoveStructure(BuildingStructure structure)
-        {
-            _constructionGridManager.RemoveStructure(structure);
-        }
-
-        public void RemoveStructureFrom(Vector2Int cell)
-        {
-            _constructionGridManager.RemoveStructureFrom(cell);
         }
 
         public bool TryGetPlacementAt(Vector2Int cell, out ConstructionGrid.PlacementData placement)
@@ -57,6 +47,16 @@ namespace ConstructionGridSystem
         public bool TryPlaceStructureAt(BuildingStructure structure, Vector2Int cell)
         {
             return _constructionGridManager.TryPlaceStructureAt(structure, cell);
+        }
+
+        public bool TryRemoveStructure(BuildingStructure structure)
+        {
+            return ((IConstructionGridManager)_constructionGridManager).TryRemoveStructure(structure);
+        }
+
+        bool IConstructionGridManager.TryRemoveStructureAt(Vector2Int cell)
+        {
+            return ((IConstructionGridManager)_constructionGridManager).TryRemoveStructureAt(cell);
         }
     }
 }

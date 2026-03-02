@@ -76,7 +76,7 @@ namespace AreaDemolishingSystem
         private void Select(Vector2Int finishCell)
         {
             HashSet<Vector2Int> cellsToSelect = _constructionGridManager.GetAllCellsFromTo(_startCell, finishCell);
-            HashSet<ConstructionGrid.PlacementData> placementsToSelect = _constructionGridManager.GetAllStructuresIn(cellsToSelect);
+            HashSet<ConstructionGrid.PlacementData> placementsToSelect = _constructionGridManager.GetAllPlacementsIn(cellsToSelect);
 
             SelectCells(cellsToSelect);
             SelectPlacements(placementsToSelect);
@@ -127,7 +127,7 @@ namespace AreaDemolishingSystem
             foreach (var placement in _selectedPlacements)
             {
                 UnityEngine.Object.Destroy(placement.Structure.View.gameObject);
-                _constructionGridManager.RemoveStructure(placement.Structure);
+                _constructionGridManager.TryRemoveStructure(placement.Structure);
 
                 _selectedPlacements.Remove(placement);
 

@@ -105,7 +105,7 @@ namespace DemolishingSystem
             if (_selectedBuilding == null) return false;
 
             UnityEngine.Object.Destroy(_selectedBuilding.View.gameObject);
-            _constructionGridManager.RemoveStructure(_selectedBuilding);
+            _constructionGridManager.TryRemoveStructure(_selectedBuilding);
             OnBuildingDemolished?.Invoke(_selectedBuilding);
 
             DeselectBuilding();
