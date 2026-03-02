@@ -7,7 +7,7 @@ namespace BuildingSystem.Testing
     {
         public override Building CreateBuilding()
         {
-            return new(Construction.CreateBuildingStructure(), Info);
+            return new(this, Construction.CreateBuildingStructure(), Info);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BuildingSystem.Implementations
 
         public override Building CreateBuilding()
         {
-            Building building = new(Construction.CreateBuildingStructure(), Info);
+            Building building = new(this, Construction.CreateBuildingStructure(), Info);
             ServiceProvider serviceProvider = new(providedService, providedAmount);
             OnServiceBuildingCreated?.Invoke(building, serviceProvider);
             return building;
