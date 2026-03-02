@@ -32,12 +32,10 @@ MonoBehaviour:
     - {x: 2, y: 0}
     - {x: 2, y: 1}
   manufactureConfiguration:
-    minTime: 3
+    minTime: 2
     consumedResources:
-      resources:
-      - _resource: {fileID: 11400000, guid: f932c77e418b11344825c215caee1010, type: 2}
-        _count: 2
+      resources: []
     producedResources:
       resources:
-      - _resource: {fileID: 11400000, guid: d5cbd7c3130375246b6e426865d3daf4, type: 2}
+      - _resource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
         _count: 1
