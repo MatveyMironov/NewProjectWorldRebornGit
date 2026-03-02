@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec54ac9295af824995ef9b42253bb86, type: 3}
+  m_Name: Test Composite Reward 1
+  m_EditorClassIdentifier: 
+  partConfigurations:
+  - {fileID: 11400000, guid: 0e1784c4cb97f224f9e585387588aaa5, type: 2}
+  - {fileID: 11400000, guid: 379a6ffd36834244fbc4a0bfcf9d96c9, type: 2}
+  displayerPrefab: {fileID: 7665147824995377089, guid: c24027b1258040f41aecde7a2195fc2c, type: 3}
