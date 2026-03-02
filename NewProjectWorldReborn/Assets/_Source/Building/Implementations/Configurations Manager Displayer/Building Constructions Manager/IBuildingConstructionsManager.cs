@@ -1,6 +1,4 @@
-﻿using BuildingSystem;
-
-namespace BuildingSystem
+﻿namespace BuildingSystem
 {
     public interface IBuildingConstructionsManager
     {
