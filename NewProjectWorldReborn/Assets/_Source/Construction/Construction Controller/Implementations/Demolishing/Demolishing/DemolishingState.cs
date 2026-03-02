@@ -65,10 +65,12 @@ namespace DemolishingSystem
         {
             DeselectBuilding();
 
-            if (_constructionGridManager.TryGetBuilding(cell, out _selectedBuilding, out HashSet<Vector2Int> occupiedCells))
+            if (_constructionGridManager.TryGetPlacementAt(cell, out ConstructionGrid.PlacementData placement))
             {
+                _selectedBuilding = placement.Structure;
+
                 _selectedBuilding.View.ShowDemolition();
-                ShowDemolitionCells(occupiedCells);
+                ShowDemolitionCells(placement.OccupiedCells);
                 OnBuildingSelected?.Invoke();
                 return true;
             }
@@ -103,7 +105,7 @@ namespace DemolishingSystem
             if (_selectedBuilding == null) return false;
 
             UnityEngine.Object.Destroy(_selectedBuilding.View.gameObject);
-            _constructionGridManager.RemoveBuilding(_selectedBuilding);
+            _constructionGridManager.RemoveStructure(_selectedBuilding);
             OnBuildingDemolished?.Invoke(_selectedBuilding);
 
             DeselectBuilding();

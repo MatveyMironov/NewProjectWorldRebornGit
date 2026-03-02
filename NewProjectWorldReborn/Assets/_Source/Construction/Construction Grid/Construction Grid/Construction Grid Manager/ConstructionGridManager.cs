@@ -16,19 +16,19 @@ namespace ConstructionGridSystem
 
         public HashSet<Vector2Int> Cells => _constructionGrid.Cells;
 
-        public void RemoveBuilding(BuildingStructure building)
+        public void RemoveStructure(BuildingStructure building)
         {
             if (_buildingOriginCells.Remove(building, out var originCell))
             {
-                RemoveBuilding(originCell);
+                RemoveStructureFrom(originCell);
             }
         }
 
-        public bool TryPlaceBuilding(BuildingStructure building, Vector2Int originCell)
+        public bool TryPlaceStructureAt(BuildingStructure building, Vector2Int originCell)
         {
             if (!_buildingOriginCells.ContainsKey(building))
             {
-                if (_constructionGrid.TryPlaceBuilding(building, originCell))
+                if (_constructionGrid.TryPlaceStructure(building, originCell))
                 {
                     _buildingOriginCells.Add(building, originCell);
                     return true;
@@ -38,40 +38,40 @@ namespace ConstructionGridSystem
             return false;
         }
 
-        public void RemoveBuilding(Vector2Int cell)
+        public void RemoveStructureFrom(Vector2Int cell)
         {
-            _constructionGrid.RemoveBuilding(cell);
+            _constructionGrid.RemoveStructure(cell);
         }
 
-        public bool CheckIfCanPlaceBuilding(Vector2Int originCell, HashSet<Vector2Int> layoutCells)
+        public bool CheckIfCanPlaceLayoutAt(Vector2Int originCell, HashSet<Vector2Int> layoutCells)
         {
-            return _constructionGrid.CheckIfCanPlaceBuilding(originCell, layoutCells);
+            return _constructionGrid.CheckIfCanPlaceStructure(originCell, layoutCells);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells)
+        public bool TryGetPlacementAt(Vector2Int cell, out ConstructionGrid.PlacementData placement)
         {
-            return _constructionGrid.TryGetBuilding(cell, out building, out occupiedCells);
+            return _constructionGrid.TryGetStructure(cell, out placement);
         }
 
-        public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell)
+        public HashSet<ConstructionGrid.PlacementData> GetAllStructuresFromTo(Vector2Int firstCell, Vector2Int secondCell)
         {
             HashSet<Vector2Int> cells = GetAllCellsFromTo(firstCell, secondCell);
-            return GetAllBuildingsIn(cells);
+            return GetAllStructuresIn(cells);
         }
 
-        public HashSet<BuildingStructure> GetAllBuildingsIn(HashSet<Vector2Int> cells)
+        public HashSet<ConstructionGrid.PlacementData> GetAllStructuresIn(HashSet<Vector2Int> cells)
         {
-            HashSet<BuildingStructure> buildings = new();
+            HashSet<ConstructionGrid.PlacementData> placments = new();
 
             foreach (var cell in cells)
             {
-                if (_constructionGrid.TryGetBuilding(cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells))
+                if (_constructionGrid.TryGetStructure(cell, out ConstructionGrid.PlacementData placement))
                 {
-                    buildings.Add(building);
+                    placments.Add(placement);
                 }
             }
 
-            return buildings;
+            return placments;
         }
 
         public HashSet<Vector2Int> GetAllCellsFromTo(Vector2Int firstCell, Vector2Int secondCell)

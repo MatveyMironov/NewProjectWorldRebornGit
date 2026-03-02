@@ -12,34 +12,28 @@ namespace ConstructionGridSystem
         {
             if (cells == null) throw new ArgumentNullException(nameof(cells));
 
-            Setup();
-
-            void Setup()
+            foreach (var cell in cells)
             {
-                foreach (var cell in cells)
-                {
-                    _cellsData.Add(cell, null);
-                }
+                _cellsData.Add(cell, null);
             }
         }
 
         public HashSet<Vector2Int> Cells => new(_cellsData.Keys);
 
-        public bool TryPlaceBuilding(BuildingStructure building, Vector2Int cell)
+        public bool TryPlaceStructure(BuildingStructure structure, Vector2Int cell)
         {
-            HashSet<Vector2Int> cellsToOccupy = CalculateCellsToOccupy(cell, building.OccupiedCells);
+            HashSet<Vector2Int> cellsToOccupy = CalculateCellsToOccupy(cell, structure.Layout.OccupiedCells);
 
             if (CheckIfCanOccupyCells(cellsToOccupy))
             {
-                OccupyCellsWithBuilding(cellsToOccupy, building);
-
+                OccupyCellsWithStructure(cellsToOccupy, structure);
                 return true;
             }
 
             return false;
         }
 
-        public void RemoveBuilding(Vector2Int cell)
+        public void RemoveStructure(Vector2Int cell)
         {
             if (_cellsData.TryGetValue(cell, out PlacementData placement))
             {
@@ -53,26 +47,19 @@ namespace ConstructionGridSystem
             }
         }
 
-        public bool CheckIfCanPlaceBuilding(Vector2Int cell, HashSet<Vector2Int> layoutCells)
+        public bool CheckIfCanPlaceStructure(Vector2Int cell, HashSet<Vector2Int> layoutCells)
         {
             HashSet<Vector2Int> cellsToOccupy = CalculateCellsToOccupy(cell, layoutCells);
             return CheckIfCanOccupyCells(cellsToOccupy);
         }
 
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure structure, out HashSet<Vector2Int> occupiedCells)
+        public bool TryGetStructure(Vector2Int cell, out PlacementData placement)
         {
-            if (_cellsData.TryGetValue(cell, out PlacementData placement))
+            if (_cellsData.TryGetValue(cell, out placement))
             {
-                if (placement != null)
-                {
-                    structure = placement.Structure;
-                    occupiedCells = new(placement.OccupiedCells);
-                    return true;
-                }
+                if (placement != null) return true;
             }
 
-            structure = null;
-            occupiedCells = null;
             return false;
         }
 
@@ -111,7 +98,7 @@ namespace ConstructionGridSystem
             return true;
         }
 
-        private void OccupyCellsWithBuilding(HashSet<Vector2Int> cellsToOccupy, BuildingStructure structure)
+        private void OccupyCellsWithStructure(HashSet<Vector2Int> cellsToOccupy, BuildingStructure structure)
         {
             PlacementData placement = new(structure, cellsToOccupy);
 
@@ -121,7 +108,7 @@ namespace ConstructionGridSystem
             }
         }
 
-        private class PlacementData
+        public class PlacementData
         {
             public readonly BuildingStructure Structure;
             public readonly HashSet<Vector2Int> OccupiedCells;

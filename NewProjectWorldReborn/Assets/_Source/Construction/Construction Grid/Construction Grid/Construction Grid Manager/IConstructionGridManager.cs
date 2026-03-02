@@ -5,18 +5,16 @@ namespace ConstructionGridSystem
 {
     public interface IConstructionGridManager
     {
-        public HashSet<Vector2Int> Cells { get; }
+        HashSet<Vector2Int> Cells { get; }
 
-        public void RemoveBuilding(BuildingStructure building);
-        public bool TryPlaceBuilding(BuildingStructure building, Vector2Int cell);
-        public void RemoveBuilding(Vector2Int cell);
-        public bool CheckIfCanPlaceBuilding(Vector2Int cell, HashSet<Vector2Int> layoutCells);
-        public bool TryGetBuilding(Vector2Int cell, out BuildingStructure building, out HashSet<Vector2Int> occupiedCells);
+        void RemoveStructure(BuildingStructure structure);
+        bool TryPlaceStructureAt(BuildingStructure structure, Vector2Int cell);
+        void RemoveStructureFrom(Vector2Int cell);
+        bool CheckIfCanPlaceLayoutAt(Vector2Int cell, HashSet<Vector2Int> layoutCells);
+        bool TryGetPlacementAt(Vector2Int cell, out ConstructionGrid.PlacementData placement);
 
-        #region Selection
-        public HashSet<BuildingStructure> GetAllBuildingsFromTo(Vector2Int firstCell, Vector2Int secondCell);
-        public HashSet<BuildingStructure> GetAllBuildingsIn(HashSet<Vector2Int> cells);
-        public HashSet<Vector2Int> GetAllCellsFromTo(Vector2Int firstCell, Vector2Int secondCell);
-        #endregion
+        HashSet<ConstructionGrid.PlacementData> GetAllStructuresFromTo(Vector2Int firstCell, Vector2Int secondCell);
+        HashSet<ConstructionGrid.PlacementData> GetAllStructuresIn(HashSet<Vector2Int> cells);
+        HashSet<Vector2Int> GetAllCellsFromTo(Vector2Int firstCell, Vector2Int secondCell);
     }
 }
