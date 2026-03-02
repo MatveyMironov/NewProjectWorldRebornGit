@@ -21,6 +21,7 @@ namespace BuildingSystem
             if (_configurations_Buildings[building.Configuration].Add(building))
             {
                 Debug.Log($"Building {building} from configuration {building.Configuration} was added");
+                OnBuildingAdded?.Invoke(building);
                 return true;
             }
 
@@ -33,6 +34,7 @@ namespace BuildingSystem
                 && buildings.Remove(building))
             {
                 Debug.Log($"Building {building} from configuration {building.Configuration} was removed");
+                OnBuildingRemoved?.Invoke(building);
                 return true;
             }
 
