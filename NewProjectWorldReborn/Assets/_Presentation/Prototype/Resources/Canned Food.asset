@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0425bab8006abca4dad9e323060c1f99, type: 3}
-  m_Name: Prototype Quest Chain
+  m_Script: {fileID: 11500000, guid: 195b2dd2c9c92524fb01c3fbc8d10532, type: 3}
+  m_Name: Canned Food
   m_EditorClassIdentifier: 
-  quests:
-  - {fileID: 11400000, guid: f1e5143efbb98d24085dd1d1d2faaa78, type: 2}
-  - {fileID: 11400000, guid: 4976474ddfab9834894966b26e759871, type: 2}
+  name: Canned Food
+  description: 
+  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}

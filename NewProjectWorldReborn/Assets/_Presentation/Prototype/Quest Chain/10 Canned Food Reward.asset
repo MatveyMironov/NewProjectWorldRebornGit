@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1f94a25f7c20d43b1032e16a8f42ab, type: 3}
+  m_Name: 10 Canned Food Reward
+  m_EditorClassIdentifier: 
+  resource: {fileID: 11400000, guid: cddf2d7670df2f44bb35d1322d6624a1, type: 2}
+  amount: 10
+  displayerPrefab: {fileID: 8902581546245553801, guid: bcac88da3b524314f8cfaa1f429056fa, type: 3}
