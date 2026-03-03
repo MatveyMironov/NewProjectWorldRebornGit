@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test Building Quest Chain
   m_EditorClassIdentifier: 
   quests:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 41b1bcdeee52f1a4a920eb2913fafeb3, type: 2}
