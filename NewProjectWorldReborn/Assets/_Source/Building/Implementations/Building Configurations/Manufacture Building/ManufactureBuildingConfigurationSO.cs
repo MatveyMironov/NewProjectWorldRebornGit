@@ -1,4 +1,3 @@
-using EfficiencySystem;
 using ManufactureSystem;
 using System;
 using UnityEngine;
@@ -16,7 +15,7 @@ namespace BuildingSystem.Implementations
         public override Building CreateBuilding()
         {
             Building building = new(this, Construction.CreateBuildingStructure(), Info);
-            IManufacture manufacture = manufactureConfiguration.CreateManufacture(new ConstantEfficiency());
+            IManufacture manufacture = manufactureConfiguration.CreateManufacture();
             OnManufactureBuildingCreated?.Invoke(building, manufacture);
             return building;
         }
