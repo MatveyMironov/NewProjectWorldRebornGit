@@ -22,7 +22,7 @@ namespace ManufactureSystem.Implementations
             ReleaseManufacture();
 
             manufacture.OnPaused += DisplayManufacturePauseState;
-            manufacture.OnUnpaused += DisplayManufacturePauseState;
+            manufacture.OnResumed += DisplayManufacturePauseState;
             DisplayPauseState(manufacture.IsPaused);
 
             _controledManufacture = manufacture;
@@ -33,7 +33,7 @@ namespace ManufactureSystem.Implementations
             if (_controledManufacture == null) return;
 
             _controledManufacture.OnPaused -= DisplayManufacturePauseState;
-            _controledManufacture.OnUnpaused -= DisplayManufacturePauseState;
+            _controledManufacture.OnResumed -= DisplayManufacturePauseState;
             DisplayPauseState(true);
 
             _controledManufacture = null;
@@ -43,7 +43,9 @@ namespace ManufactureSystem.Implementations
         {
             if (_controledManufacture == null) return;
 
-            _controledManufacture.IsPaused = !_controledManufacture.IsPaused;
+            if (_controledManufacture.TryPause()) return;
+
+            _controledManufacture.TryResume();
         }
 
         private void DisplayManufacturePauseState()

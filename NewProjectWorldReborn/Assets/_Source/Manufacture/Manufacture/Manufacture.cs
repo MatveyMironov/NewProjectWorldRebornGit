@@ -7,9 +7,9 @@ namespace ManufactureSystem
 {
     public class Manufacture : IManufacture
     {
-        private readonly ManufactureParameters _manufactureParameters;
+        private readonly IManufactureParameters _manufactureParameters;
 
-        internal Manufacture(ManufactureParameters manufactureParameters)
+        internal Manufacture(IManufactureParameters manufactureParameters)
         {
             _manufactureParameters = manufactureParameters ?? throw new ArgumentNullException(nameof(manufactureParameters));
         }
@@ -22,48 +22,15 @@ namespace ManufactureSystem
 
         public int ManufactureTime => _manufactureParameters.MinTime;
 
-        #region Pause
-        public bool _isManufacturePaused;
-        public event Action OnPaused;
-        public event Action OnUnpaused;
-
-        public bool IsPaused
-        {
-            get { return _isManufacturePaused; }
-            set
-            {
-                if (_isManufacturePaused = value) return;
-                _isManufacturePaused = value;
-
-                if (_isManufacturePaused)
-                {
-                    OnPaused?.Invoke();
-                }
-                else
-                {
-                    OnUnpaused?.Invoke();
-                }
-            }
-        }
-        #endregion
-
         public bool IsStarted { get; private set; }
-
         public bool IsPossible => IsStarted && !IsPaused;
 
-        #region Progress
-        private float _progress;
+        public bool IsPaused { get; private set; }
+        public event Action OnPaused;
+        public event Action OnResumed;
+
+        public float Progress { get; private set; }
         public event Action OnProgressChanged;
-        public float Progress
-        {
-            get { return _progress; }
-            set
-            {
-                _progress = value;
-                OnProgressChanged?.Invoke();
-            }
-        }
-        #endregion
 
         public void StartManufacture()
         {
@@ -77,6 +44,7 @@ namespace ManufactureSystem
             IsStarted = false;
 
             Progress = 0.0f;
+            OnProgressChanged?.Invoke();
         }
 
         public void ProgressManufacture()
@@ -84,12 +52,14 @@ namespace ManufactureSystem
             if (!IsPossible) return;
 
             Progress += Time.deltaTime / ManufactureTime;
+            OnProgressChanged?.Invoke();
 
             if (Progress >= 1.0f)
             {
                 if (TryConsume())
                 {
                     Progress -= 1.0f;
+                    OnProgressChanged?.Invoke();
                     TryProduce();
                 }
             }
@@ -103,6 +73,24 @@ namespace ManufactureSystem
         public bool TryProduce()
         {
             return (bool)OnProductionRequested?.Invoke(ProducedResources);
+        }
+
+        public bool TryPause()
+        {
+            if (IsPaused) return false;
+
+            IsPaused = true;
+            OnPaused?.Invoke();
+            return true;
+        }
+
+        public bool TryResume()
+        {
+            if (!IsPaused) return false;
+
+            IsPaused = false;
+            OnResumed?.Invoke();
+            return true;
         }
     }
 }
