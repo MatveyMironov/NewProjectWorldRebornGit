@@ -1,20 +1,18 @@
-using EfficiencySystem;
 using UnityEngine;
 
 namespace ManufactureSystem.Testing
 {
     public abstract class ATestManufacturesMB : MonoBehaviour
     {
-        [SerializeField] private SManufactureConfiguration[] _manufactureConfigurations = new SManufactureConfiguration[0];
+        [SerializeField] private SManufactureConfiguration[] manufactureConfigurations = new SManufactureConfiguration[0];
 
         protected abstract IManufacturesManager ManufacturesManager { get; }
 
         protected virtual void Start()
         {
-            foreach (var configuration in _manufactureConfigurations)
+            foreach (var configuration in manufactureConfigurations)
             {
-                IEfficiency efficiency = new ConstantEfficiency();
-                IManufacture manufacture = configuration.CreateManufacture(efficiency);
+                IManufacture manufacture = configuration.CreateManufacture();
                 ManufacturesManager.TryAddManufacture(manufacture);
             }
         }
