@@ -28,7 +28,7 @@ namespace EmployerSystem
 
         public bool TryEmployWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
             
             if (EmployedWorkforce + amount <= _workforce.MaxWorkforce)
             {
@@ -45,7 +45,7 @@ namespace EmployerSystem
 
         public bool TryDismissWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             if (EmployedWorkforce - amount >= 0)
             {
