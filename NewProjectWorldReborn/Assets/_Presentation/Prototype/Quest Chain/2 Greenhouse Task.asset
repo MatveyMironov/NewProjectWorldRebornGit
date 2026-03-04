@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb873134c288f64da7272b40ee40875, type: 3}
   m_Name: 2 Greenhouse Task
   m_EditorClassIdentifier: 
-  requiredBuildingConfiguration: {fileID: 11400000, guid: f76a0fbdff9e1cf40a2484471774c476, type: 2}
+  requiredBuildingConfiguration: {fileID: 11400000, guid: a974f8f2c1242954fb426507e2062905, type: 2}
   requiredCount: 2
   displayerPrefab: {fileID: 6733373281815257927, guid: 8606a1be2a1ed304cb6cf9c5a92608a0, type: 3}
