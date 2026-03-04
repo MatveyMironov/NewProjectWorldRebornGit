@@ -739,7 +739,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingConfigurations:
   - {fileID: 11400000, guid: 52200b9b54810c442831cb2e5d230aaf, type: 2}
-  - {fileID: 11400000, guid: cfd7e149209c3c240b9e8192584b4115, type: 2}
 --- !u!1 &1303839201
 GameObject:
   m_ObjectHideFlags: 0
