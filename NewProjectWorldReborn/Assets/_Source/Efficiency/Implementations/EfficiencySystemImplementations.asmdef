@@ -2,7 +2,8 @@
     "name": "EfficiencySystemImplementations",
     "rootNamespace": "EfficiencySystem.Implementations",
     "references": [
-        "GUID:835fa161c5ca8e24dbaa3c3d9048751c"
+        "GUID:835fa161c5ca8e24dbaa3c3d9048751c",
+        "GUID:92f3bc26b9349ff418ddd0f741899c9b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
