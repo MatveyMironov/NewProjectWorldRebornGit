@@ -1,0 +1,16 @@
+{
+    "name": "CellsVisualizationSystemImplementations",
+    "rootNamespace": "CellsVisualizationSystem.Implementations",
+    "references": [
+        "GUID:239da8b8a74d97b46a9775a421cdd2c1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

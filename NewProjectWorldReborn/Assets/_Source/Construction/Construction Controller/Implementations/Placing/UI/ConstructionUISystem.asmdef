@@ -1,0 +1,19 @@
+{
+    "name": "ConstructionUISystem",
+    "rootNamespace": "ConstructionUISystem",
+    "references": [
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:731329b07a22b9d478320d3a661e519b",
+        "GUID:b89c64d0793f9754f8e7fec38d5a4cbe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
