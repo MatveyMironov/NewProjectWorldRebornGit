@@ -1,5 +1,4 @@
-﻿using EfficiencySystem;
-using ResourceSystem;
+﻿using ResourceSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,57 +13,25 @@ namespace ManufactureSystem
 
         private void Awake()
         {
-            _manufacture = configuration.CreateManufacture(new ConstantEfficiency());
+            _manufacture = configuration.CreateManufacture();
         }
-
-        public int MinTime => _manufacture.MinTime;
 
         public Dictionary<IResourceDefinition, int> ConsumedResources => _manufacture.ConsumedResources;
+        public event Func<Dictionary<IResourceDefinition, int>, bool> OnConsumptionRequested { add => _manufacture.OnConsumptionRequested += value; remove => _manufacture.OnConsumptionRequested -= value; }
         public Dictionary<IResourceDefinition, int> ProducedResources => _manufacture.ProducedResources;
+        public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested { add => _manufacture.OnProductionRequested += value; remove => _manufacture.OnProductionRequested -= value; }
 
-        public bool IsPaused { get => _manufacture.IsPaused; set => _manufacture.IsPaused = value; }
-
-        public event Action OnPaused
-        {
-            add => _manufacture.OnPaused += value;
-            remove => _manufacture.OnPaused -= value;
-        }
-
-        public event Action OnUnpaused
-        {
-            add => _manufacture.OnUnpaused += value;
-            remove => _manufacture.OnUnpaused -= value;
-        }
+        public float Time => _manufacture.Time;
 
         public bool IsStarted => _manufacture.IsStarted;
         public bool IsPossible => _manufacture.IsPossible;
-        public float ManufactureTime => _manufacture.ManufactureTime;
 
-        public float Efficiency => _manufacture.Efficiency;
-        public event Action OnEfficicencyChanged
-        {
-            add => _manufacture.OnEfficicencyChanged += value;
-            remove => _manufacture.OnEfficicencyChanged -= value;
-        }
+        public bool IsPaused => _manufacture.IsPaused;
+        public event Action OnPaused { add => _manufacture.OnPaused += value; remove => _manufacture.OnPaused -= value; }
+        public event Action OnResumed { add => _manufacture.OnResumed += value; remove => _manufacture.OnResumed -= value; }
 
         public float Progress => _manufacture.Progress;
-        public event Action OnProgressChanged
-        {
-            add => _manufacture.OnProgressChanged += value;
-            remove => _manufacture.OnProgressChanged -= value;
-        }
-
-        public event Func<Dictionary<IResourceDefinition, int>, bool> OnConsumptionRequested
-        {
-            add => _manufacture.OnConsumptionRequested += value;
-            remove => _manufacture.OnConsumptionRequested -= value;
-        }
-
-        public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested
-        {
-            add => _manufacture.OnProductionRequested += value;
-            remove => _manufacture.OnProductionRequested -= value;
-        }
+        public event Action OnProgressChanged { add => _manufacture.OnProgressChanged += value; remove => _manufacture.OnProgressChanged -= value; }
 
         public void AbortManufacture()
         {
@@ -79,6 +46,16 @@ namespace ManufactureSystem
         public void StartManufacture()
         {
             _manufacture.StartManufacture();
+        }
+
+        public bool TryPause()
+        {
+            return _manufacture.TryPause();
+        }
+
+        public bool TryResume()
+        {
+            return _manufacture.TryResume();
         }
     }
 }
