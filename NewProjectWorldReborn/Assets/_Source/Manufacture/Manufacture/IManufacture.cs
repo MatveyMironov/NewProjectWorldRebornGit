@@ -6,11 +6,7 @@ namespace ManufactureSystem
 {
     public interface IManufacture
     {
-        public int MinTime { get; }
-        public float ManufactureTime { get; }
-
-        public float Efficiency { get ; }
-        public event Action OnEfficicencyChanged;
+        public int ManufactureTime { get; }
 
         public Dictionary<IResourceDefinition, int> ConsumedResources { get; }
         public event Func<Dictionary<IResourceDefinition, int>, bool> OnConsumptionRequested;

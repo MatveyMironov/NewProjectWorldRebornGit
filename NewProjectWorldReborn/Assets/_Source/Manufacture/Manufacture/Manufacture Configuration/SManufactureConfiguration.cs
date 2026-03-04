@@ -1,5 +1,4 @@
-﻿using EfficiencySystem;
-using ResourceSystem;
+﻿using ResourceSystem;
 using System;
 using UnityEngine;
 
@@ -12,13 +11,13 @@ namespace ManufactureSystem
         [SerializeField] private SResourceCountsDictionary consumedResources;
         [SerializeField] private SResourceCountsDictionary producedResources;
 
-        public IManufacture CreateManufacture(IEfficiency efficiency)
+        public IManufacture CreateManufacture()
         {
             ManufactureParameters manufactureParameters = new(minTime,
                                                               consumedResources.GetResourceCountsDictionary(),
                                                               producedResources.GetResourceCountsDictionary());
 
-            return new Manufacture(manufactureParameters, efficiency);
+            return new Manufacture(manufactureParameters);
         }
     }
 }
