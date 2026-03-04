@@ -9,12 +9,13 @@ namespace ManufactureSystem
     public class ManufactureMB : MonoBehaviour, IManufacture
     {
         [SerializeField] private SManufactureConfiguration configuration;
+        [SerializeField] private AEfficiencyConfigurationSO efficiencyConfiguration;
 
         private IManufacture _manufacture;
 
         private void Awake()
         {
-            _manufacture = configuration.CreateManufacture(new ConstantEfficiency());
+            _manufacture = configuration.CreateManufacture(efficiencyConfiguration.GetEfficiency());
         }
 
         public int MinTime => _manufacture.MinTime;
