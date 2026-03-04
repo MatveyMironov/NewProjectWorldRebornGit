@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ManufactureSystem
 {
-    internal class ManufactureParameters
+    internal class ManufactureParameters : IManufactureParameters
     {
         public ManufactureParameters(int minManufactureTime,
                                      Dictionary<IResourceDefinition, int> consumedResources,
