@@ -1,7 +1,6 @@
 ﻿using ResourceSystem;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace ManufactureSystem
 {
@@ -20,7 +19,7 @@ namespace ManufactureSystem
         public Dictionary<IResourceDefinition, int> ProducedResources => _manufactureParameters.ProducedResources;
         public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested;
 
-        public int ManufactureTime => _manufactureParameters.MinTime;
+        public float Time => _manufactureParameters.Time;
 
         public bool IsStarted { get; private set; }
         public bool IsPossible => IsStarted && !IsPaused;
@@ -51,7 +50,7 @@ namespace ManufactureSystem
         {
             if (!IsPossible) return;
 
-            Progress += Time.deltaTime / ManufactureTime;
+            Progress += UnityEngine.Time.deltaTime / Time;
             OnProgressChanged?.Invoke();
 
             if (Progress >= 1.0f)
