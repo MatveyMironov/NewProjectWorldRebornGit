@@ -1,9 +1,7 @@
-﻿using EfficiencySystem;
-
-namespace ManufactureSystem
+﻿namespace ManufactureSystem
 {
     public interface IManufactureConfiguration
     {
-        IManufacture CreateManufacture(IEfficiency efficiency);
+        IManufacture CreateManufacture();
     }
 }

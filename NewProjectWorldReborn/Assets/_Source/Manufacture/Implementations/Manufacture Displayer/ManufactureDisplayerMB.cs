@@ -4,9 +4,7 @@ namespace ManufactureSystem.Implementations
 {
     public class ManufactureDisplayerMB : AManufactureDisplayerMB
     {
-
         [SerializeField] private ManufactureResourcesDisplayerMB resourcesDisplayer;
-        [SerializeField] private ManufactureEfficiencyDisplayerMB efficiencyDisplayer;
         [SerializeField] private ManufactureProgressDisplayerMB progressDisplayer;
         [SerializeField] private ManufacturePauseControllerMB pauseController;
 
@@ -15,7 +13,6 @@ namespace ManufactureSystem.Implementations
             Clear();
 
             resourcesDisplayer.DisplayManufacture(manufacture);
-            efficiencyDisplayer.DisplayManufacture(manufacture);
             progressDisplayer.DisplayManufacture(manufacture);
             pauseController.ControlManufacture(manufacture);
         }
@@ -23,7 +20,6 @@ namespace ManufactureSystem.Implementations
         public override void Clear()
         {
             resourcesDisplayer.Clear();
-            efficiencyDisplayer.Clear();
             progressDisplayer.Clear();
             pauseController.ReleaseManufacture();
         }

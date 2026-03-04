@@ -1,5 +1,4 @@
-﻿using EfficiencySystem;
-using ResourceSystem;
+﻿using ResourceSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +8,13 @@ namespace ManufactureSystem
     public class ManufactureMB : MonoBehaviour, IManufacture
     {
         [SerializeField] private SManufactureConfiguration configuration;
-        [SerializeField] private AEfficiencyConfigurationSO efficiencyConfiguration;
 
         private IManufacture _manufacture;
 
         private void Awake()
         {
-            _manufacture = configuration.CreateManufacture(efficiencyConfiguration.GetEfficiency());
+            _manufacture = configuration.CreateManufacture();
         }
-
-        public int MinTime => _manufacture.MinTime;
 
         public Dictionary<IResourceDefinition, int> ConsumedResources => _manufacture.ConsumedResources;
         public Dictionary<IResourceDefinition, int> ProducedResources => _manufacture.ProducedResources;
@@ -41,14 +37,10 @@ namespace ManufactureSystem
         public bool IsPossible => _manufacture.IsPossible;
         public float ManufactureTime => _manufacture.ManufactureTime;
 
-        public float Efficiency => _manufacture.Efficiency;
-        public event Action OnEfficicencyChanged
-        {
-            add => _manufacture.OnEfficicencyChanged += value;
-            remove => _manufacture.OnEfficicencyChanged -= value;
-        }
-
         public float Progress => _manufacture.Progress;
+
+        int IManufacture.ManufactureTime => _manufacture.ManufactureTime;
+
         public event Action OnProgressChanged
         {
             add => _manufacture.OnProgressChanged += value;

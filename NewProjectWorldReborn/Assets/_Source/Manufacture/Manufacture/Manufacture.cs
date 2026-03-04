@@ -1,5 +1,4 @@
-﻿using EfficiencySystem;
-using ResourceSystem;
+﻿using ResourceSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +8,10 @@ namespace ManufactureSystem
     public class Manufacture : IManufacture
     {
         private readonly ManufactureParameters _manufactureParameters;
-        private readonly IEfficiency _efficiency;
 
-        internal Manufacture(ManufactureParameters manufactureParameters, IEfficiency efficiency)
+        internal Manufacture(ManufactureParameters manufactureParameters)
         {
             _manufactureParameters = manufactureParameters ?? throw new ArgumentNullException(nameof(manufactureParameters));
-            _efficiency = efficiency ?? throw new ArgumentNullException(nameof(efficiency));
         }
 
         public Dictionary<IResourceDefinition, int> ConsumedResources => _manufactureParameters.ConsumedResources;
@@ -23,14 +20,7 @@ namespace ManufactureSystem
         public Dictionary<IResourceDefinition, int> ProducedResources => _manufactureParameters.ProducedResources;
         public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested;
 
-        public int MinTime => _manufactureParameters.MinTime;
-        public float Efficiency => _efficiency.Efficiency;
-
-        public event Action OnEfficicencyChanged
-        {
-            add => _efficiency.OnEfficiencyChanged += value;
-            remove => _efficiency.OnEfficiencyChanged -= value;
-        }
+        public int ManufactureTime => _manufactureParameters.MinTime;
 
         #region Pause
         public bool _isManufacturePaused;
@@ -59,9 +49,7 @@ namespace ManufactureSystem
 
         public bool IsStarted { get; private set; }
 
-        public bool IsPossible => IsStarted && Efficiency > 0 && !IsPaused;
-
-        public float ManufactureTime => MinTime / Efficiency;
+        public bool IsPossible => IsStarted && !IsPaused;
 
         #region Progress
         private float _progress;
