@@ -8,7 +8,7 @@ namespace ManufactureSystem
     {
         private readonly IManufactureParameters _manufactureParameters;
 
-        internal Manufacture(IManufactureParameters manufactureParameters)
+        public Manufacture(IManufactureParameters manufactureParameters)
         {
             _manufactureParameters = manufactureParameters ?? throw new ArgumentNullException(nameof(manufactureParameters));
         }
