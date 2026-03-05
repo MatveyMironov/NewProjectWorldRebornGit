@@ -44,10 +44,10 @@ namespace EmployerManufactureSystem
             public Dictionary<IResourceDefinition, int> ConsumedResources { get; }
             public Dictionary<IResourceDefinition, int> ProducedResources { get; }
 
-            public float Speed => CalculateTime();
+            public float Speed => CalculateSpeed();
             public event Action OnManufactureTimeChanged { add => _employer.OnEmployedWorkforceChanged += value; remove => _employer.OnEmployedWorkforceChanged -= value; }
 
-            private float CalculateTime()
+            private float CalculateSpeed()
             {
                 float efficiency = (float)_employer.EmployedWorkforce / _employer.MaxWorkforce;
                 float speed = _maxSpeed * efficiency;
