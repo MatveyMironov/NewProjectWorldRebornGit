@@ -38,7 +38,7 @@ MonoBehaviour:
       resources:
       - _resource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
         _count: 1
-    maxSpeed: 1
+    minTime: 1
     employerConfiguration:
       minWorkForce: 1
       maxWorkForce: 5
