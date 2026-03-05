@@ -13,6 +13,11 @@ namespace ManufactureSystem
         {
             _manufacturesManager.OnManufactureAdded += AddManufacture;
             _manufacturesManager.OnManufactureRemoved += RemoveManufacture;
+
+            foreach (var manufacture in _manufacturesManager.Manufactures)
+            {
+                AddManufacture(manufacture);
+            }
         }
 
         private void OnDestroy()
@@ -33,6 +38,7 @@ namespace ManufactureSystem
         {
             if (_manufactures.Add(manufacture))
             {
+                Debug.Log($"Manufacture {manufacture} added");
                 manufacture.StartManufacture();
             }
         }
@@ -41,6 +47,7 @@ namespace ManufactureSystem
         {
             if (_manufactures.Remove(manufacture))
             {
+                Debug.Log($"Manufacture {manufacture} removed");
                 manufacture.AbortManufacture();
             }
         }
