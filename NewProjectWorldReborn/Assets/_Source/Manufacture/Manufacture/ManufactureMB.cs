@@ -21,7 +21,7 @@ namespace ManufactureSystem
         public Dictionary<IResourceDefinition, int> ProducedResources => _manufacture.ProducedResources;
         public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested { add => _manufacture.OnProductionRequested += value; remove => _manufacture.OnProductionRequested -= value; }
 
-        public float Time => _manufacture.Time;
+        public float Speed => _manufacture.Speed;
 
         public bool IsStarted => _manufacture.IsStarted;
         public bool IsPossible => _manufacture.IsPossible;
