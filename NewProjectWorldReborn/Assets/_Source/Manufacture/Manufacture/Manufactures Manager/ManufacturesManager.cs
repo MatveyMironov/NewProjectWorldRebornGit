@@ -5,12 +5,10 @@ namespace ManufactureSystem
 {
     public class ManufacturesManager : IManufacturesManager
     {
-        private readonly IManufactureController _controller;
         private readonly IManufactureStorageConnector _connector;
 
-        public ManufacturesManager(IManufactureController controller, IManufactureStorageConnector connector)
+        public ManufacturesManager(IManufactureStorageConnector connector)
         {
-            _controller = controller ?? throw new ArgumentNullException(nameof(controller));
             _connector = connector ?? throw new ArgumentNullException(nameof(connector));
         }
 
@@ -24,7 +22,6 @@ namespace ManufactureSystem
         {
             if (_manufactures.Add(manufacture))
             {
-                _controller.TryAddManufacture(manufacture);
                 _connector.ConnectManufacture(manufacture);
                 OnManufactureAdded?.Invoke(manufacture);
                 return true;
@@ -37,7 +34,6 @@ namespace ManufactureSystem
         {
             if (_manufactures.Remove(manufacture))
             {
-                _controller.TryRemoveManufacture(manufacture);
                 _connector.DisconnectManufacture(manufacture);
                 OnManufactureRemoved?.Invoke(manufacture);
                 return true;

@@ -7,7 +7,7 @@
         {
             get
             {
-                return _instance ??= new ManufacturesManager(ManufactureControllerSingleton.Instance, ManufactureStorageConnectorSingleton.Instance);
+                return _instance ??= new ManufacturesManager(ManufactureStorageConnectorSingleton.Instance);
             }
         }
     }
