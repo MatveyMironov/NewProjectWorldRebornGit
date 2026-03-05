@@ -7,6 +7,6 @@ namespace ManufactureSystem
     {
         Dictionary<IResourceDefinition, int> ConsumedResources { get; }
         Dictionary<IResourceDefinition, int> ProducedResources { get; }
-        float Time { get; }
+        float Speed { get; }
     }
 }
