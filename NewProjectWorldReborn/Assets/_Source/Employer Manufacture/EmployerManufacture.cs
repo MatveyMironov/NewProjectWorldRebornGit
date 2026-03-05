@@ -50,7 +50,7 @@ namespace EmployerManufactureSystem
             private float CalculateTime()
             {
                 float efficiency = (float)_employer.EmployedWorkforce / _employer.MaxWorkforce;
-                float speed = efficiency == 0 ? 0 : _maxSpeed * efficiency;
+                float speed = _maxSpeed * efficiency;
                 return speed;
             }
         }
