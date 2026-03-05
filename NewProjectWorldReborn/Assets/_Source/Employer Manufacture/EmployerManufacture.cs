@@ -3,6 +3,7 @@ using ManufactureSystem;
 using ResourceSystem;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace EmployerManufactureSystem
 {
@@ -36,7 +37,7 @@ namespace EmployerManufactureSystem
             {
                 ConsumedResources = consumedResources ?? throw new ArgumentNullException(nameof(consumedResources));
                 ProducedResources = producedResources ?? throw new ArgumentNullException(nameof(producedResources));
-                _maxSpeed = maxSpeed < 0 ? throw new ArgumentOutOfRangeException("Min time can't be less then 0") : 0;
+                _maxSpeed = maxSpeed <= 0 ? throw new ArgumentOutOfRangeException("Min time can't be equa; to or less then 0") : maxSpeed;
 
                 _employer = employer ?? throw new ArgumentNullException(nameof(employer));
             }

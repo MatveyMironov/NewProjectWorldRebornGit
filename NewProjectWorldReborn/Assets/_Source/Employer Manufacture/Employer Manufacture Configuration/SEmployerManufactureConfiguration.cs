@@ -10,13 +10,13 @@ namespace EmployerManufactureSystem
     {
         [SerializeField] private SResourceCountsDictionary consumedResources;
         [SerializeField] private SResourceCountsDictionary producedResources;
-        [SerializeField] private float maxSpeed;
+        [SerializeField] private float minTime;
         [SerializeField] private SEmployerConfiguration employerConfiguration;
 
         public IEmployerManufacture CreateEmployerManufacture()
         {
             IEmployer employer = employerConfiguration.GetEmployer();
-            return new EmployerManufacture(consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary(), maxSpeed, employer);
+            return new EmployerManufacture(consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary(), 1.0f / minTime, employer);
         }
     }
 }
