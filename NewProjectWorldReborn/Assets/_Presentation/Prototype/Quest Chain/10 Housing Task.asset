@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e16b73e8379944408b064fe3aef7fd7, type: 3}
-  m_Name: 20 Housing Task
+  m_Name: 10 Housing Task
   m_EditorClassIdentifier: 
   requiredService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
   requiredAmount: 20
