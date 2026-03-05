@@ -15,7 +15,7 @@ namespace EmployerManufactureSystem
 
         public EmployerManufacture(Dictionary<IResourceDefinition, int> consumedResources,
                                    Dictionary<IResourceDefinition, int> producedResources,
-                                   int maxSpeed,
+                                   float maxSpeed,
                                    IEmployer employer)
         {
             Employer = employer ?? throw new ArgumentNullException(nameof(employer));
@@ -25,13 +25,13 @@ namespace EmployerManufactureSystem
 
         private class EmployerManufactureParameters : IManufactureParameters
         {
-            private readonly int _maxSpeed;
+            private readonly float _maxSpeed;
 
             private readonly IEmployer _employer;
 
             public EmployerManufactureParameters(Dictionary<IResourceDefinition, int> consumedResources,
                                                  Dictionary<IResourceDefinition, int> producedResources,
-                                                 int maxSpeed,
+                                                 float maxSpeed,
                                                  IEmployer employer)
             {
                 ConsumedResources = consumedResources ?? throw new ArgumentNullException(nameof(consumedResources));

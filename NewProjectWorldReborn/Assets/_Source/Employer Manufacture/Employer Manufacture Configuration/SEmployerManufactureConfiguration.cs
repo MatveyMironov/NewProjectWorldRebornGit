@@ -10,7 +10,7 @@ namespace EmployerManufactureSystem
     {
         [SerializeField] private SResourceCountsDictionary consumedResources;
         [SerializeField] private SResourceCountsDictionary producedResources;
-        [SerializeField] private int maxSpeed;
+        [SerializeField] private float maxSpeed;
         [SerializeField] private SEmployerConfiguration employerConfiguration;
 
         public IEmployerManufacture CreateEmployerManufacture()
