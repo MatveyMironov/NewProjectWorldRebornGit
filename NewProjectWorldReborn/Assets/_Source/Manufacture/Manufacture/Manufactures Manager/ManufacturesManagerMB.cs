@@ -6,14 +6,13 @@ namespace ManufactureSystem
 {
     public class ManufacturesManagerMB : MonoBehaviour, IManufacturesManager
     {
-        [SerializeField] private ManufactureControllerMB controller;
         [SerializeField] private ManufactureStorageConnectorMB storageConnector;
 
         private IManufacturesManager _manager;
 
         private void Awake()
         {
-            _manager = new ManufacturesManager(controller, storageConnector);
+            _manager = new ManufacturesManager(storageConnector);
         }
 
         public HashSet<IManufacture> Manufactures => _manager.Manufactures;

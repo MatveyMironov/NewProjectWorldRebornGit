@@ -15,28 +15,28 @@ namespace EmployerManufactureSystem
 
         public EmployerManufacture(Dictionary<IResourceDefinition, int> consumedResources,
                                    Dictionary<IResourceDefinition, int> producedResources,
-                                   int minTime,
+                                   int maxSpeed,
                                    IEmployer employer)
         {
             Employer = employer ?? throw new ArgumentNullException(nameof(employer));
-            _parameters = new(consumedResources, producedResources, minTime, employer);
+            _parameters = new(consumedResources, producedResources, maxSpeed, employer);
             Manufacture = new Manufacture(_parameters);
         }
 
         private class EmployerManufactureParameters : IManufactureParameters
         {
-            private readonly int _minTime;
+            private readonly int _maxSpeed;
 
             private readonly IEmployer _employer;
 
             public EmployerManufactureParameters(Dictionary<IResourceDefinition, int> consumedResources,
                                                  Dictionary<IResourceDefinition, int> producedResources,
-                                                 int minTime,
+                                                 int maxSpeed,
                                                  IEmployer employer)
             {
                 ConsumedResources = consumedResources ?? throw new ArgumentNullException(nameof(consumedResources));
                 ProducedResources = producedResources ?? throw new ArgumentNullException(nameof(producedResources));
-                _minTime = minTime < 0 ? throw new ArgumentOutOfRangeException("Min time can't be less then 0") : 0;
+                _maxSpeed = maxSpeed < 0 ? throw new ArgumentOutOfRangeException("Min time can't be less then 0") : 0;
 
                 _employer = employer ?? throw new ArgumentNullException(nameof(employer));
             }
@@ -44,14 +44,14 @@ namespace EmployerManufactureSystem
             public Dictionary<IResourceDefinition, int> ConsumedResources { get; }
             public Dictionary<IResourceDefinition, int> ProducedResources { get; }
 
-            public float Time => CalculateTime();
+            public float Speed => CalculateTime();
             public event Action OnManufactureTimeChanged { add => _employer.OnEmployedWorkforceChanged += value; remove => _employer.OnEmployedWorkforceChanged -= value; }
 
             private float CalculateTime()
             {
                 float efficiency = (float)_employer.EmployedWorkforce / _employer.MaxWorkforce;
-                float time = efficiency == 0 ? 0 : _minTime / efficiency;
-                return time;
+                float speed = efficiency == 0 ? 0 : _maxSpeed * efficiency;
+                return speed;
             }
         }
     }

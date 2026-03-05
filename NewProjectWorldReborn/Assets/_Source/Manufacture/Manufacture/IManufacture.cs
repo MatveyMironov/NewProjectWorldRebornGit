@@ -11,7 +11,7 @@ namespace ManufactureSystem
         public Dictionary<IResourceDefinition, int> ProducedResources { get; }
         public event Func<Dictionary<IResourceDefinition, int>, bool> OnProductionRequested;
 
-        public float Time { get; }
+        public float Speed { get; }
 
         public bool IsStarted { get; }
         public bool IsPossible { get; }
