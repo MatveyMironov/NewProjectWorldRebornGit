@@ -9,10 +9,10 @@ namespace ProgressionSystem.Quest.Testing
 
         public void DisplayReward(TestReward reward)
         {
-            descriptionText.text = $"Reward is a debug message: {reward.FinishText}";
+            descriptionText.text = $"Reward is a debug message: {reward.Name}";
         }
 
-        public void HideReward()
+        public void Clear()
         {
             descriptionText.text = "";
         }

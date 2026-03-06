@@ -8,14 +8,12 @@ namespace ProgressionSystem.Quest.Testing
     {
         public string Name { get; }
 
-        public TestReward(string finishText, TestRewardDisplayerMB displayerPrefab)
+        public TestReward(string name, TestRewardDisplayerMB displayerPrefab)
         {
-            Name = finishText ?? throw new ArgumentNullException(nameof(finishText));
+            Name = name ?? throw new ArgumentNullException(nameof(name));
 
             Info = new TestRewardInfo(this, displayerPrefab);
         }
-
-        public string FinishText => Name;
 
         public ICustomInfo Info { get; }
 
