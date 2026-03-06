@@ -12,7 +12,6 @@ namespace ProgressionSystem.Quest.Implementations
         {
             questDisplayer.DisplayQuest(quest);
             hidable.Show();
-            Debug.Log(0);
         }
 
         public override void Clear()
