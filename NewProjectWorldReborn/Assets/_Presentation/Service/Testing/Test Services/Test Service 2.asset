@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fdf8b26b54cbc94aadf5508263ab92b, type: 3}
-  m_Name: Housing
+  m_Name: Test Service 2
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Housing
-  <ServiceDescription>k__BackingField: Place for people to sleep
-  <Icon>k__BackingField: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  <Name>k__BackingField: Power
+  <ServiceDescription>k__BackingField: Electrical energy measured in kW
+  <Icon>k__BackingField: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
