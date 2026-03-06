@@ -1,0 +1,24 @@
+using HidableSystem;
+using UnityEngine;
+
+namespace ProgressionSystem.Quest.Implementations
+{
+    public class HidableQuestDisplayerMB : AQuestDisplayerMB
+    {
+        [SerializeField] private AHidableMB hidable;
+        [SerializeField] private AQuestDisplayerMB questDisplayer;
+
+        public override void DisplayQuest(Quest quest)
+        {
+            questDisplayer.DisplayQuest(quest);
+            hidable.Show();
+            Debug.Log(0);
+        }
+
+        public override void Clear()
+        {
+            questDisplayer.Clear();
+            hidable.Hide();
+        }
+    }
+}

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4331003162906941970}
   - component: {fileID: 2214845579675116096}
   - component: {fileID: 9191182423694209220}
+  - component: {fileID: 6356956029709714397}
   - component: {fileID: 3802002636179675493}
   m_Layer: 5
   m_Name: Quest Menu
@@ -156,6 +157,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &6356956029709714397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832377604440449903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae849fc8a4ab384382abe991d6fa2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeQuestDisplayer: {fileID: 6206687903096396132}
+  finishedQuestDisplayer: {fileID: 0}
 --- !u!114 &3802002636179675493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3136ee55be7f4ba4cb411ac0fa970bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeQuestDisplayer: {fileID: 6206687903096396132}
+  activeQuestDisplayer: {fileID: 6356956029709714397}
 --- !u!1001 &8231290602228676042
 PrefabInstance:
   m_ObjectHideFlags: 0
