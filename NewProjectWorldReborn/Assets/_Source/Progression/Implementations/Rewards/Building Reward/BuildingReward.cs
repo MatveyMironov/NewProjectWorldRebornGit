@@ -1,6 +1,5 @@
 using BuildingSystem;
 using CustomInfoSystem;
-using ProgressionSystem.Quest;
 
 namespace ProgressionSystem.Implementations
 {
