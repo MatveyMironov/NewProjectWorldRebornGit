@@ -1,10 +1,9 @@
 using CustomInfoSystem;
-using ProgressionSystem.Quest.Testing;
 using ResourceSystem;
 using StorageSystem;
 using System;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem.Implementations
 {
     public class ResourceReward : IReward
     {

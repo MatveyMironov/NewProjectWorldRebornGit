@@ -2,7 +2,7 @@ using CustomUISystem;
 using ResourceSystem;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem.Implementations
 {
     public class ResourceRewardDisplayerMB : MonoBehaviour
     {
