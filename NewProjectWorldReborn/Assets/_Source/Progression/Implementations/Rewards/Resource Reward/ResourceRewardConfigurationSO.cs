@@ -2,7 +2,7 @@ using ResourceSystem;
 using StorageSystem;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem.Implementations
 {
     [CreateAssetMenu(fileName = "New Resource Reward", menuName = "Progression/Reward Configuration/Resource Reward")]
     public class ResourceRewardConfigurationSO : ARewardConfigurationSO

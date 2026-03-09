@@ -1,9 +1,8 @@
 using CustomInfoSystem;
-using ProgressionSystem.Quest.Implementations;
 using System;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Testing
+namespace ProgressionSystem.Implementations
 {
     public class ResourceRewardInfo : ICustomInfo
     {
