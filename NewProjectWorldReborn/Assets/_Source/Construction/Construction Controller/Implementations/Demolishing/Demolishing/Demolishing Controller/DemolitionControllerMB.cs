@@ -21,35 +21,37 @@ namespace DemolishingSystem
 
         public event Action OnBuildingSelected
         {
-            add { _controller.OnBuildingSelected += value; }
-            remove { _controller.OnBuildingSelected -= value; }
+            add => _controller.OnBuildingSelected += value;
+            remove => _controller.OnBuildingSelected -= value;
         }
 
         public event Action OnBuildingDeselected
         {
-            add { _controller.OnBuildingDeselected += value; }
-            remove { _controller.OnBuildingDeselected -= value; }
+            add => _controller.OnBuildingDeselected += value;
+            remove => _controller.OnBuildingDeselected -= value;
         }
 
         public event Action<BuildingStructure> OnBuildingDemolished
         {
-            add { _controller.OnBuildingDemolished += value; }
-            remove { _controller.OnBuildingDemolished -= value; }
+            add => _controller.OnBuildingDemolished += value;
+            remove => _controller.OnBuildingDemolished -= value;
+        }
+
+        public event Action OnStateEntered
+        {
+            add => _controller.OnStateEntered += value;
+            remove => _controller.OnStateEntered -= value;
+        }
+
+        public event Action OnStateExited
+        {
+            add => _controller.OnStateExited += value;
+            remove => _controller.OnStateExited -= value;
         }
 
         public void StartDemolishing()
         {
             _controller.StartDemolishing();
-        }
-
-        public void ConfirmDemolition()
-        {
-            _controller.ConfirmDemolition();
-        }
-
-        public void DenyDemolition()
-        {
-            _controller.DenyDemolition();
         }
     }
 }

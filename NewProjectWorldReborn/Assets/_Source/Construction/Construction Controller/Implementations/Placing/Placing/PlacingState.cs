@@ -61,16 +61,11 @@ namespace PlacingSystem
 
         public void StartAction(Vector2Int cell)
         {
-            _currentCell = cell;
-        }
-
-        public void FinishAction(Vector2Int cell)
-        {
-            if (_constructionGridManager.CheckIfCanPlaceBuilding(cell, _buildingLayout.OccupiedCells))
+            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _buildingLayout.OccupiedCells))
             {
                 BuildingStructure structure = _buildingViewInstantiator.CreateBuildingStructure(_constructionConfiguration, cell, _buildingOrientation);
 
-                if (_constructionGridManager.TryPlaceBuilding(structure, cell))
+                if (_constructionGridManager.TryPlaceStructureAt(structure, cell))
                 {
                     _preview.HidePreview();
 
@@ -85,6 +80,11 @@ namespace PlacingSystem
                 }
             }
 
+            _currentCell = cell;
+        }
+
+        public void FinishAction(Vector2Int cell)
+        {
             _currentCell = cell;
         }
 
@@ -157,7 +157,7 @@ namespace PlacingSystem
 
         private void ShowPlacementValidity(Vector2Int originCell)
         {
-            if (_constructionGridManager.CheckIfCanPlaceBuilding(originCell, _buildingLayout.OccupiedCells))
+            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(originCell, _buildingLayout.OccupiedCells))
             {
                 _preview.ShowValidPlacement();
             }
