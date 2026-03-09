@@ -2,7 +2,7 @@ using CustomInfoSystem;
 using System;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     public class CompositeRewardInfo : ICustomInfo
     {

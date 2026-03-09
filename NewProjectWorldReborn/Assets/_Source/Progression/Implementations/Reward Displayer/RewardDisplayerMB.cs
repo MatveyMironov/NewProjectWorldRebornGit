@@ -1,7 +1,7 @@
 using CustomInfoSystem;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     public class RewardDisplayerMB : ARewardDisplayerMB
     {

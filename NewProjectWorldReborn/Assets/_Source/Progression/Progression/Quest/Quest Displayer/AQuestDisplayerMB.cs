@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest
+namespace ProgressionSystem
 {
     public abstract class AQuestDisplayerMB : MonoBehaviour, IQuestDisplayer
     {

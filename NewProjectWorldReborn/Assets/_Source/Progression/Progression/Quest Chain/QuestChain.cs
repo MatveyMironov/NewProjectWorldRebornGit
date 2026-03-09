@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain
+namespace ProgressionSystem
 {
     public class QuestChain
     {
