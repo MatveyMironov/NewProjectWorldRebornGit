@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Prototype Quest Chain
   m_EditorClassIdentifier: 
   quests:
+  - {fileID: 11400000, guid: 3f44bf6cb2980ed45bd25e2b9f8daed5, type: 2}
   - {fileID: 11400000, guid: e0ff121aadff3e945960e0b5058ee3fc, type: 2}
   - {fileID: 11400000, guid: f30ee35c1b31dfe4fa727fadc58fd99d, type: 2}
   - {fileID: 11400000, guid: 86ca2a477bbdd804089deccbb3618217, type: 2}
