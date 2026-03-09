@@ -53,6 +53,14 @@ namespace ProgressionSystem
 
             ActiveQuest = _quests[_activeQuestIndex].CreateQuest();
             OnActiveQuestChanged?.Invoke();
+
+            if (ActiveQuest.IsFinished)
+            {
+                _activeQuestIndex++;
+                StartActiveQuest();
+                return;
+            }
+
             ActiveQuest.OnFinished += ChangeActiveQuest;
             ActiveQuest.Start();
         }
