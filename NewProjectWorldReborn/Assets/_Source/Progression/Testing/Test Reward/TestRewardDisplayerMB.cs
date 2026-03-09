@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Testing
+namespace ProgressionSystem.Testing
 {
     public class TestRewardDisplayerMB : MonoBehaviour
     {

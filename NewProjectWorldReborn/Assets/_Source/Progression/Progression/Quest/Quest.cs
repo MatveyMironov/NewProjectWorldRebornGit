@@ -1,6 +1,6 @@
 using System;
 
-namespace ProgressionSystem.Quest
+namespace ProgressionSystem
 {
     public class Quest
     {

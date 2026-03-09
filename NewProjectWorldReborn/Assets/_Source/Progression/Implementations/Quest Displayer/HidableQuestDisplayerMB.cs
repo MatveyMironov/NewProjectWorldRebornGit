@@ -1,7 +1,7 @@
 using HidableSystem;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     public class HidableQuestDisplayerMB : AQuestDisplayerMB
     {

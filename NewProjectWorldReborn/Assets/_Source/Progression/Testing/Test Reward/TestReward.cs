@@ -2,7 +2,7 @@ using CustomInfoSystem;
 using System;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Testing
+namespace ProgressionSystem.Testing
 {
     public class TestReward : IReward
     {

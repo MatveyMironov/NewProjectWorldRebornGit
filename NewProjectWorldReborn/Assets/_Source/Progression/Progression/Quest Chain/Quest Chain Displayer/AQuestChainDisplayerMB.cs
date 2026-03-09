@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain
+namespace ProgressionSystem
 {
     public abstract class AQuestChainDisplayerMB : MonoBehaviour, IQuestChainDisplayer
     {
