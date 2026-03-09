@@ -1,11 +1,10 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Testing
+namespace ProgressionSystem.Testing
 {
     [CreateAssetMenu(fileName = "New Test Reward", menuName = "Progression/Reward Configuration/Test Reward")]
     public class TestRewardConfiguration : ARewardConfigurationSO
     {
-        [SerializeField] private new string name;
         [SerializeField] private TestRewardDisplayerMB displayerPrefab;
 
         public override IReward CreateReward()
