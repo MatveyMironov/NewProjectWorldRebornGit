@@ -1,5 +1,4 @@
 using BuildingSystem;
-using ProgressionSystem.Quest;
 using UnityEngine;
 
 namespace ProgressionSystem.Implementations
