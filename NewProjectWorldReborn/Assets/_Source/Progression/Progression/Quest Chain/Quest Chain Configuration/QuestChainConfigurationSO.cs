@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain
+namespace ProgressionSystem
 {
     [CreateAssetMenu(fileName = "New Quest Chain", menuName = "Progression/Quest Chain Configuration")]
     public class QuestChainConfigurationSO : ScriptableObject, IQuestChainConfiguration

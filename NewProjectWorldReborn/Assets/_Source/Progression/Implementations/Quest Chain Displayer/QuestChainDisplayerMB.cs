@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain.Implementations
+namespace ProgressionSystem
 {
     public class QuestChainDisplayerMB : AQuestChainDisplayerMB
     {

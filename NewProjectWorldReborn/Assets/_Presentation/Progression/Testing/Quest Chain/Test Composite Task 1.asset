@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5af810ad6097b2e4f993557e4e1bf7cf, type: 3}
-  m_Name: Test Composite Task 2
+  m_Name: Test Composite Task 1
   m_EditorClassIdentifier: 
   partConfigurations:
+  - {fileID: 11400000, guid: 626834c47d7f5f84d95004c38901efc3, type: 2}
   - {fileID: 11400000, guid: 00a68d12a4967b34990a36b743aa4a74, type: 2}
-  - {fileID: 11400000, guid: 0802e8cb2092cb245abe3f660af96e61, type: 2}
   displayerPrefab: {fileID: 2143404124452948719, guid: 027e00e157098924ba0d528ce8458c48, type: 3}

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Test Quest Chain
   m_EditorClassIdentifier: 
   quests:
-  - {fileID: 11400000, guid: ffaede2dbf497e74a926bc261f403397, type: 2}
-  - {fileID: 11400000, guid: afea70a492b36244b939102526264e4f, type: 2}
+  - {fileID: 11400000, guid: 3df2dd9afc195de4c8192b5f6f1548f0, type: 2}
+  - {fileID: 11400000, guid: ef77323e9c2cfbd41890a35808ac98e5, type: 2}
+  - {fileID: 11400000, guid: 036b3a9f45bfc1f46beb17113d0195e3, type: 2}
+  - {fileID: 11400000, guid: d246e17fe3a79b94b90db6f77ff72674, type: 2}

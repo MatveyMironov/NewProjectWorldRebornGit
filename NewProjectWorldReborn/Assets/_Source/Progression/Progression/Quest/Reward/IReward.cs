@@ -1,6 +1,6 @@
 ﻿using CustomInfoSystem;
 
-namespace ProgressionSystem.Quest
+namespace ProgressionSystem
 {
     public interface IReward
     {

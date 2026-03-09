@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     [CreateAssetMenu(fileName = "New Composite Reward", menuName = "Progression/Reward Configuration/Composite Reward")]
     public class CompositeRewardConfigurationSO : ARewardConfigurationSO

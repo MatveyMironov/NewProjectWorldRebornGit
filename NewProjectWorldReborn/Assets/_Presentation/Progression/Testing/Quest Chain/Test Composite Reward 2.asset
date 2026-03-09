@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dec54ac9295af824995ef9b42253bb86, type: 3}
-  m_Name: Test Composite Reward 1
+  m_Name: Test Composite Reward 2
   m_EditorClassIdentifier: 
   partConfigurations:
-  - {fileID: 11400000, guid: 0e1784c4cb97f224f9e585387588aaa5, type: 2}
-  - {fileID: 11400000, guid: 379a6ffd36834244fbc4a0bfcf9d96c9, type: 2}
+  - {fileID: 11400000, guid: 1da9e2f5576ccd040ab4dea59256c5a8, type: 2}
+  - {fileID: 11400000, guid: e0c1db496d72ff7459cc01a17c94edf0, type: 2}
   displayerPrefab: {fileID: 7665147824995377089, guid: c24027b1258040f41aecde7a2195fc2c, type: 3}

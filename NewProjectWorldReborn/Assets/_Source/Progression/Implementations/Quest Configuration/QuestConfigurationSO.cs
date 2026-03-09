@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     [CreateAssetMenu(fileName = "New Quest", menuName = "Progression/Quest Configuration")]
     public class QuestConfigurationSO : AQuestConfigurationSO
