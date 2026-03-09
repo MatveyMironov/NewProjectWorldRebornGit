@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a119993cef4d54ba6e32081cc55044, type: 3}
-  m_Name: House
+  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
+  m_Name: Townhall
   m_EditorClassIdentifier: 
   info:
-    <Name>k__BackingField: House
+    <Name>k__BackingField: Townhall
     <Description>k__BackingField: 
   construction:
-    constructionPreviewPrefab: {fileID: 690439210746757020, guid: 08d96fb44f9d5d344b34e1412d21f042, type: 3}
-    buildingViewPrefab: {fileID: 3256355568392670272, guid: bb2a96bea82e8034eab26dcc1fff664f, type: 3}
+    constructionPreviewPrefab: {fileID: 690439210746757020, guid: 0bf053b45acda164f9665c7d3dc8239c, type: 3}
+    buildingViewPrefab: {fileID: 3256355568392670272, guid: 120481528f7194e418db56ef959cdf71, type: 3}
     occupiedCells:
     - {x: -1, y: -1}
     - {x: -1, y: 0}
@@ -35,5 +35,7 @@ MonoBehaviour:
     - {x: 2, y: 0}
     - {x: 2, y: 1}
     - {x: 2, y: 2}
-  providedService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
-  providedAmount: 5
+  constructionResources:
+    resources:
+    - _resource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
+      _count: 10
