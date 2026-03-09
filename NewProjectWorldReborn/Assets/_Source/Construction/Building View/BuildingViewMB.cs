@@ -6,6 +6,7 @@ namespace BuildingViewSystem
     public class BuildingViewMB : MonoBehaviour
     {
         public event Action OnSelected;
+        
         [SerializeField] private GameObject demolitionIndicator;
 
         private void Start()

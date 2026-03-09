@@ -1,4 +1,5 @@
 using BuildingSystem;
+using ConstructionResourcesPlacingSystem;
 using PlacingSystem;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace BuildingConstructionUISystem
     public class BuildingConstructionButtonsManagerMB : MonoBehaviour, IBuildingConstructionButtonsManager
     {
         [SerializeField] private BuildingConstructionButtonSpawnerMB constructionButtonSpawner;
-        [SerializeField] private PlacingInvokeCreatorMB placingInvokeCreator;
+        [SerializeField] private ConstructionResourcesPlacingInvokeCreatorMB placingInvokeCreator;
 
         private IBuildingConstructionButtonsManager _manager;
 
