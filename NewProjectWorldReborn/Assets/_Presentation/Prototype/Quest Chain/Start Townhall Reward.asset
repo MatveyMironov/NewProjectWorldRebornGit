@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e8b549dbda9504d82d5be3be222d3c, type: 3}
   m_Name: Start Townhall Reward
   m_EditorClassIdentifier: 
-  building: {fileID: 11400000, guid: 7960d55304096554092bc9c860260d8d, type: 2}
+  building: {fileID: 11400000, guid: 93542e1eddcbff6449252405befb3cf1, type: 2}
   displayerPrefab: {fileID: 4825802507586924789, guid: ab53277b8932e9d4f9d1fd49f75b2546, type: 3}
