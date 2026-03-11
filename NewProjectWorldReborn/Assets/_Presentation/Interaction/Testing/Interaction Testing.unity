@@ -556,6 +556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 877769561379773901, guid: ba52f5eac647e50458a1692cfb97a9d0, type: 3}
+      propertyPath: interactionCamera
+      value: 
+      objectReference: {fileID: 458540855}
     - target: {fileID: 8414785765565738262, guid: ba52f5eac647e50458a1692cfb97a9d0, type: 3}
       propertyPath: m_Name
       value: Interaction Controller
