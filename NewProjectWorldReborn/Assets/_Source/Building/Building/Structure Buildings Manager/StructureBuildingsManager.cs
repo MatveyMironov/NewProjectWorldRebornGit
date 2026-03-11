@@ -7,9 +7,9 @@ namespace BuildingSystem
 {
     public class StructureBuildingsManager : IStructureBuildingsManager
     {
-        private readonly IBuildingSelectionActionsManager _buildingSelectionActionsManager;
+        private readonly IBuildingInteractionsManager _buildingSelectionActionsManager;
 
-        public StructureBuildingsManager(IBuildingSelectionActionsManager buildingSelectionActionsManager)
+        public StructureBuildingsManager(IBuildingInteractionsManager buildingSelectionActionsManager)
         {
             _buildingSelectionActionsManager = buildingSelectionActionsManager ?? throw new ArgumentNullException(nameof(buildingSelectionActionsManager));
         }
@@ -23,7 +23,7 @@ namespace BuildingSystem
         {
             if (_structureBuildings.TryAdd(structure, building))
             {
-                _buildingSelectionActionsManager.TryAddBuildingSelectionAction(building);
+                _buildingSelectionActionsManager.TryAddBuildingInteraction(building);
                 Debug.Log($"Building {building} for structure {structure} was added");
                 OnBuildingAdded?.Invoke(building);
                 return true;
@@ -36,7 +36,7 @@ namespace BuildingSystem
         {
             if (_structureBuildings.Remove(structure, out Building building))
             {
-                _buildingSelectionActionsManager.TryRemoveBuildingSelectionAction(building);
+                _buildingSelectionActionsManager.TryRemoveBuildingInteraction(building);
                 Debug.Log($"Building {building} for structure {structure} was removed");
                 OnBuildingRemoved?.Invoke(building);
                 return true;

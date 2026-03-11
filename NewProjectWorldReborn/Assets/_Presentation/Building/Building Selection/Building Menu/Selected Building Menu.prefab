@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 5927452882869492432}
   - component: {fileID: 3577220659345647814}
   - component: {fileID: 6750627795869501129}
+  - component: {fileID: 3885327073428185684}
   - component: {fileID: 9171179963311432379}
-  - component: {fileID: 2954013337405050245}
+  - component: {fileID: 4186556978652941122}
   m_Layer: 0
-  m_Name: Building Menu
+  m_Name: Selected Building Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +124,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayer: {fileID: 5927452882869492432}
   hidable: {fileID: 3577220659345647814}
+--- !u!114 &3885327073428185684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755629540721017784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da7bc5e6e3461149a8bfb9f814f7403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingDisplayer: {fileID: 6750627795869501129}
 --- !u!114 &9171179963311432379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710a394359e48c94ba8f72f91e71f85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingDisplayer: {fileID: 6750627795869501129}
---- !u!114 &2954013337405050245
+  buildingSelectorDisplayer: {fileID: 3885327073428185684}
+--- !u!114 &4186556978652941122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,18 +159,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3755629540721017784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: b7ade438da7cbc546b9dfc4293e7be26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 094b2dbcf0d6de7418d0032516fbccf7, type: 2}
-  unityEvent:
-    m_PersistentCalls:
+  States:
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6750627795869501129}
-        m_TargetAssemblyTypeName: BuildingSystem.Implementations.HidableBuildingDisplayerMB,
-          BuildingSystemImplementations
-        m_MethodName: Clear
-        m_Mode: 1
+      - m_Target: {fileID: 3755629540721017784}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
