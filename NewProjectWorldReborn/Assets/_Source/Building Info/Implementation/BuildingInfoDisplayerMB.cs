@@ -18,16 +18,6 @@ namespace BuildingInfoSystem.Implementation
         {
             ClearName();
             ClearDescription();
-
-            void ClearName()
-            {
-                DisplayName(string.Empty);
-            }
-
-            void ClearDescription()
-            {
-                DisplayDescription(string.Empty);
-            }
         }
 
         private void DisplayName(string name)
@@ -35,9 +25,19 @@ namespace BuildingInfoSystem.Implementation
             nameText.text = name;
         }
 
+        private void ClearName()
+        {
+            DisplayName(string.Empty);
+        }
+
         private void DisplayDescription(string description)
         {
             descriptionText.text = description;
+        }
+
+        private void ClearDescription()
+        {
+            DisplayDescription(string.Empty);
         }
     }
 }
