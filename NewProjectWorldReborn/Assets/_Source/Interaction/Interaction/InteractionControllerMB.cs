@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace InteractionSystem
@@ -12,11 +13,19 @@ namespace InteractionSystem
         private Collider _targetCollider;
         private IInteractable _targetInteractable;
 
+        public event Action<IInteractable> OnInteractionSucceeded;
+        public event Action OnInteractionFailed;
+
         public void Interact()
         {
-            if (_targetInteractable == null) return;
+            if (_targetInteractable == null)
+            {
+                OnInteractionFailed?.Invoke();
+                return;
+            }
 
             _targetInteractable.Interact();
+            OnInteractionSucceeded?.Invoke(_targetInteractable);
         }
 
         public void ChangeMousePosition(Vector2 mousePosition)
@@ -31,9 +40,14 @@ namespace InteractionSystem
             }
             else
             {
-                _targetCollider = null;
-                ForgetTargetInteractable();
+                ForgetColliderAndInteractable();
             }
+        }
+
+        public void ForgetColliderAndInteractable()
+        {
+            _targetCollider = null;
+            ForgetTargetInteractable();
         }
 
         private void ChangeTargetCollider(Collider collider)
