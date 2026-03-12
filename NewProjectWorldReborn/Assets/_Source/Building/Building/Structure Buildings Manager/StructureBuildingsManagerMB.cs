@@ -11,6 +11,8 @@ namespace BuildingSystem
 
         private IStructureBuildingsManager _manager;
 
+        public Building[] Buildings => _manager.Buildings;
+
         public event Action<Building> OnBuildingAdded
         {
             add =>_manager.OnBuildingAdded += value;

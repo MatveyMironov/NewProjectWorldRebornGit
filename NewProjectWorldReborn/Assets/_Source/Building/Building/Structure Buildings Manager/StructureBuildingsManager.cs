@@ -1,6 +1,7 @@
 using ConstructionGridSystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BuildingSystem
@@ -16,6 +17,7 @@ namespace BuildingSystem
 
         private readonly Dictionary<BuildingStructure, Building> _structureBuildings = new();
 
+        public Building[] Buildings => _structureBuildings.Values.ToArray();
         public event Action<Building> OnBuildingAdded;
         public event Action<Building> OnBuildingRemoved;
 
