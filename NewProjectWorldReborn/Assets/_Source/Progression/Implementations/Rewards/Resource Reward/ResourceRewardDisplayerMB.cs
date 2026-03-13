@@ -1,4 +1,3 @@
-using CustomUISystem;
 using ResourceSystem;
 using UnityEngine;
 
@@ -6,19 +5,17 @@ namespace ProgressionSystem.Implementations
 {
     public class ResourceRewardDisplayerMB : MonoBehaviour
     {
-        [SerializeField] private AResourceDisplayerMB resourceDisplayer;
-        [SerializeField] private ANumberDisplayerMB amountDisplayer;
+        [SerializeField] private AResourceCountDisplayerMB resourceCountDisplayer;
 
         public void DisplayReward(ResourceReward reward)
         {
-            resourceDisplayer.DisplayResource(reward.Resource);
-            amountDisplayer.DisplayNumber(reward.Amount);
+            resourceCountDisplayer.DisplayResource(reward.Resource);
+            resourceCountDisplayer.DisplayCount(reward.Amount);
         }
 
         public void ClearDisplayer()
         {
-            resourceDisplayer.Clear();
-            amountDisplayer.DisplayNumber(0);
+            resourceCountDisplayer.DisplayCount(0);
         }
     }
 }
