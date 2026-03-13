@@ -7,9 +7,11 @@ namespace BuildingSystem
     public class StructureBuildingsManagerMB : MonoBehaviour, IStructureBuildingsManager
     {
         [Header("Selection")]
-        [SerializeField] private BuildingSelectionActionsManagerMB buildingSelectionActionsManager;
+        [SerializeField] private BuildingInteractionsManagerMB buildingSelectionActionsManager;
 
         private IStructureBuildingsManager _manager;
+
+        public Building[] Buildings => _manager.Buildings;
 
         public event Action<Building> OnBuildingAdded
         {
