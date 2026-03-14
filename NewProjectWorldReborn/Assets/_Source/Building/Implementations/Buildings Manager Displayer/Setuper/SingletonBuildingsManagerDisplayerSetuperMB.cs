@@ -8,9 +8,10 @@ namespace BuildingSystem.Implementations
 
         private readonly IStructureBuildingsManager _buildingsManager = StructureBuildingsManagerSingleton.Instance;
 
-        private void Start()
+        private void Awake()
         {
             buildingsManagerDisplayer.DisplayBuildingsManager(_buildingsManager);
+            //Debug.Log("Buildings manager displayer setup");
         }
     }
 }

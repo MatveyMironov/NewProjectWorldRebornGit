@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 9076279843806906253}
   - component: {fileID: 3577220659345647814}
   - component: {fileID: 6750627795869501129}
-  - component: {fileID: 3885327073428185684}
-  - component: {fileID: 9171179963311432379}
+  - component: {fileID: 8966614336329379531}
+  - component: {fileID: 6979055727613371344}
+  - component: {fileID: 3089470318455132995}
   - component: {fileID: 4186556978652941122}
+  - component: {fileID: 9223054538655904112}
   m_Layer: 0
   m_Name: Building Menu
   m_TagString: Untagged
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayer: {fileID: 9076279843806906253}
   hidable: {fileID: 3577220659345647814}
---- !u!114 &3885327073428185684
+--- !u!114 &8966614336329379531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,11 +150,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3755629540721017784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da7bc5e6e3461149a8bfb9f814f7403, type: 3}
+  m_Script: {fileID: 11500000, guid: cef0aa8a1a472ca419b2dd462fccd9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buildingDisplayer: {fileID: 6750627795869501129}
---- !u!114 &9171179963311432379
+--- !u!114 &6979055727613371344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,10 +163,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3755629540721017784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710a394359e48c94ba8f72f91e71f85d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7905f3172ad7c704ba73cde3811bf5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingSelectorDisplayer: {fileID: 3885327073428185684}
+  buildingDisplayer: {fileID: 8966614336329379531}
+--- !u!114 &3089470318455132995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755629540721017784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8f7e3a79d1c254fb55041ce96ea62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingsManagerDisplayer: {fileID: 6979055727613371344}
 --- !u!114 &4186556978652941122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +195,11 @@ MonoBehaviour:
   States:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3755629540721017784}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6750627795869501129}
+        m_TargetAssemblyTypeName: BuildingSystem.Implementations.HidableBuildingDisplayerMB,
+          BuildingSystemImplementations
+        m_MethodName: Clear
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -192,6 +208,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9223054538655904112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755629540721017784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e3c98ec3ba546ae9549c7cc4ced3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventsResponses:
+  - customEvents:
+    - {fileID: 11400000, guid: 094b2dbcf0d6de7418d0032516fbccf7, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8966614336329379531}
+          m_TargetAssemblyTypeName: BuildingSystem.Implementations.SelectionBuildingDisplayerMB,
+            BuildingSystemImplementations
+          m_MethodName: Clear
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5810826832876293309
 GameObject:
   m_ObjectHideFlags: 0

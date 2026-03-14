@@ -6,9 +6,6 @@ namespace BuildingSystem
 {
     public class StructureBuildingsManagerMB : MonoBehaviour, IStructureBuildingsManager
     {
-        [Header("Selection")]
-        [SerializeField] private BuildingInteractionsManagerMB buildingSelectionActionsManager;
-
         private IStructureBuildingsManager _manager;
 
         public Building[] Buildings => _manager.Buildings;
@@ -27,7 +24,7 @@ namespace BuildingSystem
 
         private void Awake()
         {
-            _manager = new StructureBuildingsManager(buildingSelectionActionsManager);
+            _manager = new StructureBuildingsManager();
         }
 
         public bool TryAddStructureBuilding(BuildingStructure structure, Building building)
