@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace InteractionSystem
 {
@@ -33,21 +35,38 @@ namespace InteractionSystem
             if (_mousePosition == mousePosition) { return; }
             _mousePosition = mousePosition;
 
-            Ray ray = interactionCamera.ScreenPointToRay(_mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, selectionDistance, selectedLayers))
+            if (CheckIfMouseIsOverUI())
             {
-                ChangeTargetCollider(hit.collider);
+                ForgetColliderAndInteractable();
+                return;
+            }
+
+            if (TryFindCollider(mousePosition, out Collider collider))
+            {
+                ChangeTargetCollider(collider);
             }
             else
             {
                 ForgetColliderAndInteractable();
             }
-        }
 
-        public void ForgetColliderAndInteractable()
-        {
-            _targetCollider = null;
-            ForgetTargetInteractable();
+            bool CheckIfMouseIsOverUI()
+            {
+                return MouseOverUIChecker.CheckIfMouseIsOverUI();
+            }
+
+            bool TryFindCollider(Vector2 mousePosition, out Collider collider)
+            {
+                Ray ray = interactionCamera.ScreenPointToRay(mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, selectionDistance, selectedLayers))
+                {
+                    collider = hit.collider;
+                    return true;
+                }
+
+                collider = null;
+                return false;
+            }
         }
 
         private void ChangeTargetCollider(Collider collider)
@@ -76,6 +95,12 @@ namespace InteractionSystem
 
             _targetInteractable = interactable;
             interactable.ShowInteraction();
+        }
+
+        public void ForgetColliderAndInteractable()
+        {
+            _targetCollider = null;
+            ForgetTargetInteractable();
         }
 
         private void ForgetTargetInteractable()
