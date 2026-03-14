@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3646367440344628466}
   - component: {fileID: 807621657576491842}
   m_Layer: 5
-  m_Name: Graphic Image
+  m_Name: Background Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 3784934103595461715}
   - component: {fileID: 1568266439905431515}
   m_Layer: 5
-  m_Name: Building Info Displayer
+  m_Name: Building Info Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
