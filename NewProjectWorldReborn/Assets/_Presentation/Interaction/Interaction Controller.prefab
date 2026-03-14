@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9216116347858051653}
   - component: {fileID: 877769561379773901}
   - component: {fileID: 4206065692900758194}
+  - component: {fileID: 2653397462540390910}
   m_Layer: 0
   m_Name: Interaction Controller
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   selectedLayers:
     serializedVersion: 2
     m_Bits: 1048576
+  interactionCamera: {fileID: 0}
 --- !u!114 &4206065692900758194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,3 +66,34 @@ MonoBehaviour:
   interactInput: {fileID: -1749092586542779268, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   mousePositionInput: {fileID: -5479752257787601805, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   interactionController: {fileID: 877769561379773901}
+--- !u!114 &2653397462540390910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414785765565738262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95220396befbe24cbd9cf67215927b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionController: {fileID: 877769561379773901}
+  interactionSucceededResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  interactionFailedResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c3ac704f24888b8429a7e90a6e542694, type: 2}
+        m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
