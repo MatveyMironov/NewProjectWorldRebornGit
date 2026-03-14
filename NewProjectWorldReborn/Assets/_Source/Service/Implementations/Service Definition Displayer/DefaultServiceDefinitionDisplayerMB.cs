@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace ServiceSystem.Implementations
 {
-    public class ServiceDefinitionDisplayerMB : AServiceDefinitionDisplayerMB
+    public class DefaultServiceDefinitionDisplayerMB : AServiceDefinitionDisplayerMB
     {
         [SerializeField] private Image iconImage;
         [SerializeField] private TextMeshProUGUI nameText;

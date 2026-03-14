@@ -441,7 +441,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 5754810158958293139}
   - component: {fileID: 5183591341544495832}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7296394687038768444}
   - component: {fileID: 2428179356859396698}
-  - component: {fileID: 7331676009102521938}
+  - component: {fileID: 2301017529571084110}
   - component: {fileID: 8560004756805819096}
   m_Layer: 5
   m_Name: Service Provider Displayer
@@ -574,15 +574,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3457446100386634949}
   - {fileID: 4514381631931401595}
   - {fileID: 5755488776244996221}
-  - {fileID: 3457446100386634949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2428179356859396698
 MonoBehaviour:
@@ -604,13 +604,13 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 5
   m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &7331676009102521938
+--- !u!114 &2301017529571084110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8574967035358009201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204fb2061b684ff4e9b1823acadb0b3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d5517757c4283a44a0654f24d0a8ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iconImage: {fileID: 1023618426336143657}
@@ -636,5 +636,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed68814f822a3943af21fb245c9fc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  providedServiceDisplayer: {fileID: 7331676009102521938}
+  providedServiceDisplayer: {fileID: 2301017529571084110}
   providedAmountDisplayer: {fileID: 3537787665709839343}
