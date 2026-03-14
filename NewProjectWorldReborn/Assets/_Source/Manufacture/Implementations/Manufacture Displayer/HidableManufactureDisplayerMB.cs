@@ -11,7 +11,7 @@ namespace ManufactureSystem.Implementations
         public override void DisplayManufacture(IManufacture manufacture)
         {
             actualDisplayer.DisplayManufacture(manufacture);
-            hidable.Hide();
+            hidable.Show();
         }
 
         public override void Clear()
