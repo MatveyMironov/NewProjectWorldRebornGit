@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace InteractionSystem
 {
@@ -18,6 +20,8 @@ namespace InteractionSystem
 
         public void Interact()
         {
+            if (CheckIfMouseIsOverUI()) { return; }
+
             if (_targetInteractable == null)
             {
                 OnInteractionFailed?.Invoke();
@@ -33,21 +37,33 @@ namespace InteractionSystem
             if (_mousePosition == mousePosition) { return; }
             _mousePosition = mousePosition;
 
-            Ray ray = interactionCamera.ScreenPointToRay(_mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, selectionDistance, selectedLayers))
+            if (CheckIfMouseIsOverUI())
             {
-                ChangeTargetCollider(hit.collider);
+                ForgetColliderAndInteractable();
+                return;
+            }
+
+            if (TryFindCollider(mousePosition, out Collider collider))
+            {
+                ChangeTargetCollider(collider);
             }
             else
             {
                 ForgetColliderAndInteractable();
             }
-        }
+            
+            bool TryFindCollider(Vector2 mousePosition, out Collider collider)
+            {
+                Ray ray = interactionCamera.ScreenPointToRay(mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, selectionDistance, selectedLayers))
+                {
+                    collider = hit.collider;
+                    return true;
+                }
 
-        public void ForgetColliderAndInteractable()
-        {
-            _targetCollider = null;
-            ForgetTargetInteractable();
+                collider = null;
+                return false;
+            }
         }
 
         private void ChangeTargetCollider(Collider collider)
@@ -78,6 +94,12 @@ namespace InteractionSystem
             interactable.ShowInteraction();
         }
 
+        public void ForgetColliderAndInteractable()
+        {
+            _targetCollider = null;
+            ForgetTargetInteractable();
+        }
+
         private void ForgetTargetInteractable()
         {
             if (_targetInteractable != null)
@@ -85,6 +107,11 @@ namespace InteractionSystem
                 _targetInteractable.HideInteraction();
                 _targetInteractable = null;
             }
+        }
+
+        private bool CheckIfMouseIsOverUI()
+        {
+            return MouseOverUIChecker.CheckIfMouseIsOverUI();
         }
     }
 }

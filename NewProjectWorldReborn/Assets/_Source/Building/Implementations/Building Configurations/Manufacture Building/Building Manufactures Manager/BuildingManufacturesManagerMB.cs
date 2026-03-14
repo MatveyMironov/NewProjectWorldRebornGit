@@ -1,4 +1,5 @@
 using ManufactureSystem;
+using System;
 using UnityEngine;
 
 namespace BuildingSystem.Implementations
@@ -8,6 +9,20 @@ namespace BuildingSystem.Implementations
         [SerializeField] private ManufacturesManagerMB manufacturesManager;
 
         private IBuildingManufacturesManager _manager;
+
+        public Building[] Buildings => _manager.Buildings;
+
+        public event Action<Building> OnBuildingAdded
+        {
+            add => _manager.OnBuildingAdded += value;
+            remove => _manager.OnBuildingAdded -= value;
+        }
+
+        public event Action<Building> OnBuildingRemoved
+        {
+            add => _manager.OnBuildingRemoved += value;
+            remove => _manager.OnBuildingRemoved -= value;
+        }
 
         private void Awake()
         {
@@ -22,6 +37,11 @@ namespace BuildingSystem.Implementations
         public bool TryRemoveBuildingManufacture(Building building)
         {
             return _manager.TryRemoveBuildingManufacture(building);
+        }
+
+        public bool TryGetBuildingManufacture(Building building, out IManufacture manufacture)
+        {
+            return _manager.TryGetBuildingManufacture(building, out manufacture);
         }
     }
 }
