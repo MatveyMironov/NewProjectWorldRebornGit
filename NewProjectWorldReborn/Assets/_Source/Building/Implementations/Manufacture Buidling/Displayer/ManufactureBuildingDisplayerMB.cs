@@ -15,6 +15,10 @@ namespace BuildingSystem.Implementations
             {
                 manufactureDisplayer.DisplayManufacture(manufacture);
             }
+            else
+            {
+                Clear();
+            }
         }
 
         public override void Clear()
