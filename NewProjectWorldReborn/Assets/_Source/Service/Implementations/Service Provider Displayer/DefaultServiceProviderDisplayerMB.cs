@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace ServiceSystem.Implementations
 {
-    public class ServiceProviderDisplayerMB : AServiceProviderDisplayerMB
+    public class DefaultServiceProviderDisplayerMB : AServiceProviderDisplayerMB
     {
-        [SerializeField] private ServiceDefinitionDisplayerMB providedServiceDisplayer;
+        [SerializeField] private DefaultServiceDefinitionDisplayerMB providedServiceDisplayer;
         [SerializeField] private ANumberDisplayerMB providedAmountDisplayer;
 
         private ServiceProvider _displayedProvider;
