@@ -114,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3722537607615074890, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
       propertyPath: m_Name
-      value: Manufacture Menu Variant
+      value: Building Manufacture Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6182987895717393085, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
       propertyPath: m_AnchorMax.y
@@ -210,6 +210,12 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3722537607615074890, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6859066244431606642}
+    - targetCorrespondingSourceObject: {fileID: 3722537607615074890, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6139486606908511339}
+    - targetCorrespondingSourceObject: {fileID: 3722537607615074890, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6425333726104675359}
   m_SourcePrefab: {fileID: 100100000, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
 --- !u!1 &4449778522214713630 stripped
@@ -217,6 +223,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3722537607615074890, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
   m_PrefabInstance: {fileID: 1038596236626139988}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6859066244431606642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449778522214713630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2ade8364beae247bb3bf5dfb0536ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6139486606908511339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449778522214713630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e16cb0ec6cd2d4fbbf75cc4ba6c95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualDisplayer: {fileID: 5394534454197933313}
+  hidable: {fileID: 6859066244431606642}
 --- !u!114 &6425333726104675359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c846cad5a27c9f4badd2fca31d8fcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manufactureDisplayer: {fileID: 5394534454197933313}
+  manufactureDisplayer: {fileID: 6139486606908511339}
 --- !u!114 &5394534454197933313 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4950838383321173589, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
