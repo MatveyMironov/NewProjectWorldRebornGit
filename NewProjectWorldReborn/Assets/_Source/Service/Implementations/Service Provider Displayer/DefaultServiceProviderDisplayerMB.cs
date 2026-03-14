@@ -5,7 +5,7 @@ namespace ServiceSystem.Implementations
 {
     public class DefaultServiceProviderDisplayerMB : AServiceProviderDisplayerMB
     {
-        [SerializeField] private DefaultServiceDefinitionDisplayerMB providedServiceDisplayer;
+        [SerializeField] private AServiceDefinitionDisplayerMB providedServiceDisplayer;
         [SerializeField] private ANumberDisplayerMB providedAmountDisplayer;
 
         private ServiceProvider _displayedProvider;
