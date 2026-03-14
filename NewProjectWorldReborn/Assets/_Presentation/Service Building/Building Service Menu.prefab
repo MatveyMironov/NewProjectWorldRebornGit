@@ -512,6 +512,8 @@ GameObject:
   - component: {fileID: 8568910611295817766}
   - component: {fileID: 6736872777519535829}
   - component: {fileID: 7305925443154218946}
+  - component: {fileID: 6560013325783489395}
+  - component: {fileID: 5310676216799323885}
   - component: {fileID: 3400232884237752288}
   m_Layer: 5
   m_Name: Building Service Menu
@@ -582,6 +584,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   providedServiceDisplayer: {fileID: 7481951573378617778}
   providedAmountDisplayer: {fileID: 2499600739509610229}
+--- !u!114 &6560013325783489395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253194072604557931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2ade8364beae247bb3bf5dfb0536ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5310676216799323885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253194072604557931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d552a3ef2ab39fd4a96ea8a3a8f57028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualDisplayer: {fileID: 7305925443154218946}
+  hidable: {fileID: 6560013325783489395}
 --- !u!114 &3400232884237752288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8184c4dae9cfd4ab3b40377a262001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serviceProviderDisplayer: {fileID: 7305925443154218946}
+  serviceProviderDisplayer: {fileID: 5310676216799323885}
 --- !u!1 &8131007704560759139
 GameObject:
   m_ObjectHideFlags: 0

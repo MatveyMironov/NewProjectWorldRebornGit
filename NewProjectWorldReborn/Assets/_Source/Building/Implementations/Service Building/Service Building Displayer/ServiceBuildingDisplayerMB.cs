@@ -11,6 +11,8 @@ namespace BuildingSystem.Implementations
 
         public override void DisplayBuilding(Building building)
         {
+            Clear();
+
             if (_serviceBuildingsManager.TryGetBuildingServiceProvider(building, out ServiceProvider serviceProvider))
             {
                 serviceProviderDisplayer.DisplayServiceProvider(serviceProvider);

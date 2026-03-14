@@ -1412,6 +1412,7 @@ MonoBehaviour:
   buildingConfigurations:
   - {fileID: 11400000, guid: dc88885057f79594181b2ebde22a6cf0, type: 2}
   - {fileID: 11400000, guid: d6e9a2ab8064db64991bb33e906fec56, type: 2}
+  - {fileID: 11400000, guid: 52200b9b54810c442831cb2e5d230aaf, type: 2}
 --- !u!1 &1303839201
 GameObject:
   m_ObjectHideFlags: 0
