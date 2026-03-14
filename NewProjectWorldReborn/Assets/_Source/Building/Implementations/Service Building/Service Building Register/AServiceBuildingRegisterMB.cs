@@ -25,7 +25,7 @@ namespace BuildingSystem.Implementations
         {
             if (ServiceBuildingsManager.TryAddServiceBuilding(building, serviceProvider))
             {
-                Debug.Log($"Service provider {serviceProvider} was added for building {building}");
+                //Debug.Log($"Service provider {serviceProvider} was added for building {building}");
             }
         }
 
@@ -33,7 +33,7 @@ namespace BuildingSystem.Implementations
         {
             if (ServiceBuildingsManager.TryRemoveServiceBuilding(building))
             {
-                Debug.Log($"Service provider was removed of building {building}");
+                //Debug.Log($"Service provider was removed of building {building}");
             }
         }
     }
