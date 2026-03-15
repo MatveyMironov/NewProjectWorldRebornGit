@@ -6,10 +6,9 @@ namespace BuildingSystem
 {
     public class StructureBuildingsManagerMB : MonoBehaviour, IStructureBuildingsManager
     {
-        [Header("Selection")]
-        [SerializeField] private BuildingSelectionActionsManagerMB buildingSelectionActionsManager;
-
         private IStructureBuildingsManager _manager;
+
+        public Building[] Buildings => _manager.Buildings;
 
         public event Action<Building> OnBuildingAdded
         {
@@ -25,7 +24,7 @@ namespace BuildingSystem
 
         private void Awake()
         {
-            _manager = new StructureBuildingsManager(buildingSelectionActionsManager);
+            _manager = new StructureBuildingsManager();
         }
 
         public bool TryAddStructureBuilding(BuildingStructure structure, Building building)

@@ -36,7 +36,7 @@ namespace BuildingConstructionUISystem
                 BuildingConstructionConfiguration constructionConfiguration = new(configuration, _structureBuildingsManager);
                 button.OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
 
-                Debug.Log($"Building construction button added for configuration: {configuration}");
+                //Debug.Log($"Building construction button added for configuration: {configuration}");
 
                 return true;
             }
@@ -49,7 +49,7 @@ namespace BuildingConstructionUISystem
             if (_buildingConstructionButtons.Remove(configuration, out var button))
             {
                 UnityEngine.Object.Destroy(button.gameObject);
-                Debug.Log($"Building construction button removed of configuration: {configuration}");
+                //Debug.Log($"Building construction button removed of configuration: {configuration}");
                 return true;
             }
 
