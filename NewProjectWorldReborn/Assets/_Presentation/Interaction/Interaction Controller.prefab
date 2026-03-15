@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9216116347858051653}
   - component: {fileID: 877769561379773901}
   - component: {fileID: 4206065692900758194}
-  - component: {fileID: 936058437657679490}
   - component: {fileID: 2653397462540390910}
   m_Layer: 0
   m_Name: Interaction Controller
@@ -67,7 +66,7 @@ MonoBehaviour:
   interactInput: {fileID: -1749092586542779268, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   mousePositionInput: {fileID: -5479752257787601805, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   interactionController: {fileID: 877769561379773901}
---- !u!114 &936058437657679490
+--- !u!114 &2653397462540390910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,62 +97,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2653397462540390910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8414785765565738262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e3e3c98ec3ba546ae9549c7cc4ced3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventsResponses:
-  - customEvents:
-    - {fileID: 11400000, guid: 094b2dbcf0d6de7418d0032516fbccf7, type: 2}
-    response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4206065692900758194}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 877769561379773901}
-          m_TargetAssemblyTypeName: InteractionSystem.InteractionControllerMB, InteractionSystem
-          m_MethodName: ForgetColliderAndInteractable
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - customEvents:
-    - {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
-    response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4206065692900758194}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
