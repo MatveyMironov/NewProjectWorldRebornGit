@@ -18,27 +18,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 94.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.46
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939781230948261079, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,6 +236,18 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Employes workers:'
       objectReference: {fileID: 0}
+    - target: {fileID: 6505051097955905694, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505051097955905694, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505051097955905694, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7013847416925569354, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
       propertyPath: m_Name
       value: Building Employer Menu
@@ -265,7 +277,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6162265493890017054, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7013847416925569354, guid: c4f073da7c2da7c48b9ec9954f55cf2d, type: 3}

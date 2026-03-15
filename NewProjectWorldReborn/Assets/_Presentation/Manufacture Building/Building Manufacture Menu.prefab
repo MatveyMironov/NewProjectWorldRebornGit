@@ -184,6 +184,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7888460493578286478, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      propertyPath: m_text
+      value: 'Carries out manufacture:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888460493578286478, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888460493578286478, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888460493578286478, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8086877014586536407, guid: 4441984ec41c7114ba7094a0feb13b92, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
