@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: Greenhouse
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Vegetables grow in artificial environment, protected
+      from harsh outside
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: 3a4ea4101279b5c479212cad7dc08912, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: 9dc0a352f467f9a4699fdae079dbb4ff, type: 3}

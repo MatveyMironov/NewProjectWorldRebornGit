@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: House
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Primitive hut provides sleeping space for several
+      people
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: ed94d2c73996fe14b9168513e0a2c167, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: f648166074f93b74fb462b7222559b82, type: 3}
