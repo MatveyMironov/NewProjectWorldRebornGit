@@ -23,7 +23,7 @@ namespace EmployerSystem
         {
             if (_employers.Add(employer))
             {
-                Debug.Log($"Employer {employer} was added");
+                //Debug.Log($"Employer {employer} was added");
                 _workforceReserveConnector.TryConnectEmployer(employer);
                 OnEmployerAdded?.Invoke(employer);
                 return true;
@@ -36,7 +36,7 @@ namespace EmployerSystem
         {
             if (_employers.Remove(employer))
             {
-                Debug.Log($"Employer {employer} was removed");
+                //Debug.Log($"Employer {employer} was removed");
                 _workforceReserveConnector.TryDisconnectEmployer(employer);
                 OnEmployerRemoved?.Invoke(employer);
                 return true;

@@ -35,8 +35,6 @@ namespace ProgressionSystem.Implementations
 
             void CompleteIsPossible(Building building)
             {
-                Debug.Log(1);
-
                 if (building.Configuration == RequiredBuildingConfiguration)
                 {
                     OnActualCountChanged?.Invoke();

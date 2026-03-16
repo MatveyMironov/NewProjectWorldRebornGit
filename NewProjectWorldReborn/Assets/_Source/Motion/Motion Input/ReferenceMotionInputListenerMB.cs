@@ -35,7 +35,7 @@ namespace MotionInput
             zoom.action.performed += OnZoom;
             zoom.action.canceled += OnZoom;
 
-            Debug.Log("Motion input enabled");
+            //Debug.Log("Motion input enabled");
         }
 
         private void OnDisable()
@@ -56,7 +56,7 @@ namespace MotionInput
             zoom.action.performed -= OnZoom;
             zoom.action.canceled -= OnZoom;
 
-            Debug.Log("Motion input disabled");
+            //Debug.Log("Motion input disabled");
         }
 
         private void OnMove(InputAction.CallbackContext context)
