@@ -1,4 +1,4 @@
-﻿namespace BuildingSystem
+﻿namespace BuildingSystem.Implementations
 {
     public class SingletonBuildingConstructionsManagerMB : ABuildingConstructionsManagerMB
     {

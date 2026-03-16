@@ -1,7 +1,6 @@
-﻿using BuildingConstructionUISystem;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace BuildingSystem
+namespace BuildingSystem.Implementations
 {
     public abstract class ABuildingConstructionsManagerMB : MonoBehaviour, IBuildingConstructionsManager
     {

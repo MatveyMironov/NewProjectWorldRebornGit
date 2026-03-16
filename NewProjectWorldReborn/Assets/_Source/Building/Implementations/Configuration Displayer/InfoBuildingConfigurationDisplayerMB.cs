@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BuildingSystem.Implementations
 {
-    public class BuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB
+    public class InfoBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB
     {
         [SerializeField] private ABuildingInfoDisplayerMB buildingInfoDisplayer;
 

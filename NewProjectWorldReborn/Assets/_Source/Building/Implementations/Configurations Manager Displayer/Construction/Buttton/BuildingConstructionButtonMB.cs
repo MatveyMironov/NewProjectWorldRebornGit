@@ -1,9 +1,8 @@
-using BuildingSystem;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BuildingConstructionUISystem
+namespace BuildingSystem.Implementations
 {
     public class BuildingConstructionButtonMB : MonoBehaviour
     {

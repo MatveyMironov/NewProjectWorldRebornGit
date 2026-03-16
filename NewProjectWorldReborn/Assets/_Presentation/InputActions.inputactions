@@ -1132,6 +1132,28 @@
             "bindings": [
                 {
                     "name": "",
+                    "id": "61714210-6280-4d04-85bb-1490d9a7501e",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Construction Mode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81880b98-8541-41d9-82cf-8001d7e54a21",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c25a9662-6daf-4166-9499-32e235bd1317",
                     "path": "<Keyboard>/enter",
                     "interactions": "",

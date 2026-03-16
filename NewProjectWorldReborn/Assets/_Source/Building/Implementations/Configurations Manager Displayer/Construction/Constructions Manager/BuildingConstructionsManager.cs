@@ -1,7 +1,6 @@
-using BuildingConstructionUISystem;
 using System;
 
-namespace BuildingSystem
+namespace BuildingSystem.Implementations
 {
     public class BuildingConstructionsManager : IBuildingConstructionsManager
     {

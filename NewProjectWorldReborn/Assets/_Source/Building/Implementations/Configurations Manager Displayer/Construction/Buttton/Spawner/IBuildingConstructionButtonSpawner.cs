@@ -1,4 +1,4 @@
-﻿namespace BuildingConstructionUISystem
+﻿namespace BuildingSystem.Implementations
 {
     public interface IBuildingConstructionButtonSpawner
     {
