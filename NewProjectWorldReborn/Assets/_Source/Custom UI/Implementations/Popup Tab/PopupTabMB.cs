@@ -7,7 +7,7 @@ namespace CustomUISystem.Implementations
     {
         [SerializeField] private GameObject tabObject;
 
-        private void Awake()
+        private void Start()
         {
             HidePopupTab();
         }
