@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa09ea7580d32e42ba0ddc1e3a670d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demolitionIndicator: {fileID: 7115393819243224203}
   interactionIndicator: {fileID: 7115393819243224203}
   selectionIndicator: {fileID: 3731947158475476500}
 --- !u!1 &3731947158475476500
