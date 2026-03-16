@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BuildingSystem
+namespace BuildingSystem.Implementations
 {
     public class ConstructionBuildingConfigurationsManagerDisplayerMB : ABuildingConfigurationsManagerDisplayerMB
     {

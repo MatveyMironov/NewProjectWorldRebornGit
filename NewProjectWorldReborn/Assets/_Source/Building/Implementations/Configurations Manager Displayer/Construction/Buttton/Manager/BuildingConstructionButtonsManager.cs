@@ -1,11 +1,10 @@
-using BuildingSystem;
 using ConstructionGridSystem;
 using PlacingSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BuildingConstructionUISystem
+namespace BuildingSystem.Implementations
 {
     public class BuildingConstructionButtonsManager : IBuildingConstructionButtonsManager
     {

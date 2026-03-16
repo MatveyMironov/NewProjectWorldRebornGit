@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BuildingConstructionUISystem
+namespace BuildingSystem.Implementations
 {
     public class BuildingConstructionButtonSpawnerMB : MonoBehaviour, IBuildingConstructionButtonSpawner
     {
