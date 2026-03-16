@@ -2,7 +2,7 @@
 
 namespace ResourceSystem
 {
-    public class ResourceCountDisplayersManagerMB : AResourceCountDisplayersManager
+    public class ResourceCountDisplayersManagerMB : AResourceCountDisplayersManagerMB
     {
         [SerializeField] private AResourceCountDisplayerSpawnerMB spawner;
 
