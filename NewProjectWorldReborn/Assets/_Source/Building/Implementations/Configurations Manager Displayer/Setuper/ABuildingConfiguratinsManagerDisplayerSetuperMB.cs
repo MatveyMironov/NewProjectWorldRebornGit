@@ -11,7 +11,7 @@ namespace BuildingSystem.Implementations
         protected virtual void Start()
         {
             buildingConfigurationsManagerDisplayer.DisplayBuildingConfigurationsManager(BuildingConfigurationsManager);
-            Debug.Log("Building Configuratins Manager Displayer is setup.");
+            //Debug.Log("Building Configuratins Manager Displayer is setup.");
         }
     }
 }

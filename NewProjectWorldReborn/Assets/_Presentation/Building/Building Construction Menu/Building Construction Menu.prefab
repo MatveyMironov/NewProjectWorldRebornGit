@@ -393,7 +393,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_SizeDelta: {x: 100, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8454072559997207192
 MonoBehaviour:
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!114 &5114624901014142962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2650612714613311803}
   - component: {fileID: 4960452666797123100}
-  - component: {fileID: 3117875933900079778}
   m_Layer: 5
   m_Name: Construction Buttons Scroll View
   m_TagString: Untagged
@@ -1193,26 +1192,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3117875933900079778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4409670967869546796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 55
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &7061725519709241342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,10 +1300,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4561072110020847037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7428616705929005214
 MonoBehaviour:
@@ -1375,7 +1354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8628076741362235748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f7a402c6bbfa545ba7a3571e2acc24, type: 3}
+  m_Script: {fileID: 11500000, guid: 274656ad39ed98145895d0c1c4720042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1834920441579174235, guid: 0a68d9d9978274a4f85daefcd8e7fb06, type: 3}

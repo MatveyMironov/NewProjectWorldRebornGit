@@ -1,7 +1,9 @@
 {
     "name": "BuildingViewSystem",
     "rootNamespace": "BuildingViewSystem",
-    "references": [],
+    "references": [
+        "GUID:20531a30135653447828c16e807460dc"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

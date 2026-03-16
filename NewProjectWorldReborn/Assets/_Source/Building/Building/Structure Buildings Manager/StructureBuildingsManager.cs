@@ -1,21 +1,16 @@
 using ConstructionGridSystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BuildingSystem
 {
     public class StructureBuildingsManager : IStructureBuildingsManager
     {
-        private readonly IBuildingSelectionActionsManager _buildingSelectionActionsManager;
-
-        public StructureBuildingsManager(IBuildingSelectionActionsManager buildingSelectionActionsManager)
-        {
-            _buildingSelectionActionsManager = buildingSelectionActionsManager ?? throw new ArgumentNullException(nameof(buildingSelectionActionsManager));
-        }
-
         private readonly Dictionary<BuildingStructure, Building> _structureBuildings = new();
 
+        public Building[] Buildings => _structureBuildings.Values.ToArray();
         public event Action<Building> OnBuildingAdded;
         public event Action<Building> OnBuildingRemoved;
 
@@ -23,8 +18,7 @@ namespace BuildingSystem
         {
             if (_structureBuildings.TryAdd(structure, building))
             {
-                _buildingSelectionActionsManager.TryAddBuildingSelectionAction(building);
-                Debug.Log($"Building {building} for structure {structure} was added");
+                //Debug.Log($"Building {building} for structure {structure} was added");
                 OnBuildingAdded?.Invoke(building);
                 return true;
             }
@@ -36,8 +30,7 @@ namespace BuildingSystem
         {
             if (_structureBuildings.Remove(structure, out Building building))
             {
-                _buildingSelectionActionsManager.TryRemoveBuildingSelectionAction(building);
-                Debug.Log($"Building {building} for structure {structure} was removed");
+                //Debug.Log($"Building {building} for structure {structure} was removed");
                 OnBuildingRemoved?.Invoke(building);
                 return true;
             }
