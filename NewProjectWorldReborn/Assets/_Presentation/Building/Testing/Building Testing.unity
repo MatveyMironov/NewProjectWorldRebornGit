@@ -788,10 +788,6 @@ PrefabInstance:
       propertyPath: placingInvokeCreator
       value: 
       objectReference: {fileID: 1917960415769807024}
-    - target: {fileID: 6152049864003732086, guid: 1dd26308722341d4080011b991defeda, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.9999695
-      objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -822,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,10 +883,6 @@ PrefabInstance:
     - target: {fileID: 6836029795019277632, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartDemolishing
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778091501346854100, guid: 1dd26308722341d4080011b991defeda, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.9999695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
