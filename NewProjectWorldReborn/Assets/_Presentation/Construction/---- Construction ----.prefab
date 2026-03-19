@@ -376,85 +376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingViewsParent: {fileID: 7494730171664553987}
   grid: {fileID: 2724681712192269289}
---- !u!1 &2912229829632208822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8712805654238249402}
-  - component: {fileID: 8934770605484918224}
-  - component: {fileID: 5877583228741204567}
-  m_Layer: 0
-  m_Name: Construction Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8712805654238249402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2912229829632208822}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9094199776068674842}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8934770605484918224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2912229829632208822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ebcba27af351b2498b830818d929dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  layers:
-    serializedVersion: 2
-    m_Bits: 1024
-  grid: {fileID: 2724681712192269289}
---- !u!114 &5877583228741204567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2912229829632208822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8934770605484918224}
-        m_TargetAssemblyTypeName: ConstructionControllerSystem.ConstructionControllerMB,
-          ConstructionControllerSystem
-        m_MethodName: AbortAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3366474420466713295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1506,83 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 797561513485391603, guid: aa74dcc964e1830419e872553aa6285a, type: 3}
   m_PrefabInstance: {fileID: 2257230822196153135}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7273768284227709360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9094199776068674842}
+    m_Modifications:
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238063828030123104, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 2724681712192269289}
+    - target: {fileID: 5520230269776496134, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+      propertyPath: m_Name
+      value: Construction Controller
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+--- !u!4 &8712805654238249402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2025361045686052874, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+  m_PrefabInstance: {fileID: 7273768284227709360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8934770605484918224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2238063828030123104, guid: 888d64f8155063c4d93444fcbc24b5bb, type: 3}
+  m_PrefabInstance: {fileID: 7273768284227709360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebcba27af351b2498b830818d929dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7999784684434077594
 PrefabInstance:
   m_ObjectHideFlags: 0
