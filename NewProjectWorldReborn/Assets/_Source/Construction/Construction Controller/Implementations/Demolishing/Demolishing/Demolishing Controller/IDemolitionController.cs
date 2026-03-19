@@ -5,12 +5,13 @@ namespace DemolishingSystem
 {
     public interface IDemolitionController
     {
-        public event Action OnBuildingSelected;
-        public event Action OnBuildingDeselected;
-        public event Action<BuildingStructure> OnBuildingDemolished;
+        event Action OnBuildingSelected;
+        event Action OnBuildingDeselected;
+        event Action<BuildingStructure> OnBuildingDemolished;
 
-        public void StartDemolishing();
-        void ConfirmDemolition();
-        void DenyDemolition();
+        event Action OnStateEntered;
+        event Action OnStateExited;
+
+        void StartDemolishing();
     }
 }
