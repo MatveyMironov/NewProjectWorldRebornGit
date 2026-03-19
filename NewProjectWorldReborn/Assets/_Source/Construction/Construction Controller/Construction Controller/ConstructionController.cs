@@ -21,7 +21,7 @@ namespace ConstructionControllerSystem
 
         public void UpdateMousePosition(Vector2 mousePosition)
         {
-            if (_state == null) return;
+            if (_state == null) { return; }
 
             if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
             
@@ -45,7 +45,7 @@ namespace ConstructionControllerSystem
         {
             AbortAction();
 
-            if (state == null) return;
+            if (state == null) { return; }
 
             state.EnterState(_lastCell);
             state.UpdateState(_lastCell);
@@ -55,7 +55,7 @@ namespace ConstructionControllerSystem
 
         public void StartAction()
         {
-            if (_state == null) return;
+            if (_state == null) { return; }
 
             if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
 
@@ -64,7 +64,7 @@ namespace ConstructionControllerSystem
 
         public void AbortAction()
         {
-            if (_state == null) return;
+            if (_state == null) { return; }
 
             _state.ExitState();
             _state = null;
@@ -72,7 +72,7 @@ namespace ConstructionControllerSystem
 
         public void FinishAction()
         {
-            if (_state == null) return;
+            if (_state == null) { return; }
             
             _state.FinishAction(_lastCell);
         }
