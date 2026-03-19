@@ -10,14 +10,12 @@ namespace ConstructionInputSystem
     {
         [SerializeField] private ConstructionControllerMB constructionController;
         [SerializeField] private BuildingRotationControllerMB buildingRotationController;
-        [SerializeField] private DemolitionControllerMB demolitionController;
 
         [Space]
         [SerializeField] private InputActionReference executeConstructionAction;
         [SerializeField] private InputActionReference abortConstructionAction;
         [SerializeField] private InputActionReference moveMouse;
         [SerializeField] private InputActionReference rotateBuilding;
-        [SerializeField] private InputActionReference startDemolishing;
 
         private void OnEnable()
         {
@@ -29,8 +27,6 @@ namespace ConstructionInputSystem
             moveMouse.action.performed += OnMoveMouseInput;
 
             rotateBuilding.action.performed += OnRotateBuildingInput;
-
-            startDemolishing.action.performed += OnStartDemolishingInput;
         }
 
         private void OnDisable()
@@ -43,8 +39,6 @@ namespace ConstructionInputSystem
             moveMouse.action.performed -= OnMoveMouseInput;
 
             rotateBuilding.action.performed -= OnRotateBuildingInput;
-
-            startDemolishing.action.performed -= OnStartDemolishingInput;
         }
 
         private void OnExecuteConstructionActionInput(InputAction.CallbackContext context)
@@ -78,12 +72,6 @@ namespace ConstructionInputSystem
         {
             //Debug.Log("Rotate building");
             buildingRotationController.RotateBuilding();
-        }
-
-        private void OnStartDemolishingInput(InputAction.CallbackContext context)
-        {
-            //Debug.Log("Start demolishing");
-            demolitionController.StartDemolishing();
         }
     }
 }

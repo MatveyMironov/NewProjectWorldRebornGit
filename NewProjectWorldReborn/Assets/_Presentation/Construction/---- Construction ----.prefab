@@ -92,12 +92,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constructionController: {fileID: 8934770605484918224}
   buildingRotationController: {fileID: 966965755711268130}
-  demolitionController: {fileID: 5831621182821511302}
   executeConstructionAction: {fileID: 1211994214318754528, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   abortConstructionAction: {fileID: 7239726853284948095, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   moveMouse: {fileID: 5712389962566732906, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   rotateBuilding: {fileID: 1536659692449239730, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  startDemolishing: {fileID: -433567442823212336, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &8217838986346976615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,53 +152,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &387074584750191160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2497418321090016816}
-  - component: {fileID: 5831621182821511302}
-  m_Layer: 0
-  m_Name: Demolition Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2497418321090016816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387074584750191160}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9094199776068674842}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5831621182821511302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387074584750191160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efd2479bdb01684eb5fe54ac45d4881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  constructionController: {fileID: 8934770605484918224}
-  constructionGridManager: {fileID: 4756140776102663446}
-  demolitionGridVisualization: {fileID: 8912380553727956434}
 --- !u!1 &461193380327612887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,3 +1655,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2620835219375867616, guid: 2a46661e101ecf34f871c4442a099e06, type: 3}
   m_PrefabInstance: {fileID: 7999784684434077594}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8198276275925133864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9094199776068674842}
+    m_Modifications:
+    - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: constructionController
+      value: 
+      objectReference: {fileID: 8934770605484918224}
+    - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: constructionGridManager
+      value: 
+      objectReference: {fileID: 4756140776102663446}
+    - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: demolitionGridVisualization
+      value: 
+      objectReference: {fileID: 8912380553727956434}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401758256117733392, guid: 9a456feff416a094cb407f8344527773, type: 3}
+      propertyPath: m_Name
+      value: Demolition Controller
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a456feff416a094cb407f8344527773, type: 3}
+--- !u!4 &2497418321090016816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6011949728942054424, guid: 9a456feff416a094cb407f8344527773, type: 3}
+  m_PrefabInstance: {fileID: 8198276275925133864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5831621182821511302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
+  m_PrefabInstance: {fileID: 8198276275925133864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efd2479bdb01684eb5fe54ac45d4881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
