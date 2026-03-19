@@ -22,6 +22,8 @@ namespace ConstructionControllerSystem
         public void UpdateMousePosition(Vector2 mousePosition)
         {
             if (_state == null) return;
+
+            if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
             
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
 
@@ -54,6 +56,8 @@ namespace ConstructionControllerSystem
         public void StartAction()
         {
             if (_state == null) return;
+
+            if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
 
             _state.StartAction(_lastCell);
         }
