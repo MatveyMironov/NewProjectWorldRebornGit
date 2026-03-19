@@ -58,7 +58,7 @@ namespace ConstructionInputSystem
         private void OnAbortConstructionActionInput(InputAction.CallbackContext context)
         {
             //Debug.Log("Abort construction action");
-            constructionController.AbortAction();
+            constructionController.ExitState();
         }
 
         private void OnMoveMouseInput(InputAction.CallbackContext context)

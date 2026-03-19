@@ -16,12 +16,16 @@ namespace ConstructionControllerSystem
             _grid = grid != null ? grid : throw new ArgumentNullException(nameof(grid));
         }
 
-        private IConstructionState _state;
+        private IConstructionState _currentState;
         private Vector2Int _lastCell;
+
+        public bool HasEnteredState => _currentState != null;
+        public event Action OnStateEntered;
+        public event Action OnStateExited;
 
         public void UpdateMousePosition(Vector2 mousePosition)
         {
-            if (_state == null) { return; }
+            if (_currentState == null) { return; }
 
             if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
             
@@ -36,45 +40,48 @@ namespace ConstructionControllerSystem
                 if (_lastCell != cell)
                 {
                     _lastCell = cell;
-                    _state.UpdateState(cell);
+                    _currentState.UpdateState(cell);
                 }
             }
         }
 
-        public void SetState(IConstructionState state)
+        public void EnterState(IConstructionState state)
         {
-            AbortAction();
+            ExitState();
 
             if (state == null) { return; }
+            _currentState = state;
 
             state.EnterState(_lastCell);
             state.UpdateState(_lastCell);
 
-            _state = state;
+            OnStateEntered?.Invoke();
+        }
+
+        public void ExitState()
+        {
+            if (_currentState == null) { return; }
+
+            _currentState.ExitState();
+            _currentState = null;
+
+            OnStateExited?.Invoke();
         }
 
         public void StartAction()
         {
-            if (_state == null) { return; }
+            if (_currentState == null) { return; }
 
             if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
 
-            _state.StartAction(_lastCell);
-        }
-
-        public void AbortAction()
-        {
-            if (_state == null) { return; }
-
-            _state.ExitState();
-            _state = null;
+            _currentState.StartAction(_lastCell);
         }
 
         public void FinishAction()
         {
-            if (_state == null) { return; }
+            if (_currentState == null) { return; }
             
-            _state.FinishAction(_lastCell);
+            _currentState.FinishAction(_lastCell);
         }
     }
 }

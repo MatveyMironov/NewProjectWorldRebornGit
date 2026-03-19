@@ -48,7 +48,7 @@ namespace DemolishingSystem
 
         public void StartDemolishing()
         {
-            _constructionController.SetState(_demolishingState);
+            _constructionController.EnterState(_demolishingState);
             OnStateEntered?.Invoke();
         }
     }

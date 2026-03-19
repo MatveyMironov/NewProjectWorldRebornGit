@@ -35,7 +35,7 @@ namespace ConstructionInputSystem
             if (value.isPressed)
             {
                 //Debug.Log("Abort construction action");
-                constructionController.AbortAction();
+                constructionController.ExitState();
             }
         }
 
