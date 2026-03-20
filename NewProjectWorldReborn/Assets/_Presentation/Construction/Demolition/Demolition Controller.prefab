@@ -49,9 +49,9 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2389217084681722542}
-        m_TargetAssemblyTypeName: DemolishingSystem.DemolitionControllerMB, DemolishingSystem
-        m_MethodName: StartDemolishing
+      - m_Target: {fileID: 11400000, guid: 03f7c9ab4d7d1f742accb970083cc346, type: 2}
+        m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
+        m_MethodName: Call
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
