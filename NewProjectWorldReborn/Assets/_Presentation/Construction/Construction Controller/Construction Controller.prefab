@@ -110,6 +110,8 @@ MonoBehaviour:
   EventsResponses:
   - customEvents:
     - {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
+    - {fileID: 11400000, guid: 854edcbe78f5b2c4b991dbfb7500ee6b, type: 2}
+    - {fileID: 11400000, guid: 62d2b1d7b370a124b8471e85795c5be1, type: 2}
     response:
       m_PersistentCalls:
         m_Calls:
