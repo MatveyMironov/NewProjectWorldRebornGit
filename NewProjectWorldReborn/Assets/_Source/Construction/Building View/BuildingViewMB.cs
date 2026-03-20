@@ -6,9 +6,9 @@ namespace BuildingViewSystem
 {
     public class BuildingViewMB : MonoBehaviour, IInteractable
     {
-        [SerializeField] private GameObject demolitionIndicator;
         [SerializeField] private GameObject interactionIndicator;
         [SerializeField] private GameObject selectionIndicator;
+        [SerializeField] private GameObject demolitionIndicator;
 
         public event Action OnInteractionShown;
         public event Action OnInteractionHidden;

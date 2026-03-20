@@ -1,31 +1,25 @@
-using ConstructionControllerSystem;
-using PlacingSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ConstructionInputSystem
+namespace ConstructionControllerSystem.Input
 {
-    public class ReferenceConstructionInputListenerMB : MonoBehaviour
+    public class ConstructionControllerInputListenerMB : MonoBehaviour
     {
         [SerializeField] private ConstructionControllerMB constructionController;
-        [SerializeField] private BuildingRotationControllerMB buildingRotationController;
 
         [Space]
         [SerializeField] private InputActionReference executeConstructionAction;
-        [SerializeField] private InputActionReference abortConstructionAction;
+        [SerializeField] private InputActionReference exitConstructionState;
         [SerializeField] private InputActionReference moveMouse;
-        [SerializeField] private InputActionReference rotateBuilding;
 
         private void OnEnable()
         {
             executeConstructionAction.action.started += OnExecuteConstructionActionInput;
             executeConstructionAction.action.canceled += OnExecuteConstructionActionInput;
 
-            abortConstructionAction.action.performed += OnAbortConstructionActionInput;
+            exitConstructionState.action.performed += OnExitConstructionStateInput;
 
             moveMouse.action.performed += OnMoveMouseInput;
-
-            rotateBuilding.action.performed += OnRotateBuildingInput;
         }
 
         private void OnDisable()
@@ -33,11 +27,9 @@ namespace ConstructionInputSystem
             executeConstructionAction.action.started -= OnExecuteConstructionActionInput;
             executeConstructionAction.action.canceled -= OnExecuteConstructionActionInput;
 
-            abortConstructionAction.action.performed -= OnAbortConstructionActionInput;
+            exitConstructionState.action.performed -= OnExitConstructionStateInput;
 
             moveMouse.action.performed -= OnMoveMouseInput;
-
-            rotateBuilding.action.performed -= OnRotateBuildingInput;
         }
 
         private void OnExecuteConstructionActionInput(InputAction.CallbackContext context)
@@ -54,10 +46,10 @@ namespace ConstructionInputSystem
             }
         }
 
-        private void OnAbortConstructionActionInput(InputAction.CallbackContext context)
+        private void OnExitConstructionStateInput(InputAction.CallbackContext context)
         {
             //Debug.Log("Abort construction action");
-            constructionController.AbortAction();
+            constructionController.ExitState();
         }
 
         private void OnMoveMouseInput(InputAction.CallbackContext context)
@@ -65,12 +57,6 @@ namespace ConstructionInputSystem
             Vector2 movementInput = context.ReadValue<Vector2>();
             //Debug.Log($"Mouse movement: {movementInput}");
             constructionController.UpdateMousePosition(movementInput);
-        }
-
-        private void OnRotateBuildingInput(InputAction.CallbackContext context)
-        {
-            //Debug.Log("Rotate building");
-            buildingRotationController.RotateBuilding();
         }
     }
 }

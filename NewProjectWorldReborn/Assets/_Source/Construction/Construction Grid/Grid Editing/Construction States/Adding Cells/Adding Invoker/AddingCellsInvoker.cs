@@ -25,7 +25,7 @@ namespace GridEditingSystem
 
         public void InvokeAddingCells()
         {
-            _constructionController.SetState(_addingCellsState);
+            _constructionController.EnterState(_addingCellsState);
         }
     }
 }
