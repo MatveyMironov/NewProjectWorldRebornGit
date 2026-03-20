@@ -1,5 +1,4 @@
 using ConstructionGridSystem;
-using ConstructionResourcesPlacingSystem;
 using PlacingSystem;
 using System;
 using System.Collections.Generic;
@@ -10,12 +9,12 @@ namespace BuildingSystem.Implementations
     public class BuildingConstructionButtonsManager : IBuildingConstructionButtonsManager
     {
         private readonly IBuildingConstructionButtonSpawner _constructionButtonSpawner;
-        private readonly IConstructionResourcesPlacingInvokeCreator _placingInvokeCreator;
+        private readonly IPlacingInvokeCreator _placingInvokeCreator;
 
         private readonly IStructureBuildingsManager _structureBuildingsManager;
 
         public BuildingConstructionButtonsManager(IBuildingConstructionButtonSpawner constructionButtonSpawner,
-                                                  IConstructionResourcesPlacingInvokeCreator placingInvokeCreator,
+                                                  IPlacingInvokeCreator placingInvokeCreator,
                                                   IStructureBuildingsManager structureBuildingsManager)
         {
             _constructionButtonSpawner = constructionButtonSpawner ?? throw new ArgumentNullException(nameof(constructionButtonSpawner));
@@ -34,7 +33,7 @@ namespace BuildingSystem.Implementations
                 button.DisplayBuildingConfiguration(configuration);
 
                 BuildingConstructionConfiguration constructionConfiguration = new(configuration, _structureBuildingsManager);
-                button.OnButtonClicked += _placingInvokeCreator.CreateInvoke(constructionConfiguration, configuration.ConstructionResources);
+                button.OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
 
                 //Debug.Log($"Building construction button added for configuration: {configuration}");
 
