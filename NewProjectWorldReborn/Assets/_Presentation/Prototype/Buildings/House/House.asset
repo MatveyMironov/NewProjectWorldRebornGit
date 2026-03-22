@@ -38,5 +38,5 @@ MonoBehaviour:
     - {x: 2, y: 2}
   constructionResources:
     resources: []
-  providedService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
+  providedService: {fileID: 11400000, guid: 340587d9fd179dc418e42b3737982f29, type: 2}
   providedAmount: 5
