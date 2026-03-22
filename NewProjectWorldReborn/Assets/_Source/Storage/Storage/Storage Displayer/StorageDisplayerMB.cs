@@ -5,7 +5,7 @@ namespace StorageSystem
 {
     public class StorageDisplayerMB : MonoBehaviour, IStorageDisplayer
     {
-        [SerializeField] private AResourceCountDisplayersManager resourceCountDisplayersManager;
+        [SerializeField] private AResourceCountDisplayersManagerMB resourceCountDisplayersManager;
 
         private IStorageDisplayer _storageDisplayer;
 
