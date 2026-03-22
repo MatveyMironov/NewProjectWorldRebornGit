@@ -1,0 +1,16 @@
+{
+    "name": "CustomEventImplementations",
+    "rootNamespace": "CustomEventSystem.Implementations",
+    "references": [
+        "GUID:4f93a31ec37e0da43bbf58ce1869c936"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
