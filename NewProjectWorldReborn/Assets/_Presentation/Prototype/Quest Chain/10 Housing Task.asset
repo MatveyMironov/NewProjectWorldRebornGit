@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e16b73e8379944408b064fe3aef7fd7, type: 3}
   m_Name: 10 Housing Task
   m_EditorClassIdentifier: 
-  requiredService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
+  requiredService: {fileID: 11400000, guid: 340587d9fd179dc418e42b3737982f29, type: 2}
   requiredAmount: 20
   displayerPrefab: {fileID: 1835507949355674047, guid: 23aed55dc7bba674d9b46ac03d648be7, type: 3}
