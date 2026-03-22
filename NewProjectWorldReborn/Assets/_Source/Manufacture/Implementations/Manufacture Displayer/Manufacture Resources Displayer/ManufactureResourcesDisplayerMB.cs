@@ -5,8 +5,8 @@ namespace ManufactureSystem.Implementations
 {
     public class ManufactureResourcesDisplayerMB : MonoBehaviour, IManufactureResourcesDisplayer
     {
-        [SerializeField] private AResourceCountDisplayersManager consumedResourcesDisplayer;
-        [SerializeField] private AResourceCountDisplayersManager producedResourcesDisplayer;
+        [SerializeField] private AResourceCountDisplayersManagerMB consumedResourcesDisplayer;
+        [SerializeField] private AResourceCountDisplayersManagerMB producedResourcesDisplayer;
 
         private IManufactureResourcesDisplayer _displayer;
 
