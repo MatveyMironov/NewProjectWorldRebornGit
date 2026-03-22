@@ -5,7 +5,7 @@ namespace BuildingSystem.Implementations
 {
     public class ConstructionResourceBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB
     {
-        [SerializeField] private AResourceCountDisplayersManager resourceCountDisplayersManager;
+        [SerializeField] private AResourceCountDisplayersManagerMB resourceCountDisplayersManager;
 
         private IBuildingConfiguration _displayedConfiguration;
 
