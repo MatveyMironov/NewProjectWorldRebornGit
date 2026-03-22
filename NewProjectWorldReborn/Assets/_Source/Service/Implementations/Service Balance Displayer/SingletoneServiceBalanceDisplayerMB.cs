@@ -5,7 +5,7 @@ namespace ServiceSystem.Implementations
 {
     public class SingletoneServiceBalanceDisplayerMB : AServiceBalanceDisplayerMB
     {
-        [SerializeField] private DefaultServiceDefinitionDisplayerMB serviceDefinitionDisplayer;
+        [SerializeField] private AServiceDefinitionDisplayerMB serviceDefinitionDisplayer;
         [SerializeField] private ANumberDisplayerMB totalServiceSupplyDisplayer;
 
         private IServicesManager _servicesManager;

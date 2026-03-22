@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6317006942224466281}
   - component: {fileID: 2546897012302357781}
   - component: {fileID: 3657766432673238024}
+  - component: {fileID: 6888332456565078127}
   m_Layer: 5
   m_Name: Service Name Text (TMP)
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6888332456565078127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477091366539374591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2081b6b0ba7fd444bd234e53715b132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serviceNameText: {fileID: 3657766432673238024}
 --- !u!1 &3058886145270449668
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +162,7 @@ GameObject:
   - component: {fileID: 4600385886498025167}
   - component: {fileID: 1023618426336143657}
   - component: {fileID: 1030490014975067941}
+  - component: {fileID: 951985520210366886}
   m_Layer: 5
   m_Name: Service Icon Image
   m_TagString: Untagged
@@ -232,6 +247,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &951985520210366886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058886145270449668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8608bb6c73e04ec4fa959d2ed105ce7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serviceIconImage: {fileID: 1023618426336143657}
 --- !u!1 &4234703962451594001
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,11 +647,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8574967035358009201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5517757c4283a44a0654f24d0a8ad4, type: 3}
+  m_Script: {fileID: 11500000, guid: aa5b9f064ee10f34cbd5200c0d59ac1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 1023618426336143657}
-  nameText: {fileID: 3657766432673238024}
+  displayers:
+  - {fileID: 951985520210366886}
+  - {fileID: 6888332456565078127}
 --- !u!114 &8560004756805819096
 MonoBehaviour:
   m_ObjectHideFlags: 0
