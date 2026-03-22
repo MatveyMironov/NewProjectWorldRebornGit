@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:NewProjectWorldReborn/Assets/_Source/Workforce/Employer/Employer/EmployerSystem.asmdef.meta
 guid: 92f3bc26b9349ff418ddd0f741899c9b
 AssemblyDefinitionImporter:
+========
+guid: 888d64f8155063c4d93444fcbc24b5bb
+PrefabImporter:
+>>>>>>>> feature/construction_resources:NewProjectWorldReborn/Assets/_Presentation/Construction/Construction Controller/Construction Controller.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
