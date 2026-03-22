@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Vegetables
   description: 
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 9bdfef7a066beba478a58913de7b9cfc, type: 3}
