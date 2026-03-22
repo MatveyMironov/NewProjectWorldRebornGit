@@ -1,0 +1,16 @@
+{
+    "name": "StorageSystemImplementations",
+    "rootNamespace": "StorageSystem.Implementations",
+    "references": [
+        "GUID:ab91a191917feff43813a543844f0818"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

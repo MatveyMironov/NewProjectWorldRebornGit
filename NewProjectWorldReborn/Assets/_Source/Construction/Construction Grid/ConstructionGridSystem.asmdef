@@ -1,0 +1,17 @@
+{
+    "name": "ConstructionGridSystem",
+    "rootNamespace": "ConstructionGridSystem",
+    "references": [
+        "GUID:399597e995f9ce54db5774fded2f4d9c",
+        "GUID:a66d1ff004e0a284390d4eeb9a911e80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

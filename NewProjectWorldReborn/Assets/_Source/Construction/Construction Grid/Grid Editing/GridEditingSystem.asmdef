@@ -1,0 +1,19 @@
+{
+    "name": "GridEditingSystem",
+    "rootNamespace": "GridEditingSystem",
+    "references": [
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:00533e80ef0cd664d9efedb3551b77bf",
+        "GUID:4a15b20a4d7038a428b9de8bac930249",
+        "GUID:239da8b8a74d97b46a9775a421cdd2c1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

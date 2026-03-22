@@ -1,0 +1,16 @@
+{
+    "name": "EmployerSystem",
+    "rootNamespace": "EmployerSystem",
+    "references": [
+        "GUID:77028bac46798ed448072b00aef410a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

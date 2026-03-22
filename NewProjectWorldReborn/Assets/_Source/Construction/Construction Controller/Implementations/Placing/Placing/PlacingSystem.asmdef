@@ -1,0 +1,21 @@
+{
+    "name": "PlacingSystem",
+    "rootNamespace": "PlacingSystem",
+    "references": [
+        "GUID:4a15b20a4d7038a428b9de8bac930249",
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:399597e995f9ce54db5774fded2f4d9c",
+        "GUID:239da8b8a74d97b46a9775a421cdd2c1",
+        "GUID:a66d1ff004e0a284390d4eeb9a911e80",
+        "GUID:b4aa14674644acc42a58ffe1ec0711b5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
