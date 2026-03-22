@@ -52,6 +52,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929c0fed572ff81418b189975919cf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayResourceEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 75833aac86a4ea642acc9afcaa4b6c42, type: 2}
+        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[ResourceSystem.IResourceDefinition,
+          ResourceSystem
+        m_MethodName: Call
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ClearEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ba38a6c2c38bdc74498ea6a2122681bd, type: 2}
+        m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3583073408757362356
 MonoBehaviour:
   m_ObjectHideFlags: 0
