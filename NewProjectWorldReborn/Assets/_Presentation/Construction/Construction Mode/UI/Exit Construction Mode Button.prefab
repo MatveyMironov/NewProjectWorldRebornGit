@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1509555487500226126}
   - component: {fileID: 6296178564042817616}
   m_Layer: 0
-  m_Name: Construction Mode Exit Button
+  m_Name: Exit Construction Mode Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
