@@ -12,8 +12,7 @@ namespace ProgressionSystem.Implementations
 
         public override ITask CreateTask()
         {
-            SuppliesManager serviceBalance = null;
-            ServicesManagerSingleton.Instance.TryGetServiceBalance(requiredService, out serviceBalance);
+            SuppliesManager serviceBalance = ServicesManagerSingleton.Instance.GetServiceSupply(requiredService);
             return new ServiceTask(requiredService, requiredAmount, serviceBalance, displayerPrefab);
         }
     }
