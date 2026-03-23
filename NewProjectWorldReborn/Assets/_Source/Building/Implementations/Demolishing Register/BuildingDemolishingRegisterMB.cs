@@ -6,7 +6,7 @@ namespace BuildingSystem.Implementations
 {
     public class BuildingDemolishingRegisterMB : MonoBehaviour
     {
-        [SerializeField] private DemolishingInvokerMB demolishingInvoker;
+        [SerializeField] private DemolitionControllerMB demolitionController;
 
         private IStructureBuildingsManager _buildingsManager;
 
@@ -17,12 +17,12 @@ namespace BuildingSystem.Implementations
 
         private void Start()
         {
-            demolishingInvoker.OnBuildingDemolished += RemoveBuilding;
+            demolitionController.OnBuildingDemolished += RemoveBuilding;
         }
 
         private void OnDestroy()
         {
-            demolishingInvoker.OnBuildingDemolished -= RemoveBuilding;
+            demolitionController.OnBuildingDemolished -= RemoveBuilding;
         }
 
         private void RemoveBuilding(BuildingStructure structure)
