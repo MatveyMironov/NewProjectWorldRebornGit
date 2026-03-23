@@ -14,43 +14,35 @@ namespace ServiceSystem
 
         private readonly HashSet<ServiceProvider> _providers = new();
 
+        public HashSet<ServiceProvider> Providers => new(_providers);
+
         public event Action<ServiceProvider> OnServiceProviderAdded;
         public event Action<ServiceProvider> OnServiceProviderRemoved;
 
         public bool TryAddServiceProvider(ServiceProvider serviceProvider)
         {
-            if (!_providers.Add(serviceProvider)) return false;
-
-            if (!_servicesManager.TryGetServiceBalance(serviceProvider.ProvidedService, out SuppliesManager serviceBalance))
+            if (_providers.Add(serviceProvider))
             {
-                if (!_servicesManager.TryAddServiceBalance(serviceProvider.ProvidedService, out serviceBalance))
-                {
-                    _providers.Remove(serviceProvider);
-                    return false;
-                }
+                SuppliesManager supply = _servicesManager.GetServiceSupply(serviceProvider.ProvidedService);
+                supply.TryAddSupply(serviceProvider);
+                OnServiceProviderAdded?.Invoke(serviceProvider);
+                return true;
             }
 
-            if (!serviceBalance.TryAddSupply(serviceProvider))
-            {
-                _providers.Remove(serviceProvider);
-                return false;
-            }
-
-            OnServiceProviderAdded?.Invoke(serviceProvider);
-            return true;
+            return false;
         }
 
         public bool TryRemoveServiceProvider(ServiceProvider serviceProvider)
         {
-            if (_providers.Remove(serviceProvider)) return false;
-
-            if (_servicesManager.TryGetServiceBalance(serviceProvider.ProvidedService, out SuppliesManager serviceBalance))
+            if (_providers.Remove(serviceProvider))
             {
-                serviceBalance.TryRemoveSupply(serviceProvider);
+                SuppliesManager supply = _servicesManager.GetServiceSupply(serviceProvider.ProvidedService);
+                supply.TryRemoveSupply(serviceProvider);
+                OnServiceProviderRemoved?.Invoke(serviceProvider);
+                return true;
             }
 
-            OnServiceProviderRemoved?.Invoke(serviceProvider);
-            return true;
+            return false;
         }
     }
 }

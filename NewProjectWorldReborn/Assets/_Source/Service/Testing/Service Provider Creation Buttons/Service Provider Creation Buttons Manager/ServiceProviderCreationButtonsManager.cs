@@ -1,4 +1,3 @@
-using ServiceSystem;
 using System;
 using System.Collections.Generic;
 
@@ -8,55 +7,44 @@ namespace ServiceSystem.Testing
     {
         private readonly IServiceProvidersManager _serviceProvidersManager;
         private readonly IServiceProviderCreationButtonSpawner _creationButtonSpawner;
-        private readonly IServiceProviderDisplayersManager _displayersManager;
 
-        private readonly Dictionary<IServiceDefinition, IServiceProviderCreationButton> _buttons = new();
-        private readonly Dictionary<IServiceProviderCreationButton, Action> _buttonActions = new();
-
-        public ServiceProviderCreationButtonsManager(IServiceProvidersManager serviceProvidersManager,
-                                                     IServiceProviderCreationButtonSpawner creationButtonSpawner,
-                                                     IServiceProviderDisplayersManager displayersManager)
+        public ServiceProviderCreationButtonsManager(IServiceProvidersManager serviceProvidersManager, IServiceProviderCreationButtonSpawner creationButtonSpawner)
         {
             _serviceProvidersManager = serviceProvidersManager ?? throw new ArgumentNullException(nameof(serviceProvidersManager));
             _creationButtonSpawner = creationButtonSpawner ?? throw new ArgumentNullException(nameof(creationButtonSpawner));
-            _displayersManager = displayersManager ?? throw new ArgumentNullException(nameof(displayersManager));
         }
+
+        private readonly Dictionary<IServiceDefinition, IServiceProviderCreationButton> _buttons = new();
 
         public bool TryAddButton(IServiceDefinition service, int providedAmount)
         {
-            if (!_buttons.TryAdd(service, null)) return false;
-
-            IServiceProviderCreationButton button = _creationButtonSpawner.SpawnButton();
-            button.DisplayCreatedServiceSupply(service, providedAmount);
-            _buttons[service] = button;
-
-            if (_buttonActions.TryAdd(button, CreateServiceProvider))
+            if (_buttons.TryAdd(service, null))
             {
-                button.OnButtonClicked += CreateServiceProvider;
+                _buttons[service] = _creationButtonSpawner.SpawnButton();
+                _buttons[service].DisplayCreatedServiceSupply(service, providedAmount);
+                _buttons[service].OnButtonClicked += CreateServiceProvider;
+
+                return true;
             }
 
-            return true;
+            return false;
 
             void CreateServiceProvider()
             {
                 ServiceProvider serviceProvider = new(service, providedAmount);
                 _serviceProvidersManager.TryAddServiceProvider(serviceProvider);
-                _displayersManager.TryAddServiceProviderDisplayer(serviceProvider);
             }
         }
 
         public bool TryRemoveButton(IServiceDefinition service)
         {
-            if (!_buttons.Remove(service, out IServiceProviderCreationButton button)) return false;
-
-            button.Destroy();
-
-            if (_buttonActions.Remove(button, out Action createServiceProvider))
+            if (_buttons.Remove(service, out IServiceProviderCreationButton button))
             {
-                button.OnButtonClicked -= createServiceProvider;
+                button.Destroy();
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

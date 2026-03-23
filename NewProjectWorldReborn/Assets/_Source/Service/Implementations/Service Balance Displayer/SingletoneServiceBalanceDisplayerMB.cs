@@ -5,7 +5,7 @@ namespace ServiceSystem.Implementations
 {
     public class SingletoneServiceBalanceDisplayerMB : AServiceBalanceDisplayerMB
     {
-        [SerializeField] private ServiceDefinitionDisplayerMB serviceDefinitionDisplayer;
+        [SerializeField] private AServiceDefinitionDisplayerMB serviceDefinitionDisplayer;
         [SerializeField] private ANumberDisplayerMB totalServiceSupplyDisplayer;
 
         private IServicesManager _servicesManager;
@@ -23,13 +23,7 @@ namespace ServiceSystem.Implementations
 
             serviceDefinitionDisplayer.DisplayServiceDefinition(service);
 
-            if (!_servicesManager.TryGetServiceBalance(service, out var balance))
-            {
-                if (!_servicesManager.TryAddServiceBalance(service, out balance))
-                {
-                    return;
-                }
-            }
+            SuppliesManager balance = _servicesManager.GetServiceSupply(service);
 
             DisplayTotalSupply(balance.TotalSupply);
             balance.OnTotalSupplyChanged += DisplayServiceBalanceTotalSupply;

@@ -13,14 +13,19 @@ namespace ServiceSystem
             _manager = new ServiceProviderDisplayersManager(displayerSpawner);
         }
 
-        public bool TryAddServiceProviderDisplayer(ServiceProvider serviceProvider)
+        public bool TryAddDisplayer(ServiceProvider serviceProvider)
         {
-            return _manager.TryAddServiceProviderDisplayer(serviceProvider);
+            return _manager.TryAddDisplayer(serviceProvider);
         }
 
-        public bool TryRemoveServiceProviderDisplayer(ServiceProvider serviceProvider)
+        public bool TryRemoveDisplayer(ServiceProvider serviceProvider)
         {
-            return _manager.TryRemoveServiceProviderDisplayer(serviceProvider);
+            return _manager.TryRemoveDisplayer(serviceProvider);
+        }
+
+        public void RemoveAllDisplayers()
+        {
+            _manager.RemoveAllDisplayers();
         }
     }
 }

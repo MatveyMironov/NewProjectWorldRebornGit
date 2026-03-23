@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fdf8b26b54cbc94aadf5508263ab92b, type: 3}
-  m_Name: Power
+  m_Script: {fileID: 11500000, guid: 25bcf476ae8a972488c51215fd2c476b, type: 3}
+  m_Name: Show Event
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Power
-  <ServiceDescription>k__BackingField: Electrical energy measured in kW
-  <Icon>k__BackingField: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}

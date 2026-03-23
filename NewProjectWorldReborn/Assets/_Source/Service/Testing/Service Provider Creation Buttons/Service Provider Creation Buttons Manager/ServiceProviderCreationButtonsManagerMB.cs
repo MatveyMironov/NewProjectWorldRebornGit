@@ -1,20 +1,16 @@
-﻿using ServiceSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ServiceSystem.Testing
 {
     public class ServiceProviderCreationButtonsManagerMB : MonoBehaviour, IServiceProviderCreationButtonsManager
     {
         [SerializeField] private ServiceProviderCreationButtonSpawnerMB creationButtonSpawner;
-        [SerializeField] private ServiceProviderDisplayersManagerMB displayersManager;
 
         private IServiceProviderCreationButtonsManager _manager;
 
         private void Awake()
         {
-            IServiceProvidersManager serviceProvidersManager = ServiceProvidersManagerSingleton.Instance;
-
-            _manager = new ServiceProviderCreationButtonsManager(serviceProvidersManager, creationButtonSpawner, displayersManager);
+            _manager = new ServiceProviderCreationButtonsManager(ServiceProvidersManagerSingleton.Instance, creationButtonSpawner);
         }
 
         public bool TryAddButton(IServiceDefinition service, int providedAmount)
