@@ -21,6 +21,9 @@ namespace BuildingSystem
         public event Action OnInteractionHidden { add => Structure.View.OnInteractionHidden += value; remove => Structure.View.OnInteractionHidden -= value; }
         public event Action OnInteracted { add => Structure.View.OnInteracted += value; remove => Structure.View.OnInteracted -= value; }
 
+        public event Action OnSelectedForDemolition { add => Structure.View.OnSelectedForDemolition += value; remove => Structure.View.OnSelectedForDemolition -= value; }
+        public event Action OnDeselectedForDemolition { add => Structure.View.OnDeselectedForDemolition += value; remove => Structure.View.OnDeselectedForDemolition -= value; }
+
         public void Select()
         {
             Structure.View.Select();
