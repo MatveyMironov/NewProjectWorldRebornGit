@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25bcf476ae8a972488c51215fd2c476b, type: 3}
-  m_Name: ConstructionStateExited
+  m_Name: Construction State Exited
   m_EditorClassIdentifier: 
