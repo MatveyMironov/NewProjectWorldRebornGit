@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:NewProjectWorldReborn/Assets/_Source/Building Info.meta
 guid: 9114821acc4d4a54c883749239045e8d
+========
+guid: 81dd936430741a64aa1509bbd1b4adb8
+>>>>>>>> 263f5b6 (Merge branch 'feature/custom_event' into feature/construction):NewProjectWorldReborn/Assets/_Source/Custom Event/Implementations.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

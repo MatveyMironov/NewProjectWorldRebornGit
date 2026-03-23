@@ -1,9 +1,16 @@
 {
+<<<<<<<< HEAD:NewProjectWorldReborn/Assets/_Source/Interaction/Interaction Input/InteractionInputSystem.asmdef
     "name": "InteractionInputSystem",
     "rootNamespace": "InteractionSystem.Input",
     "references": [
         "GUID:20531a30135653447828c16e807460dc",
         "GUID:75469ad4d38634e559750d17036d5f7c"
+========
+    "name": "CustomEventImplementations",
+    "rootNamespace": "CustomEventSystem.Implementations",
+    "references": [
+        "GUID:4f93a31ec37e0da43bbf58ce1869c936"
+>>>>>>>> 263f5b6 (Merge branch 'feature/custom_event' into feature/construction):NewProjectWorldReborn/Assets/_Source/Custom Event/Implementations/CustomEventImplementations.asmdef
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
