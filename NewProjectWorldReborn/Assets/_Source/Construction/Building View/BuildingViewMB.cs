@@ -14,22 +14,25 @@ namespace BuildingViewSystem
         public event Action OnInteractionHidden;
         public event Action OnInteracted;
 
+        public event Action OnSelectedForDemolition;
+        public event Action OnDeselectedForDemolition;
+
         private bool _isInteractionShown;
         private bool _isSelected;
 
         private void Awake()
         {
-            HideDemolition();
+            OnDeselectForDemolition();
             HideInteraction();
             Deselect();
         }
 
-        public void ShowDemolition()
+        public void OnSelectForDemolition()
         {
             demolitionIndicator.SetActive(true);
         }
 
-        public void HideDemolition()
+        public void OnDeselectForDemolition()
         {
             demolitionIndicator.SetActive(false);
         }
@@ -78,6 +81,11 @@ namespace BuildingViewSystem
             {
                 ShowInteraction();
             }
+        }
+        
+        public void Demolish()
+        {
+            Destroy(gameObject);
         }
     }
 }

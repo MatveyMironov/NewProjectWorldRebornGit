@@ -106,7 +106,7 @@ namespace AreaDemolishingSystem
 
             foreach (var placement in placementsToSelect)
             {
-                placement.Structure.View.ShowDemolition();
+                placement.Structure.View.OnSelectForDemolition();
             }
 
             _selectedPlacements.UnionWith(placementsToSelect);
@@ -116,7 +116,7 @@ namespace AreaDemolishingSystem
         {
             foreach (var placement in _selectedPlacements)
             {
-                placement.Structure.View.HideDemolition();
+                placement.Structure.View.OnDeselectForDemolition();
 
                 _selectedPlacements.Remove(placement);
             }
