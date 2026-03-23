@@ -6,29 +6,31 @@ using UnityEngine;
 
 namespace DemolishingSystem
 {
-    public class DemolitionControllerMB : MonoBehaviour, IDemolitionController
+    public class DemolishingInvokerMB : MonoBehaviour, IDemolishingInvoker
     {
         [SerializeField] private ConstructionControllerMB constructionController;
         [SerializeField] private ConstructionGridManagerMB constructionGridManager;
         [SerializeField] private ACellsVisualizationMB demolitionGridVisualization;
 
-        private IDemolitionController _controller;
+        private IDemolishingInvoker _controller;
 
         private void Awake()
         {
-            _controller = new DemolitionController(constructionController, constructionGridManager, demolitionGridVisualization);
+            _controller = new DemolishingInvoker(constructionController, constructionGridManager, demolitionGridVisualization);
         }
 
-        public event Action OnBuildingSelected
+        public BuildingStructure SelectedStructure => _controller.SelectedStructure;
+
+        public event Action OnStructureSelected
         {
-            add => _controller.OnBuildingSelected += value;
-            remove => _controller.OnBuildingSelected -= value;
+            add => _controller.OnStructureSelected += value;
+            remove => _controller.OnStructureSelected -= value;
         }
 
-        public event Action OnBuildingDeselected
+        public event Action OnStructureDeselected
         {
-            add => _controller.OnBuildingDeselected += value;
-            remove => _controller.OnBuildingDeselected -= value;
+            add => _controller.OnStructureDeselected += value;
+            remove => _controller.OnStructureDeselected -= value;
         }
 
         public event Action<BuildingStructure> OnBuildingDemolished
@@ -49,9 +51,9 @@ namespace DemolishingSystem
             remove => _controller.OnStateExited -= value;
         }
 
-        public void StartDemolishing()
+        public void InvokeDemolishing()
         {
-            _controller.StartDemolishing();
+            _controller.InvokeDemolishing();
         }
     }
 }

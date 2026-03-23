@@ -3,15 +3,17 @@ using System;
 
 namespace DemolishingSystem
 {
-    public interface IDemolitionController
+    public interface IDemolishingInvoker
     {
-        event Action OnBuildingSelected;
-        event Action OnBuildingDeselected;
+        BuildingStructure SelectedStructure { get; }
+
+        event Action OnStructureSelected;
+        event Action OnStructureDeselected;
         event Action<BuildingStructure> OnBuildingDemolished;
 
         event Action OnStateEntered;
         event Action OnStateExited;
 
-        void StartDemolishing();
+        void InvokeDemolishing();
     }
 }

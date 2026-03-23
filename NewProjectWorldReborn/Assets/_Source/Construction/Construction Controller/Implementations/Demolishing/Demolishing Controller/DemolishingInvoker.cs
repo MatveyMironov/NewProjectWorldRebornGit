@@ -5,13 +5,13 @@ using System;
 
 namespace DemolishingSystem
 {
-    public class DemolitionController : IDemolitionController
+    public class DemolishingInvoker : IDemolishingInvoker
     {
         private readonly IConstructionController _constructionController;
 
         private readonly DemolishingState _demolishingState;
 
-        public DemolitionController(IConstructionController constructionController,
+        public DemolishingInvoker(IConstructionController constructionController,
                                     IConstructionGridManager constructionGridManager,
                                     ICellsVisualization demolitionCellsVisualization)
         {
@@ -20,25 +20,31 @@ namespace DemolishingSystem
             _demolishingState = new(constructionGridManager, demolitionCellsVisualization);
         }
 
-        public event Action OnBuildingSelected
+        public BuildingStructure SelectedStructure => _demolishingState.SelectedStructure;
+
+        public event Action OnStructureSelected
         {
-            add => _demolishingState.OnBuildingSelected += value;
-            remove => _demolishingState.OnBuildingSelected -= value;
+            add => _demolishingState.OnStructureSelected += value;
+            remove => _demolishingState.OnStructureSelected -= value;
         }
 
-        public event Action OnBuildingDeselected
+        public event Action OnStructureDeselected
         {
-            add => _demolishingState.OnBuildingDeselected += value;
-            remove => _demolishingState.OnBuildingDeselected -= value;
+            add => _demolishingState.OnStructureDeselected += value;
+            remove => _demolishingState.OnStructureDeselected -= value;
         }
 
         public event Action<BuildingStructure> OnBuildingDemolished
         {
-            add => _demolishingState.OnBuildingDemolished += value;
-            remove => _demolishingState.OnBuildingDemolished -= value;
+            add => _demolishingState.OnStructureDemolished += value;
+            remove => _demolishingState.OnStructureDemolished -= value;
         }
 
-        public event Action OnStateEntered;
+        public event Action OnStateEntered
+        {
+            add => _demolishingState.OnStateEntered += value;
+            remove => _demolishingState.OnStateEntered -= value;
+        }
 
         public event Action OnStateExited
         {
@@ -46,10 +52,9 @@ namespace DemolishingSystem
             remove => _demolishingState.OnStateExited -= value;
         }
 
-        public void StartDemolishing()
+        public void InvokeDemolishing()
         {
             _constructionController.EnterState(_demolishingState);
-            OnStateEntered?.Invoke();
         }
     }
 }

@@ -24,18 +24,20 @@ namespace DemolishingSystem
         //public event Action OnCurrentCellChanged;
 
         private BuildingStructure _selectedBuilding;
-        public BuildingStructure SelectedBuilding { get => _selectedBuilding; }
-        public event Action OnBuildingSelected;
-        public event Action OnBuildingDeselected;
+        public BuildingStructure SelectedStructure { get => _selectedBuilding; }
+        public event Action OnStructureSelected;
+        public event Action OnStructureDeselected;
 
-        public event Action<BuildingStructure> OnBuildingDemolished;
+        public event Action<BuildingStructure> OnStructureDemolished;
 
+        public event Action OnStateEntered;
         public event Action OnStateExited;
 
         public void EnterState(Vector2Int cell)
         {
             TrySelectBuilding(cell);
             CurrentCell = cell;
+            OnStateEntered?.Invoke();
         }
 
         public void UpdateState(Vector2Int cell)
@@ -71,7 +73,7 @@ namespace DemolishingSystem
 
                 _selectedBuilding.View.ShowDemolition();
                 ShowDemolitionCells(placement.OccupiedCells);
-                OnBuildingSelected?.Invoke();
+                OnStructureSelected?.Invoke();
                 return true;
             }
 
@@ -85,7 +87,7 @@ namespace DemolishingSystem
             _selectedBuilding.View.HideDemolition();
             HideDemolitionCells();
             _selectedBuilding = null;
-            OnBuildingDeselected?.Invoke();
+            OnStructureDeselected?.Invoke();
         }
 
         private void ShowDemolitionCells(HashSet<Vector2Int> cells)
@@ -106,7 +108,7 @@ namespace DemolishingSystem
 
             UnityEngine.Object.Destroy(_selectedBuilding.View.gameObject);
             _constructionGridManager.TryRemoveStructure(_selectedBuilding);
-            OnBuildingDemolished?.Invoke(_selectedBuilding);
+            OnStructureDemolished?.Invoke(_selectedBuilding);
 
             DeselectBuilding();
 
