@@ -210,6 +210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4514387904387584541}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de13fced93c44fc438df81d316491c1e, type: 3}
   m_Name: 
@@ -555,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Info Tab
       objectReference: {fileID: 0}
+    - target: {fileID: 4208455146392804352, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8190294652189919532, guid: 29f31fb56a18589488d097a324222700, type: 3}
     - target: {fileID: 7418668213361615515, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
