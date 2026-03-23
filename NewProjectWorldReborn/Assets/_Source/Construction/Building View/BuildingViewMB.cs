@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace BuildingViewSystem
@@ -6,19 +7,27 @@ namespace BuildingViewSystem
     {
         [SerializeField] private GameObject demolitionIndicator;
 
+        public event Action OnSelectedForDemolition;
+        public event Action OnDeselectedForDemolition;
+
         private void Start()
         {
-            HideDemolition();
+            OnDeselectForDemolition();
         }
 
-        public void ShowDemolition()
+        public void OnSelectForDemolition()
         {
             demolitionIndicator.SetActive(true);
         }
 
-        public void HideDemolition()
+        public void OnDeselectForDemolition()
         {
             demolitionIndicator.SetActive(false);
+        }
+
+        public void Demolish()
+        {
+            Destroy(gameObject);
         }
     }
 }

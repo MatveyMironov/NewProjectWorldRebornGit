@@ -71,7 +71,7 @@ namespace DemolishingSystem
             {
                 _selectedBuilding = placement.Structure;
 
-                _selectedBuilding.View.ShowDemolition();
+                _selectedBuilding.View.OnSelectForDemolition();
                 ShowDemolitionCells(placement.OccupiedCells);
                 OnStructureSelected?.Invoke();
                 return true;
@@ -84,7 +84,7 @@ namespace DemolishingSystem
         {
             if (_selectedBuilding == null) return;
 
-            _selectedBuilding.View.HideDemolition();
+            _selectedBuilding.View.OnDeselectForDemolition();
             HideDemolitionCells();
             _selectedBuilding = null;
             OnStructureDeselected?.Invoke();
@@ -106,7 +106,7 @@ namespace DemolishingSystem
         {
             if (_selectedBuilding == null) return false;
 
-            UnityEngine.Object.Destroy(_selectedBuilding.View.gameObject);
+            _selectedBuilding.View.Demolish();
             _constructionGridManager.TryRemoveStructure(_selectedBuilding);
             OnStructureDemolished?.Invoke(_selectedBuilding);
 
