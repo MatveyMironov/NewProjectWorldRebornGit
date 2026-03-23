@@ -16,7 +16,7 @@ namespace BuildingViewSystem
 
         public event Action OnSelectedForDemolition;
         public event Action OnDeselectedForDemolition;
-
+        
         private bool _isInteractionShown;
         private bool _isSelected;
 
