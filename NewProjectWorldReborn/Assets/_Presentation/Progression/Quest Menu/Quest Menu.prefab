@@ -184,8 +184,10 @@ GameObject:
   - component: {fileID: 4331003162906941970}
   - component: {fileID: 2214845579675116096}
   - component: {fileID: 9191182423694209220}
+  - component: {fileID: 4857762912913860593}
   - component: {fileID: 6356956029709714397}
   - component: {fileID: 3802002636179675493}
+  - component: {fileID: 6520404140162470040}
   m_Layer: 5
   m_Name: Quest Menu
   m_TagString: Untagged
@@ -254,6 +256,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4857762912913860593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832377604440449903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e5939520bc91547bc174b4300b46ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayQuest:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 684326beffdf0f9428d228b491b5e8c1, type: 2}
+        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[ProgressionSystem.Quest,
+          ProgressionSystem
+        m_MethodName: Call
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  clear:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6356956029709714397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeQuestDisplayer: {fileID: 6206687903096396132}
-  finishedQuestDisplayer: {fileID: 0}
+  finishedQuestDisplayer: {fileID: 4857762912913860593}
 --- !u!114 &3802002636179675493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +314,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeQuestDisplayer: {fileID: 6356956029709714397}
+--- !u!114 &6520404140162470040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832377604440449903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5dd1324204da54292b321832357b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fd6f72bae7e71e14a93172f196395976, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3802002636179675493}
+        m_TargetAssemblyTypeName: ProgressionSystem.QuestChainDisplayerMB, ProgressionSystemImplementations
+        m_MethodName: DisplayQuestChain
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8231290602228676042
 PrefabInstance:
   m_ObjectHideFlags: 0

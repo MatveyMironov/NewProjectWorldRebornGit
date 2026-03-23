@@ -936,7 +936,9 @@ GameObject:
   - component: {fileID: 5050987407796343954}
   - component: {fileID: 6313238656309324456}
   - component: {fileID: 6822972250123692390}
+  - component: {fileID: 8718427479181985592}
   - component: {fileID: 735692377434556320}
+  - component: {fileID: 2830364258566546762}
   m_Layer: 5
   m_Name: Finished Quest Panel
   m_TagString: Untagged
@@ -1028,6 +1030,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidable: {fileID: 6313238656309324456}
   questDisplayer: {fileID: 7232239061008208764}
+--- !u!114 &8718427479181985592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832377604440449903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da689b96595fb74a833b6d1537d0396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 684326beffdf0f9428d228b491b5e8c1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6822972250123692390}
+        m_TargetAssemblyTypeName: ProgressionSystem.HidableQuestDisplayerMB, ProgressionSystemImplementations
+        m_MethodName: DisplayQuest
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &735692377434556320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1073,33 @@ MonoBehaviour:
   inputAction: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   unityEvent:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6822972250123692390}
+        m_TargetAssemblyTypeName: ProgressionSystem.HidableQuestDisplayerMB, ProgressionSystemImplementations
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2830364258566546762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832377604440449903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ade438da7cbc546b9dfc4293e7be26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  States:
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6822972250123692390}
         m_TargetAssemblyTypeName: ProgressionSystem.HidableQuestDisplayerMB, ProgressionSystemImplementations
