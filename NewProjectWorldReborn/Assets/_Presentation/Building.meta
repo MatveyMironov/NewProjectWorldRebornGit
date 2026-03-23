@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:NewProjectWorldReborn/Assets/_Presentation/Building.meta
 guid: e32c1b07aff54f44ca93cf8b41ef1f50
+========
+guid: 07d6abd502caf734284d04a8d708ffb2
+>>>>>>>> feature/construction:NewProjectWorldReborn/Assets/_Presentation/Construction/Construction Controller.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

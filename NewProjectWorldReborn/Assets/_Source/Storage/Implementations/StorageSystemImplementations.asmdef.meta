@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:NewProjectWorldReborn/Assets/_Source/Storage/Implementations/StorageSystemImplementations.asmdef.meta
 guid: db70aaa8a3373954c854927789635391
 AssemblyDefinitionImporter:
+========
+guid: fc72e9e7d915b4d45b84d4838239e056
+PrefabImporter:
+>>>>>>>> feature/construction:NewProjectWorldReborn/Assets/_Presentation/Construction/Construction Controller/UI/Exit Construction State Button.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
