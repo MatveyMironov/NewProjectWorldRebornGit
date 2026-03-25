@@ -22,22 +22,30 @@ namespace BuildingSystem.Implementations
             _structureBuildingsManager = structureBuildingsManager ?? throw new ArgumentNullException(nameof(structureBuildingsManager));
         }
 
-        private readonly Dictionary<IBuildingConfiguration, BuildingConstructionButtonMB> _buildingConstructionButtons = new();
+        private readonly Dictionary<IBuildingConfiguration, BuildingConstructionButtonMB> _buildings_ConstructionButtons = new();
 
         public bool TryAddConstructionButton(IBuildingConfiguration configuration)
         {
-            if (_buildingConstructionButtons.TryAdd(configuration, null))
+            if (_buildings_ConstructionButtons.TryAdd(configuration, null))
             {
                 BuildingConstructionButtonMB button = _constructionButtonSpawner.SpawnButton();
-                _buildingConstructionButtons[configuration] = button;
                 button.DisplayBuildingConfiguration(configuration);
 
                 BuildingConstructionConfiguration constructionConfiguration = new(configuration, _structureBuildingsManager);
-                button.OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
+                Action invokePlacing = _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
+                button.OnButtonClicked += StartPlacing;
 
+                _buildings_ConstructionButtons[configuration] = button;
                 //Debug.Log($"Building construction button added for configuration: {configuration}");
 
                 return true;
+
+                void StartPlacing()
+                {
+                    //Following order is important
+                    invokePlacing();
+                    button.OnBuildingSelected();
+                }
             }
 
             return false;
@@ -45,7 +53,7 @@ namespace BuildingSystem.Implementations
 
         public bool TryRemoveConstructionButton(IBuildingConfiguration configuration)
         {
-            if (_buildingConstructionButtons.Remove(configuration, out var button))
+            if (_buildings_ConstructionButtons.Remove(configuration, out var button))
             {
                 UnityEngine.Object.Destroy(button.gameObject);
                 //Debug.Log($"Building construction button removed of configuration: {configuration}");
