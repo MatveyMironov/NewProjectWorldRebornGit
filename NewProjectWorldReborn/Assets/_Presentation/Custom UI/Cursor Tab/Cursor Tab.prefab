@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2969828437481870264}
   - component: {fileID: 138550215864926918}
   m_Layer: 5
-  m_Name: Cursor Following Tab
+  m_Name: Cursor Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
