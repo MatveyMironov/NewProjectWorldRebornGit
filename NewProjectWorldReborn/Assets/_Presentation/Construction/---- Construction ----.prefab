@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 8912380553727956434}
   - component: {fileID: 1961621405334773285}
   m_Layer: 0
-  m_Name: Cleared Cells Visualization
+  m_Name: Demolition Cells Visualization
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1885397528561074655}
+  m_Father: {fileID: 7067731452272951535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8912380553727956434
 MonoBehaviour:
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8992611245992602814}
   - component: {fileID: 4756140776102663446}
   m_Layer: 0
-  m_Name: Construction Grid
+  m_Name: Construction Grid Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9094199776068674842}
+  m_Father: {fileID: 1885397528561074655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4756140776102663446
 MonoBehaviour:
@@ -154,6 +154,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellSet: {fileID: 11400000, guid: 9f7594269611746468f0e4463260132e, type: 2}
+--- !u!1 &5940939205536979467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2563759737425012818}
+  m_Layer: 0
+  m_Name: ---- Placing ----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2563759737425012818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940939205536979467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7726206643135914609}
+  - {fileID: 6256619952298854799}
+  - {fileID: 4227984688128386687}
+  m_Father: {fileID: 3524795999926013131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6000833920839659487
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885397528561074655}
   m_Layer: 0
-  m_Name: ---- Grid Visualizations ----
+  m_Name: ---- Grid ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,9 +217,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8992611245992602814}
   - {fileID: 1896356069568661984}
-  - {fileID: 6256619952298854799}
-  - {fileID: 2087151749077590815}
   m_Father: {fileID: 3524795999926013131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6112617692916471760
@@ -219,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1885397528561074655}
+  m_Father: {fileID: 2563759737425012818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6933354722467191481
 MonoBehaviour:
@@ -251,6 +284,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2ade8364beae247bb3bf5dfb0536ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6272820503915250431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7067731452272951535}
+  m_Layer: 0
+  m_Name: ---- Demolition ----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7067731452272951535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272820503915250431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2087151749077590815}
+  - {fileID: 2497418321090016816}
+  m_Father: {fileID: 3524795999926013131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7092826931779491108
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3524795999926013131}
+  m_Father: {fileID: 2563759737425012818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6849998506690337002
 MonoBehaviour:
@@ -330,9 +396,10 @@ Transform:
   m_Children:
   - {fileID: 9094199776068674842}
   - {fileID: 1945761793657246700}
-  - {fileID: 1885397528561074655}
   - {fileID: 863529280274616610}
-  - {fileID: 4227984688128386687}
+  - {fileID: 1885397528561074655}
+  - {fileID: 2563759737425012818}
+  - {fileID: 7067731452272951535}
   - {fileID: 7494730171664553987}
   - {fileID: 4341429549947978691}
   m_Father: {fileID: 0}
@@ -520,7 +587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9094199776068674842}
+  m_Father: {fileID: 2563759737425012818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4320512155800903561
 MonoBehaviour:
@@ -618,10 +685,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 094b2dbcf0d6de7418d0032516fbccf7, type: 2}
+  customEvent: {fileID: 11400000, guid: e7f40ea3720b94b48b8ab7408c54c8ea, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8399370261707352666}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &3041298396833961721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,10 +713,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
+  customEvent: {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8399370261707352666}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8666237093787306565
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,11 +758,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8992611245992602814}
   - {fileID: 8712805654238249402}
   - {fileID: 8402005975987549849}
-  - {fileID: 7726206643135914609}
-  - {fileID: 2497418321090016816}
   m_Father: {fileID: 3524795999926013131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &747494344224492485
@@ -900,7 +988,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 9094199776068674842}
+    m_TransformParent: {fileID: 7067731452272951535}
     m_Modifications:
     - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
       propertyPath: constructionController
