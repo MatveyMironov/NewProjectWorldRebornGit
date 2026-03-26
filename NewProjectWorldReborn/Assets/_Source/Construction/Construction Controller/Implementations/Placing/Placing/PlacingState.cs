@@ -103,6 +103,7 @@ namespace PlacingSystem
             };
 
             _preview.ShowPreview(_constructionConfiguration.ConstructionPreviewPrefab);
+            _preview.SetOrientation(_buildingOrientation);
             _preview.MoveToCell(cell);
 
             ShowPlacementCells(cell);
