@@ -1,3 +1,4 @@
+using BuildingInteriorSystem;
 using UnityEngine;
 
 namespace BuildingSystem.Testing
@@ -7,7 +8,8 @@ namespace BuildingSystem.Testing
     {
         public override Building CreateBuilding()
         {
-            return new(this, Construction.CreateBuildingStructure(), Info);
+            BuildingInterior interior = new(Info.Name, Info.Description);
+            return new(this, Construction.CreateBuildingStructure(), Info, interior);
         }
     }
 }
