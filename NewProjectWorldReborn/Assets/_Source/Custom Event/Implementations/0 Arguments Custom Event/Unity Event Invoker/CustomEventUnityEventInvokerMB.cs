@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CustomEventSystem
+namespace CustomEventSystem.Implementations
 {
     public class CustomEventUnityEventInvokerMB : MonoBehaviour
     {
