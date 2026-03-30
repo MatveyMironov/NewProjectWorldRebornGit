@@ -11,14 +11,13 @@ namespace BuildingSystem.Implementations.Manufacture
         {
             IManufacture buildingManufacture = building.Interior.Manufacture;
 
-            if (buildingManufacture != null)
-            {
-                manufactureDisplayer.DisplayManufacture(buildingManufacture);
-            }
-            else
+            if (buildingManufacture == null)
             {
                 Clear();
+                return;
             }
+
+            manufactureDisplayer.DisplayManufacture(buildingManufacture);
         }
 
         public override void Clear()
