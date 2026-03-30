@@ -40,3 +40,19 @@ MonoBehaviour:
     resources:
     - _resource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
       _count: 10
+  interiorConfiguration:
+    Name: 
+    Description: 
+    employesWorkers: 0
+    employerConfiguration:
+      minWorkForce: 0
+      maxWorkForce: 0
+    carriesOutManufacture: 0
+    time: 0
+    consumedResources:
+      resources: []
+    producedResources:
+      resources: []
+    providesService: 1
+    providedService: {fileID: 11400000, guid: 66ba1a45196e297499951df9ce757b63, type: 2}
+    providedAmount: 100

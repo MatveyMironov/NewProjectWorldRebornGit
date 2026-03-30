@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a119993cef4d54ba6e32081cc55044, type: 3}
+  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: House
-    <Description>k__BackingField: Primitive hut provides sleeping space for several
-      people
+    <Description>k__BackingField: Provides a place for people to sleep
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: ed94d2c73996fe14b9168513e0a2c167, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: f648166074f93b74fb462b7222559b82, type: 3}
@@ -38,5 +37,19 @@ MonoBehaviour:
     - {x: 2, y: 2}
   constructionResources:
     resources: []
-  providedService: {fileID: 11400000, guid: 340587d9fd179dc418e42b3737982f29, type: 2}
-  providedAmount: 5
+  interiorConfiguration:
+    Name: House
+    Description: Provides a place for people to sleep
+    employesWorkers: 0
+    employerConfiguration:
+      minWorkForce: 0
+      maxWorkForce: 0
+    carriesOutManufacture: 0
+    time: 0
+    consumedResources:
+      resources: []
+    producedResources:
+      resources: []
+    providesService: 1
+    providedService: {fileID: 11400000, guid: 340587d9fd179dc418e42b3737982f29, type: 2}
+    providedAmount: 5
