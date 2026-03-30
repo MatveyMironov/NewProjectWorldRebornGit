@@ -1,6 +1,7 @@
 using ServiceSystem;
 using ManufactureSystem;
 using ResourceSystem;
+using EmployerSystem;
 using System;
 using UnityEngine;
 
@@ -11,6 +12,10 @@ namespace BuildingInteriorSystem
     {
         [SerializeField] public string Name;
         [SerializeField] public string Description;
+
+        [Space]
+        [SerializeField] private bool employesWorkers;
+        [SerializeField] private SEmployerConfiguration employerConfiguration;
 
         [Space]
         [SerializeField] private bool carriesOutManufacture;
@@ -25,6 +30,8 @@ namespace BuildingInteriorSystem
 
         public BuildingInterior CreateInterior()
         {
+            IEmployer employer = employesWorkers ? employerConfiguration.GetEmployer() : null;
+
             IManufacture manufacture = null;
             if (carriesOutManufacture)
             {
@@ -34,7 +41,7 @@ namespace BuildingInteriorSystem
 
             ServiceProvider serviceProvider = providesService ? new(providedService, providedAmount) : null;
             
-            return new(Name, Description, manufacture, serviceProvider);
+            return new(Name, Description, employer, manufacture, serviceProvider);
         }
     }
 }
