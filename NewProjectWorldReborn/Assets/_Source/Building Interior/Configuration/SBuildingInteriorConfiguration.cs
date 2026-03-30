@@ -1,3 +1,4 @@
+using EmployerSystem;
 using System;
 using UnityEngine;
 
@@ -9,9 +10,15 @@ namespace BuildingInteriorSystem
         [SerializeField] public string Name;
         [SerializeField] public string Description;
 
+        [Space]
+        [SerializeField] private bool employesWorkers;
+        [SerializeField] private SEmployerConfiguration employerConfiguration;
+
         public BuildingInterior CreateInterior()
         {
-            return new(Name, Description);
+            IEmployer employer = employesWorkers ? employerConfiguration.GetEmployer() : null;
+
+            return new(Name, Description, employer);
         }
     }
 }

@@ -1,7 +1,9 @@
 {
     "name": "BuildingInteriorSystem",
     "rootNamespace": "BuildingInteriorSystem",
-    "references": [],
+    "references": [
+        "GUID:92f3bc26b9349ff418ddd0f741899c9b"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

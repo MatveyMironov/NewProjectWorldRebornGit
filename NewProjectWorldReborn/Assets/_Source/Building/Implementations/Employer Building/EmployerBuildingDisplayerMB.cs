@@ -7,18 +7,17 @@ namespace BuildingSystem.Implementations
     {
         [SerializeField] private AEmployerDisplayerMB employerDisplayer;
 
-        private readonly IBuildingEmployersManager _buildingEmployersManager = BuildingEmployersManagerSingleton.Instance;
-
         public override void DisplayBuilding(Building building)
         {
-            if (_buildingEmployersManager.TryGetBuildingEmployer(building, out IEmployer employer))
-            {
-                employerDisplayer.DisplayEmployer(employer);
-            }
-            else
+            IEmployer employer = building.Interior.Employer;
+
+            if (employer == null)
             {
                 Clear();
+                return;
             }
+
+            employerDisplayer.DisplayEmployer(employer);
         }
 
         public override void Clear()
