@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BuildingSystem.Implementations
 {
-    public class EmployerBuildingDisplayerMB : ABuildingDisplayerMB
+    public class BuildingEmployerDisplayerMB : ABuildingDisplayerMB
     {
         [SerializeField] private AEmployerDisplayerMB employerDisplayer;
 
