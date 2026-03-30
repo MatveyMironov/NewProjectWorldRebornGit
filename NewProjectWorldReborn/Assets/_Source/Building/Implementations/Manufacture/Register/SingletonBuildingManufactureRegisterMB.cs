@@ -1,8 +1,8 @@
 using ManufactureSystem;
 
-namespace BuildingSystem.Implementations
+namespace BuildingSystem.Implementations.Manufacture
 {
-    public class SingletonManufactureBuildingRegisterMB : AManufactureBuildingRegisterMB
+    public class SingletonBuildingManufactureRegisterMB : ABuildingManufactureRegisterMB
     {
         protected override IStructureBuildingsManager BuildingsManager => StructureBuildingsManagerSingleton.Instance;
         protected override IManufacturesManager ManufacturesManager => ManufacturesManagerSingleton.Instance;

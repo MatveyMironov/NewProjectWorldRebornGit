@@ -1,9 +1,9 @@
 using ManufactureSystem;
 using UnityEngine;
 
-namespace BuildingSystem.Implementations
+namespace BuildingSystem.Implementations.Manufacture
 {
-    public abstract class AManufactureBuildingRegisterMB : MonoBehaviour
+    public abstract class ABuildingManufactureRegisterMB : MonoBehaviour
     {
         protected abstract IStructureBuildingsManager BuildingsManager { get; }
         protected abstract IManufacturesManager ManufacturesManager { get; }
