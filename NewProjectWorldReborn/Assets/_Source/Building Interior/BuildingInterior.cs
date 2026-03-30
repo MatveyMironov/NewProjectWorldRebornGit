@@ -8,7 +8,7 @@ namespace BuildingInteriorSystem
     {
         public BuildingInterior(string name,
                                 string description,
-                                IManufacture manufacture = null)
+                                IManufacture manufacture = null,
                                 IEmployer employer = null)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
