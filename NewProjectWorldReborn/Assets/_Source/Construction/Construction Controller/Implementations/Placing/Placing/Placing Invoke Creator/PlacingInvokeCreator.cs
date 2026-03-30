@@ -44,7 +44,7 @@ namespace PlacingSystem
             void InvokePlacing()
             {
                 _buildingRotationController.ProvidePlacingState(placingState);
-                _constructionController.SetState(placingState);
+                _constructionController.EnterState(placingState);
             }
         }
     }
