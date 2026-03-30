@@ -8,29 +8,33 @@ namespace BuildingViewSystem
     {
         [SerializeField] private GameObject interactionIndicator;
         [SerializeField] private GameObject selectionIndicator;
+        [SerializeField] private GameObject demolitionIndicator;
 
         public event Action OnInteractionShown;
         public event Action OnInteractionHidden;
         public event Action OnInteracted;
 
+        public event Action OnSelectedForDemolition;
+        public event Action OnDeselectedForDemolition;
+        
         private bool _isInteractionShown;
         private bool _isSelected;
 
         private void Awake()
         {
-            HideDemolition();
+            OnDeselectForDemolition();
             HideInteraction();
             Deselect();
         }
 
-        public void ShowDemolition()
+        public void OnSelectForDemolition()
         {
-
+            demolitionIndicator.SetActive(true);
         }
 
-        public void HideDemolition()
+        public void OnDeselectForDemolition()
         {
-
+            demolitionIndicator.SetActive(false);
         }
 
         public void ShowInteraction()
@@ -77,6 +81,11 @@ namespace BuildingViewSystem
             {
                 ShowInteraction();
             }
+        }
+        
+        public void Demolish()
+        {
+            Destroy(gameObject);
         }
     }
 }

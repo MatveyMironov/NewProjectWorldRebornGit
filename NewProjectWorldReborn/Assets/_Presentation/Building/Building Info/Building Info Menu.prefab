@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2914641924172105430}
   - component: {fileID: 5285942483519572857}
   - component: {fileID: 9079821770883228459}
+  - component: {fileID: 6591019394112187150}
   m_Layer: 5
   m_Name: Description Text (TMP)
   m_TagString: Untagged
@@ -232,6 +233,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6591019394112187150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958335111253404953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0c63d27ea51c54eb042a5e900c79e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingDescriptionText: {fileID: 9079821770883228459}
 --- !u!1 &7422808417335089414
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2f23854cb2a4441a911062ff29a634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 7865145683629327957}
-  descriptionText: {fileID: 9079821770883228459}
+  displayers:
+  - {fileID: 7620120365698950900}
+  - {fileID: 6591019394112187150}
 --- !u!1 &9027257390732046448
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +338,7 @@ GameObject:
   - component: {fileID: 4539856149839420209}
   - component: {fileID: 3538464017882798565}
   - component: {fileID: 7865145683629327957}
+  - component: {fileID: 7620120365698950900}
   m_Layer: 5
   m_Name: Name Text (TMP)
   m_TagString: Untagged
@@ -448,3 +464,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7620120365698950900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9027257390732046448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba6bcf2a9e48eb47a53734cacb99f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 7865145683629327957}
