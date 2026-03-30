@@ -2,6 +2,7 @@ using ServiceSystem;
 using ManufactureSystem;
 using ResourceSystem;
 using EmployerSystem;
+using EmployerManufactureSystem;
 using System;
 using UnityEngine;
 
@@ -35,7 +36,16 @@ namespace BuildingInteriorSystem
             IManufacture manufacture = null;
             if (carriesOutManufacture)
             {
-                ManufactureParameters manufactureParameters = new(1.0f / time, consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary());
+                IManufactureParameters manufactureParameters;
+                if (employer == null)
+                {
+                    manufactureParameters = new ManufactureParameters(1.0f / time, consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary());
+                }
+                else
+                {
+                    manufactureParameters = new EmployerManufactureParameters(consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary(), 1.0f / time, employer);
+                }
+
                 manufacture = new Manufacture(manufactureParameters);
             }
 
