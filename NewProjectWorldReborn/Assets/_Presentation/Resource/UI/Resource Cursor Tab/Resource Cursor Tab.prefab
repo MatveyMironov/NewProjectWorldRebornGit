@@ -237,6 +237,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  voidResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4461941327098348534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customEvent: {fileID: 11400000, guid: ba38a6c2c38bdc74498ea6a2122681bd, type: 2}
-  unityEvent:
+  response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4098530703534197984}
