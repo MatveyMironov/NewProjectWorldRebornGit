@@ -5,29 +5,39 @@ namespace BuildingSystem.Implementations
 {
     public abstract class AManufactureBuildingRegisterMB : MonoBehaviour
     {
-        protected abstract IBuildingManufacturesManager BuildingManufacturesManager { get; }
-        protected abstract IStructureBuildingsManager StructureBuildingsManager { get; }
+        protected abstract IStructureBuildingsManager BuildingsManager { get; }
+        protected abstract IManufacturesManager ManufacturesManager { get; }
 
         protected virtual void OnEnable()
         {
-            ManufactureBuildingConfigurationSO.OnManufactureBuildingCreated += RegisterManufactureBuilding;
-            StructureBuildingsManager.OnBuildingRemoved += UnregisterManufactureBuilding;
+            BuildingsManager.OnBuildingAdded += RegisterManufactureIfBuildingHasIt;
+            BuildingsManager.OnBuildingRemoved += UnregisterManufactureIfBuildingHasIt;
         }
 
         protected virtual void OnDisable()
         {
-            ManufactureBuildingConfigurationSO.OnManufactureBuildingCreated -= RegisterManufactureBuilding;
-            StructureBuildingsManager.OnBuildingRemoved -= UnregisterManufactureBuilding;
+            BuildingsManager.OnBuildingAdded -= RegisterManufactureIfBuildingHasIt;
+            BuildingsManager.OnBuildingRemoved -= UnregisterManufactureIfBuildingHasIt;
         }
 
-        private void RegisterManufactureBuilding(Building building, IManufacture manufacture)
+        private void RegisterManufactureIfBuildingHasIt(Building building)
         {
-            BuildingManufacturesManager.TryAddBuildingManufacture(building, manufacture);
+            IManufacture manufacture = building.Interior.Manufacture;
+
+            if (manufacture != null)
+            {
+                ManufacturesManager.TryAddManufacture(manufacture);
+            }
         }
 
-        private void UnregisterManufactureBuilding(Building building)
+        private void UnregisterManufactureIfBuildingHasIt(Building building)
         {
-            BuildingManufacturesManager.TryRemoveBuildingManufacture(building);
+            IManufacture manufacture = building.Interior.Manufacture;
+
+            if (manufacture != null)
+            {
+                ManufacturesManager.TryRemoveManufacture(manufacture);
+            }
         }
     }
 }

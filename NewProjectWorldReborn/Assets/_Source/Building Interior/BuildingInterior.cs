@@ -1,16 +1,23 @@
+using ManufactureSystem;
 using System;
 
 namespace BuildingInteriorSystem
 {
     public class BuildingInterior
     {
-        public BuildingInterior(string name, string description)
+        public BuildingInterior(string name,
+                                string description,
+                                IManufacture manufacture = null)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Description = description ?? throw new ArgumentNullException(nameof(description));
+
+            Manufacture = manufacture;
         }
 
         public string Name { get; }
         public string Description { get; }
+
+        public IManufacture Manufacture { get; }
     }
 }

@@ -1,19 +1,19 @@
 using ManufactureSystem;
 using UnityEngine;
 
-namespace BuildingSystem.Implementations
+namespace BuildingSystem.Implementations.Manufacture
 {
     public class ManufactureBuildingDisplayerMB : ABuildingDisplayerMB
     {
         [SerializeField] private AManufactureDisplayerMB manufactureDisplayer;
 
-        private readonly IBuildingManufacturesManager _buildingManufacturesManager = BuildingManufacturesManagerSingleton.Instance;
-
         public override void DisplayBuilding(Building building)
         {
-            if (_buildingManufacturesManager.TryGetBuildingManufacture(building, out IManufacture manufacture))
+            IManufacture buildingManufacture = building.Interior.Manufacture;
+
+            if (buildingManufacture != null)
             {
-                manufactureDisplayer.DisplayManufacture(manufacture);
+                manufactureDisplayer.DisplayManufacture(buildingManufacture);
             }
             else
             {
