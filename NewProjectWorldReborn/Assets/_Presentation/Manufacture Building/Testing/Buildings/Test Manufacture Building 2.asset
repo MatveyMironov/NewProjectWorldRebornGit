@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79de6974ed383745865f020c670448a, type: 3}
+  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
   m_Name: Test Manufacture Building 2
   m_EditorClassIdentifier: 
   info:
-    <Name>k__BackingField: Test Manufacture Building 2
-    <Description>k__BackingField: 
+    <Name>k__BackingField: Test Building 2
+    <Description>k__BackingField: This building is used for testing
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: 108b38318676cb347b69fb11b6615006, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: f4acbdbda5adb0b4abaccba02ef80415, type: 3}
@@ -31,8 +31,11 @@ MonoBehaviour:
     - {x: 2, y: -1}
     - {x: 2, y: 0}
     - {x: 2, y: 1}
-  manufactureConfiguration:
-    time: 2
+  interiorConfiguration:
+    Name: 
+    Description: 
+    carriesOutManufacture: 1
+    time: 10
     consumedResources:
       resources:
       - _resource: {fileID: 11400000, guid: f932c77e418b11344825c215caee1010, type: 2}
