@@ -33,9 +33,8 @@ namespace BuildingInteriorSystem
             }
 
             ServiceProvider serviceProvider = providesService ? new(providedService, providedAmount) : null;
-            return new(Name, Description, serviceProvider);
             
-            return new(Name, Description, manufacture);
+            return new(Name, Description, manufacture, serviceProvider);
         }
     }
 }
