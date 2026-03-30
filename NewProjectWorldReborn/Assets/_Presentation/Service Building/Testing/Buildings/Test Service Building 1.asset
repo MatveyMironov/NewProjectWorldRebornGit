@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a119993cef4d54ba6e32081cc55044, type: 3}
+  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
   m_Name: Test Service Building 1
   m_EditorClassIdentifier: 
   info:
-    <Name>k__BackingField: House
-    <Description>k__BackingField: 
+    <Name>k__BackingField: Test Building 1
+    <Description>k__BackingField: This building is used for testing
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: 08d96fb44f9d5d344b34e1412d21f042, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: bb2a96bea82e8034eab26dcc1fff664f, type: 3}
@@ -35,5 +35,9 @@ MonoBehaviour:
     - {x: 2, y: 0}
     - {x: 2, y: 1}
     - {x: 2, y: 2}
-  providedService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
-  providedAmount: 4
+  interiorConfiguration:
+    Name: 
+    Description: 
+    providesService: 1
+    providedService: {fileID: 11400000, guid: 25419be5b9e36b146af591797b022657, type: 2}
+    providedAmount: 1

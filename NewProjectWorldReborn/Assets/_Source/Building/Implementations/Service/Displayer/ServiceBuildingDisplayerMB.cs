@@ -7,16 +7,17 @@ namespace BuildingSystem.Implementations
     {
         [SerializeField] private AServiceProviderDisplayerMB serviceProviderDisplayer;
 
-        private readonly IServiceBuildingsManager _serviceBuildingsManager = ServiceBuildingsManagerSingleton.Instance;
-
         public override void DisplayBuilding(Building building)
         {
-            Clear();
+            ServiceProvider serviceProvider = building.Interior.ServiceProvider;
 
-            if (_serviceBuildingsManager.TryGetBuildingServiceProvider(building, out ServiceProvider serviceProvider))
+            if (serviceProvider == null)
             {
-                serviceProviderDisplayer.DisplayServiceProvider(serviceProvider);
+                Clear();
+                return;
             }
+
+            serviceProviderDisplayer.DisplayServiceProvider(serviceProvider);
         }
 
         public override void Clear()
