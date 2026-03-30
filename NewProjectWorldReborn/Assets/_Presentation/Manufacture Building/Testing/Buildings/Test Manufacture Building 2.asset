@@ -34,14 +34,13 @@ MonoBehaviour:
   interiorConfiguration:
     Name: 
     Description: 
-    hasManufacture: 1
-    manufactureConfiguration:
-      time: 10
-      consumedResources:
-        resources:
-        - _resource: {fileID: 11400000, guid: f932c77e418b11344825c215caee1010, type: 2}
-          _count: 2
-      producedResources:
-        resources:
-        - _resource: {fileID: 11400000, guid: d5cbd7c3130375246b6e426865d3daf4, type: 2}
-          _count: 1
+    carriesOutManufacture: 1
+    time: 10
+    consumedResources:
+      resources:
+      - _resource: {fileID: 11400000, guid: f932c77e418b11344825c215caee1010, type: 2}
+        _count: 2
+    producedResources:
+      resources:
+      - _resource: {fileID: 11400000, guid: d5cbd7c3130375246b6e426865d3daf4, type: 2}
+        _count: 1
