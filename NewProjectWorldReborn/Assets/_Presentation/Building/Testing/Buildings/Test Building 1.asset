@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: Test Building 1
-    <Description>k__BackingField: 
+    <Description>k__BackingField: This building is used for testing
   construction:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: 08d96fb44f9d5d344b34e1412d21f042, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: bb2a96bea82e8034eab26dcc1fff664f, type: 3}

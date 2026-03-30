@@ -27,7 +27,7 @@ namespace AreaDemolishingSystem
         private bool _isSelecting;
         private Vector2Int _startCell;
 
-        private readonly HashSet<BuildingStructure> _selectedBuildings = new();
+        private readonly HashSet<ConstructionGrid.PlacementData> _selectedPlacements = new();
 
         public event Action<BuildingStructure> OnBuildingDemolished;
 
@@ -76,10 +76,10 @@ namespace AreaDemolishingSystem
         private void Select(Vector2Int finishCell)
         {
             HashSet<Vector2Int> cellsToSelect = _constructionGridManager.GetAllCellsFromTo(_startCell, finishCell);
-            HashSet<BuildingStructure> buildingsToSelect = _constructionGridManager.GetAllBuildingsIn(cellsToSelect);
+            HashSet<ConstructionGrid.PlacementData> placementsToSelect = _constructionGridManager.GetAllPlacementsIn(cellsToSelect);
 
             SelectCells(cellsToSelect);
-            SelectBuildings(buildingsToSelect);
+            SelectPlacements(placementsToSelect);
         }
 
         private void Deselect()
@@ -100,38 +100,38 @@ namespace AreaDemolishingSystem
             _demolishingCellsVisualization.DestroyVisualization();
         }
 
-        private void SelectBuildings(HashSet<BuildingStructure> buildingsToSelect)
+        private void SelectPlacements(HashSet<ConstructionGrid.PlacementData> placementsToSelect)
         {
             DeselectBuildings();
 
-            foreach (BuildingStructure building in buildingsToSelect)
+            foreach (var placement in placementsToSelect)
             {
-                building.View.ShowDemolition();
+                placement.Structure.View.OnSelectForDemolition();
             }
 
-            _selectedBuildings.UnionWith(buildingsToSelect);
+            _selectedPlacements.UnionWith(placementsToSelect);
         }
 
         private void DeselectBuildings()
         {
-            foreach (BuildingStructure building in _selectedBuildings)
+            foreach (var placement in _selectedPlacements)
             {
-                building.View.HideDemolition();
+                placement.Structure.View.OnDeselectForDemolition();
 
-                _selectedBuildings.Remove(building);
+                _selectedPlacements.Remove(placement);
             }
         }
 
         private void DemolishSelectedBuildings()
         {
-            foreach (BuildingStructure building in _selectedBuildings)
+            foreach (var placement in _selectedPlacements)
             {
-                UnityEngine.Object.Destroy(building.View.gameObject);
-                _constructionGridManager.RemoveBuilding(building);
+                UnityEngine.Object.Destroy(placement.Structure.View.gameObject);
+                _constructionGridManager.TryRemoveStructure(placement.Structure);
 
-                _selectedBuildings.Remove(building);
+                _selectedPlacements.Remove(placement);
 
-                OnBuildingDemolished?.Invoke(building);
+                OnBuildingDemolished?.Invoke(placement.Structure);
             }
         }
     }

@@ -1,3 +1,4 @@
+using BuildingInteriorSystem;
 using UnityEngine;
 
 namespace BuildingSystem.Testing
@@ -5,9 +6,11 @@ namespace BuildingSystem.Testing
     [CreateAssetMenu(fileName = "Test Building", menuName = "Building Configuration/Test Building")]
     public class TestBuildingConfigurationSO : ABuildingConfigurationSO
     {
+        [SerializeField] private SBuildingInteriorConfiguration interiorConfiguration;
         public override Building CreateBuilding()
         {
-            return new(this, Construction.CreateBuildingStructure(), Info);
+            BuildingInterior interior = interiorConfiguration.CreateInterior();
+            return new(this, Construction.CreateBuildingStructure(), Info, interior);
         }
     }
 }
