@@ -3,7 +3,8 @@
     "rootNamespace": "BuildingInteriorSystem",
     "references": [
         "GUID:84a569501cbdab14eaa75de5a49493fc",
-        "GUID:1d2b337a2c1b7334e84762ceaa9479a1"
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1",
+        "GUID:92f3bc26b9349ff418ddd0f741899c9b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

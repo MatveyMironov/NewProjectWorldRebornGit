@@ -1,5 +1,6 @@
 using ManufactureSystem;
 using ResourceSystem;
+using EmployerSystem;
 using System;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ namespace BuildingInteriorSystem
         [SerializeField] public string Description;
 
         [Space]
+        [SerializeField] private bool employesWorkers;
+        [SerializeField] private SEmployerConfiguration employerConfiguration;
+
+        [Space]
         [SerializeField] private bool carriesOutManufacture;
         [SerializeField] private int time;
         [SerializeField] private SResourceCountsDictionary consumedResources;
@@ -19,14 +24,16 @@ namespace BuildingInteriorSystem
 
         public BuildingInterior CreateInterior()
         {
+            IEmployer employer = employesWorkers ? employerConfiguration.GetEmployer() : null;
+
             IManufacture manufacture = null;
             if (carriesOutManufacture)
             {
                 ManufactureParameters manufactureParameters = new(1.0f / time, consumedResources.GetResourceCountsDictionary(), producedResources.GetResourceCountsDictionary());
                 manufacture = new Manufacture(manufactureParameters);
             }
-
-            return new(Name, Description, manufacture);
+            
+            return new(Name, Description, manufacture, employer);
         }
     }
 }
