@@ -1,9 +1,11 @@
 
-namespace BuildingSystem.Implementations
+using ServiceSystem;
+
+namespace BuildingSystem.Implementations.Service
 {
     public class SingletonServiceBuildingRegisterMB : AServiceBuildingRegisterMB
     {
-        protected override IServiceBuildingsManager ServiceBuildingsManager { get; } = ServiceBuildingsManagerSingleton.Instance;
-        protected override IStructureBuildingsManager StructureBuildingsManager { get; } = StructureBuildingsManagerSingleton.Instance;
+        protected override IStructureBuildingsManager BuildingsManager { get; } = StructureBuildingsManagerSingleton.Instance;
+        protected override IServiceProvidersManager ServiceProvidersManager { get; } = ServiceProvidersManagerSingleton.Instance;
     }
 }

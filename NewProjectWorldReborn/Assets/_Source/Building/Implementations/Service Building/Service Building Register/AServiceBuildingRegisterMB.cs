@@ -1,29 +1,32 @@
 using ServiceSystem;
-using System;
 using UnityEngine;
 
-namespace BuildingSystem.Implementations
+namespace BuildingSystem.Implementations.Service
 {
     public abstract class AServiceBuildingRegisterMB : MonoBehaviour
     {
-        protected abstract IServiceBuildingsManager ServiceBuildingsManager { get; }
-        protected abstract IStructureBuildingsManager StructureBuildingsManager { get; }
+        protected abstract IStructureBuildingsManager BuildingsManager { get; }
+        protected abstract IServiceProvidersManager ServiceProvidersManager { get; }
 
         protected virtual void Start()
         {
-            ServiceBuildingConfigurationSO.OnServiceBuildingCreated += RegisterServiceBuilding;
-            StructureBuildingsManager.OnBuildingRemoved += UnregisterServiceBuilding;
+            BuildingsManager.OnBuildingAdded += RegisterServiceBuilding;
+            BuildingsManager.OnBuildingRemoved += UnregisterServiceBuilding;
         }
 
         private void OnDestroy()
         {
-            ServiceBuildingConfigurationSO.OnServiceBuildingCreated -= RegisterServiceBuilding;
-            StructureBuildingsManager.OnBuildingRemoved -= UnregisterServiceBuilding;
+            BuildingsManager.OnBuildingAdded -= RegisterServiceBuilding;
+            BuildingsManager.OnBuildingRemoved -= UnregisterServiceBuilding;
         }
 
-        private void RegisterServiceBuilding(Building building, ServiceProvider serviceProvider)
+        private void RegisterServiceBuilding(Building building)
         {
-            if (ServiceBuildingsManager.TryAddServiceBuilding(building, serviceProvider))
+            ServiceProvider serviceProvider = building.Interior.ServiceProvider;
+
+            if (serviceProvider == null) { return; }
+
+            if (ServiceProvidersManager.TryAddServiceProvider(serviceProvider))
             {
                 //Debug.Log($"Service provider {serviceProvider} was added for building {building}");
             }
@@ -31,7 +34,11 @@ namespace BuildingSystem.Implementations
 
         private void UnregisterServiceBuilding(Building building)
         {
-            if (ServiceBuildingsManager.TryRemoveServiceBuilding(building))
+            ServiceProvider serviceProvider = building.Interior.ServiceProvider;
+
+            if (serviceProvider == null) { return; }
+
+            if (ServiceProvidersManager.TryRemoveServiceProvider(serviceProvider))
             {
                 //Debug.Log($"Service provider was removed of building {building}");
             }
