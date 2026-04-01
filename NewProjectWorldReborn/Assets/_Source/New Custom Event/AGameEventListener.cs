@@ -7,6 +7,7 @@ namespace GameEventSystem
     {
         [SerializeField] private AGameEvent<T> gameEvent;
         [SerializeField] private UnityEvent<T> response;
+        [SerializeField] private UnityEvent voidResponse;
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace GameEventSystem
         public void Notify(T data)
         {
             response.Invoke(data);
+            voidResponse.Invoke();
         }
     }
 }
