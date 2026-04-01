@@ -16,13 +16,21 @@ PrefabInstance:
       propertyPath: m_Maskable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3235892753379296404, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828894028152878738, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4196083300077434207, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
       propertyPath: m_Maskable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5974075114149995047, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
       propertyPath: m_Name
-      value: Resource Count Displayer Variant
+      value: Building Resource Count Displayer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7172635725108039858, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
       propertyPath: m_SizeDelta.y
