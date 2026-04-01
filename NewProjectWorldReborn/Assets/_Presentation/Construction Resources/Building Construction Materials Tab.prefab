@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4503631604833519982}
   - component: {fileID: 7346020639024983131}
+  - component: {fileID: 3758989742688910286}
   - component: {fileID: 2997045878920877168}
   m_Layer: 5
   m_Name: Building Construction Materials Tab
@@ -290,6 +291,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3758989742688910286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891531509434786300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d21388753e67ac46a8c184dc74887ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualDisplayer: {fileID: 2997045878920877168}
 --- !u!114 &2997045878920877168
 MonoBehaviour:
   m_ObjectHideFlags: 0

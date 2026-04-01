@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BuildingSystem.Implementations
 {
-    public class ConstructionResourceBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB
+    public class BuildingConstructionMaterialsDisplayerMB : ABuildingConfigurationDisplayerMB
     {
         [SerializeField] private AResourceCountDisplayersManagerMB resourceCountDisplayersManager;
 
