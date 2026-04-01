@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5882695135543040341}
-  - component: {fileID: 103304500312417453}
+  - component: {fileID: 2209471038883467528}
   m_Layer: 0
   m_Name: Placing Invoke Creator
   m_TagString: Untagged
@@ -78,7 +78,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1805598112593318774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103304500312417453
+--- !u!114 &2209471038883467528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5351632131762361350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db98f9d4742fd164ab4fd0dfaa3744cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 66704f8e20313754e97005a597a3b70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   constructionController: {fileID: 0}

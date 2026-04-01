@@ -1,0 +1,23 @@
+{
+    "name": "ConstructionResourcesPlacingSystem",
+    "rootNamespace": "ConstructionResourcesPlacingSystem",
+    "references": [
+        "GUID:b89c64d0793f9754f8e7fec38d5a4cbe",
+        "GUID:4a15b20a4d7038a428b9de8bac930249",
+        "GUID:ab91a191917feff43813a543844f0818",
+        "GUID:1d2b337a2c1b7334e84762ceaa9479a1",
+        "GUID:8cc5c9e272c3e5942b91f3370a11df9c",
+        "GUID:399597e995f9ce54db5774fded2f4d9c",
+        "GUID:239da8b8a74d97b46a9775a421cdd2c1",
+        "GUID:a66d1ff004e0a284390d4eeb9a911e80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

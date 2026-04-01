@@ -411,17 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6e76925086adb4ca7330fa8c14f784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &700414125 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4320512155800903561, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
-  m_PrefabInstance: {fileID: 1917960415769807023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db98f9d4742fd164ab4fd0dfaa3744cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &842695505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1142,7 +1131,7 @@ PrefabInstance:
     - target: {fileID: 3245807967071792421, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: placingInvokeCreator
       value: 
-      objectReference: {fileID: 700414125}
+      objectReference: {fileID: 1813346318}
     - target: {fileID: 3685568149343750048, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1678,6 +1667,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1813346318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2608453053795183148, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
+  m_PrefabInstance: {fileID: 1917960415769807023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66704f8e20313754e97005a597a3b70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846430749
 GameObject:
   m_ObjectHideFlags: 0

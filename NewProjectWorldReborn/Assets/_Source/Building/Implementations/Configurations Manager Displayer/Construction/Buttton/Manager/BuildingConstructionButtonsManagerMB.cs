@@ -1,3 +1,4 @@
+using ConstructionResourcesPlacingSystem;
 using PlacingSystem;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace BuildingSystem.Implementations
     public class BuildingConstructionButtonsManagerMB : MonoBehaviour, IBuildingConstructionButtonsManager
     {
         [SerializeField] private BuildingConstructionButtonSpawnerMB constructionButtonSpawner;
-        [SerializeField] private PlacingInvokeCreatorMB placingInvokeCreator;
+        [SerializeField] private ConstructionResourcesPlacingInvokeCreatorMB placingInvokeCreator;
 
         private IBuildingConstructionButtonsManager _manager;
 
