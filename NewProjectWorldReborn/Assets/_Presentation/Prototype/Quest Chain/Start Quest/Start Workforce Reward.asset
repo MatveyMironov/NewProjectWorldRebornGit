@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Start Workforce Reward
   m_EditorClassIdentifier: 
   workforceAmount: 10
-  displayerPrefab: {fileID: 6522332413429438042, guid: 50fd5587a2c988740a91855637804018, type: 3}
+  displayerPrefab: {fileID: 3753937559135868189, guid: 2f97cb2768544a84ab23ee1f53f5a286, type: 3}

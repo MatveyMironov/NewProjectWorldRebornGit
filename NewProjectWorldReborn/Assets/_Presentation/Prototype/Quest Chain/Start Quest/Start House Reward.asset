@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Start House Reward
   m_EditorClassIdentifier: 
   building: {fileID: 11400000, guid: 7960d55304096554092bc9c860260d8d, type: 2}
-  displayerPrefab: {fileID: 4825802507586924789, guid: ab53277b8932e9d4f9d1fd49f75b2546, type: 3}
+  displayerPrefab: {fileID: 5725014972919182555, guid: d5a740daa652a4e49b3f353049739b35, type: 3}

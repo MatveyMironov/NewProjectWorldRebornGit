@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetResource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
   targetAmount: 10
-  displayerPrefab: {fileID: 2670723354356243400, guid: ed75e7e053ac77f4699bc9eb833bbdae, type: 3}
+  displayerPrefab: {fileID: 4973992948668294694, guid: 9fe95a4ba917e8e4bbd473dafacd5086, type: 3}

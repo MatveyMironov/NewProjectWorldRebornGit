@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Greenhouse Reward
   m_EditorClassIdentifier: 
   building: {fileID: 11400000, guid: a974f8f2c1242954fb426507e2062905, type: 2}
-  displayerPrefab: {fileID: 4825802507586924789, guid: ab53277b8932e9d4f9d1fd49f75b2546, type: 3}
+  displayerPrefab: {fileID: 5725014972919182555, guid: d5a740daa652a4e49b3f353049739b35, type: 3}

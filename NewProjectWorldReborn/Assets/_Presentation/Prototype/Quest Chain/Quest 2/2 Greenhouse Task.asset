@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredBuildingConfiguration: {fileID: 11400000, guid: a974f8f2c1242954fb426507e2062905, type: 2}
   requiredCount: 2
-  displayerPrefab: {fileID: 6733373281815257927, guid: 8606a1be2a1ed304cb6cf9c5a92608a0, type: 3}
+  displayerPrefab: {fileID: 5251495293089391415, guid: 0b76cbf8100f7a44fb7e94beb6824eb8, type: 3}
