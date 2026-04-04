@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6684241675379444470}
   - component: {fileID: 3958448579500852521}
   - component: {fileID: 7483059782587088910}
-  m_Layer: 7
+  m_Layer: 20
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,14 +122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greenhouse View
       objectReference: {fileID: 0}
-    - target: {fileID: 4115309948036579233, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115309948036579233, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5034540163904934163, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -199,7 +191,7 @@ PrefabInstance:
     - {fileID: 288920000889633001, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4115309948036579233, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 6684241675379444470}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce2434ee2be94e4682af732ae4f0830, type: 3}

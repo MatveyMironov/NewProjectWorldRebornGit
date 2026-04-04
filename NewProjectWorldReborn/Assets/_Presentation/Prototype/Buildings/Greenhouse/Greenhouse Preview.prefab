@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4564129431758155002}
   - component: {fileID: 182882946882096515}
   - component: {fileID: 4318392138477721406}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,14 +121,6 @@ PrefabInstance:
     - target: {fileID: 2230415787717463894, guid: ca514156d6d88b949a5ebc8bacf1f10a, type: 3}
       propertyPath: m_Name
       value: Greenhouse Preview
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115309948036579233, guid: ca514156d6d88b949a5ebc8bacf1f10a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115309948036579233, guid: ca514156d6d88b949a5ebc8bacf1f10a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5034540163904934163, guid: ca514156d6d88b949a5ebc8bacf1f10a, type: 3}
       propertyPath: m_LocalPosition.x
