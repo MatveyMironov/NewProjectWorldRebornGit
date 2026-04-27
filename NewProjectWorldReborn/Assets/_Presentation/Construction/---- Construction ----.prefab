@@ -50,7 +50,7 @@ MonoBehaviour:
   cellMaterial: {fileID: 2100000, guid: c9a3c6b5a004b19449d5a1ce51862fdb, type: 2}
   mainCamera: {fileID: 0}
   cullingDistance: 40
-  excludedCellsMeshCellsVisualization: {fileID: 0}
+  excludedCellsMeshCellsVisualization: {fileID: 5246899945642156466}
 --- !u!114 &1961621405334773285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1896356069568661984}
-  - component: {fileID: 451230789165899131}
+  - component: {fileID: 5246899945642156466}
   - component: {fileID: 7724844240398612222}
   - component: {fileID: 2108186889294826326}
   - component: {fileID: 3041298396833961721}
@@ -400,7 +400,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1885397528561074655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &451230789165899131
+--- !u!114 &5246899945642156466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,13 +409,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8399370261707352666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2153ab3dbf4fca74b871b0b91c461ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: d0ab463c16f115140aac564cc259bb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 2724681712192269289}
-  _instanceMesh: {fileID: -462981019419857548, guid: f3adf1a1d63b00e45a58b16e3e2c0157, type: 3}
-  _instanceMaterial: {fileID: 2100000, guid: 8d311c0eff0a41e4db1db4d85354c60c, type: 2}
-  positionBufferName: position_buffer
+  cellMesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  cellMaterial: {fileID: 2100000, guid: 9b89b873e8958c042871811aae7a54ed, type: 2}
+  mainCamera: {fileID: 0}
+  cullingDistance: 40
 --- !u!114 &7724844240398612222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539123008b243f745b1c2c027f9f7e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualization: {fileID: 451230789165899131}
+  visualization: {fileID: 5246899945642156466}
   grid: {fileID: 4756140776102663446}
 --- !u!114 &2108186889294826326
 MonoBehaviour:
@@ -648,6 +649,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 2724681712192269289}
+    - target: {fileID: 6530977495057441181, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
+      propertyPath: excludedCellsMeshCellsVisualization
+      value: 
+      objectReference: {fileID: 5246899945642156466}
     - target: {fileID: 7098474491136810953, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
       propertyPath: grid
       value: 
