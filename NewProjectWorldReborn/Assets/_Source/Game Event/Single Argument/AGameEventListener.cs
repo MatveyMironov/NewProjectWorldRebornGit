@@ -6,8 +6,8 @@ namespace GameEventSystem
     public abstract class AGameEventListener<T> : MonoBehaviour
     {
         [SerializeField] private AGameEvent<T> gameEvent;
+        [Space]
         [SerializeField] private UnityEvent<T> response;
-        [SerializeField] private UnityEvent voidResponse;
 
         private void Awake()
         {
@@ -22,7 +22,6 @@ namespace GameEventSystem
         public void Notify(T data)
         {
             response.Invoke(data);
-            voidResponse.Invoke();
         }
     }
 }
