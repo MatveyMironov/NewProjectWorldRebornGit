@@ -6,6 +6,9 @@ namespace ProgressionSystem
     {
         [SerializeField] private AQuestDisplayerMB activeQuestDisplayer;
 
+        [Space]
+        [SerializeField] private AQuestChainDisplayerMB finishedQuestChainDisplayer;
+
         private QuestChain _displayedChain;
 
         private void OnDestroy()
@@ -16,16 +19,12 @@ namespace ProgressionSystem
         public override void DisplayQuestChain(QuestChain chain)
         {
             Clear();
-
-            DisplayActiveLink();
-
             _displayedChain = chain;
 
-            void DisplayActiveLink()
-            {
-                if (chain.ActiveQuest != null) DisplayActiveQuest(chain.ActiveQuest);
-                chain.OnActiveQuestChanged += DisplayChainActiveQuest;
-            }
+            if (chain.ActiveQuest != null) { DisplayActiveQuest(chain.ActiveQuest); }
+            chain.OnActiveQuestChanged += DisplayChainActiveQuest;
+
+            chain.OnQuestChainFinished += DisplayQuestChainFinished;
         }
 
         public override void Clear()
@@ -34,6 +33,8 @@ namespace ProgressionSystem
 
             _displayedChain.OnActiveQuestChanged -= DisplayChainActiveQuest;
             HideActiveQuest();
+
+            _displayedChain.OnQuestChainFinished -= DisplayQuestChainFinished;
         }
 
         private void DisplayChainActiveQuest()
@@ -49,6 +50,11 @@ namespace ProgressionSystem
         private void HideActiveQuest()
         {
             activeQuestDisplayer.Clear();
+        }
+
+        private void DisplayQuestChainFinished()
+        {
+            finishedQuestChainDisplayer.DisplayQuestChain(_displayedChain);
         }
     }
 }
