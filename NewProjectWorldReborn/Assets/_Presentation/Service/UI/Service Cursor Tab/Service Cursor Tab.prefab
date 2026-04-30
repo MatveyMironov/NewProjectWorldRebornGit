@@ -302,12 +302,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Service Cursor Tab
       objectReference: {fileID: 0}
+    - target: {fileID: 6592740377994907130, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7935149967352145586, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
       propertyPath: m_Name
       value: Service Name Text (TMP)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8307520836515869599, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5906325124637050178, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
@@ -315,7 +318,7 @@ PrefabInstance:
       addedObject: {fileID: 6397538428886332534}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6051987727183612673, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
-      insertIndex: 3
+      insertIndex: 1
       addedObject: {fileID: 7496422823257712606}
     - targetCorrespondingSourceObject: {fileID: 6051987727183612673, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
       insertIndex: -1
@@ -328,7 +331,7 @@ PrefabInstance:
       addedObject: {fileID: 4324512528796934112}
     - targetCorrespondingSourceObject: {fileID: 6051987727183612673, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3589436594747649026}
+      addedObject: {fileID: 85122096367493498}
     - targetCorrespondingSourceObject: {fileID: 6051987727183612673, guid: f6b4285eb545f6e458fdc4d5e4f23c82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1073350420406935703}
@@ -447,7 +450,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3589436594747649026
+--- !u!114 &85122096367493498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,11 +459,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3919281971317936806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f36c3bdc4ce3e444908b97534daaea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: acd75e6370f8a4a4a9c42cb3465c942a, type: 2}
-  unityEvent:
+  gameEvents:
+  - {fileID: 11400000, guid: acd75e6370f8a4a4a9c42cb3465c942a, type: 2}
+  response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7658743278349771731}
