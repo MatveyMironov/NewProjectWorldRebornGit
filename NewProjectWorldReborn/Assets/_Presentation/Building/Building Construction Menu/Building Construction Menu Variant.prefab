@@ -464,6 +464,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9186103310272277974}
     m_Modifications:
+    - target: {fileID: 572430114535099405, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572430114535099405, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572430114535099405, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618373028369859633, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1064324073760450964, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_Name
       value: Building Construction Buttons Menu
@@ -478,6 +494,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561072110020847037, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749304741403048478, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749304741403048478, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749304741403048478, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749304741403048478, guid: 1dd26308722341d4080011b991defeda, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
@@ -506,11 +538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6476487210166062345, guid: 1dd26308722341d4080011b991defeda, type: 3}
       propertyPath: m_LocalPosition.x
