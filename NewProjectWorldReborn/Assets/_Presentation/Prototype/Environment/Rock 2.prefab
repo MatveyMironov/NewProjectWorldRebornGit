@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3510343563055297587, guid: e69663325b8c80445a23fd45d199b4dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4152656343403773988, guid: e69663325b8c80445a23fd45d199b4dd, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
@@ -66,7 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093571416296142199, guid: e69663325b8c80445a23fd45d199b4dd, type: 3}
       propertyPath: m_Name
-      value: Rock 2 Variant
+      value: Rock 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093571416296142199, guid: e69663325b8c80445a23fd45d199b4dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
