@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 3089470318455132995}
   - component: {fileID: 4186556978652941122}
   - component: {fileID: 9223054538655904112}
+  - component: {fileID: 2536513308162893744}
   m_Layer: 0
   m_Name: Building Menu
   m_TagString: Untagged
@@ -474,6 +475,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2536513308162893744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755629540721017784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f4e9cf095e6ee41a9edde4dc90d515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction: {fileID: 8618846213935865488, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8966614336329379531}
+        m_TargetAssemblyTypeName: BuildingSystem.Implementations.SelectionBuildingDisplayerMB,
+          BuildingSystemImplementations
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5810826832876293309
 GameObject:
   m_ObjectHideFlags: 0
