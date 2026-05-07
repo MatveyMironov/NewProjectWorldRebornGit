@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Power
   <ServiceDescription>k__BackingField: Electrical energy measured in kW
-  <Icon>k__BackingField: {fileID: 21300000, guid: 3abf5f67570f3824ba9819a318eea879, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 50cdebba41d1e4db0a1aee543e935812, type: 3}
