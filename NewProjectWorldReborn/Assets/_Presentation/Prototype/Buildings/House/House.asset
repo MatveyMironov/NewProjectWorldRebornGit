@@ -19,18 +19,38 @@ MonoBehaviour:
     constructionPreviewPrefab: {fileID: 690439210746757020, guid: ed94d2c73996fe14b9168513e0a2c167, type: 3}
     buildingViewPrefab: {fileID: 3256355568392670272, guid: f648166074f93b74fb462b7222559b82, type: 3}
     occupiedCells:
+    - {x: -3, y: -3}
+    - {x: -3, y: -2}
+    - {x: -3, y: -1}
+    - {x: -3, y: 0}
+    - {x: -3, y: 1}
+    - {x: -3, y: 2}
+    - {x: -2, y: -3}
+    - {x: -2, y: -2}
+    - {x: -2, y: -1}
+    - {x: -2, y: 0}
+    - {x: -2, y: 1}
+    - {x: -2, y: 2}
+    - {x: -1, y: -3}
+    - {x: -1, y: -2}
     - {x: -1, y: -1}
     - {x: -1, y: 0}
     - {x: -1, y: 1}
     - {x: -1, y: 2}
+    - {x: 0, y: -3}
+    - {x: 0, y: -2}
     - {x: 0, y: -1}
     - {x: 0, y: 0}
     - {x: 0, y: 1}
     - {x: 0, y: 2}
+    - {x: 1, y: -3}
+    - {x: 1, y: -2}
     - {x: 1, y: -1}
     - {x: 1, y: 0}
     - {x: 1, y: 1}
     - {x: 1, y: 2}
+    - {x: 2, y: -3}
+    - {x: 2, y: -2}
     - {x: 2, y: -1}
     - {x: 2, y: 0}
     - {x: 2, y: 1}
@@ -52,4 +72,4 @@ MonoBehaviour:
       resources: []
     providesService: 1
     providedService: {fileID: 11400000, guid: 340587d9fd179dc418e42b3737982f29, type: 2}
-    providedAmount: 5
+    providedAmount: 2
