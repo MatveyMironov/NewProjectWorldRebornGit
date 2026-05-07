@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b02d6c56c498a4b84c0515f3e034eb, type: 3}
-  m_Name: Quest 2
+  m_Script: {fileID: 11500000, guid: 76e8b549dbda9504d82d5be3be222d3c, type: 3}
+  m_Name: Wind Turbine Reward
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 52edbae3977ef0740b2315cffbdc1917, type: 2}
-  reward: {fileID: 11400000, guid: 3600bf82cd5afd44abd1d03c9a7d8f80, type: 2}
+  building: {fileID: 11400000, guid: a23391af81b490a41aee106d5e417193, type: 2}
+  displayerPrefab: {fileID: 5725014972919182555, guid: d5a740daa652a4e49b3f353049739b35, type: 3}

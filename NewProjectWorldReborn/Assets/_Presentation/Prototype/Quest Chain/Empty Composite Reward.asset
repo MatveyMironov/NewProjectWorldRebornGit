@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e8b549dbda9504d82d5be3be222d3c, type: 3}
-  m_Name: Start Wind Turbine Reward
+  m_Script: {fileID: 11500000, guid: dec54ac9295af824995ef9b42253bb86, type: 3}
+  m_Name: Empty Composite Reward
   m_EditorClassIdentifier: 
-  building: {fileID: 11400000, guid: 7960d55304096554092bc9c860260d8d, type: 2}
-  displayerPrefab: {fileID: 5725014972919182555, guid: d5a740daa652a4e49b3f353049739b35, type: 3}
+  partConfigurations: []
+  displayerPrefab: {fileID: 3874636610575057853, guid: 08176ba8270b3074597d6cc20d183326, type: 3}

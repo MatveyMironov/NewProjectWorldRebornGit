@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 72805372635938680, guid: ab53277b8932e9d4f9d1fd49f75b2546, type: 3}
       propertyPath: m_text
-      value: 'You gain acess to '
+      value: 'You gained access to new building: '
       objectReference: {fileID: 0}
     - target: {fileID: 1102157238526258639, guid: ab53277b8932e9d4f9d1fd49f75b2546, type: 3}
       propertyPath: m_Pivot.x

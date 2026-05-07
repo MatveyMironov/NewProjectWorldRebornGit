@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6b02d6c56c498a4b84c0515f3e034eb, type: 3}
-  m_Name: Quest 2
+  m_Name: Quest 4
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 52edbae3977ef0740b2315cffbdc1917, type: 2}
-  reward: {fileID: 11400000, guid: 3600bf82cd5afd44abd1d03c9a7d8f80, type: 2}
+  task: {fileID: 11400000, guid: fd5af2d915e2491468e8003f58f742da, type: 2}
+  reward: {fileID: 11400000, guid: 1f2249d33812b7944b1a280fa3adff6b, type: 2}

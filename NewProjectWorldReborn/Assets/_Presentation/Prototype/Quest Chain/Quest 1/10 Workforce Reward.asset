@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b02d6c56c498a4b84c0515f3e034eb, type: 3}
-  m_Name: Quest 2
+  m_Script: {fileID: 11500000, guid: 0d4dbe0924b3f414390874ec85e5bae7, type: 3}
+  m_Name: 10 Workforce Reward
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 52edbae3977ef0740b2315cffbdc1917, type: 2}
-  reward: {fileID: 11400000, guid: 3600bf82cd5afd44abd1d03c9a7d8f80, type: 2}
+  workforceAmount: 10
+  displayerPrefab: {fileID: 6522332413429438042, guid: 50fd5587a2c988740a91855637804018, type: 3}

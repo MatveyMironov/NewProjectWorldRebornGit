@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b02d6c56c498a4b84c0515f3e034eb, type: 3}
   m_Name: Quest 3
   m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: 2106bed054f5fc141a5af6611bd38016, type: 2}
-  reward: {fileID: 11400000, guid: 78248a9cfa78c7841958f6198c63ebc3, type: 2}
+  task: {fileID: 11400000, guid: 985565c1ec46e3d408d2245b20ce4305, type: 2}
+  reward: {fileID: 11400000, guid: 0bc4a4d34fc92fa45b2b968feff51da3, type: 2}

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Start Composite Reward
   m_EditorClassIdentifier: 
   partConfigurations:
-  - {fileID: 11400000, guid: c12d85dae11a795408772d251c16fd53, type: 2}
   - {fileID: 11400000, guid: 5d3c802b301d75046b529f03e34c4a5e, type: 2}
   displayerPrefab: {fileID: 3874636610575057853, guid: 08176ba8270b3074597d6cc20d183326, type: 3}
