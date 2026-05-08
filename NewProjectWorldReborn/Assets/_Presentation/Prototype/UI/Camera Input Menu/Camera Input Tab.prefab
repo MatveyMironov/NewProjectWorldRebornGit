@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Camera input:'
+  m_text: 'Control camera:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8864866512604103861}
   - component: {fileID: 5430083550093004852}
   m_Layer: 0
-  m_Name: Camera Input Menu
+  m_Name: Camera Input Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -5, y: 5}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 166.51999, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &8864866512604103861
 MonoBehaviour:
@@ -198,7 +198,7 @@ MonoBehaviour:
     m_Bottom: 15
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!1 &5087567565887126644
 GameObject:
@@ -323,6 +323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1570325527900031685}
     m_Modifications:
+    - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
+      propertyPath: textBefore
+      value: 'Move '
+      objectReference: {fileID: 0}
     - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
       propertyPath: inputAction
       value: 
@@ -482,6 +486,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1570325527900031685}
     m_Modifications:
     - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
+      propertyPath: textBefore
+      value: 'Increase Speed '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
       propertyPath: inputAction
       value: 
       objectReference: {fileID: 7062221154188415272, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -640,6 +648,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1570325527900031685}
     m_Modifications:
     - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
+      propertyPath: textBefore
+      value: 'Zoom '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
       propertyPath: inputAction
       value: 
       objectReference: {fileID: 2376240253286796246, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -797,6 +809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1570325527900031685}
     m_Modifications:
+    - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
+      propertyPath: textBefore
+      value: 'Rotate '
+      objectReference: {fileID: 0}
     - target: {fileID: 4043821725563085721, guid: fb7cc2742133acc4fa4fb3947d42f099, type: 3}
       propertyPath: inputAction
       value: 
