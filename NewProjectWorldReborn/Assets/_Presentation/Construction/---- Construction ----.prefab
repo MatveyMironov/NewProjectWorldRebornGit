@@ -440,10 +440,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8399370261707352666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: e7f40ea3720b94b48b8ab7408c54c8ea, type: 2}
+  gameEvent: {fileID: 11400000, guid: e7f40ea3720b94b48b8ab7408c54c8ea, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -468,10 +468,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8399370261707352666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
+  gameEvent: {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:

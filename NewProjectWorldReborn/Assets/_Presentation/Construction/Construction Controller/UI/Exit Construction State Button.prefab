@@ -147,10 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 263195212753177930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
+  gameEvent: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -175,10 +175,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 263195212753177930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: d911ecd1a9e4542418375439e6bdddaf, type: 2}
+  gameEvent: {fileID: 11400000, guid: d911ecd1a9e4542418375439e6bdddaf, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 5215914780581068317}
   - component: {fileID: 8507924573842622913}
   - component: {fileID: 4697106403095136751}
-  - component: {fileID: 6881417885544940210}
+  - component: {fileID: 6717167762284259755}
   m_Layer: 0
   m_Name: Demolishing Text (TMP)
   m_TagString: Untagged
@@ -494,10 +494,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4726270745141833220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
+  gameEvent: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -513,7 +513,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &6881417885544940210
+--- !u!114 &6717167762284259755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,10 +522,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4726270745141833220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f36c3bdc4ce3e444908b97534daaea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 5711a9d3c48b20048b3c717a08905a08, type: 2}
+  gameEvents:
+  - {fileID: 11400000, guid: d911ecd1a9e4542418375439e6bdddaf, type: 2}
+  - {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -649,8 +651,7 @@ GameObject:
   - component: {fileID: 8073741260584292227}
   - component: {fileID: 1243668549436931959}
   - component: {fileID: 6308394726940779654}
-  - component: {fileID: 8599836103727502248}
-  - component: {fileID: 6231491289148387760}
+  - component: {fileID: 7912679364666158004}
   m_Layer: 0
   m_Name: Exit Construction State Button
   m_TagString: Untagged
@@ -772,10 +773,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8010145587098694277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 5e56c644de228ec41b39715caf6cc8ad, type: 2}
+  gameEvent: {fileID: 11400000, guid: 5e56c644de228ec41b39715caf6cc8ad, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -791,7 +792,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &8599836103727502248
+--- !u!114 &7912679364666158004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -800,56 +801,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8010145587098694277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f36c3bdc4ce3e444908b97534daaea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 5711a9d3c48b20048b3c717a08905a08, type: 2}
+  gameEvents:
+  - {fileID: 11400000, guid: 5711a9d3c48b20048b3c717a08905a08, type: 2}
+  - {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8010145587098694277}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6231491289148387760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8010145587098694277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8010145587098694277}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6231491289148387760}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
