@@ -51,7 +51,6 @@ namespace InteractionSystem
             {
                 ForgetColliderAndInteractable();
             }
-            
             bool TryFindCollider(Vector2 mousePosition, out Collider collider)
             {
                 Ray ray = interactionCamera.ScreenPointToRay(mousePosition);

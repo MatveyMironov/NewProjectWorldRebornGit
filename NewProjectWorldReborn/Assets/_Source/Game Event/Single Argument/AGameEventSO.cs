@@ -4,7 +4,7 @@ using UnityEngine;
 namespace GameEventSystem
 {
     //[CreateAssetMenu(fileName = "New <Type> Game Event", menuName = "Game Event/<Type>")]
-    public abstract class AGameEvent<T> : ScriptableObject
+    public abstract class AGameEventSO<T> : ScriptableObject
     {
         private readonly List<AGameEventListener<T>> _listeners = new();
 
