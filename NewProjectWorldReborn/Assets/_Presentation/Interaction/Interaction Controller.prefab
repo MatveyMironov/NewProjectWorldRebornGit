@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5495942392384952283}
   - component: {fileID: 3050673152429077722}
+  - component: {fileID: 6245374473794040444}
+  - component: {fileID: 2637919500173342496}
   m_Layer: 0
   m_Name: ' Interaction Input Listener'
   m_TagString: Untagged
@@ -47,6 +49,62 @@ MonoBehaviour:
   interactInput: {fileID: -1749092586542779268, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   mousePositionInput: {fileID: -5479752257787601805, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   interactionController: {fileID: 877769561379773901}
+--- !u!114 &6245374473794040444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687148261513053621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e7f40ea3720b94b48b8ab7408c54c8ea, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7687148261513053621}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2637919500173342496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687148261513053621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 43000862c37496744b0c93411f44a5a2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7687148261513053621}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &8414785765565738262
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +116,7 @@ GameObject:
   - component: {fileID: 9216116347858051653}
   - component: {fileID: 877769561379773901}
   - component: {fileID: 2653397462540390910}
+  - component: {fileID: 920973815435440172}
   m_Layer: 0
   m_Name: Interaction Controller
   m_TagString: Untagged
@@ -120,6 +179,34 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: c3ac704f24888b8429a7e90a6e542694, type: 2}
         m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
         m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &920973815435440172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414785765565738262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e7f40ea3720b94b48b8ab7408c54c8ea, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 877769561379773901}
+        m_TargetAssemblyTypeName: InteractionSystem.InteractionControllerMB, InteractionSystem
+        m_MethodName: ForgetColliderAndInteractable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
