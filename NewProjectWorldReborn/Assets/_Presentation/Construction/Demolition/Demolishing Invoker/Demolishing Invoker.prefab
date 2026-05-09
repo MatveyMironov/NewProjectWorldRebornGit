@@ -71,38 +71,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3645316201765303369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 094b2dbcf0d6de7418d0032516fbccf7, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3645316201765303369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &7455448632286714477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645316201765303369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
+  gameEvent: {fileID: 11400000, guid: 28b66e5eb0a5871478eaccf9c5cbec9d, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -118,6 +90,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7455448632286714477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3645316201765303369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d911ecd1a9e4542418375439e6bdddaf, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3645316201765303369}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &8401758256117733392
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,8 +128,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6011949728942054424}
   - component: {fileID: 2389217084681722542}
-  - component: {fileID: 2426898376922752572}
   - component: {fileID: 8097390850755255171}
+  - component: {fileID: 392850745544825466}
   m_Layer: 0
   m_Name: Demolishing Invoker
   m_TagString: Untagged
@@ -168,34 +168,6 @@ MonoBehaviour:
   constructionController: {fileID: 0}
   constructionGridManager: {fileID: 0}
   demolitionGridVisualization: {fileID: 0}
---- !u!114 &2426898376922752572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8401758256117733392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 03f7c9ab4d7d1f742accb970083cc346, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2389217084681722542}
-        m_TargetAssemblyTypeName: DemolishingSystem.DemolishingInvokerMB, DemolishingSystem
-        m_MethodName: InvokeDemolishing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8097390850755255171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +233,34 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 396e5b3e2f557c34d927d559d56c951f, type: 2}
         m_TargetAssemblyTypeName: CustomEventSystem.CustomEventSO, CustomEventSystem
         m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &392850745544825466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401758256117733392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 03f7c9ab4d7d1f742accb970083cc346, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2389217084681722542}
+        m_TargetAssemblyTypeName: DemolishingSystem.DemolishingInvokerMB, DemolishingSystem
+        m_MethodName: InvokeDemolishing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
