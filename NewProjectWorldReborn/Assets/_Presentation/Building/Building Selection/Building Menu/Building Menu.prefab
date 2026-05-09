@@ -228,8 +228,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6979055727613371344}
-        m_TargetAssemblyTypeName: BuildingSystem.Implementations.SelectionBuildingsManagerDisplayerMB,
+      - m_Target: {fileID: 8966614336329379531}
+        m_TargetAssemblyTypeName: BuildingSystem.Implementations.SelectionBuildingDisplayerMB,
           BuildingSystemImplementations
         m_MethodName: Clear
         m_Mode: 1

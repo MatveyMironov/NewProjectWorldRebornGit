@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7114535525755448643}
   - component: {fileID: 1834920441579174235}
   - component: {fileID: 8523635439376596381}
+  - component: {fileID: 8783369252746410956}
   m_Layer: 5
   m_Name: Building Construction Button
   m_TagString: Untagged
@@ -179,6 +180,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabObject: {fileID: 1199681288171635081}
+--- !u!114 &8783369252746410956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514387904387584541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5e56c644de228ec41b39715caf6cc8ad, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7950406153982057064}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7950406153982057064
 GameObject:
   m_ObjectHideFlags: 0
