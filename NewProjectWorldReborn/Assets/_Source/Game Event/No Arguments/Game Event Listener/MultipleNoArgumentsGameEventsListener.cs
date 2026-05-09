@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameEventSystem
+namespace GameEventSystem.NoArguments
 {
-    public class MultipleGameEventsListener : MonoBehaviour, IGameEventListener
+    public class MultipleNoArgumentsGameEventsListener : MonoBehaviour, INoArgumentsGameEventListener
     {
-        [SerializeField] private GameEventSO[] gameEvents = new GameEventSO[0];
+        [SerializeField] private NoArgumentsGameEventSO[] gameEvents = new NoArgumentsGameEventSO[0];
         [Space]
         [SerializeField] private UnityEvent response;
 
