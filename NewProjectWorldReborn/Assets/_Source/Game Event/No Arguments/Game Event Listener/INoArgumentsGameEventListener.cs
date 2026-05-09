@@ -1,6 +1,6 @@
 ﻿namespace GameEventSystem
 {
-    public interface IGameEventListener
+    public interface INoArgumentsGameEventListener
     {
         void Notify();
     }
