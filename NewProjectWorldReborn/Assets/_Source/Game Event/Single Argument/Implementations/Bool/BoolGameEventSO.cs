@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace GameEventSystem
+namespace GameEventSystem.Implementations.Bool
 {
     [CreateAssetMenu(fileName = "New Bool Game Event", menuName = "Game Event/Bool")]
-    public class BoolGameEvent : AGameEvent<bool> { }
+    public class BoolGameEventSO : AGameEventSO<bool> { }
 }
