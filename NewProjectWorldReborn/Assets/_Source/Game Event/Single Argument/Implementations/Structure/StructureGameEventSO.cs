@@ -1,9 +1,8 @@
 using ConstructionGridSystem;
-using GameEventSystem;
 using UnityEngine;
 
-namespace ConstructionSystem
+namespace GameEventSystem.Implementations.Structure
 {
     [CreateAssetMenu(fileName = "New Structure Event", menuName = "Event/Structure")]
-    public class StructureEvent : AGameEvent<BuildingStructure> { }
+    public class StructureGameEventSO : AGameEvent<BuildingStructure> { }
 }
