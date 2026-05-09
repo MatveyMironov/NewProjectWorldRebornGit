@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7427537682832069392}
   - component: {fileID: 4676897897202558233}
   - component: {fileID: 8981341463215739007}
-  - component: {fileID: 3593066222721014019}
   - component: {fileID: 634536892818341658}
   m_Layer: 0
   m_Name: Main Camera
@@ -108,10 +107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5950536460156162426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f36c3bdc4ce3e444908b97534daaea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: bfe2586d5f6afd1448512bd54bd0810f, type: 2}
+  gameEvents: []
   response:
     m_PersistentCalls:
       m_Calls:
@@ -127,7 +126,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3593066222721014019
+--- !u!114 &634536892818341658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,10 +135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5950536460156162426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f36c3bdc4ce3e444908b97534daaea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 65b508b73448313459b8ba91a4e29fd7, type: 2}
+  gameEvents: []
   response:
     m_PersistentCalls:
       m_Calls:
@@ -154,34 +153,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &634536892818341658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950536460156162426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: 567466de3d837fc4ebae490dde4f46c9, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4676897897202558233}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6512238778574176826
 GameObject:

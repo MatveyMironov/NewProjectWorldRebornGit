@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6543816528543985053}
   - component: {fileID: 5842316072860872019}
   - component: {fileID: 6422903263900839540}
+  - component: {fileID: 3977094387615596583}
   m_Layer: 0
   m_Name: Construction Mode Switch
   m_TagString: Untagged
@@ -118,6 +119,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 72e65372c8726eb46b21dc162aa79953, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6543816528543985053}
+        m_TargetAssemblyTypeName: SwitchSystem.UnityEventSwitchMB, SwitchSystem
+        m_MethodName: SwitchTo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3977094387615596583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566274916728426137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da689b96595fb74a833b6d1537d0396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 684326beffdf0f9428d228b491b5e8c1, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
