@@ -18,6 +18,7 @@ namespace PlacingSystem
         private readonly IConstructionPreviewFactory _previewFactory;
         private readonly ICellsVisualization _placementCellsVisualization;
         private readonly IBuildingStructureFactory _structureFactory;
+        private readonly Action<BuildingStructure> _structurePlacedCallback;
 
         private readonly Layout _buildingLayout;
 
@@ -25,13 +26,15 @@ namespace PlacingSystem
                             IConstructionGridManager constructionGridManager,
                             IConstructionPreviewFactory previewFactory,
                             ICellsVisualization placementCellsVisualization,
-                            IBuildingStructureFactory stractureFactory)
+                            IBuildingStructureFactory stractureFactory,
+                            Action<BuildingStructure> structurePlacedCallback)
         {
             _constructionConfiguration = constructionConfiguration ?? throw new ArgumentNullException(nameof(constructionConfiguration));
             _constructionGridManager = constructionGridManager ?? throw new ArgumentNullException(nameof(constructionGridManager));
             _previewFactory = previewFactory ?? throw new ArgumentNullException(nameof(previewFactory));
             _placementCellsVisualization = placementCellsVisualization ?? throw new ArgumentNullException(nameof(placementCellsVisualization));
             _structureFactory = stractureFactory ?? throw new ArgumentNullException(nameof(stractureFactory));
+            _structurePlacedCallback = structurePlacedCallback;
 
             _buildingLayout = _constructionConfiguration.GetBuildingLayout();
         }
@@ -40,8 +43,6 @@ namespace PlacingSystem
 
         //Cashing hash set for perfomance
         private readonly HashSet<Vector2Int> _placementCells = new();
-
-        public event Action<BuildingStructure> OnBuildingPlaced;
 
         private GameObject _previewObject;
         private ConstructionPreview _preview;
@@ -73,7 +74,7 @@ namespace PlacingSystem
 
                 if (_constructionGridManager.TryPlaceStructureAt(structure, cell))
                 {
-                    OnBuildingPlaced?.Invoke(structure);
+                    _structurePlacedCallback.Invoke(structure);
 
                     ShowPlacementValidityAt(cell);
                 }
