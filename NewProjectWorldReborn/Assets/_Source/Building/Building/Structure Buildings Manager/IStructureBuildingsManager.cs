@@ -5,6 +5,7 @@ namespace BuildingSystem
 {
     public interface IStructureBuildingsManager
     {
+        Building[] Buildings { get; }
         event Action<Building> OnBuildingAdded;
         event Action<Building> OnBuildingRemoved;
 

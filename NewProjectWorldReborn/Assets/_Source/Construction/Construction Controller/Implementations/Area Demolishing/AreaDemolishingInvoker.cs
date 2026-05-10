@@ -30,7 +30,7 @@ namespace AreaDemolishingSystem
 
         public void InvokeDemolishing()
         {
-            _constructionController.SetState(_demolishingState);
+            _constructionController.EnterState(_demolishingState);
         }
     }
 }

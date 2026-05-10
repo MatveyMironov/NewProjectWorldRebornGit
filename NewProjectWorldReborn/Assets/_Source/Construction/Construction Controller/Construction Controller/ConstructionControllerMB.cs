@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ConstructionControllerSystem
 {
@@ -15,9 +16,23 @@ namespace ConstructionControllerSystem
             _controller = new ConstructionController(mainCamera, layers, grid);
         }
 
-        public void AbortAction()
+        public bool HasEnteredState => _controller.HasEnteredState;
+
+        public event Action OnStateEntered
         {
-            _controller.AbortAction();
+            add => _controller.OnStateEntered += value;
+            remove => _controller.OnStateEntered -= value;
+        }
+
+        public event Action OnStateExited
+        {
+            add => _controller.OnStateExited += value;
+            remove => _controller.OnStateExited -= value;
+        }
+
+        public void ExitState()
+        {
+            _controller.ExitState();
         }
 
         public void FinishAction()
@@ -25,9 +40,9 @@ namespace ConstructionControllerSystem
             _controller.FinishAction();
         }
 
-        public void SetState(IConstructionState state)
+        public void EnterState(IConstructionState state)
         {
-            _controller.SetState(state);
+            _controller.EnterState(state);
         }
 
         public void StartAction()

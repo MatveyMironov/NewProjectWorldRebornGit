@@ -11,7 +11,9 @@
 
         public void RotateBuilding()
         {
-            _placingState?.RotateBuilding();
+            if (_placingState == null) { return; }
+
+            _placingState.RotateBuilding();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace GridEditingSystem
 
         public void InvokeRemovingCellsState()
         {
-            _constructionController.SetState(_removingCellsState);
+            _constructionController.EnterState(_removingCellsState);
         }
     }
 }

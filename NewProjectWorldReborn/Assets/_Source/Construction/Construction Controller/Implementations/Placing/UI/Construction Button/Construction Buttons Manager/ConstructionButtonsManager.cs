@@ -1,15 +1,16 @@
+using ConstructionGridSystem;
+using PlacingSystem;
 using System;
 using System.Collections.Generic;
-using PlacingSystem;
 
 namespace ConstructionUISystem
 {
     public class ConstructionButtonsManager : IConstructionButtonsManager
     {
         private readonly IConstructionButtonSpawner _constructionButtonSpawner;
-        private readonly IPlacingInvokeCreator _placingInvokeCreator;
+        private readonly IInvokePlacingFactory _placingInvokeCreator;
 
-        public ConstructionButtonsManager(IConstructionButtonSpawner constructionButtonSpawner, IPlacingInvokeCreator placingInvokeCreator)
+        public ConstructionButtonsManager(IConstructionButtonSpawner constructionButtonSpawner, IInvokePlacingFactory placingInvokeCreator)
         {
             _constructionButtonSpawner = constructionButtonSpawner ?? throw new ArgumentNullException(nameof(constructionButtonSpawner));
             _placingInvokeCreator = placingInvokeCreator ?? throw new ArgumentNullException(nameof(placingInvokeCreator));
@@ -17,12 +18,12 @@ namespace ConstructionUISystem
 
         private readonly Dictionary<IConstructionConfiguration, ConstructionButtonMB> _constructionButtons = new();
 
-        public bool TryAddConstructionButton(IConstructionConfiguration construction)
+        public bool TryAddConstructionButton(IConstructionConfiguration construction, Action<BuildingStructure> structurePlacedCallback)
         {
             if (_constructionButtons.TryAdd(construction, null))
             {
                 _constructionButtons[construction] = _constructionButtonSpawner.SpawnConstructionButton();
-                _constructionButtons[construction].OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(construction);
+                _constructionButtons[construction].OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(construction, structurePlacedCallback);
 
                 return true;
             }

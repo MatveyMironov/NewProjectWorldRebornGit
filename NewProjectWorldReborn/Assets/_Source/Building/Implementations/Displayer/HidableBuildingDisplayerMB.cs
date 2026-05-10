@@ -16,6 +16,7 @@ namespace BuildingSystem.Implementations
 
         public override void Clear()
         {
+            //Debug.Log("Cleared");
             hidable.Hide();
             displayer.Clear();
         }
