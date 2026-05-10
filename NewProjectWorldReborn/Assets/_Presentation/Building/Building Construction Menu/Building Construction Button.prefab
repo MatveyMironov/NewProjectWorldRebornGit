@@ -698,6 +698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Info Tab
       objectReference: {fileID: 0}
+    - target: {fileID: 5092034932265554433, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
+      propertyPath: displayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7418668213361615515, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -771,7 +775,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -3808695779775862851, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34528e0f22951e24a81fe4a946ccf395, type: 3}
