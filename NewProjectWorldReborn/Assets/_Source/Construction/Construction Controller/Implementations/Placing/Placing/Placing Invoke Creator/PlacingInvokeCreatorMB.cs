@@ -12,9 +12,9 @@ namespace PlacingSystem
 
         [Space]
         [SerializeField] private ConstructionGridManagerMB constructionGridManager;
-        [SerializeField] private ConstructionPreviewControllerMB constructionPreviewController;
+        [SerializeField] private ConstructionPreviewFactoryMB constructionPreviewController;
         [SerializeField] private ACellsVisualizationMB occupiedCellsVisualization;
-        [SerializeField] private BuildingViewInstantiatorMB buildingViewCreator;
+        [SerializeField] private BuildingStructureFactoryMB buildingViewCreator;
 
         [Space]
         [SerializeField] private BuildingRotationControllerMB buildingRotationController;
