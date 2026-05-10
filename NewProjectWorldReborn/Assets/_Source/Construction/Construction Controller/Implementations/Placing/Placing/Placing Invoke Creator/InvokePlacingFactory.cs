@@ -5,7 +5,7 @@ using ConstructionControllerSystem;
 
 namespace PlacingSystem
 {
-    public class PlacingInvokeCreator : IPlacingInvokeCreator
+    public class InvokePlacingFactory : IInvokePlacingFactory
     {
         private readonly IConstructionGridManager _constructionGridManager;
         private readonly IConstructionPreviewFactory _constructionPreviewController;
@@ -15,7 +15,7 @@ namespace PlacingSystem
         private readonly IBuildingRotationController _buildingRotationController;
         private readonly IConstructionController _constructionController;
 
-        public PlacingInvokeCreator(IConstructionGridManager constructionGridManager,
+        public InvokePlacingFactory(IConstructionGridManager constructionGridManager,
                                     IConstructionPreviewFactory constructionPreviewController,
                                     ICellsVisualization occupiedCellsVisualization,
                                     IBuildingStructureFactory buildingViewInstantiator,
@@ -31,13 +31,14 @@ namespace PlacingSystem
             _constructionController = constructionController ?? throw new ArgumentNullException(nameof(constructionController));
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
         {
             PlacingState placingState = new(constructionConfiguration,
                                             _constructionGridManager,
                                             _constructionPreviewController,
                                             _occupiedCellsVisualization,
-                                            _buildingViewInstantiator);
+                                            _buildingViewInstantiator,
+                                            structurePlacedCallback);
 
             return InvokePlacing;
 
