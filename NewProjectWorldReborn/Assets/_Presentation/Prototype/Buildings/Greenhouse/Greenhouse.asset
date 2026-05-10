@@ -9,69 +9,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
+  m_Script: {fileID: 11500000, guid: 308633d185103034cbac2ec6a6ba1017, type: 3}
   m_Name: Greenhouse
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: Greenhouse
-    <Description>k__BackingField: Vegetables are grown in an artificial environment,
-      protected from hostile elements
+    <Description>k__BackingField: Plants can be grown in controlled environment,
+      protected from hostile outside elements
   construction:
-    constructionPreviewPrefab: {fileID: 690439210746757020, guid: 3a4ea4101279b5c479212cad7dc08912, type: 3}
-    buildingViewPrefab: {fileID: 3256355568392670272, guid: 9dc0a352f467f9a4699fdae079dbb4ff, type: 3}
     occupiedCells:
-    - {x: -3, y: -3}
     - {x: -3, y: -2}
     - {x: -3, y: -1}
     - {x: -3, y: 0}
     - {x: -3, y: 1}
     - {x: -3, y: 2}
-    - {x: -2, y: -3}
     - {x: -2, y: -2}
     - {x: -2, y: -1}
     - {x: -2, y: 0}
     - {x: -2, y: 1}
     - {x: -2, y: 2}
-    - {x: -1, y: -3}
     - {x: -1, y: -2}
     - {x: -1, y: -1}
     - {x: -1, y: 0}
     - {x: -1, y: 1}
     - {x: -1, y: 2}
-    - {x: 0, y: -3}
     - {x: 0, y: -2}
     - {x: 0, y: -1}
     - {x: 0, y: 0}
     - {x: 0, y: 1}
     - {x: 0, y: 2}
-    - {x: 1, y: -3}
     - {x: 1, y: -2}
     - {x: 1, y: -1}
     - {x: 1, y: 0}
     - {x: 1, y: 1}
     - {x: 1, y: 2}
-    - {x: 2, y: -3}
     - {x: 2, y: -2}
     - {x: 2, y: -1}
     - {x: 2, y: 0}
     - {x: 2, y: 1}
     - {x: 2, y: 2}
-    - {x: 3, y: -3}
-    - {x: 3, y: -2}
-    - {x: 3, y: -1}
-    - {x: 3, y: 0}
-    - {x: 3, y: 1}
-    - {x: 3, y: 2}
-  constructionResources:
-    resources: []
+    buildingViewPrefab: {fileID: 3256355568392670272, guid: 9dc0a352f467f9a4699fdae079dbb4ff, type: 3}
   interiorConfiguration:
-    Name: Greenhouse
-    Description: Vegetables are grown in an artificial environment, protected from
-      hostile elements
+    Name: 
+    Description: 
     employesWorkers: 1
     employerConfiguration:
-      minWorkForce: 1
-      maxWorkForce: 5
+      minWorkForce: 0
+      maxWorkForce: 3
     carriesOutManufacture: 1
     time: 5
     consumedResources:

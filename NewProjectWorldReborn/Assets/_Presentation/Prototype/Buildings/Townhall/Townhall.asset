@@ -9,37 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
+  m_Script: {fileID: 11500000, guid: 308633d185103034cbac2ec6a6ba1017, type: 3}
   m_Name: Townhall
   m_EditorClassIdentifier: 
   info:
-    <Name>k__BackingField: Townhall
-    <Description>k__BackingField: Center of the community, where administrative decisions
-      can be planed in relative comfort
+    <Name>k__BackingField: 
+    <Description>k__BackingField: 
   construction:
-    constructionPreviewPrefab: {fileID: 690439210746757020, guid: 0bf053b45acda164f9665c7d3dc8239c, type: 3}
+    occupiedCells: []
     buildingViewPrefab: {fileID: 3256355568392670272, guid: 120481528f7194e418db56ef959cdf71, type: 3}
-    occupiedCells:
-    - {x: -1, y: -1}
-    - {x: -1, y: 0}
-    - {x: -1, y: 1}
-    - {x: -1, y: 2}
-    - {x: 0, y: -1}
-    - {x: 0, y: 0}
-    - {x: 0, y: 1}
-    - {x: 0, y: 2}
-    - {x: 1, y: -1}
-    - {x: 1, y: 0}
-    - {x: 1, y: 1}
-    - {x: 1, y: 2}
-    - {x: 2, y: -1}
-    - {x: 2, y: 0}
-    - {x: 2, y: 1}
-    - {x: 2, y: 2}
-  constructionResources:
-    resources:
-    - _resource: {fileID: 11400000, guid: bae3167b47b4c6e4b822bbbab798a7ef, type: 2}
-      _count: 10
   interiorConfiguration:
     Name: 
     Description: 
@@ -53,6 +31,6 @@ MonoBehaviour:
       resources: []
     producedResources:
       resources: []
-    providesService: 1
-    providedService: {fileID: 11400000, guid: 66ba1a45196e297499951df9ce757b63, type: 2}
-    providedAmount: 100
+    providesService: 0
+    providedService: {fileID: 0}
+    providedAmount: 0

@@ -7141,9 +7141,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3245807967071792421, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
+      propertyPath: invokePlacingFactory
+      value: 
+      objectReference: {fileID: 2017512150}
+    - target: {fileID: 3245807967071792421, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: placingInvokeCreator
       value: 
-      objectReference: {fileID: 1771543537}
+      objectReference: {fileID: 0}
     - target: {fileID: 3685568149343750048, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7838,17 +7842,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9216116347858051653, guid: ba52f5eac647e50458a1692cfb97a9d0, type: 3}
   m_PrefabInstance: {fileID: 1728672753}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1771543537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4320512155800903561, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
-  m_PrefabInstance: {fileID: 1432945159}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db98f9d4742fd164ab4fd0dfaa3744cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1771946863
 GameObject:
   m_ObjectHideFlags: 0
@@ -8970,15 +8963,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1823092129691236279, guid: a61faa727924d4e40a37c45b4a9f709d, type: 3}
   m_PrefabInstance: {fileID: 1512263975453336579}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2014677694 stripped
+--- !u!114 &2017512150 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4837606866946607380, guid: efbff91967c1fd84f88a24168f0047ca, type: 3}
-  m_PrefabInstance: {fileID: 8197357988491080178}
+  m_CorrespondingSourceObject: {fileID: 8152418333059284626, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
+  m_PrefabInstance: {fileID: 1432945159}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f769307f7a2d9441aeef5fd8bf8beec, type: 3}
+  m_Script: {fileID: 11500000, guid: 66bdd705d116f1b4bb5a3ad270e810b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2022795165
@@ -11885,10 +11878,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7987347490597769784, guid: efbff91967c1fd84f88a24168f0047ca, type: 3}
-      propertyPath: taskDisplayer
-      value: 
-      objectReference: {fileID: 2014677694}
     - target: {fileID: 9158567821180650004, guid: efbff91967c1fd84f88a24168f0047ca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11976,6 +11965,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 511997354244751166, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940455361849256973, guid: 89f18f3ba2c7637448d8c9e2665ee3ca, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

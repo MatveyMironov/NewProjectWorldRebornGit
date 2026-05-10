@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bd18d6394c3e941a70b92362ff9f88, type: 3}
+  m_Script: {fileID: 11500000, guid: 308633d185103034cbac2ec6a6ba1017, type: 3}
   m_Name: Wind Turbine
   m_EditorClassIdentifier: 
   info:
     <Name>k__BackingField: Wind Turbine
-    <Description>k__BackingField: Generates power from wind
+    <Description>k__BackingField: Converts eind energy into electrical power
   construction:
-    constructionPreviewPrefab: {fileID: 690439210746757020, guid: f7202cc0909dcff4598b5ea2d28b06fa, type: 3}
-    buildingViewPrefab: {fileID: 3256355568392670272, guid: 6825296d25889434ab1d308bb05ed322, type: 3}
     occupiedCells:
     - {x: -1, y: -1}
     - {x: -1, y: 0}
@@ -28,15 +26,14 @@ MonoBehaviour:
     - {x: 1, y: -1}
     - {x: 1, y: 0}
     - {x: 1, y: 1}
-  constructionResources:
-    resources: []
+    buildingViewPrefab: {fileID: 3256355568392670272, guid: 6825296d25889434ab1d308bb05ed322, type: 3}
   interiorConfiguration:
-    Name: Wind Turbine
-    Description: Generates power from wind
-    employesWorkers: 1
+    Name: 
+    Description: 
+    employesWorkers: 0
     employerConfiguration:
-      minWorkForce: 1
-      maxWorkForce: 1
+      minWorkForce: 0
+      maxWorkForce: 0
     carriesOutManufacture: 0
     time: 0
     consumedResources:
