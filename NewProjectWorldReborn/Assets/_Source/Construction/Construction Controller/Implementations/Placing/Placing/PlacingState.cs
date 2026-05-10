@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ConstructionControllerSystem;
 using System.Linq;
+using BuildingViewSystem;
 
 namespace PlacingSystem
 {
@@ -14,25 +15,28 @@ namespace PlacingSystem
         private readonly IConstructionConfiguration _constructionConfiguration;
 
         private readonly IConstructionGridManager _constructionGridManager;
-        private readonly IConstructionPreviewController _previewController;
+        private readonly IConstructionPreviewFactory _previewFactory;
         private readonly ICellsVisualization _placementCellsVisualization;
-        private readonly IBuildingStructureCreator _buildingViewInstantiator;
+        private readonly IBuildingStructureFactory _structureFactory;
+        private readonly Action<BuildingStructure> _structurePlacedCallback;
 
         private readonly Layout _buildingLayout;
 
         public PlacingState(IConstructionConfiguration constructionConfiguration,
                             IConstructionGridManager constructionGridManager,
-                            IConstructionPreviewController preview,
+                            IConstructionPreviewFactory previewFactory,
                             ICellsVisualization placementCellsVisualization,
-                            IBuildingStructureCreator buildingViewInstantiator)
+                            IBuildingStructureFactory stractureFactory,
+                            Action<BuildingStructure> structurePlacedCallback)
         {
             _constructionConfiguration = constructionConfiguration ?? throw new ArgumentNullException(nameof(constructionConfiguration));
             _constructionGridManager = constructionGridManager ?? throw new ArgumentNullException(nameof(constructionGridManager));
-            _previewController = preview ?? throw new ArgumentNullException(nameof(preview));
+            _previewFactory = previewFactory ?? throw new ArgumentNullException(nameof(previewFactory));
             _placementCellsVisualization = placementCellsVisualization ?? throw new ArgumentNullException(nameof(placementCellsVisualization));
-            _buildingViewInstantiator = buildingViewInstantiator ?? throw new ArgumentNullException(nameof(buildingViewInstantiator));
+            _structureFactory = stractureFactory ?? throw new ArgumentNullException(nameof(stractureFactory));
+            _structurePlacedCallback = structurePlacedCallback;
 
-            _buildingLayout = new(_constructionConfiguration.OccupiedCells);
+            _buildingLayout = _constructionConfiguration.GetBuildingLayout();
         }
 
         private Vector2Int _currentCell;
@@ -40,15 +44,16 @@ namespace PlacingSystem
         //Cashing hash set for perfomance
         private readonly HashSet<Vector2Int> _placementCells = new();
 
-        public event Action<BuildingStructure> OnBuildingPlaced;
+        private GameObject _previewObject;
+        private ConstructionPreview _preview;
 
         public void EnterState(Vector2Int cell)
         {
             _currentCell = cell;
 
-            //Show player where structure will be placed
-            _previewController.ShowPreview(_constructionConfiguration.ConstructionPreviewPrefab);
-            _previewController.SetOrientation(_buildingLayout.Orientation);
+            _previewObject = _constructionConfiguration.CreateBuildingPreviewObject();
+            _preview = _previewFactory.CreateConstructionPreview(_previewObject);
+            _preview.SetOrientation(_buildingLayout.Orientation);
             ShowPlacementAt(cell);
         }
 
@@ -65,11 +70,11 @@ namespace PlacingSystem
 
             if (_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _buildingLayout.OccupiedCells))
             {
-                BuildingStructure structure = _buildingViewInstantiator.CreateBuildingStructure(_constructionConfiguration, cell, _buildingLayout.Orientation);
+                BuildingStructure structure = _structureFactory.CreateBuildingStructure(cell, _buildingLayout, _constructionConfiguration.BuildingViewPrefab);
 
                 if (_constructionGridManager.TryPlaceStructureAt(structure, cell))
                 {
-                    OnBuildingPlaced?.Invoke(structure);
+                    _structurePlacedCallback.Invoke(structure);
 
                     ShowPlacementValidityAt(cell);
                 }
@@ -87,20 +92,15 @@ namespace PlacingSystem
 
         public void ExitState()
         {
-            HidePlacement();
+            UnityEngine.Object.Destroy(_previewObject);
+            HidePlacementCells();
         }
 
         private void ShowPlacementAt(Vector2Int cell)
         {
-            _previewController.MoveToCell(cell);
+            _preview.MoveToCell(cell);
             ShowPlacementCellsAt(cell);
             ShowPlacementValidityAt(cell);
-        }
-
-        private void HidePlacement()
-        {
-            _previewController.HidePreview();
-            HidePlacementCells();
         }
 
         public void RotateBuilding()
@@ -124,7 +124,7 @@ namespace PlacingSystem
                 break;
             }
 
-            _previewController.SetOrientation(_buildingLayout.Orientation);
+            _preview.SetOrientation(_buildingLayout.Orientation);
             ShowPlacementCellsAt(_currentCell);
             ShowPlacementValidityAt(_currentCell);
         }
@@ -159,12 +159,12 @@ namespace PlacingSystem
 
             void ShowValidPlacement()
             {
-                _previewController.ShowValidPlacement();
+                _preview.ShowValidPlacement();
             }
 
             void ShowInvalidPlacement()
             {
-                _previewController.ShowInvalidPlacement();
+                _preview.ShowInvalidPlacement();
             }
         }
     }

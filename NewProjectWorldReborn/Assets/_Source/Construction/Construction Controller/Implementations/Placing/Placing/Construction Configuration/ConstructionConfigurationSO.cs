@@ -1,4 +1,5 @@
-using ConstructionGridSystem;
+using BuildingViewSystem;
+using LayoutSystem;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +10,9 @@ namespace PlacingSystem
     {
         [SerializeField] private SConstructionConfiguration constructionConfiguration;
 
-        public HashSet<Vector2Int> OccupiedCells => constructionConfiguration.OccupiedCells;
-        public ConstructionPreviewMB ConstructionPreviewPrefab => constructionConfiguration.ConstructionPreviewPrefab;
+        public BuildingViewMB BuildingViewPrefab => constructionConfiguration.BuildingViewPrefab;
 
-        public BuildingStructure CreateBuildingStructure()
-        {
-            return constructionConfiguration.CreateBuildingStructure();
-        }
+        public GameObject CreateBuildingPreviewObject() => constructionConfiguration.CreateBuildingPreviewObject();
+        public Layout GetBuildingLayout() => constructionConfiguration.GetBuildingLayout();
     }
 }

@@ -6,7 +6,7 @@ namespace ProgressionSystem.Implementations
     [CreateAssetMenu(fileName = "New Building Task", menuName = "Progression/Task Configuration/Building Task")]
     public class BuildingTaskConfigurationSO : ATaskConfigurationSO
     {
-        [SerializeField] private ABuildingConfigurationSO requiredBuildingConfiguration;
+        [SerializeField] private BuildingConfigurationSO requiredBuildingConfiguration;
         [SerializeField] private int requiredCount;
         [SerializeField] private BuildingTaskDisplayerMB displayerPrefab;
 

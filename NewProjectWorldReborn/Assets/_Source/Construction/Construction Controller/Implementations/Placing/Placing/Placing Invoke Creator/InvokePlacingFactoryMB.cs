@@ -6,24 +6,24 @@ using ConstructionControllerSystem;
 
 namespace PlacingSystem
 {
-    public class PlacingInvokeCreatorMB : MonoBehaviour, IPlacingInvokeCreator
+    public class InvokePlacingFactoryMB : MonoBehaviour, IInvokePlacingFactory
     {
         [SerializeField] private ConstructionControllerMB constructionController;
 
         [Space]
         [SerializeField] private ConstructionGridManagerMB constructionGridManager;
-        [SerializeField] private ConstructionPreviewControllerMB constructionPreviewController;
+        [SerializeField] private ConstructionPreviewFactoryMB constructionPreviewController;
         [SerializeField] private ACellsVisualizationMB occupiedCellsVisualization;
-        [SerializeField] private BuildingViewInstantiatorMB buildingViewCreator;
+        [SerializeField] private BuildingStructureFactoryMB buildingViewCreator;
 
         [Space]
         [SerializeField] private BuildingRotationControllerMB buildingRotationController;
 
-        private IPlacingInvokeCreator _placingInvokeCreator;
+        private IInvokePlacingFactory _invokePlacingFactory;
 
         private void Awake()
         {
-            _placingInvokeCreator = new PlacingInvokeCreator(constructionGridManager,
+            _invokePlacingFactory = new InvokePlacingFactory(constructionGridManager,
                                                              constructionPreviewController,
                                                              occupiedCellsVisualization,
                                                              buildingViewCreator,
@@ -31,9 +31,9 @@ namespace PlacingSystem
                                                              constructionController);
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration)
+        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
         {
-            return _placingInvokeCreator.CreatePlacingInvoke(constructionConfiguration);
+            return _invokePlacingFactory.CreatePlacingInvoke(constructionConfiguration, structurePlacedCallback);
         }
     }
 }

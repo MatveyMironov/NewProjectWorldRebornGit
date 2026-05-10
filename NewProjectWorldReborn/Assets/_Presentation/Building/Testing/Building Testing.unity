@@ -634,9 +634,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3245807967071792421, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
+      propertyPath: invokePlacingFactory
+      value: 
+      objectReference: {fileID: 744955766}
+    - target: {fileID: 3245807967071792421, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: placingInvokeCreator
       value: 
-      objectReference: {fileID: 1917960415769807024}
+      objectReference: {fileID: 0}
     - target: {fileID: 3685568149343750048, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1075,6 +1079,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9186103310272277974, guid: 56ba0b150366d444eba5fadf0901ff00, type: 3}
   m_PrefabInstance: {fileID: 657142236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &744955766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8152418333059284626, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
+  m_PrefabInstance: {fileID: 1917960415769807023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdd705d116f1b4bb5a3ad270e810b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1031787292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2765,17 +2780,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
---- !u!114 &1917960415769807024 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4320512155800903561, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
-  m_PrefabInstance: {fileID: 1917960415769807023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db98f9d4742fd164ab4fd0dfaa3744cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1917960415769807027 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5831621182821511302, guid: 01be9fc80abfaca43a0d5febce9e17d3, type: 3}
