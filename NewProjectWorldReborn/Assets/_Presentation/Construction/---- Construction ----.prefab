@@ -653,6 +653,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2209471038883467528, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
+      propertyPath: constructionController
+      value: 
+      objectReference: {fileID: 8934770605484918224}
+    - target: {fileID: 2209471038883467528, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
+      propertyPath: constructionGridManager
+      value: 
+      objectReference: {fileID: 4756140776102663446}
     - target: {fileID: 6530977495057441181, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
       propertyPath: grid
       value: 
@@ -676,6 +684,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7098474491136810953, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
     - {fileID: 103304500312417453, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
+    - {fileID: 2209471038883467528, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6409819142657764864, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
     m_AddedGameObjects: []
