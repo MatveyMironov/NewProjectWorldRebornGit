@@ -6,7 +6,7 @@ namespace ProgressionSystem.Implementations
     [CreateAssetMenu(fileName = "New Building Reward", menuName = "Progression/Reward Configuration/Building Reward")]
     public class BuildingRewardConfigurationSO : ARewardConfigurationSO
     {
-        [SerializeField] private ABuildingConfigurationSO building;
+        [SerializeField] private BuildingConfigurationSO building;
         [SerializeField] private BuildingRewardDisplayerMB displayerPrefab;
 
         public override IReward CreateReward()
