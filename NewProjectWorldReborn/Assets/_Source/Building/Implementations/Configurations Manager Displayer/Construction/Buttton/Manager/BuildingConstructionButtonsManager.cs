@@ -1,5 +1,6 @@
+using BuildingViewSystem;
 using ConstructionGridSystem;
-using ConstructionResourcesPlacingSystem;
+using LayoutSystem;
 using PlacingSystem;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,15 @@ namespace BuildingSystem.Implementations
     public class BuildingConstructionButtonsManager : IBuildingConstructionButtonsManager
     {
         private readonly IBuildingConstructionButtonSpawner _constructionButtonSpawner;
-        private readonly IConstructionResourcesPlacingInvokeCreator _placingInvokeCreator;
-
+        private readonly IInvokePlacingFactory _invokePlacingFactory;
         private readonly IStructureBuildingsManager _structureBuildingsManager;
 
         public BuildingConstructionButtonsManager(IBuildingConstructionButtonSpawner constructionButtonSpawner,
-                                                  IConstructionResourcesPlacingInvokeCreator placingInvokeCreator,
+                                                  IInvokePlacingFactory invokePlacingFactory,
                                                   IStructureBuildingsManager structureBuildingsManager)
         {
             _constructionButtonSpawner = constructionButtonSpawner ?? throw new ArgumentNullException(nameof(constructionButtonSpawner));
-            _placingInvokeCreator = placingInvokeCreator ?? throw new ArgumentNullException(nameof(placingInvokeCreator));
+            _invokePlacingFactory = invokePlacingFactory ?? throw new ArgumentNullException(nameof(invokePlacingFactory));
             _structureBuildingsManager = structureBuildingsManager ?? throw new ArgumentNullException(nameof(structureBuildingsManager));
         }
 
@@ -29,11 +29,10 @@ namespace BuildingSystem.Implementations
         {
             if (_buildings_ConstructionButtons.TryAdd(configuration, null))
             {
+                Action invokePlacing = _invokePlacingFactory.CreatePlacingInvoke(configuration.Construction, CreateBuilding);
+
                 BuildingConstructionButtonMB button = _constructionButtonSpawner.SpawnButton();
                 button.DisplayBuildingConfiguration(configuration);
-
-                BuildingConstructionConfiguration constructionConfiguration = new(configuration, _structureBuildingsManager);
-                Action invokePlacing = _placingInvokeCreator.CreateInvoke(constructionConfiguration, configuration.ConstructionResources);
                 button.OnButtonClicked += StartPlacing;
 
                 _buildings_ConstructionButtons[configuration] = button;
@@ -45,7 +44,13 @@ namespace BuildingSystem.Implementations
                 {
                     //Following order is important
                     invokePlacing();
-                    button.OnBuildingSelected();
+                    button.DisplayBuildingSelected();
+                }
+
+                void CreateBuilding(BuildingStructure structure)
+                {
+                    Building building = configuration.CreateBuilding(structure);
+                    _structureBuildingsManager.TryAddStructureBuilding(building.Structure, building);
                 }
             }
 
@@ -62,29 +67,6 @@ namespace BuildingSystem.Implementations
             }
 
             return false;
-        }
-
-        private class BuildingConstructionConfiguration : IConstructionConfiguration
-        {
-            private readonly IBuildingConfiguration _buildingConfiguration;
-
-            private readonly IStructureBuildingsManager _structureBuildingsManager;
-
-            public BuildingConstructionConfiguration(IBuildingConfiguration buildingConfiguration, IStructureBuildingsManager structureBuildingsManager)
-            {
-                _buildingConfiguration = buildingConfiguration ?? throw new ArgumentNullException(nameof(buildingConfiguration));
-                _structureBuildingsManager = structureBuildingsManager ?? throw new ArgumentNullException(nameof(structureBuildingsManager));
-            }
-
-            public HashSet<Vector2Int> OccupiedCells => _buildingConfiguration.OccupiedCells;
-            public ConstructionPreviewMB ConstructionPreviewPrefab => _buildingConfiguration.ConstructionPreviewPrefab;
-
-            public BuildingStructure CreateBuildingStructure()
-            {
-                Building building = _buildingConfiguration.CreateBuilding();
-                _structureBuildingsManager.TryAddStructureBuilding(building.Structure, building);
-                return building.Structure;
-            }
         }
     }
 }
