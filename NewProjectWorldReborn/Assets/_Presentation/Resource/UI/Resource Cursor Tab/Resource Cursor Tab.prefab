@@ -246,11 +246,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8173955321320036400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5516e210c25a9294ca11d6f0e75a0f22, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customEvent: {fileID: 11400000, guid: ba38a6c2c38bdc74498ea6a2122681bd, type: 2}
-  unityEvent:
+  gameEvent: {fileID: 11400000, guid: ba38a6c2c38bdc74498ea6a2122681bd, type: 2}
+  response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4098530703534197984}
