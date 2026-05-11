@@ -11,7 +11,7 @@ namespace PlacingSystem
         [SerializeField] private ConstructionControllerMB constructionController;
 
         [Space]
-        [SerializeField] private ConstructionGridManagerMB constructionGridManager;
+        [SerializeField] private ConstructionGridManagerSO constructionGridManager;
         [SerializeField] private ConstructionPreviewFactoryMB constructionPreviewController;
         [SerializeField] private ACellsVisualizationMB occupiedCellsVisualization;
         [SerializeField] private BuildingStructureFactoryMB buildingViewCreator;

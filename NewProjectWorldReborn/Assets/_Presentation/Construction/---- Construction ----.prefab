@@ -63,51 +63,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2ade8364beae247bb3bf5dfb0536ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4386155199075165846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8992611245992602814}
-  - component: {fileID: 4756140776102663446}
-  m_Layer: 0
-  m_Name: Construction Grid Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8992611245992602814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4386155199075165846}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1885397528561074655}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4756140776102663446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4386155199075165846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a36414a657bba41448c736af6c2a3896, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellSet: {fileID: 11400000, guid: 9f7594269611746468f0e4463260132e, type: 2}
 --- !u!1 &6000833920839659487
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +92,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8992611245992602814}
   - {fileID: 1896356069568661984}
   m_Father: {fileID: 3524795999926013131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -430,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualization: {fileID: 5246899945642156466}
-  grid: {fileID: 4756140776102663446}
+  grid: {fileID: 11400000, guid: 3ca58ba311cb05e4b99b3fe13bb9f6c5, type: 2}
 --- !u!114 &2108186889294826326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,10 +560,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8934770605484918224}
     - target: {fileID: 103304500312417453, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
-      propertyPath: constructionGridManager
-      value: 
-      objectReference: {fileID: 4756140776102663446}
-    - target: {fileID: 103304500312417453, guid: 6ccd697e5ce9a484a8edeefd58907ea3, type: 3}
       propertyPath: constructionPreviewController
       value: 
       objectReference: {fileID: 7694595110826520422}
@@ -775,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructionController: {fileID: 8934770605484918224}
-  constructionGridManager: {fileID: 4756140776102663446}
+  constructionGridManager: {fileID: 11400000, guid: 3ca58ba311cb05e4b99b3fe13bb9f6c5, type: 2}
   constructionPreviewController: {fileID: 7694595110826520422}
   occupiedCellsVisualization: {fileID: 6933354722467191481}
   buildingViewCreator: {fileID: 6600383595547435244}
@@ -869,10 +819,6 @@ PrefabInstance:
       propertyPath: constructionController
       value: 
       objectReference: {fileID: 8934770605484918224}
-    - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
-      propertyPath: constructionGridManager
-      value: 
-      objectReference: {fileID: 4756140776102663446}
     - target: {fileID: 2389217084681722542, guid: 9a456feff416a094cb407f8344527773, type: 3}
       propertyPath: demolitionGridVisualization
       value: 
