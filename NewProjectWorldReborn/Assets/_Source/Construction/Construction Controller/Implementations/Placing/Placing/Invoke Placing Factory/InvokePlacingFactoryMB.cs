@@ -31,9 +31,9 @@ namespace PlacingSystem
                                                              constructionController);
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
+        public Action CreateInvokePlacing(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
         {
-            return _invokePlacingFactory.CreatePlacingInvoke(constructionConfiguration, structurePlacedCallback);
+            return _invokePlacingFactory.CreateInvokePlacing(constructionConfiguration, structurePlacedCallback);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace PlacingSystem
         private readonly IBuildingStructureFactory _structureFactory;
         private readonly Action<BuildingStructure> _structurePlacedCallback;
 
-        private readonly Layout _buildingLayout;
+        private readonly Layout _structureLayout;
 
         public PlacingState(IConstructionConfiguration constructionConfiguration,
                             IConstructionGridManager constructionGridManager,
@@ -36,7 +36,7 @@ namespace PlacingSystem
             _structureFactory = stractureFactory ?? throw new ArgumentNullException(nameof(stractureFactory));
             _structurePlacedCallback = structurePlacedCallback;
 
-            _buildingLayout = _constructionConfiguration.GetBuildingLayout();
+            _structureLayout = _constructionConfiguration.GetBuildingLayout();
         }
 
         private Vector2Int _currentCell;
@@ -49,112 +49,133 @@ namespace PlacingSystem
 
         public void EnterState(Vector2Int cell)
         {
-            _currentCell = cell;
-
-            _previewObject = _constructionConfiguration.CreateBuildingPreviewObject();
-            _preview = _previewFactory.CreateConstructionPreview(_previewObject);
-            _preview.SetOrientation(_buildingLayout.Orientation);
+            AssignCurrentCell(cell);
+            CreatePlacementPreview();
             ShowPlacementAt(cell);
+
+            void CreatePlacementPreview()
+            {
+                _previewObject = _constructionConfiguration.CreateBuildingPreviewObject();
+                _preview = _previewFactory.CreateConstructionPreview(_previewObject);
+                _preview.SetOrientation(_structureLayout.Orientation);
+            }
         }
 
         public void UpdateState(Vector2Int cell)
         {
-            _currentCell = cell;
-
+            AssignCurrentCell(cell);
             ShowPlacementAt(cell);
         }
 
         public void StartAction(Vector2Int cell)
         {
-            _currentCell = cell;
+            AssignCurrentCell(cell);
+            TryPlaceStructureAt(cell);
 
-            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _buildingLayout.OccupiedCells))
+            bool TryPlaceStructureAt(Vector2Int cell)
             {
-                BuildingStructure structure = _structureFactory.CreateBuildingStructure(cell, _buildingLayout, _constructionConfiguration.BuildingViewPrefab);
+                if (!_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _structureLayout.OccupiedCells)) { return false; }
 
-                if (_constructionGridManager.TryPlaceStructureAt(structure, cell))
-                {
-                    _structurePlacedCallback.Invoke(structure);
+                BuildingStructure structure = _structureFactory.CreateBuildingStructure(cell, _structureLayout, _constructionConfiguration.BuildingViewPrefab);
 
-                    ShowPlacementValidityAt(cell);
-                }
-                else
+                if (!_constructionGridManager.TryPlaceStructureAt(structure, cell))
                 {
                     UnityEngine.Object.Destroy(structure.View.gameObject);
+                    return false;
                 }
+
+                _structurePlacedCallback.Invoke(structure);
+                ShowPlacementValidityAt(cell);
+                return true;
             }
         }
 
         public void FinishAction(Vector2Int cell)
         {
-            _currentCell = cell;
+            AssignCurrentCell(cell);
         }
 
         public void ExitState()
         {
-            UnityEngine.Object.Destroy(_previewObject);
+            HidePlacementPreview();
             HidePlacementCells();
+
+            void HidePlacementPreview()
+            {
+                UnityEngine.Object.Destroy(_previewObject);
+                _preview = null;
+            }
+
+            void HidePlacementCells()
+            {
+                _placementCellsVisualization.DestroyVisualization();
+            }
         }
 
         private void ShowPlacementAt(Vector2Int cell)
         {
-            _preview.MoveToCell(cell);
+            ShowPlacementPreviewAt(cell);
             ShowPlacementCellsAt(cell);
             ShowPlacementValidityAt(cell);
+
+            void ShowPlacementPreviewAt(Vector2Int cell)
+            {
+                _preview.MoveToCell(cell);
+            }
         }
 
         public void RotateBuilding()
         {
-            switch (_buildingLayout.Orientation)
-            {
-                case EOrientation.up:
-                _buildingLayout.Orientation = EOrientation.right;
-                break;
-
-                case EOrientation.right:
-                _buildingLayout.Orientation = EOrientation.down;
-                break;
-
-                case EOrientation.down:
-                _buildingLayout.Orientation = EOrientation.left;
-                break;
-
-                case EOrientation.left:
-                _buildingLayout.Orientation = EOrientation.up;
-                break;
-            }
-
-            _preview.SetOrientation(_buildingLayout.Orientation);
+            ChangeOrientation();
             ShowPlacementCellsAt(_currentCell);
             ShowPlacementValidityAt(_currentCell);
+
+            void ChangeOrientation()
+            {
+                EOrientation newOrientation = OrientationOperations.RotateClockwise(_structureLayout.Orientation);
+                _structureLayout.Orientation = newOrientation;
+                _preview.SetOrientation(newOrientation);
+            }
+        }
+
+        private void AssignCurrentCell(Vector2Int cell)
+        {
+            _currentCell = cell;
         }
 
         private void ShowPlacementCellsAt(Vector2Int originCell)
         {
-            _placementCells.Clear();
-            foreach (var cell in _buildingLayout.OccupiedCells)
+            Vector2Int[] placementCells = GetPlacementCells(originCell);
+            _placementCellsVisualization.CreateVisualization(placementCells);
+
+            Vector2Int[] GetPlacementCells(Vector2Int originCell)
             {
-                Vector2Int placementCell = originCell + cell;
-                _placementCells.Add(placementCell);
+                _placementCells.Clear();
+
+                foreach (var cell in _structureLayout.OccupiedCells)
+                {
+                    Vector2Int placementCell = originCell + cell;
+                    _placementCells.Add(placementCell);
+                }
+
+                return _placementCells.ToArray();
             }
-
-            _placementCellsVisualization.CreateVisualization(_placementCells.ToArray());
         }
 
-        private void HidePlacementCells()
+        private void ShowPlacementValidityAt(Vector2Int cell)
         {
-            _placementCellsVisualization.DestroyVisualization();
-        }
-
-        private void ShowPlacementValidityAt(Vector2Int originCell)
-        {
-            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(originCell, _buildingLayout.OccupiedCells))
+            if (CheckIfCanPlaceLayoutAt(cell))
             {
                 ShowValidPlacement();
             }
             else
             {
                 ShowInvalidPlacement();
+            }
+
+            bool CheckIfCanPlaceLayoutAt(Vector2Int cell)
+            {
+                return _constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _structureLayout.OccupiedCells);
             }
 
             void ShowValidPlacement()
