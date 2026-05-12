@@ -14,6 +14,6 @@ namespace LayoutSystem
         }
 
         public EOrientation Orientation { get; set; } = EOrientation.up;
-        public HashSet<Vector2Int> OccupiedCells { get { return CellsRotation.RotateCells(_baseCells, Orientation); } }
+        public HashSet<Vector2Int> OccupiedCells => CellsRotation.RotateCells(_baseCells, Orientation);
     }
 }
