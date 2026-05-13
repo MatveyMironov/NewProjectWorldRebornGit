@@ -48,7 +48,7 @@ namespace ConstructionResourcesSystem
         {
             if (!CheckIfEnoughResources()) { return; }
 
-            _placingState.FinishAction();
+            _placingState.StartAction();
 
             bool CheckIfEnoughResources()
             {

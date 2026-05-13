@@ -27,6 +27,7 @@ namespace BuildingSystem.Implementations
 
             if (constructionResourcesDictionary.Count <= 0)
             {
+                Debug.Log(0);
                 Hide();
                 return;
             }

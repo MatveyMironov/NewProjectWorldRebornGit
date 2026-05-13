@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -336,5 +336,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7b2d7d9d74a2940b37d6f2e2eb43a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCountDisplayerPrefab: {fileID: 3424403667261176685, guid: f84277f8da890714597d4a0a371a1b10, type: 3}
+  resourceCountDisplayerPrefab: {fileID: 2983517602587989765, guid: f74337452b3a501429f90b256cd15240, type: 3}
   content: {fileID: 3601885500907893006}
