@@ -58,6 +58,7 @@ namespace ConstructionResourcesSystem
             void InvokePlacing()
             {
                 _rotationController.ProvidePlacingState(placing);
+                _constructionController.EnterState(placing);
             }
         }
     }
