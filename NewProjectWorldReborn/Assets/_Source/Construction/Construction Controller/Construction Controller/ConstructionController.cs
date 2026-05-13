@@ -23,65 +23,60 @@ namespace ConstructionControllerSystem
         public event Action OnStateEntered;
         public event Action OnStateExited;
 
+        private bool IsMouseOverUI => MouseOverUIChecker.CheckIfMouseIsOverUI();
+        private bool IsCurrentStateNull => _currentState == null;
+
         public void UpdateMousePosition(Vector2 mousePosition)
         {
-            if (_currentState == null) { return; }
+            if (IsCurrentStateNull) { return; }
+            if (IsMouseOverUI) { return; }
 
-            if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
-            
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _layers))
-            {
-                Vector3 worldPosition = hit.point;
-                Vector3Int gridPosition = _grid.WorldToCell(worldPosition);
-                Vector2Int cell = new(gridPosition.x, gridPosition.z);
+            if (!Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _layers)) { return; }
 
-                if (_lastCell != cell)
-                {
-                    _lastCell = cell;
-                    _currentState.UpdateState(cell);
-                }
-            }
+            Vector3 worldPosition = hit.point;
+            Vector3Int gridPosition = _grid.WorldToCell(worldPosition);
+            Vector2Int cell = new(gridPosition.x, gridPosition.z);
+
+            if (_lastCell == cell) { return; }
+
+            _lastCell = cell;
+            _currentState.UpdateState(cell);
         }
 
         public void EnterState(IConstructionState state)
         {
             ExitState();
-
-            if (state == null) { return; }
             _currentState = state;
-
-            state.EnterState(_lastCell);
+            state.EnterState();
             state.UpdateState(_lastCell);
-
             OnStateEntered?.Invoke();
         }
 
         public void ExitState()
         {
-            if (_currentState == null) { return; }
+            if (IsCurrentStateNull) { return; }
 
             _currentState.ExitState();
             _currentState = null;
-
             OnStateExited?.Invoke();
         }
 
         public void StartAction()
         {
-            if (_currentState == null) { return; }
+            if (IsCurrentStateNull) { return; }
+            if (IsMouseOverUI) { return; }
 
-            if (MouseOverUIChecker.CheckIfMouseIsOverUI()) { return; }
-
-            _currentState.StartAction(_lastCell);
+            _currentState.StartAction();
         }
 
         public void FinishAction()
         {
-            if (_currentState == null) { return; }
-            
-            _currentState.FinishAction(_lastCell);
+            if (IsCurrentStateNull) { return; }
+            if (IsMouseOverUI) { return; }
+
+            _currentState.FinishAction();
         }
     }
 }

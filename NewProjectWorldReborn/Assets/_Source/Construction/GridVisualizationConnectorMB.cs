@@ -8,7 +8,7 @@ namespace ConstructionSystem
     public class GridVisualizationConnectorMB : MonoBehaviour
     {
         [SerializeField] private ACellsVisualizationMB visualization;
-        [SerializeField] private ConstructionGridManagerMB grid;
+        [SerializeField] private ConstructionGridManagerSO grid;
 
         private void Start()
         {

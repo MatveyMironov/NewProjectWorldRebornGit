@@ -3,17 +3,16 @@ using UnityEngine;
 
 namespace ConstructionGridSystem
 {
-    public class ConstructionGridManagerMB : MonoBehaviour, IConstructionGridManager
+    [CreateAssetMenu(fileName = "New Construction Grid Manager", menuName = "Construction/Construction Grid Manager")]
+    public class ConstructionGridManagerSO : ScriptableObject, IConstructionGridManager
     {
         [SerializeField] private CellSetSO cellSet;
 
         private ConstructionGridManager _constructionGridManager;
 
-        private HashSet<Vector2Int> GridCells { get { return cellSet.Cells; } }
-
-        protected virtual void Awake()
+        protected virtual void OnEnable()
         {
-            ConstructionGrid constructionGrid = new(GridCells);
+            ConstructionGrid constructionGrid = new(cellSet.Cells);
             _constructionGridManager = new(constructionGrid);
         }
 
