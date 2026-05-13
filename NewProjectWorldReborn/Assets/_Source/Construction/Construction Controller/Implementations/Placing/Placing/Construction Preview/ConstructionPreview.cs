@@ -41,30 +41,13 @@ namespace PlacingSystem
         {
             Vector3Int cellPosition = new(cell.x, 0, cell.y);
             Vector3 worldPosition = _grid.CellToWorld(cellPosition);
-
-            _previewTransform.position = worldPosition + _grid.cellSize / 2;
+            Vector3 offset = _grid.cellSize / 2;
+            _previewTransform.position = worldPosition + offset;
         }
 
         public void SetOrientation(EOrientation orientation)
         {
-            switch (orientation)
-            {
-                case EOrientation.up:
-                _previewTransform.localRotation = Quaternion.Euler(0, 0, 0);
-                break;
-
-                case EOrientation.right:
-                _previewTransform.localRotation = Quaternion.Euler(0, 90, 0);
-                break;
-
-                case EOrientation.down:
-                _previewTransform.localRotation = Quaternion.Euler(0, 180, 0);
-                break;
-
-                case EOrientation.left:
-                _previewTransform.localRotation = Quaternion.Euler(0, 270, 0);
-                break;
-            }
+            _previewTransform.localRotation = OrientationOperations.GetRotation(orientation);
         }
     }
 }

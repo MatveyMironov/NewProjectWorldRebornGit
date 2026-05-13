@@ -4,10 +4,10 @@ namespace ConstructionControllerSystem
 {
     public interface IConstructionState
     {
-        public void EnterState(Vector2Int cell);
+        public void EnterState();
         public void UpdateState(Vector2Int cell);
-        public void StartAction(Vector2Int cell);
-        public void FinishAction(Vector2Int cell);
+        public void StartAction();
+        public void FinishAction();
         public void ExitState();
     }
 }

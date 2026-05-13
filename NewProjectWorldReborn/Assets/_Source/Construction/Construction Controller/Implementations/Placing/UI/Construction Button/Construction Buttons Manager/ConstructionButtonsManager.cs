@@ -23,7 +23,7 @@ namespace ConstructionUISystem
             if (_constructionButtons.TryAdd(construction, null))
             {
                 _constructionButtons[construction] = _constructionButtonSpawner.SpawnConstructionButton();
-                _constructionButtons[construction].OnButtonClicked += _placingInvokeCreator.CreatePlacingInvoke(construction, structurePlacedCallback);
+                _constructionButtons[construction].OnButtonClicked += _placingInvokeCreator.CreateInvokePlacing(construction, structurePlacedCallback);
 
                 return true;
             }

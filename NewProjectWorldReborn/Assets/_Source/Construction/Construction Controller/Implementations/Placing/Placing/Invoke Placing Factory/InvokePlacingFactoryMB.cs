@@ -11,7 +11,7 @@ namespace PlacingSystem
         [SerializeField] private ConstructionControllerMB constructionController;
 
         [Space]
-        [SerializeField] private ConstructionGridManagerMB constructionGridManager;
+        [SerializeField] private ConstructionGridManagerSO constructionGridManager;
         [SerializeField] private ConstructionPreviewFactoryMB constructionPreviewController;
         [SerializeField] private ACellsVisualizationMB occupiedCellsVisualization;
         [SerializeField] private BuildingStructureFactoryMB buildingViewCreator;
@@ -31,9 +31,9 @@ namespace PlacingSystem
                                                              constructionController);
         }
 
-        public Action CreatePlacingInvoke(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
+        public Action CreateInvokePlacing(IConstructionConfiguration constructionConfiguration, Action<BuildingStructure> structurePlacedCallback)
         {
-            return _invokePlacingFactory.CreatePlacingInvoke(constructionConfiguration, structurePlacedCallback);
+            return _invokePlacingFactory.CreateInvokePlacing(constructionConfiguration, structurePlacedCallback);
         }
     }
 }

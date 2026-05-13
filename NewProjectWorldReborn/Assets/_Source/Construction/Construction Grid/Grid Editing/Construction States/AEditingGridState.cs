@@ -22,16 +22,17 @@ namespace GridEditingSystem
             _cellIndicator = cellIndicator ?? throw new System.ArgumentNullException(nameof(cellIndicator));
         }
 
+        private Vector2Int _currentCell;
+
         protected HashSet<Vector2Int> ValidCells { get; }
         protected HashSet<Vector2Int> SelectedCells { get; } = new();
 
         private Vector2Int _selectionStartCell;
         private bool _isSelecting;
 
-        public void EnterState(Vector2Int cell)
+        public void EnterState()
         {
             _cellIndicator.Show();
-            _cellIndicator.MoveToCell(cell);
         }
 
         public void ExitState()
@@ -45,6 +46,7 @@ namespace GridEditingSystem
 
         public void UpdateState(Vector2Int cell)
         {
+            _currentCell = cell;
             _cellIndicator.MoveToCell(cell);
 
             if (_isSelecting)
@@ -53,17 +55,17 @@ namespace GridEditingSystem
             }
         }
 
-        public void StartAction(Vector2Int cell)
+        public void StartAction()
         {
             _cellIndicator.Hide();
 
-            _selectionStartCell = cell;
+            _selectionStartCell = _currentCell;
             SelectCells(_selectionStartCell);
 
             _isSelecting = true;
         }
 
-        public void FinishAction(Vector2Int cell)
+        public void FinishAction()
         {
             _cellIndicator.Show();
 
