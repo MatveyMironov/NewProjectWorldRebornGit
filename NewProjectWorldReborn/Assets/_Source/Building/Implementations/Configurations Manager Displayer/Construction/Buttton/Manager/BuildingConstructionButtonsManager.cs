@@ -1,5 +1,6 @@
 using BuildingViewSystem;
 using ConstructionGridSystem;
+using ConstructionResourcesSystem;
 using LayoutSystem;
 using PlacingSystem;
 using System;
@@ -11,11 +12,11 @@ namespace BuildingSystem.Implementations
     public class BuildingConstructionButtonsManager : IBuildingConstructionButtonsManager
     {
         private readonly IBuildingConstructionButtonSpawner _constructionButtonSpawner;
-        private readonly IInvokePlacingFactory _invokePlacingFactory;
+        private readonly IInvokeConstructionResourcesPlacingFactory _invokePlacingFactory;
         private readonly IStructureBuildingsManager _structureBuildingsManager;
 
         public BuildingConstructionButtonsManager(IBuildingConstructionButtonSpawner constructionButtonSpawner,
-                                                  IInvokePlacingFactory invokePlacingFactory,
+                                                  IInvokeConstructionResourcesPlacingFactory invokePlacingFactory,
                                                   IStructureBuildingsManager structureBuildingsManager)
         {
             _constructionButtonSpawner = constructionButtonSpawner ?? throw new ArgumentNullException(nameof(constructionButtonSpawner));
@@ -29,7 +30,7 @@ namespace BuildingSystem.Implementations
         {
             if (_buildings_ConstructionButtons.TryAdd(configuration, null))
             {
-                Action invokePlacing = _invokePlacingFactory.CreateInvokePlacing(configuration.Construction, CreateBuilding);
+                Action invokePlacing = _invokePlacingFactory.CreateInvokePlacing(configuration.Construction, CreateBuilding, configuration.ConstructionResourcesDictionary);
 
                 BuildingConstructionButtonMB button = _constructionButtonSpawner.SpawnButton();
                 button.DisplayBuildingConfiguration(configuration);
