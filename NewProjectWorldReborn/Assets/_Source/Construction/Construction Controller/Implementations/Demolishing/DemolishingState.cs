@@ -11,20 +11,17 @@ namespace DemolishingSystem
     public class DemolishingState : IConstructionState
     {
         private readonly IConstructionGridManager _constructionGridManager;
-        private readonly ICellsVisualization _demolitionCellsVisualization;
+        private readonly ICellsVisualization _demolitionAreaVisualization;
 
         public DemolishingState(IConstructionGridManager constructionGridManager,
-                                ICellsVisualization demolitionCellsVisualization)
+                                ICellsVisualization demolitionAreaVisualization)
         {
             _constructionGridManager = constructionGridManager ?? throw new ArgumentNullException(nameof(constructionGridManager));
-            _demolitionCellsVisualization = demolitionCellsVisualization ?? throw new ArgumentNullException(nameof(demolitionCellsVisualization));
+            _demolitionAreaVisualization = demolitionAreaVisualization ?? throw new ArgumentNullException(nameof(demolitionAreaVisualization));
         }
 
-        public Vector2Int CurrentCell { get; private set; }
-        //public event Action OnCurrentCellChanged;
-
-        private BuildingStructure _selectedBuilding;
-        public BuildingStructure SelectedStructure { get => _selectedBuilding; }
+        private BuildingStructure _selectedStructure;
+        public BuildingStructure SelectedStructure { get => _selectedStructure; }
         public event Action OnStructureSelected;
         public event Action OnStructureDeselected;
 
@@ -35,84 +32,87 @@ namespace DemolishingSystem
 
         public void EnterState(Vector2Int cell)
         {
-            TrySelectBuilding(cell);
-            CurrentCell = cell;
+            TrySelectStructureAt(cell);
             OnStateEntered?.Invoke();
         }
 
         public void UpdateState(Vector2Int cell)
         {
-            TrySelectBuilding(cell);
-            CurrentCell = cell;
+            TrySelectStructureAt(cell);
         }
 
         public void StartAction(Vector2Int cell)
         {
-            TryDemolishSelectedBuilding();
-            CurrentCell = cell;
+            TryDemolishSelectedStructure();
+
+            bool TryDemolishSelectedStructure()
+            {
+                if (_selectedStructure == null) return false;
+
+                BuildingStructure structureToDemolish = _selectedStructure;
+
+                DeselectStructure();
+
+                return TryDemolishStructure(structureToDemolish);
+
+                bool TryDemolishStructure(BuildingStructure structure)
+                {
+                    if (!_constructionGridManager.TryRemoveStructure(structure)) { return false; }
+
+                    structure.View.Demolish();
+                    OnStructureDemolished?.Invoke(structure);
+                    return true;
+                }
+            }
         }
 
         public void FinishAction(Vector2Int cell)
         {
-            CurrentCell = cell;
+
         }
 
         public void ExitState()
         {
-            DeselectBuilding();
+            DeselectStructure();
             OnStateExited?.Invoke();
         }
 
-        private bool TrySelectBuilding(Vector2Int cell)
+        private bool TrySelectStructureAt(Vector2Int cell)
         {
-            DeselectBuilding();
+            DeselectStructure();
 
-            if (_constructionGridManager.TryGetPlacementAt(cell, out ConstructionGrid.PlacementData placement))
-            {
-                _selectedBuilding = placement.Structure;
+            if (!_constructionGridManager.TryGetPlacementAt(cell, out ConstructionGrid.PlacementData placement)) { return false; }
 
-                _selectedBuilding.View.OnSelectForDemolition();
-                ShowDemolitionCells(placement.OccupiedCells);
-                OnStructureSelected?.Invoke();
-                return true;
-            }
+            ShowDemolitionArea(placement.OccupiedCells.ToArray());
 
-            return false;
-        }
-
-        private void DeselectBuilding()
-        {
-            if (_selectedBuilding == null) return;
-
-            _selectedBuilding.View.OnDeselectForDemolition();
-            HideDemolitionCells();
-            _selectedBuilding = null;
-            OnStructureDeselected?.Invoke();
-        }
-
-        private void ShowDemolitionCells(HashSet<Vector2Int> cells)
-        {
-            //HideDemolitionCells();
-
-            _demolitionCellsVisualization.CreateVisualization(cells.ToArray());
-        }
-
-        private void HideDemolitionCells()
-        {
-            _demolitionCellsVisualization.DestroyVisualization();
-        }
-
-        private bool TryDemolishSelectedBuilding()
-        {
-            if (_selectedBuilding == null) return false;
-
-            _selectedBuilding.View.Demolish();
-            _constructionGridManager.TryRemoveStructure(_selectedBuilding);
-            OnStructureDemolished?.Invoke(_selectedBuilding);
-
-            DeselectBuilding();
+            BuildingStructure structureToSelect = placement.Structure;
+            structureToSelect.View.OnSelectForDemolition();
+            _selectedStructure = structureToSelect;
+            OnStructureSelected?.Invoke();
 
             return true;
+
+            void ShowDemolitionArea(Vector2Int[] cells)
+            {
+                _demolitionAreaVisualization.CreateVisualization(cells);
+            }
+        }
+
+        private void DeselectStructure()
+        {
+            if (_selectedStructure == null) return;
+
+            _selectedStructure.View.OnDeselectForDemolition();
+            _selectedStructure = null;
+
+            HideDemolitionArea();
+
+            OnStructureDeselected?.Invoke();
+
+            void HideDemolitionArea()
+            {
+                _demolitionAreaVisualization.DestroyVisualization();
+            }
         }
     }
 }
