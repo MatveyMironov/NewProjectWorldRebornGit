@@ -11,7 +11,7 @@ namespace PlacingSystem
             _buildingRotationController = new BuildingRotationController();
         }
 
-        public void ProvidePlacingState(PlacingState state)
+        public void ProvidePlacingState(IPlacingState state)
         {
             _buildingRotationController.ProvidePlacingState(state);
         }
