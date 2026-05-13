@@ -30,9 +30,8 @@ namespace DemolishingSystem
         public event Action OnStateEntered;
         public event Action OnStateExited;
 
-        public void EnterState(Vector2Int cell)
+        public void EnterState()
         {
-            TrySelectStructureAt(cell);
             OnStateEntered?.Invoke();
         }
 
@@ -41,18 +40,15 @@ namespace DemolishingSystem
             TrySelectStructureAt(cell);
         }
 
-        public void StartAction(Vector2Int cell)
+        public void StartAction()
         {
             TryDemolishSelectedStructure();
 
             bool TryDemolishSelectedStructure()
             {
                 if (_selectedStructure == null) return false;
-
                 BuildingStructure structureToDemolish = _selectedStructure;
-
                 DeselectStructure();
-
                 return TryDemolishStructure(structureToDemolish);
 
                 bool TryDemolishStructure(BuildingStructure structure)
@@ -66,7 +62,7 @@ namespace DemolishingSystem
             }
         }
 
-        public void FinishAction(Vector2Int cell)
+        public void FinishAction()
         {
 
         }

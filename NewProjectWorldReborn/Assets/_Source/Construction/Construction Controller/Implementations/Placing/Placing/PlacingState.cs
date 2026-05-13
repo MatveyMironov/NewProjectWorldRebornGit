@@ -47,11 +47,9 @@ namespace PlacingSystem
         private GameObject _previewObject;
         private ConstructionPreview _preview;
 
-        public void EnterState(Vector2Int cell)
+        public void EnterState()
         {
-            AssignCurrentCell(cell);
             CreatePlacementPreview();
-            ShowPlacementAt(cell);
 
             void CreatePlacementPreview()
             {
@@ -63,14 +61,13 @@ namespace PlacingSystem
 
         public void UpdateState(Vector2Int cell)
         {
-            AssignCurrentCell(cell);
+            _currentCell = cell;
             ShowPlacementAt(cell);
         }
 
-        public void StartAction(Vector2Int cell)
+        public void StartAction()
         {
-            AssignCurrentCell(cell);
-            TryPlaceStructureAt(cell);
+            TryPlaceStructureAt(_currentCell);
 
             bool TryPlaceStructureAt(Vector2Int cell)
             {
@@ -90,9 +87,9 @@ namespace PlacingSystem
             }
         }
 
-        public void FinishAction(Vector2Int cell)
+        public void FinishAction()
         {
-            AssignCurrentCell(cell);
+
         }
 
         public void ExitState()
@@ -136,11 +133,6 @@ namespace PlacingSystem
                 _structureLayout.Orientation = newOrientation;
                 _preview.SetOrientation(newOrientation);
             }
-        }
-
-        private void AssignCurrentCell(Vector2Int cell)
-        {
-            _currentCell = cell;
         }
 
         private void ShowPlacementCellsAt(Vector2Int originCell)
