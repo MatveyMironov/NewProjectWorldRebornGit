@@ -29,7 +29,7 @@ namespace BuildingSystem.Implementations
         {
             if (_buildings_ConstructionButtons.TryAdd(configuration, null))
             {
-                Action invokePlacing = _invokePlacingFactory.CreatePlacingInvoke(configuration.Construction, CreateBuilding);
+                Action invokePlacing = _invokePlacingFactory.CreateInvokePlacing(configuration.Construction, CreateBuilding);
 
                 BuildingConstructionButtonMB button = _constructionButtonSpawner.SpawnButton();
                 button.DisplayBuildingConfiguration(configuration);
