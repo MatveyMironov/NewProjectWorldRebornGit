@@ -2,9 +2,9 @@
 {
     public class BuildingRotationController : IBuildingRotationController
     {
-        private PlacingState _placingState;
+        private IPlacingState _placingState;
 
-        public void ProvidePlacingState(PlacingState state)
+        public void ProvidePlacingState(IPlacingState state)
         {
             _placingState = state;
         }

@@ -2,7 +2,7 @@
 {
     public interface IBuildingRotationController
     {
-        public void ProvidePlacingState(PlacingState state);
+        public void ProvidePlacingState(IPlacingState state);
 
         public void RotateBuilding();
     }

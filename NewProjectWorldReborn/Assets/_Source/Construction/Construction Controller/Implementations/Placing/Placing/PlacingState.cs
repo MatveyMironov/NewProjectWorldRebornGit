@@ -4,13 +4,11 @@ using CellsVisualizationSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using ConstructionControllerSystem;
 using System.Linq;
-using BuildingViewSystem;
 
 namespace PlacingSystem
 {
-    public class PlacingState : IConstructionState
+    public class PlacingState : IPlacingState
     {
         private readonly IConstructionConfiguration _constructionConfiguration;
 
@@ -109,18 +107,6 @@ namespace PlacingSystem
             }
         }
 
-        private void ShowPlacementAt(Vector2Int cell)
-        {
-            ShowPlacementPreviewAt(cell);
-            ShowPlacementCellsAt(cell);
-            ShowPlacementValidityAt(cell);
-
-            void ShowPlacementPreviewAt(Vector2Int cell)
-            {
-                _preview.MoveToCell(cell);
-            }
-        }
-
         public void RotateBuilding()
         {
             ChangeOrientation();
@@ -132,6 +118,18 @@ namespace PlacingSystem
                 EOrientation newOrientation = OrientationOperations.RotateClockwise(_structureLayout.Orientation);
                 _structureLayout.Orientation = newOrientation;
                 _preview.SetOrientation(newOrientation);
+            }
+        }
+
+        private void ShowPlacementAt(Vector2Int cell)
+        {
+            ShowPlacementPreviewAt(cell);
+            ShowPlacementCellsAt(cell);
+            ShowPlacementValidityAt(cell);
+
+            void ShowPlacementPreviewAt(Vector2Int cell)
+            {
+                _preview.MoveToCell(cell);
             }
         }
 
