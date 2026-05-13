@@ -49,7 +49,7 @@ namespace ConstructionControllerSystem
         {
             ExitState();
             _currentState = state;
-            state.EnterState(_lastCell);
+            state.EnterState();
             state.UpdateState(_lastCell);
             OnStateEntered?.Invoke();
         }
@@ -68,7 +68,7 @@ namespace ConstructionControllerSystem
             if (IsCurrentStateNull) { return; }
             if (IsMouseOverUI) { return; }
 
-            _currentState.StartAction(_lastCell);
+            _currentState.StartAction();
         }
 
         public void FinishAction()
@@ -76,7 +76,7 @@ namespace ConstructionControllerSystem
             if (IsCurrentStateNull) { return; }
             if (IsMouseOverUI) { return; }
 
-            _currentState.FinishAction(_lastCell);
+            _currentState.FinishAction();
         }
     }
 }
