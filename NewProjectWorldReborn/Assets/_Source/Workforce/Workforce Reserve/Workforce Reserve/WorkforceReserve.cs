@@ -51,7 +51,7 @@ namespace WorkforceReserveSystem
 
         public void IncreaseTotalWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             TotalWorkforce += amount;
             AvailableWorkforce += amount;
@@ -59,7 +59,7 @@ namespace WorkforceReserveSystem
 
         public bool TryDecreaseTotalWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             if (TotalWorkforce < amount || AvailableWorkforce < amount)
             { return false; }
@@ -72,7 +72,7 @@ namespace WorkforceReserveSystem
 
         public bool TryInvolveWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             if (AvailableWorkforce < amount)
             { return false; }
@@ -85,7 +85,7 @@ namespace WorkforceReserveSystem
 
         public bool TryFreeWorkforce(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             if (InvolvedWorkforce < amount)
             { return false; }

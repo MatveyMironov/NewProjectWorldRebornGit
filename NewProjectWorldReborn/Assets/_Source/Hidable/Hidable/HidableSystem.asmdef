@@ -1,9 +1,7 @@
 {
-    "name": "CustomUISystem",
-    "rootNamespace": "CustomUISystem",
-    "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
-    ],
+    "name": "HidableSystem",
+    "rootNamespace": "HidableSystem",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
