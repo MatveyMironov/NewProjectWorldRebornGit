@@ -79,8 +79,8 @@ namespace PlacingSystem
                     return false;
                 }
 
-                _structurePlacedCallback.Invoke(structure);
                 ShowPlacementValidityAt(cell);
+                _structurePlacedCallback.Invoke(structure);
                 return true;
             }
         }
