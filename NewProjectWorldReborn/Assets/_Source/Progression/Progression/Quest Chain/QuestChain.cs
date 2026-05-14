@@ -23,6 +23,9 @@ namespace ProgressionSystem
         public Quest ActiveQuest { get; private set; }
         public event Action OnActiveQuestChanged;
 
+        public bool IsFinished { get; private set; }
+        public event Action OnQuestChainFinished;
+
         public void Start()
         {
             StartActiveQuest();
@@ -53,6 +56,14 @@ namespace ProgressionSystem
 
             ActiveQuest = _quests[_activeQuestIndex].CreateQuest();
             OnActiveQuestChanged?.Invoke();
+
+            if (ActiveQuest.IsFinished)
+            {
+                _activeQuestIndex++;
+                StartActiveQuest();
+                return;
+            }
+
             ActiveQuest.OnFinished += ChangeActiveQuest;
             ActiveQuest.Start();
         }
@@ -60,6 +71,8 @@ namespace ProgressionSystem
         private void Finish()
         {
             Debug.Log("Quest chain is finished");
+            IsFinished = true;
+            OnQuestChainFinished?.Invoke();
         }
     }
 }
