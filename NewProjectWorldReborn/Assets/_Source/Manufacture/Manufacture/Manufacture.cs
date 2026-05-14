@@ -51,7 +51,7 @@ namespace ManufactureSystem
         {
             if (!IsPossible) return;
 
-            Progress += UnityEngine.Time.deltaTime * Speed;
+            Progress += Time.deltaTime * Speed;
             OnProgressChanged?.Invoke();
 
             if (Progress >= 1.0f)
@@ -61,6 +61,10 @@ namespace ManufactureSystem
                     Progress -= 1.0f;
                     OnProgressChanged?.Invoke();
                     TryProduce();
+                }
+                else
+                {
+                    Progress = 1.0f;
                 }
             }
         }
