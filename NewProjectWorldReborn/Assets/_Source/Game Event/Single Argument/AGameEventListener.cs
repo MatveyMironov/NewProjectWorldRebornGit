@@ -5,7 +5,7 @@ namespace GameEventSystem
 {
     public abstract class AGameEventListener<T> : MonoBehaviour
     {
-        [SerializeField] private AGameEvent<T> gameEvent;
+        [SerializeField] private AGameEventSO<T> gameEvent;
         [Space]
         [SerializeField] private UnityEvent<T> response;
 
