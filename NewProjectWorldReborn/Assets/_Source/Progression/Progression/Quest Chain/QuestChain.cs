@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain
+namespace ProgressionSystem
 {
     public class QuestChain
     {
@@ -22,6 +22,9 @@ namespace ProgressionSystem.Quest.QuestChain
         private int _activeQuestIndex;
         public Quest ActiveQuest { get; private set; }
         public event Action OnActiveQuestChanged;
+
+        public bool IsFinished { get; private set; }
+        public event Action OnQuestChainFinished;
 
         public void Start()
         {
@@ -53,6 +56,14 @@ namespace ProgressionSystem.Quest.QuestChain
 
             ActiveQuest = _quests[_activeQuestIndex].CreateQuest();
             OnActiveQuestChanged?.Invoke();
+
+            if (ActiveQuest.IsFinished)
+            {
+                _activeQuestIndex++;
+                StartActiveQuest();
+                return;
+            }
+
             ActiveQuest.OnFinished += ChangeActiveQuest;
             ActiveQuest.Start();
         }
@@ -60,6 +71,8 @@ namespace ProgressionSystem.Quest.QuestChain
         private void Finish()
         {
             Debug.Log("Quest chain is finished");
+            IsFinished = true;
+            OnQuestChainFinished?.Invoke();
         }
     }
 }

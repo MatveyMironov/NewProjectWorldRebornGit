@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     public class CompositeRewardDisplayerMB : MonoBehaviour
     {

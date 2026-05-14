@@ -1,4 +1,4 @@
-﻿namespace ProgressionSystem.Quest
+﻿namespace ProgressionSystem
 {
     public interface IQuestConfiguration
     {

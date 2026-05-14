@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProgressionSystem.Quest.QuestChain.Testing
+namespace ProgressionSystem.Testing
 {
     public class TestQuestChainMB : MonoBehaviour
     {

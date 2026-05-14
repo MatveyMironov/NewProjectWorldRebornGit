@@ -1,4 +1,4 @@
-﻿namespace ProgressionSystem.Quest.QuestChain
+﻿namespace ProgressionSystem
 {
     public interface IQuestChainDisplayer
     {

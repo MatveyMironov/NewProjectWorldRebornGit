@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProgressionSystem.Quest.Implementations
+namespace ProgressionSystem
 {
     public class CompositeReward : IReward
     {

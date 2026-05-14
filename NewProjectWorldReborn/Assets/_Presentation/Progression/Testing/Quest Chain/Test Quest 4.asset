@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b02d6c56c498a4b84c0515f3e034eb, type: 3}
+  m_Name: Test Quest 4
+  m_EditorClassIdentifier: 
+  task: {fileID: 11400000, guid: 5c192e94c41aae346b32e521740b44fd, type: 2}
+  reward: {fileID: 11400000, guid: bfbe71869846edf44ad75f2a931668d0, type: 2}
