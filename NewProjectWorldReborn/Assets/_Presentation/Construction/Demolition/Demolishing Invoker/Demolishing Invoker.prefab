@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructionController: {fileID: 0}
-  constructionGridManager: {fileID: 0}
+  constructionGridManager: {fileID: 11400000, guid: 3ca58ba311cb05e4b99b3fe13bb9f6c5, type: 2}
   demolitionGridVisualization: {fileID: 0}
 --- !u!114 &8097390850755255171
 MonoBehaviour:
