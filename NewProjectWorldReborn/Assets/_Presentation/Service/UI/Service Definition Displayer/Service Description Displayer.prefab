@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3753837764037492108}
   - component: {fileID: 1498283896578206012}
-  - component: {fileID: 1896710929074022230}
+  - component: {fileID: 6143519724801361632}
   m_Layer: 5
-  m_Name: Service Name Displayer
+  m_Name: Service Description Displayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1896710929074022230
+--- !u!114 &6143519724801361632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,10 +73,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3823085086284473866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2081b6b0ba7fd444bd234e53715b132, type: 3}
+  m_Script: {fileID: 11500000, guid: 07348fc6736f5f74d801e7c437b0a522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serviceNameText: {fileID: 7493929034251349165}
+  serviceDescriptionText: {fileID: 7493929034251349165}
 --- !u!1 &6026889294371852122
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8531315945826059696}
   - component: {fileID: 7493929034251349165}
   m_Layer: 5
-  m_Name: Service Name Text (TMP)
+  m_Name: Service Desciption Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <Service Name>
+  m_text: <Service Description>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
