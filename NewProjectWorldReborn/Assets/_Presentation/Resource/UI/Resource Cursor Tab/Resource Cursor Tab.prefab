@@ -92,11 +92,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063555933006226264, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+--- !u!114 &6469084295484732709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5163434921411154310, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
+  m_PrefabInstance: {fileID: 2192964192345253027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263f2e69b3123f14e956764b4aa43ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8828931581218845453 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7271153058596591534, guid: b0a4172a322a73a4bb4b20a951791303, type: 3}
@@ -362,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hidable: {fileID: 7868311283095808319}
-  resourceDisplayer: {fileID: 0}
+  resourceDisplayer: {fileID: 6469084295484732709}
 --- !u!114 &7548327314150950104
 MonoBehaviour:
   m_ObjectHideFlags: 0
