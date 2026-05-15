@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tab
       objectReference: {fileID: 0}
+    - target: {fileID: 5987371413757137243, guid: 67c5322517f696b4c9ae30edca8d3147, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7252015785808327276, guid: 67c5322517f696b4c9ae30edca8d3147, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
