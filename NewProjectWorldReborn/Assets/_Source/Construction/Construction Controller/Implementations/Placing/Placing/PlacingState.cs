@@ -4,35 +4,37 @@ using CellsVisualizationSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using ConstructionControllerSystem;
 using System.Linq;
 
 namespace PlacingSystem
 {
-    public class PlacingState : IConstructionState
+    public class PlacingState : IPlacingState
     {
         private readonly IConstructionConfiguration _constructionConfiguration;
 
         private readonly IConstructionGridManager _constructionGridManager;
-        private readonly IConstructionPreviewController _previewController;
+        private readonly IConstructionPreviewFactory _previewFactory;
         private readonly ICellsVisualization _placementCellsVisualization;
-        private readonly IBuildingStructureCreator _buildingViewInstantiator;
+        private readonly IBuildingStructureFactory _structureFactory;
+        private readonly Action<BuildingStructure> _structurePlacedCallback;
 
-        private readonly Layout _buildingLayout;
+        private readonly Layout _structureLayout;
 
         public PlacingState(IConstructionConfiguration constructionConfiguration,
                             IConstructionGridManager constructionGridManager,
-                            IConstructionPreviewController preview,
+                            IConstructionPreviewFactory previewFactory,
                             ICellsVisualization placementCellsVisualization,
-                            IBuildingStructureCreator buildingViewInstantiator)
+                            IBuildingStructureFactory stractureFactory,
+                            Action<BuildingStructure> structurePlacedCallback)
         {
             _constructionConfiguration = constructionConfiguration ?? throw new ArgumentNullException(nameof(constructionConfiguration));
             _constructionGridManager = constructionGridManager ?? throw new ArgumentNullException(nameof(constructionGridManager));
-            _previewController = preview ?? throw new ArgumentNullException(nameof(preview));
+            _previewFactory = previewFactory ?? throw new ArgumentNullException(nameof(previewFactory));
             _placementCellsVisualization = placementCellsVisualization ?? throw new ArgumentNullException(nameof(placementCellsVisualization));
-            _buildingViewInstantiator = buildingViewInstantiator ?? throw new ArgumentNullException(nameof(buildingViewInstantiator));
+            _structureFactory = stractureFactory ?? throw new ArgumentNullException(nameof(stractureFactory));
+            _structurePlacedCallback = structurePlacedCallback;
 
-            _buildingLayout = new(_constructionConfiguration.OccupiedCells);
+            _structureLayout = _constructionConfiguration.GetBuildingLayout();
         }
 
         private Vector2Int _currentCell;
@@ -40,115 +42,119 @@ namespace PlacingSystem
         //Cashing hash set for perfomance
         private readonly HashSet<Vector2Int> _placementCells = new();
 
-        public event Action<BuildingStructure> OnBuildingPlaced;
+        private GameObject _previewObject;
+        private ConstructionPreview _preview;
 
-        public void EnterState(Vector2Int cell)
+        public void EnterState()
         {
-            _currentCell = cell;
+            CreatePlacementPreview();
 
-            //Show player where structure will be placed
-            _previewController.ShowPreview(_constructionConfiguration.ConstructionPreviewPrefab);
-            _previewController.SetOrientation(_buildingLayout.Orientation);
-            ShowPlacementAt(cell);
+            void CreatePlacementPreview()
+            {
+                _previewObject = _constructionConfiguration.CreateBuildingPreviewObject();
+                _preview = _previewFactory.CreateConstructionPreview(_previewObject);
+                _preview.SetOrientation(_structureLayout.Orientation);
+            }
         }
 
         public void UpdateState(Vector2Int cell)
         {
             _currentCell = cell;
-
             ShowPlacementAt(cell);
         }
 
-        public void StartAction(Vector2Int cell)
+        public void StartAction()
         {
-            _currentCell = cell;
+            TryPlaceStructureAt(_currentCell);
 
-            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _buildingLayout.OccupiedCells))
+            bool TryPlaceStructureAt(Vector2Int cell)
             {
-                BuildingStructure structure = _buildingViewInstantiator.CreateBuildingStructure(_constructionConfiguration, cell, _buildingLayout.Orientation);
+                if (!_constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _structureLayout.OccupiedCells)) { return false; }
 
-                if (_constructionGridManager.TryPlaceStructureAt(structure, cell))
-                {
-                    OnBuildingPlaced?.Invoke(structure);
+                BuildingStructure structure = _structureFactory.CreateBuildingStructure(cell, _structureLayout, _constructionConfiguration.BuildingViewPrefab);
 
-                    ShowPlacementValidityAt(cell);
-                }
-                else
+                if (!_constructionGridManager.TryPlaceStructureAt(structure, cell))
                 {
                     UnityEngine.Object.Destroy(structure.View.gameObject);
+                    return false;
                 }
+
+                ShowPlacementValidityAt(cell);
+                _structurePlacedCallback.Invoke(structure);
+                return true;
             }
         }
 
-        public void FinishAction(Vector2Int cell)
+        public void FinishAction()
         {
-            _currentCell = cell;
+
         }
 
         public void ExitState()
         {
-            HidePlacement();
-        }
-
-        private void ShowPlacementAt(Vector2Int cell)
-        {
-            _previewController.MoveToCell(cell);
-            ShowPlacementCellsAt(cell);
-            ShowPlacementValidityAt(cell);
-        }
-
-        private void HidePlacement()
-        {
-            _previewController.HidePreview();
+            HidePlacementPreview();
             HidePlacementCells();
+
+            void HidePlacementPreview()
+            {
+                UnityEngine.Object.Destroy(_previewObject);
+                _preview = null;
+            }
+
+            void HidePlacementCells()
+            {
+                _placementCellsVisualization.DestroyVisualization();
+            }
         }
 
         public void RotateBuilding()
         {
-            switch (_buildingLayout.Orientation)
-            {
-                case EOrientation.up:
-                _buildingLayout.Orientation = EOrientation.right;
-                break;
-
-                case EOrientation.right:
-                _buildingLayout.Orientation = EOrientation.down;
-                break;
-
-                case EOrientation.down:
-                _buildingLayout.Orientation = EOrientation.left;
-                break;
-
-                case EOrientation.left:
-                _buildingLayout.Orientation = EOrientation.up;
-                break;
-            }
-
-            _previewController.SetOrientation(_buildingLayout.Orientation);
+            ChangeOrientation();
             ShowPlacementCellsAt(_currentCell);
             ShowPlacementValidityAt(_currentCell);
+
+            void ChangeOrientation()
+            {
+                EOrientation newOrientation = OrientationOperations.RotateClockwise(_structureLayout.Orientation);
+                _structureLayout.Orientation = newOrientation;
+                _preview.SetOrientation(newOrientation);
+            }
+        }
+
+        private void ShowPlacementAt(Vector2Int cell)
+        {
+            ShowPlacementPreviewAt(cell);
+            ShowPlacementCellsAt(cell);
+            ShowPlacementValidityAt(cell);
+
+            void ShowPlacementPreviewAt(Vector2Int cell)
+            {
+                _preview.MoveToCell(cell);
+            }
         }
 
         private void ShowPlacementCellsAt(Vector2Int originCell)
         {
-            _placementCells.Clear();
-            foreach (var cell in _buildingLayout.OccupiedCells)
+            Vector2Int[] placementCells = GetPlacementCells(originCell);
+            _placementCellsVisualization.CreateVisualization(placementCells);
+
+            Vector2Int[] GetPlacementCells(Vector2Int originCell)
             {
-                Vector2Int placementCell = originCell + cell;
-                _placementCells.Add(placementCell);
+                _placementCells.Clear();
+
+                foreach (var cell in _structureLayout.OccupiedCells)
+                {
+                    Vector2Int placementCell = originCell + cell;
+                    _placementCells.Add(placementCell);
+                }
+
+                return _placementCells.ToArray();
             }
-
-            _placementCellsVisualization.CreateVisualization(_placementCells.ToArray());
         }
 
-        private void HidePlacementCells()
+        private void ShowPlacementValidityAt(Vector2Int cell)
         {
-            _placementCellsVisualization.DestroyVisualization();
-        }
-
-        private void ShowPlacementValidityAt(Vector2Int originCell)
-        {
-            if (_constructionGridManager.CheckIfCanPlaceLayoutAt(originCell, _buildingLayout.OccupiedCells))
+            if (CheckIfCanPlaceLayoutAt(cell))
             {
                 ShowValidPlacement();
             }
@@ -157,14 +163,19 @@ namespace PlacingSystem
                 ShowInvalidPlacement();
             }
 
+            bool CheckIfCanPlaceLayoutAt(Vector2Int cell)
+            {
+                return _constructionGridManager.CheckIfCanPlaceLayoutAt(cell, _structureLayout.OccupiedCells);
+            }
+
             void ShowValidPlacement()
             {
-                _previewController.ShowValidPlacement();
+                _preview.ShowValidPlacement();
             }
 
             void ShowInvalidPlacement()
             {
-                _previewController.ShowInvalidPlacement();
+                _preview.ShowInvalidPlacement();
             }
         }
     }
