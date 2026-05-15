@@ -1,14 +1,14 @@
-﻿using ConstructionGridSystem;
-using System.Collections.Generic;
+﻿using BuildingViewSystem;
+using LayoutSystem;
 using UnityEngine;
 
 namespace PlacingSystem
 {
     public interface IConstructionConfiguration
     {
-        HashSet<Vector2Int> OccupiedCells { get; }
-        ConstructionPreviewMB ConstructionPreviewPrefab { get; }
+        BuildingViewMB BuildingViewPrefab { get; }
 
-        BuildingStructure CreateBuildingStructure();
+        Layout GetBuildingLayout();
+        GameObject CreateBuildingPreviewObject();
     }
 }
