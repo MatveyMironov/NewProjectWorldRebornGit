@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 7374508048099164346}
   - component: {fileID: 1217873635907581451}
   - component: {fileID: 6018942966563974759}
+  - component: {fileID: 1116642406104271056}
   m_Layer: 5
   m_Name: Service Icon Image
   m_TagString: Untagged
@@ -311,6 +312,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1116642406104271056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267483015775109932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8608bb6c73e04ec4fa959d2ed105ce7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serviceIconImage: {fileID: 1217873635907581451}
 --- !u!1 &3282275898453524115
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +336,7 @@ GameObject:
   - component: {fileID: 1693761923078845563}
   - component: {fileID: 8435426527104470764}
   - component: {fileID: 5836258911887534406}
+  - component: {fileID: 980274355884060169}
   m_Layer: 5
   m_Name: Service Name Text (TMP)
   m_TagString: Untagged
@@ -447,6 +462,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &980274355884060169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282275898453524115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2081b6b0ba7fd444bd234e53715b132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serviceNameText: {fileID: 5836258911887534406}
 --- !u!1 &5000956193746625895
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,11 +635,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5000956193746625895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204fb2061b684ff4e9b1823acadb0b3a, type: 3}
+  m_Script: {fileID: 11500000, guid: aa5b9f064ee10f34cbd5200c0d59ac1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 1217873635907581451}
-  nameText: {fileID: 5836258911887534406}
+  displayers:
+  - {fileID: 1116642406104271056}
+  - {fileID: 980274355884060169}
 --- !u!114 &5603426860179593330
 MonoBehaviour:
   m_ObjectHideFlags: 0
