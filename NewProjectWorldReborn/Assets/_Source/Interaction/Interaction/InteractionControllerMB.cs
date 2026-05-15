@@ -20,6 +20,8 @@ namespace InteractionSystem
 
         public void Interact()
         {
+            if (CheckIfMouseIsOverUI()) { return; }
+
             if (_targetInteractable == null)
             {
                 OnInteractionFailed?.Invoke();
@@ -48,11 +50,6 @@ namespace InteractionSystem
             else
             {
                 ForgetColliderAndInteractable();
-            }
-
-            bool CheckIfMouseIsOverUI()
-            {
-                return MouseOverUIChecker.CheckIfMouseIsOverUI();
             }
 
             bool TryFindCollider(Vector2 mousePosition, out Collider collider)
@@ -110,6 +107,11 @@ namespace InteractionSystem
                 _targetInteractable.HideInteraction();
                 _targetInteractable = null;
             }
+        }
+
+        private bool CheckIfMouseIsOverUI()
+        {
+            return MouseOverUIChecker.CheckIfMouseIsOverUI();
         }
     }
 }
