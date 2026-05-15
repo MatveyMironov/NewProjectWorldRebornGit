@@ -3,12 +3,17 @@ using UnityEngine.EventSystems;
 
 namespace BuildingSystem.Implementations
 {
-    public class EventHandlerBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB, IPointerEnterHandler, IPointerExitHandler
+    public class PointerBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB, IPointerEnterHandler, IPointerExitHandler
     {
 
         [SerializeField] private ABuildingConfigurationDisplayerMB buildingConfigurationDisplayer;
 
         private IBuildingConfiguration _displayedConfiguration;
+
+        private void OnDisable()
+        {
+            buildingConfigurationDisplayer.Clear();
+        }
 
         public override void DisplayBuildingConiguration(IBuildingConfiguration configuration)
         {
