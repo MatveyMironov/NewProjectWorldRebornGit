@@ -24,6 +24,8 @@ namespace AreaDemolishingSystem
             _demolishingCellsVisualization = demolishingCellsVisualization ?? throw new ArgumentNullException(nameof(demolishingCellsVisualization));
         }
 
+        private Vector2Int _currentCell;
+
         private bool _isSelecting;
         private Vector2Int _startCell;
 
@@ -31,30 +33,30 @@ namespace AreaDemolishingSystem
 
         public event Action<BuildingStructure> OnBuildingDemolished;
 
-        public void EnterState(Vector2Int cell)
+        public void EnterState()
         {
             _cellIndicator.Show();
-            _cellIndicator.MoveToCell(cell);
         }
 
         public void UpdateState(Vector2Int cell)
         {
+            _currentCell = cell;
             _cellIndicator.MoveToCell(cell);
 
             if (_isSelecting) Select(cell);
         }
 
-        public void StartAction(Vector2Int cell)
+        public void StartAction()
         {
             _cellIndicator.Hide();
 
-            _startCell = cell;
+            _startCell = _currentCell;
             Select(_startCell);
 
             _isSelecting = true;
         }
 
-        public void FinishAction(Vector2Int cell)
+        public void FinishAction()
         {
             _cellIndicator.Show();
 

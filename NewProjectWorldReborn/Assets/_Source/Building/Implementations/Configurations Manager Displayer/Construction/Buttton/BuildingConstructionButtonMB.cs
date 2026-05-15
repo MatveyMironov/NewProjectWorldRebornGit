@@ -23,7 +23,7 @@ namespace BuildingSystem.Implementations
             buildingConfigurationDisplayer.DisplayBuildingConiguration(configuration);
         }
 
-        public void OnBuildingSelected()
+        public void DisplayBuildingSelected()
         {
             selectionIndicator.SetActive(true);
         }

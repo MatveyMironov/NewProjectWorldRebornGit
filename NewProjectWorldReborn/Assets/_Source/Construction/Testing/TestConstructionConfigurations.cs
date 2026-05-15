@@ -1,6 +1,7 @@
 using ConstructionUISystem;
 using UnityEngine;
 using PlacingSystem;
+using ConstructionGridSystem;
 
 namespace ConstructionSystem.Testing
 {
@@ -13,7 +14,12 @@ namespace ConstructionSystem.Testing
         {
             foreach (var configuration in constructionConfigurations)
             {
-                constructionButtonsManager.TryAddConstructionButton(configuration);
+                constructionButtonsManager.TryAddConstructionButton(configuration, SendDebugMessage);
+            }
+
+            static void SendDebugMessage(BuildingStructure structure)
+            {
+                Debug.Log($"Buildingstructure was placed {structure}");
             }
         }
     }

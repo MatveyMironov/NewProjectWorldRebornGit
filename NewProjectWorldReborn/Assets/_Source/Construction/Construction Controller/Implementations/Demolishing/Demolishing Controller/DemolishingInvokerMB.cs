@@ -9,7 +9,7 @@ namespace DemolishingSystem
     public class DemolishingInvokerMB : MonoBehaviour, IDemolishingInvoker
     {
         [SerializeField] private ConstructionControllerMB constructionController;
-        [SerializeField] private ConstructionGridManagerMB constructionGridManager;
+        [SerializeField] private ConstructionGridManagerSO constructionGridManager;
         [SerializeField] private ACellsVisualizationMB demolitionGridVisualization;
 
         private IDemolishingInvoker _controller;

@@ -4,7 +4,7 @@ namespace BuildingSystem.Testing
 {
     public abstract class ATestBuildingConfigurationsMB : MonoBehaviour
     {
-        [SerializeField] private ABuildingConfigurationSO[] buildingConfigurations = new ABuildingConfigurationSO[0];
+        [SerializeField] private BuildingConfigurationSO[] buildingConfigurations = new BuildingConfigurationSO[0];
 
         protected abstract IBuildingConfigurationsManager BuildingConfigurationsManager { get; }
 
