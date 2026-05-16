@@ -1,4 +1,4 @@
 namespace GameEventSystem.Implementations.Bool
 {
-    public class BoolGameEventListener : AGameEventListener<bool> { }
+    public class BoolGameEventListener : AGameEventListenerMB<bool> { }
 }

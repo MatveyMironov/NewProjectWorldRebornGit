@@ -1,4 +1,4 @@
 namespace GameEventSystem.Implementations.Float
 {
-    public class FloatGameEventListener : AGameEventListener<float> { }
+    public class FloatGameEventListener : AGameEventListenerMB<float> { }
 }
