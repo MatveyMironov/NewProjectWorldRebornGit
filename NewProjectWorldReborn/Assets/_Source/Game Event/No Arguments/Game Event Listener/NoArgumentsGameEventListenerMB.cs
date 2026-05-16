@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace GameEventSystem.NoArguments
 {
-    public class NoArgumentsGameEventListener : MonoBehaviour, INoArgumentsGameEventListener
+    public class NoArgumentsGameEventListenerMB : MonoBehaviour, INoArgumentsGameEventListener
     {
         [SerializeField] private NoArgumentsGameEventSO gameEvent;
         [Space]
