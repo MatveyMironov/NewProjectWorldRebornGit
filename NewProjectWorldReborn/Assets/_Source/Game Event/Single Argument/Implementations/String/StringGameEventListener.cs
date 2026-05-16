@@ -1,4 +1,4 @@
 namespace GameEventSystem.Implementations.String
 {
-    public class StringGameEventListener : AGameEventListener<string> { }
+    public class StringGameEventListener : AGameEventListenerMB<string> { }
 }
