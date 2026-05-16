@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BuildingInfoSystem.Implementation
 {
-    public class BuildingNameDisplayer : ABuildingInfoDisplayerMB
+    public class BuildingNameDisplayerMB : ABuildingInfoDisplayerMB
     {
         [SerializeField] private TextMeshProUGUI nameText;
 
