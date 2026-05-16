@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace GameEventSystem
 {
-    public abstract class AGameEventListener<T> : MonoBehaviour
+    public abstract class AGameEventListenerMB<T> : MonoBehaviour
     {
         [SerializeField] private AGameEventSO<T> gameEvent;
         [Space]
