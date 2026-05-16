@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308633d185103034cbac2ec6a6ba1017, type: 3}
-  m_Name: Test Building 2
+  m_Name: Construction Resources Test Building
   m_EditorClassIdentifier: 
   info:
-    <Name>k__BackingField: Test Building 2
+    <Name>k__BackingField: Construction Resources Test Building
     <Description>k__BackingField: Building used for testing
   construction:
     occupiedCells:
@@ -34,4 +34,6 @@ MonoBehaviour:
     Name: 
     Description: 
   constructionResources:
-    resources: []
+    resources:
+    - _resource: {fileID: 11400000, guid: f932c77e418b11344825c215caee1010, type: 2}
+      _count: 10

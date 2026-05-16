@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BuildingSystem.Implementations
 {
-    public class ConstructionResourcesDisplayerMB : ABuildingConfigurationDisplayerMB
+    public class ConstructionResourcesBuildingConfigurationDisplayerMB : ABuildingConfigurationDisplayerMB
     {
         [SerializeField] private AResourceCountDisplayerMB resourceCountDisplayerPrefab;
         [SerializeField] private Transform content;
@@ -17,17 +17,19 @@ namespace BuildingSystem.Implementations
 
             for (int i = 0; i < createdDisplayersCount; i++)
             {
+                Destroy(_createdDisplayers[0].gameObject);
                 _createdDisplayers.RemoveAt(0);
             }
         }
 
         public override void DisplayBuildingConiguration(IBuildingConfiguration configuration)
         {
+            Clear();
+
             Dictionary<IResourceDefinition, int> constructionResourcesDictionary = configuration.ConstructionResourcesDictionary;
 
             if (constructionResourcesDictionary.Count <= 0)
             {
-                Debug.Log(0);
                 Hide();
                 return;
             }
