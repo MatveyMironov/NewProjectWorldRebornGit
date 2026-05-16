@@ -2,17 +2,22 @@ using UnityEngine;
 
 public class TransformFollowerMB : MonoBehaviour
 {
-    public Transform FollowedTransform;
+    [SerializeField] private Transform target;
 
     private void OnEnable()
     {
-        if (FollowedTransform == null) { return; }
-        transform.position = FollowedTransform.position;
+        if (target == null) { return; }
+        transform.position = target.position;
     }
 
     private void Update()
     {
-        if (FollowedTransform == null) { return; }
-        transform.position = FollowedTransform.position;
+        if (target == null) { return; }
+        transform.position = target.position;
+    }
+
+    public void AssignFollowedTransform(Transform newTarget)
+    {
+        target = newTarget;
     }
 }
