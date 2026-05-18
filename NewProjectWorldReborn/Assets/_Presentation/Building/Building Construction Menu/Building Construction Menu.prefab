@@ -277,10 +277,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8418098476891890665, guid: 1100f8afd84387a47a597f224c77e8cb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418098476891890665, guid: 1100f8afd84387a47a597f224c77e8cb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -456,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593854403098515638, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_Name
-      value: Building Construction Menu Variant
+      value: Building Construction Menu
       objectReference: {fileID: 0}
     - target: {fileID: 1691907819646883835, guid: c3b928294adf3c1488c57e00a957b9be, type: 3}
       propertyPath: m_AnchorMax.y
